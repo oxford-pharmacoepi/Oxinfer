@@ -51,7 +51,8 @@ Execute the following commands, make sure that you fill the parameters of the da
 The following libraries will be used in this chapter: DBI, RPostgres, dplyr, dbplyr, usethis and here. If you do not have them installed you can install them with the following command:
 
 ```{r, eval = FALSE}
-install.packages(c("DBI", "RPostgres", "dplyr", "dbplyr", "usethis", "here")) 
+install.packages(c("DBI", "RPostgres", "dplyr", "dbplyr", "usethis", "here"))
+x <- 1
 ```
 
 library("DBI") 
