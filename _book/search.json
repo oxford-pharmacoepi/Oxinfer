@@ -18,7 +18,7 @@
     "href": "connect_to_database.html#load-libraries",
     "title": "1  Connect to the database",
     "section": "1.2 Load libraries",
-    "text": "1.2 Load libraries\nThe following libraries will be used in this chapter: DBI, RPostgres, dplyr, dbplyr, usethis and here. If you do not have them installed you can install them with the following command:\n\ninstall.packages(c(\"DBI\", \"RPostgres\", \"dplyr\", \"dbplyr\", \"usethis\", \"here\")) \n\nlibrary(“DBI”)\nlibrary(“RPostgres”)"
+    "text": "1.2 Load libraries\nThe following libraries will be used in this chapter: DBI, RPostgres, dplyr, dbplyr, usethis and here. If you do not have them installed you can install them with the following command:\n\ninstall.packages(c(\"DBI\", \"RPostgres\", \"dplyr\", \"dbplyr\", \"usethis\", \"here\"))\nx <- 1\n\nlibrary(“DBI”)\nlibrary(“RPostgres”)"
   },
   {
     "objectID": "connect_to_database.html#set-connection-details",
