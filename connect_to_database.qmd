@@ -111,8 +111,33 @@ Connection to the database it is a repetitive process that you will repeat every
 
 To access to a secret you can type:
 ```{r}
-Sys.getenv()
+Sys.getenv("MY_SECRET")
 ```
+
+As we have just seen if a secret does not exist the output will be an empty string: `""`.
+
+You can set a temporary secret using the following command:
+```{r}
+Sys.setenv(MY_SECRET = "123456789")
+```
+
+Then now if you run the same command than before you will get the value that we have just set back:
+
+```{r}
+Sys.getenv("MY_SECRET")
+```
+
+This value can be assigned to a variable as we would do as usual:
+```{r}
+x <- "123456789"
+print(x)
+```
+```{r}
+y <- Sys.getenv("MY_SECRET")
+print(y)
+```
+
+As you can see `x` and `y` have the same value but if you share the code in the second case the code would only work if you have the same secret stored in your environment. This is very useful to store the connection details so even if you share your code you would not be share sensitive information.
 
 There are two type of secrets:
 
@@ -122,6 +147,11 @@ There are two type of secrets:
 
 You can read more about secrets [here](https://cran.r-project.org/web/packages/httr/vignettes/secrets.html).
 
+*NOTE: you can see all the secrets of your R session running the following command:
+```{r, eval = FALSE}
+Sys.getenv()
+```
+
 ### Set up your own .Renviron file
 
 To open your .Renviron file you can run the following command:
@@ -129,5 +159,15 @@ To open your .Renviron file you can run the following command:
 edit_r_environ()
 ```
 
+There you can write secrets that you want to store
+```{r}
+MY_SECRET = "123456789"
+```
+
+It is like writing in the `Sys.setenv()` function, but these secrets will be permanent and always be loaded in your session.
+
+Secrets are loaded every time our session starts, so if we modify the .Renviron file and we want the new secrets to be loaded we should restart the R session (Control+Shift+F10).
+
+## Final remark
 
 **YOU MUST NEVER INCLUDE CONNECTION DETAILS IN A SCRIPT THAT IS PUBLIC OR YOU SHARE WITH SOMEONE, EVEN IF YOU TRUST THAT PERSON OR IS IN THE SAME ORGANIZATION.**
