@@ -40,15 +40,19 @@ STEP 0 Install the libraries
 
 The libraries necessary to connect to a database are: DBI, RPostgres, dplyr, dbplyr, usethis, DatabaseConnector and here. They are all CRAN libraries so there should not be any problem installing them: if you have any problem please ask for help. To install them run the following commands: 
 
-install.packages(c("DBI","RPostgres","dplyr","dbplyr","usethis", 
 
-                   "DatabaseConnector","here")) 
 
 STEP 1 Connect to a database for first time 
 
 Execute the following commands, make sure that you fill the parameters of the database accordingly (lines 7-11). 
 
 ## Load libraries 
+
+The following libraries will be used in this chapter: DBI, RPostgres, dplyr, dbplyr, usethis and here. If you do not have them installed you can install them with the following command:
+
+```{r, eval = FALSE}
+install.packages(c("DBI", "RPostgres", "dplyr", "dbplyr", "usethis", "here")) 
+```
 
 library("DBI") 
 
