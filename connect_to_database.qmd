@@ -4,49 +4,45 @@
 
 To connect to databases we will use DBI package and CDMConnector, you can find more information about both packages in their websites:
 
-- DBI package website: <https://dbi.r-dbi.org/>
+-   DBI package website: <https://dbi.r-dbi.org/>
 
-- CDMConnector package website: <https://darwin-eu.github.io/CDMConnector/>
+-   CDMConnector package website: <https://darwin-eu.github.io/CDMConnector/>
 
-Connect to database (standard way) and set up the environment 
+Connect to database (standard way) and set up the environment
 
+To connect to the database, you need to know some parameters of it: server_dbi, port, host, server, user, and password.
 
+server_dbi is different for each one of the databases: e.g.
 
-To connect to the database, you need to know some parameters of it: server_dbi, port, host, server, user, and password. 
+server_dbi \<- "cdm_aurum_202106"
 
-server_dbi is different for each one of the databases: e.g.  
+Port is the port used to connect to the database for the moment our databases use port 5432.
 
-server_dbi <- "cdm_aurum_202106" 
+port \<- "5432"
 
-Port is the port used to connect to the database for the moment our databases use port 5432. 
+Host is the IP of the computer that contains the databases. For the moment the host of all our current databases is: 163.1.64.2
 
-port <- "5432"
+host \<- "163.1.64.2"
 
-Host is the IP of the computer that contains the databases. For the moment the host of all our current databases is: 163.1.64.2 
+Server is the combination of the host and the server_dbi with a slash "/" in between.
 
-host <- "163.1.64.2" 
+server \<- "163.1.64.2/cdm_aurum_202106"
 
-Server is the combination of the host and the server_dbi with a slash “/” in between. 
+User and password are provided by the database administrator (e.g. Antonella), and they are personal and nontransferable. One of the first things that we will have to do is to change the password, from the default one (given by the administrator) to one of our choices (see STEP 2). The username and password are shared by all the databases that we have on the same port and server, so we need to change it only once.
 
-server <- "163.1.64.2/cdm_aurum_202106" 
+user \<- "..."
 
-User and password are provided by the database administrator (e.g. Antonella), and they are personal and nontransferable. One of the first things that we will have to do is to change the password, from the default one (given by the administrator) to one of our choices (see STEP 2). The username and password are shared by all the databases that we have on the same port and server, so we need to change it only once. 
+password \<- "..."
 
-user <- "..." 
+STEP 0 Install the libraries
 
-password <- "..." 
+The libraries necessary to connect to a database are: DBI, RPostgres, dplyr, dbplyr, usethis, DatabaseConnector and here. They are all CRAN libraries so there should not be any problem installing them: if you have any problem please ask for help. To install them run the following commands:
 
-STEP 0 Install the libraries 
+STEP 1 Connect to a database for first time
 
-The libraries necessary to connect to a database are: DBI, RPostgres, dplyr, dbplyr, usethis, DatabaseConnector and here. They are all CRAN libraries so there should not be any problem installing them: if you have any problem please ask for help. To install them run the following commands: 
+Execute the following commands, make sure that you fill the parameters of the database accordingly (lines 7-11).
 
-
-
-STEP 1 Connect to a database for first time 
-
-Execute the following commands, make sure that you fill the parameters of the database accordingly (lines 7-11). 
-
-## Load libraries 
+## Load libraries
 
 The following libraries will be used in this chapter: DBI, RPostgres, dplyr, dbplyr, usethis and here. If you do not have them installed you can install them with the following command:
 
@@ -55,29 +51,29 @@ install.packages(c("DBI", "RPostgres", "dplyr", "dbplyr", "usethis", "here"))
 x <- 1
 ```
 
-library("DBI") 
+library("DBI")
 
-library("RPostgres") 
+library("RPostgres")
 
-## Set connection details 
+## Set connection details
 
-## Substitute the next 5 lines with the specifications of the database that you 
+## Substitute the next 5 lines with the specifications of the database that you
 
-## want to connect 
+## want to connect
 
-server_dbi <- "..." 
+server_dbi \<- "..."
 
-user       <- "..." 
+user \<- "..."
 
-password  <- "..." 
+password \<- "..."
 
-port <- "..." 
+port \<- "..."
 
-host <- "..." 
+host \<- "..."
 
-## Connect to the database 
+## Connect to the database
 
-db         <- dbConnect(RPostgres::Postgres(), 
+db \<- dbConnect(RPostgres::Postgres(),
 
                         dbname = server_dbi, 
 
@@ -85,45 +81,41 @@ db         <- dbConnect(RPostgres::Postgres(),
 
        host = host, 
 
-  user = user,
+user = user,
 
         password = password) 
 
- 
+To check that you are connected run the following commands:
 
-To check that you are connected run the following commands: 
+library("dplyr")
 
-library("dplyr") 
+tbl(db, sql("SELECT \* FROM public.person limit 1"))
 
-tbl(db, sql("SELECT * FROM public.person limit 1")) 
-
-If you are connected you should see something like this in your terminal: 
+If you are connected you should see something like this in your terminal:
 
 ShapeBackground pattern
 
-Description automatically generated 
+Description automatically generated
 
-STEP 2 Change the password (only to be executed the first time a user connects) 
+STEP 2 Change the password (only to be executed the first time a user connects)
 
-For the new password make sure that you chose a strong password. 
+For the new password make sure that you chose a strong password.
 
-After connecting to the database with the temporary password, to change the password, you must execute the following command in the terminal: 
+After connecting to the database with the temporary password, to change the password, you must execute the following command in the terminal:
 
-dbGetQuery(db, "ALTER USER user WITH PASSWORD 'new_password'") 
+dbGetQuery(db, "ALTER USER user WITH PASSWORD 'new_password'")
 
-Example: 
+Example:
 
-dbGetQuery(db, "ALTER USER martics WITH PASSWORD '12345678'") 
+dbGetQuery(db, "ALTER USER martics WITH PASSWORD '12345678'")
 
- 
+Disconnect from the database and reconnect with the new password to make sure that the password change was effective.
 
-Disconnect from the database and reconnect with the new password to make sure that the password change was effective. 
+dbDisconnect(db)
 
-dbDisconnect(db) 
+password \<- "new_password"
 
-password  <- "new_password" 
-
-db         <- dbConnect(RPostgres::Postgres(), 
+db \<- dbConnect(RPostgres::Postgres(),
 
                         dbname = server_dbi, 
 
@@ -135,93 +127,89 @@ host = host,
 
         password = password) 
 
-tbl(db, sql("SELECT * FROM public.person limit 1")) 
+tbl(db, sql("SELECT \* FROM public.person limit 1"))
 
-If everything worked, you must observe the same output that you observed before. 
+If everything worked, you must observe the same output that you observed before.
 
-STEP 3 Set .Renviron 
+STEP 3 Set .Renviron
 
-Including username, password and connection details in an R script is something that we must avoid at all costs. Otherwise, when we share our code or upload it in GitHub our account can be vulnerable. So NEVER include the connection details into an R script! 
+Including username, password and connection details in an R script is something that we must avoid at all costs. Otherwise, when we share our code or upload it in GitHub our account can be vulnerable. So NEVER include the connection details into an R script!
 
-To avoid this potential problem we are going to store the connection details of our database in .Renviron file so that we can use them easily without sharing them. 
+To avoid this potential problem we are going to store the connection details of our database in .Renviron file so that we can use them easily without sharing them.
 
-How .Renviron works? This is a file where we write a list of variables with their values that we can access from any R script. For example, if I add to the file: 
+How .Renviron works? This is a file where we write a list of variables with their values that we can access from any R script. For example, if I add to the file:
 
-NAME = "marti" 
+NAME = "marti"
 
-When I execute the following command, I will obtain "marti" as a result: 
+When I execute the following command, I will obtain "marti" as a result:
 
-Sys.getenv("NAME") 
+Sys.getenv("NAME")
 
-So this two commands would have the same output, but in the second case without having the same .Renviron file someone external won’t be able to read it. 
+So this two commands would have the same output, but in the second case without having the same .Renviron file someone external won't be able to read it.
 
-x <- "marti" 
+x \<- "marti"
 
-x <- Sys.getenv("NAME") 
+x \<- Sys.getenv("NAME")
 
-To open and set the .Renviron file we have two options: 
+To open and set the .Renviron file we have two options:
 
-OPTION 1: open directly the file: 
+OPTION 1: open directly the file:
 
 Graphical user interface, application
 
-Description automatically generated 
+Description automatically generated
 
-OPTION 2: write the following command in the console:  
+OPTION 2: write the following command in the console:
 
-usethis::edit_r_environ() 
+usethis::edit_r\_environ()
 
-Once you have it opened you must add the follow to the file:  
+Once you have it opened you must add the follow to the file:
 
-DB_USER = "xxx"     # Username for the database 
+DB_USER = "xxx" \# Username for the database
 
-DB_PASSWORD = "xxx" # Password for the database, the new one!! 
+DB_PASSWORD = "xxx" \# Password for the database, the new one!!
 
-DB_PORT = "5432" 
+DB_PORT = "5432"
 
-DB_HOST = "163.1.64.2" 
+DB_HOST = "163.1.64.2"
 
-DB_SERVER_name_database = "163.1.64.2/xxx" # xxx depends on the database that you 
+DB_SERVER_name_database = "163.1.64.2/xxx" \# xxx depends on the database that you
 
-DB_SERVER_DBI_name_database = "xxx"        # want to access, see section 4. 
+DB_SERVER_DBI_name_database = "xxx" \# want to access, see section 4.
 
-Instead of DB_SERVER_DBI_name_database we can write a name that we can remember easily. For example, for CPRD AURUM May 2021 release I would write in .Renviron file: 
+Instead of DB_SERVER_DBI_name_database we can write a name that we can remember easily. For example, for CPRD AURUM May 2021 release I would write in .Renviron file:
 
-DB_SERVER_DBI_aurum202106 = "cdm_aurum_202106" 
+DB_SERVER_DBI_aurum202106 = "cdm_aurum_202106"
 
-And call it from the main script as: 
+And call it from the main script as:
 
-server_dbi <- Sys.getenv("DB_SERVER_DBI_aurum202106") 
+server_dbi \<- Sys.getenv("DB_SERVER_DBI_aurum202106")
 
-But as said we can use any name that we want to use. 
+But as said we can use any name that we want to use.
 
-Important!! Every time that we change .Renviron file, R must be rebooted (Session / Restart R, or Ctrl+Shift+F10) so that the changes are effective. 
+Important!! Every time that we change .Renviron file, R must be rebooted (Session / Restart R, or Ctrl+Shift+F10) so that the changes are effective.
 
- 
+STEP 4 Check that .Renviron setting works
 
-STEP 4 Check that .Renviron setting works 
+After rebooting, execute the following code to check if you can connect to the data base:
 
-After rebooting, execute the following code to check if you can connect to the data base: 
+library("DBI")
 
-library("DBI") 
+library("RPostgres")
 
-library("RPostgres") 
+## use your own .Renviron "keys" to select the database that you want to access
 
- 
+server_dbi \<- Sys.getenv("DB_SERVER_DBI_name_database")
 
-## use your own .Renviron "keys" to select the database that you want to access 
+user \<- Sys.getenv("DB_USER")
 
-server_dbi <- Sys.getenv("DB_SERVER_DBI_name_database") 
+password \<- Sys.getenv("DB_PASSWORD")
 
-user       <- Sys.getenv("DB_USER") 
+port \<- Sys.getenv("DB_PORT")
 
-password   <- Sys.getenv("DB_PASSWORD") 
+host \<- Sys.getenv("DB_HOST")
 
-port       <- Sys.getenv("DB_PORT")  
-
-host       <- Sys.getenv("DB_HOST") 
-
-db         <- dbConnect(RPostgres::Postgres(), 
+db \<- dbConnect(RPostgres::Postgres(),
 
                         dbname = server_dbi, 
 
@@ -233,98 +221,90 @@ db         <- dbConnect(RPostgres::Postgres(),
 
         password = password) 
 
-tbl(db, sql("SELECT * FROM public.person limit 1")) 
+tbl(db, sql("SELECT \* FROM public.person limit 1"))
 
-If you connected correctly to the database, you must observe the same output that you observed before. 
+If you connected correctly to the database, you must observe the same output that you observed before.
 
- 
+Connect to the database (OHDSI way)
 
-Connect to the database (OHDSI way) 
+The connector used in OHDSI packages is different from the one used in the "standard way". To create the connection used in OHDSI packages for your database you must use the following commands:
 
-The connector used in OHDSI packages is different from the one used in the “standard way”. To create the connection used in OHDSI packages for your database you must use the following commands: 
+library("DatabaseConnector")
 
-library("DatabaseConnector") 
+library("here")
 
-library("here") 
+server \<- Sys.getenv("DB_SERVER_name_database")
 
-server  <- Sys.getenv("DB_SERVER_name_database") 
+user \<- Sys.getenv("DB_USER")
 
-user  <- Sys.getenv("DB_USER") 
+password \<- Sys.getenv("DB_PASSWORD")
 
-password <- Sys.getenv("DB_PASSWORD") 
+port\<- Sys.getenv("DB_PORT")
 
-port<- Sys.getenv("DB_PORT")
+host \<- Sys.getenv("DB_HOST")
 
-host <- Sys.getenv("DB_HOST")
-
-connectionDetails <- DatabaseConnector::downloadJdbcDrivers("postgresql", 
+connectionDetails \<- DatabaseConnector::downloadJdbcDrivers("postgresql",
 
                                                             here::here()) 
 
-connectionDetails <- DatabaseConnector::createConnectionDetails( 
+connectionDetails \<- DatabaseConnector::createConnectionDetails(
 
                                 dbms = "postgresql", 
 
-server = server, 
+server = server,
 
- user = user, 
+user = user,
 
- password = password, 
+password = password,
 
-port = port, 
+port = port,
 
- pathToDriver = here::here()) 
+pathToDriver = here::here())
 
-Important considerations 
+Important considerations
 
-The SQL dialect of our database is: postgresql. This will be needed in some functions (manly OHDSI packages) as an input. 
+The SQL dialect of our database is: postgresql. This will be needed in some functions (manly OHDSI packages) as an input.
 
-targetDialect <- "postgresql" 
+targetDialect \<- "postgresql"
 
-IMPORTANT!! 
+IMPORTANT!!
 
-The database works with schemas each schema contains different tables and data. The two schemas that we have access to are: 
+The database works with schemas each schema contains different tables and data. The two schemas that we have access to are:
 
-Public: contains the mapped data and the vocabularies. This schema should NEVER be used to write. 
+Public: contains the mapped data and the vocabularies. This schema should NEVER be used to write.
 
-This should be automatically achieved if people have the correct privileges and do not use WebAPI privileges. 
+This should be automatically achieved if people have the correct privileges and do not use WebAPI privileges.
 
-Results: should be the only schema where the users have read and write privileges. It contains the cohorts that we create as well as the tables that we upload. 
+Results: should be the only schema where the users have read and write privileges. It contains the cohorts that we create as well as the tables that we upload.
 
-cdm_database_schema <- "public" 
-vocabulary_database_schema <- "public" 
-results_database_schema<- "results" 
+cdm_database_schema \<- "public" vocabulary_database_schema \<- "public" results_database_schema\<- "results"
 
- 
+Available databases
 
- 
+For the moment we have access to 4 databases:
 
-Available databases 
+cdm_aurum_202106 - CPRD AURUM 2021_06 release
 
-For the moment we have access to 4 databases: 
+p20_059_cdm_aurum - CPRD AURUM for protocol 20_059.
 
-cdm_aurum_202106 - CPRD AURUM 2021_06 release 
+p20_000211_cdm_aurum - CPRD AURUM for protocol 20_000211.
 
-p20_059_cdm_aurum - CPRD AURUM for protocol 20_059. 
+cdmgold202007 - CPRD GOLD 2020_07 release.
 
-p20_000211_cdm_aurum - CPRD AURUM for protocol 20_000211. 
+A suggestion of data to add to the .Renviron file would be:
 
-cdmgold202007 - CPRD GOLD 2020_07 release. 
+DB_SERVER_aurum_202106 = "163.1.64.2/cdm_aurum_202106"
 
-A suggestion of data to add to the .Renviron file would be: 
+DB_SERVER_DBI_aurum_202106 = "cdm_aurum_202106"
 
-DB_SERVER_aurum_202106     		= "163.1.64.2/cdm_aurum_202106" 
+DB_SERVER_aurum_protocol_059 = "163.1.64.2/p20_059_cdm_aurum"
 
-DB_SERVER_DBI_aurum_202106 		= "cdm_aurum_202106" 
+DB_SERVER_DBI\_ aurum_protocol_059 = "p20_059_cdm_aurum"
 
-DB_SERVER_aurum_protocol_059      	= "163.1.64.2/p20_059_cdm_aurum" 
+DB_SERVER_aurum_protocol_211 = "163.1.64.2/p20_000211_cdm_aurum"
 
-DB_SERVER_DBI_ aurum_protocol_059 	= "p20_059_cdm_aurum" 
+DB_SERVER_DBI_aurum_protocol_211 = "p20_000211_cdm_aurum"
 
-DB_SERVER_aurum_protocol_211     	= "163.1.64.2/p20_000211_cdm_aurum" 
+DB_SERVER_gold_202007 = "163.1.64.2/cdmgold202007"
 
-DB_SERVER_DBI_aurum_protocol_211 	= "p20_000211_cdm_aurum" 
-
-DB_SERVER_gold_202007     			= "163.1.64.2/cdmgold202007" 
-
-DB_SERVER_DBI_gold_202007 			= "cdmgold202007" 
+DB_SERVER_DBI_gold_202007 = "cdmgold202007"

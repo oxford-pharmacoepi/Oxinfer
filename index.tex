@@ -1,0 +1,665 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Oxinfer onboarding},
+  pdfauthor={Danielle Newby, Martí Català, Edward Burn},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Oxinfer onboarding}
+\author{Danielle Newby, Martí Català, Edward Burn}
+\date{2024-07-17T00:00:00+01:00}
+
+\begin{document}
+\maketitle
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, boxrule=0pt, breakable, enhanced, sharp corners, interior hidden, frame hidden]}{\end{tcolorbox}}\fi
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\bookmarksetup{startatroot}
+
+\hypertarget{preface}{%
+\chapter*{Preface}\label{preface}}
+\addcontentsline{toc}{chapter}{Preface}
+
+\hypertarget{onboarding-to-the-oxinfer-group}{%
+\section*{Onboarding to the oxinfer
+group}\label{onboarding-to-the-oxinfer-group}}
+\addcontentsline{toc}{section}{Onboarding to the oxinfer group}
+
+We've written this book for anyone interested in a working with
+databases mapped to the OMOP Common Data Model (CDM) in a tidyverse
+inspired approach. That is, human centered, consistent, composable, and
+inclusive (see \url{https://design.tidyverse.org/unifying.html} for more
+details on these principles).
+
+New to the OMOP CDM? We'd recommend you pare this book with
+\href{https://ohdsi.github.io/TheBookOfOhdsi/}{The Book of OHDSI}
+
+New to R? We recommend you compliment the book with
+\href{https://r4ds.had.co.nz/}{R for data science}
+
+\hypertarget{citation}{%
+\section*{Citation}\label{citation}}
+\addcontentsline{toc}{section}{Citation}
+
+TO ADD
+
+\hypertarget{license}{%
+\section*{License}\label{license}}
+\addcontentsline{toc}{section}{License}
+
+\bookmarksetup{startatroot}
+
+\hypertarget{connect-to-the-database}{%
+\chapter{Connect to the database}\label{connect-to-the-database}}
+
+\hypertarget{getting-started}{%
+\section{Getting started}\label{getting-started}}
+
+To connect to databases we will use DBI package and CDMConnector, you
+can find more information about both packages in their websites:
+
+\begin{itemize}
+\item
+  DBI package website: \url{https://dbi.r-dbi.org/}
+\item
+  CDMConnector package website:
+  \url{https://darwin-eu.github.io/CDMConnector/}
+\end{itemize}
+
+Connect to database (standard way) and set up the environment
+
+To connect to the database, you need to know some parameters of it:
+server\_dbi, port, host, server, user, and password.
+
+server\_dbi is different for each one of the databases: e.g.
+
+server\_dbi \textless- ``cdm\_aurum\_202106''
+
+Port is the port used to connect to the database for the moment our
+databases use port 5432.
+
+port \textless- ``5432''
+
+Host is the IP of the computer that contains the databases. For the
+moment the host of all our current databases is: 163.1.64.2
+
+host \textless- ``163.1.64.2''
+
+Server is the combination of the host and the server\_dbi with a slash
+``/'' in between.
+
+server \textless- ``163.1.64.2/cdm\_aurum\_202106''
+
+User and password are provided by the database administrator
+(e.g.~Antonella), and they are personal and nontransferable. One of the
+first things that we will have to do is to change the password, from the
+default one (given by the administrator) to one of our choices (see STEP
+2). The username and password are shared by all the databases that we
+have on the same port and server, so we need to change it only once.
+
+user \textless- ``\ldots{}''
+
+password \textless- ``\ldots{}''
+
+STEP 0 Install the libraries
+
+The libraries necessary to connect to a database are: DBI, RPostgres,
+dplyr, dbplyr, usethis, DatabaseConnector and here. They are all CRAN
+libraries so there should not be any problem installing them: if you
+have any problem please ask for help. To install them run the following
+commands:
+
+STEP 1 Connect to a database for first time
+
+Execute the following commands, make sure that you fill the parameters
+of the database accordingly (lines 7-11).
+
+\hypertarget{load-libraries}{%
+\section{Load libraries}\label{load-libraries}}
+
+The following libraries will be used in this chapter: DBI, RPostgres,
+dplyr, dbplyr, usethis and here. If you do not have them installed you
+can install them with the following command:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"DBI"}\NormalTok{, }\StringTok{"RPostgres"}\NormalTok{, }\StringTok{"dplyr"}\NormalTok{, }\StringTok{"dbplyr"}\NormalTok{, }\StringTok{"usethis"}\NormalTok{, }\StringTok{"here"}\NormalTok{))}
+\NormalTok{x }\OtherTok{\textless{}{-}} \DecValTok{1}
+\end{Highlighting}
+\end{Shaded}
+
+library(``DBI'')
+
+library(``RPostgres'')
+
+\hypertarget{set-connection-details}{%
+\section{Set connection details}\label{set-connection-details}}
+
+\hypertarget{substitute-the-next-5-lines-with-the-specifications-of-the-database-that-you}{%
+\section{Substitute the next 5 lines with the specifications of the
+database that
+you}\label{substitute-the-next-5-lines-with-the-specifications-of-the-database-that-you}}
+
+\hypertarget{want-to-connect}{%
+\section{want to connect}\label{want-to-connect}}
+
+server\_dbi \textless- ``\ldots{}''
+
+user \textless- ``\ldots{}''
+
+password \textless- ``\ldots{}''
+
+port \textless- ``\ldots{}''
+
+host \textless- ``\ldots{}''
+
+\hypertarget{connect-to-the-database-1}{%
+\section{Connect to the database}\label{connect-to-the-database-1}}
+
+db \textless- dbConnect(RPostgres::Postgres(),
+
+\begin{verbatim}
+                    dbname = server_dbi, 
+
+port = port, 
+
+   host = host, 
+\end{verbatim}
+
+user = user,
+
+\begin{verbatim}
+    password = password) 
+\end{verbatim}
+
+To check that you are connected run the following commands:
+
+library(``dplyr'')
+
+tbl(db, sql(``SELECT * FROM public.person limit 1''))
+
+If you are connected you should see something like this in your
+terminal:
+
+ShapeBackground pattern
+
+Description automatically generated
+
+STEP 2 Change the password (only to be executed the first time a user
+connects)
+
+For the new password make sure that you chose a strong password.
+
+After connecting to the database with the temporary password, to change
+the password, you must execute the following command in the terminal:
+
+dbGetQuery(db, ``ALTER USER user WITH PASSWORD `new\_password'\,'')
+
+Example:
+
+dbGetQuery(db, ``ALTER USER martics WITH PASSWORD `12345678'\,'')
+
+Disconnect from the database and reconnect with the new password to make
+sure that the password change was effective.
+
+dbDisconnect(db)
+
+password \textless- ``new\_password''
+
+db \textless- dbConnect(RPostgres::Postgres(),
+
+\begin{verbatim}
+                    dbname = server_dbi, 
+
+ port = port, 
+\end{verbatim}
+
+host = host,
+
+\begin{verbatim}
+    user = user,
+
+    password = password) 
+\end{verbatim}
+
+tbl(db, sql(``SELECT * FROM public.person limit 1''))
+
+If everything worked, you must observe the same output that you observed
+before.
+
+STEP 3 Set .Renviron
+
+Including username, password and connection details in an R script is
+something that we must avoid at all costs. Otherwise, when we share our
+code or upload it in GitHub our account can be vulnerable. So NEVER
+include the connection details into an R script!
+
+To avoid this potential problem we are going to store the connection
+details of our database in .Renviron file so that we can use them easily
+without sharing them.
+
+How .Renviron works? This is a file where we write a list of variables
+with their values that we can access from any R script. For example, if
+I add to the file:
+
+NAME = ``marti''
+
+When I execute the following command, I will obtain ``marti'' as a
+result:
+
+Sys.getenv(``NAME'')
+
+So this two commands would have the same output, but in the second case
+without having the same .Renviron file someone external won't be able to
+read it.
+
+x \textless- ``marti''
+
+x \textless- Sys.getenv(``NAME'')
+
+To open and set the .Renviron file we have two options:
+
+OPTION 1: open directly the file:
+
+Graphical user interface, application
+
+Description automatically generated
+
+OPTION 2: write the following command in the console:
+
+usethis::edit\_r\_environ()
+
+Once you have it opened you must add the follow to the file:
+
+DB\_USER = ``xxx'' \# Username for the database
+
+DB\_PASSWORD = ``xxx'' \# Password for the database, the new one!!
+
+DB\_PORT = ``5432''
+
+DB\_HOST = ``163.1.64.2''
+
+DB\_SERVER\_name\_database = ``163.1.64.2/xxx'' \# xxx depends on the
+database that you
+
+DB\_SERVER\_DBI\_name\_database = ``xxx'' \# want to access, see section
+4.
+
+Instead of DB\_SERVER\_DBI\_name\_database we can write a name that we
+can remember easily. For example, for CPRD AURUM May 2021 release I
+would write in .Renviron file:
+
+DB\_SERVER\_DBI\_aurum202106 = ``cdm\_aurum\_202106''
+
+And call it from the main script as:
+
+server\_dbi \textless- Sys.getenv(``DB\_SERVER\_DBI\_aurum202106'')
+
+But as said we can use any name that we want to use.
+
+Important!! Every time that we change .Renviron file, R must be rebooted
+(Session / Restart R, or Ctrl+Shift+F10) so that the changes are
+effective.
+
+STEP 4 Check that .Renviron setting works
+
+After rebooting, execute the following code to check if you can connect
+to the data base:
+
+library(``DBI'')
+
+library(``RPostgres'')
+
+\hypertarget{use-your-own-.renviron-keys-to-select-the-database-that-you-want-to-access}{%
+\section{use your own .Renviron ``keys'' to select the database that you
+want to
+access}\label{use-your-own-.renviron-keys-to-select-the-database-that-you-want-to-access}}
+
+server\_dbi \textless- Sys.getenv(``DB\_SERVER\_DBI\_name\_database'')
+
+user \textless- Sys.getenv(``DB\_USER'')
+
+password \textless- Sys.getenv(``DB\_PASSWORD'')
+
+port \textless- Sys.getenv(``DB\_PORT'')
+
+host \textless- Sys.getenv(``DB\_HOST'')
+
+db \textless- dbConnect(RPostgres::Postgres(),
+
+\begin{verbatim}
+                    dbname = server_dbi, 
+
+    port = port, 
+
+    host = host,
+
+     user = user,
+
+    password = password) 
+\end{verbatim}
+
+tbl(db, sql(``SELECT * FROM public.person limit 1''))
+
+If you connected correctly to the database, you must observe the same
+output that you observed before.
+
+Connect to the database (OHDSI way)
+
+The connector used in OHDSI packages is different from the one used in
+the ``standard way''. To create the connection used in OHDSI packages
+for your database you must use the following commands:
+
+library(``DatabaseConnector'')
+
+library(``here'')
+
+server \textless- Sys.getenv(``DB\_SERVER\_name\_database'')
+
+user \textless- Sys.getenv(``DB\_USER'')
+
+password \textless- Sys.getenv(``DB\_PASSWORD'')
+
+port\textless- Sys.getenv(``DB\_PORT'')
+
+host \textless- Sys.getenv(``DB\_HOST'')
+
+connectionDetails \textless-
+DatabaseConnector::downloadJdbcDrivers(``postgresql'',
+
+\begin{verbatim}
+                                                        here::here()) 
+\end{verbatim}
+
+connectionDetails \textless- DatabaseConnector::createConnectionDetails(
+
+\begin{verbatim}
+                            dbms = "postgresql", 
+\end{verbatim}
+
+server = server,
+
+user = user,
+
+password = password,
+
+port = port,
+
+pathToDriver = here::here())
+
+Important considerations
+
+The SQL dialect of our database is: postgresql. This will be needed in
+some functions (manly OHDSI packages) as an input.
+
+targetDialect \textless- ``postgresql''
+
+IMPORTANT!!
+
+The database works with schemas each schema contains different tables
+and data. The two schemas that we have access to are:
+
+Public: contains the mapped data and the vocabularies. This schema
+should NEVER be used to write.
+
+This should be automatically achieved if people have the correct
+privileges and do not use WebAPI privileges.
+
+Results: should be the only schema where the users have read and write
+privileges. It contains the cohorts that we create as well as the tables
+that we upload.
+
+cdm\_database\_schema \textless- ``public'' vocabulary\_database\_schema
+\textless- ``public'' results\_database\_schema\textless- ``results''
+
+Available databases
+
+For the moment we have access to 4 databases:
+
+cdm\_aurum\_202106 - CPRD AURUM 2021\_06 release
+
+p20\_059\_cdm\_aurum - CPRD AURUM for protocol 20\_059.
+
+p20\_000211\_cdm\_aurum - CPRD AURUM for protocol 20\_000211.
+
+cdmgold202007 - CPRD GOLD 2020\_07 release.
+
+A suggestion of data to add to the .Renviron file would be:
+
+DB\_SERVER\_aurum\_202106 = ``163.1.64.2/cdm\_aurum\_202106''
+
+DB\_SERVER\_DBI\_aurum\_202106 = ``cdm\_aurum\_202106''
+
+DB\_SERVER\_aurum\_protocol\_059 = ``163.1.64.2/p20\_059\_cdm\_aurum''
+
+DB\_SERVER\_DBI\_ aurum\_protocol\_059 = ``p20\_059\_cdm\_aurum''
+
+DB\_SERVER\_aurum\_protocol\_211 =
+``163.1.64.2/p20\_000211\_cdm\_aurum''
+
+DB\_SERVER\_DBI\_aurum\_protocol\_211 = ``p20\_000211\_cdm\_aurum''
+
+DB\_SERVER\_gold\_202007 = ``163.1.64.2/cdmgold202007''
+
+DB\_SERVER\_DBI\_gold\_202007 = ``cdmgold202007''
+
+\bookmarksetup{startatroot}
+
+\hypertarget{references}{%
+\chapter*{References}\label{references}}
+\addcontentsline{toc}{chapter}{References}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{0}{0}
+\end{CSLReferences}
+
+
+
+\end{document}
