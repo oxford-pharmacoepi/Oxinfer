@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: 2c7120c2-4016-4f1a-90d5-c920d3974fbf
+      url: 'https://quartopub.com/sites/dpa-pde-oxford/oxinfer-onboarding'

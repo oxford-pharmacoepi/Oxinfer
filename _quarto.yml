@@ -6,10 +6,9 @@ book:
   author: "Danielle Newby, Martí Català, Edward Burn"
   date: today
   chapters:
-    - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
+  - index.qmd
+  - connect_to_database.qmd
+  - references.qmd
 
 bibliography: references.bib
 
@@ -21,3 +20,5 @@ format:
 
 editor: visual
 
+
+  
