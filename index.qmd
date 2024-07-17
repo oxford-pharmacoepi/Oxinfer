@@ -8,10 +8,6 @@ New to the OMOP CDM? We'd recommend you pare this book with [The Book of OHDSI](
 
 New to R? We recommend you compliment the book with [R for data science](https://r4ds.had.co.nz/)
 
-## Citation
-
-TO ADD
-
 ## License
 
 ```{=html}
