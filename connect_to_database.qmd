@@ -15,7 +15,7 @@ Connect to database (standard way) and set up the environment
 The following libraries will be used in this chapter: DBI, RPostgres, dplyr, dbplyr, usethis and here. If you do not have them installed you can install them with the following command:
 
 ```{r, echo = FALSE}
-options(width = 120)
+options(width = 80)
 ```
 
 
@@ -100,6 +100,56 @@ Databases are organised in schemas. Schemas are the internal structure of a data
 For our databases the `cdmSchema = `**public** and the `writeSchema = `**results**.
 
 ## Create the cdm object
+
+The cdm object is a structure on top of our database connection to access all the tables in a user-friendly way, see more information in the [CDMConnector website](https://darwin-eu.github.io/CDMConnector/)
+
+To create our first cdm object we need first a connection to our back-end:
+
+```{r, eval = FALSE}
+con <- dbConnect(drv = Postgres(),
+                 dbname = "...",
+                 host = "...",
+                 port = "...",
+                 user = "...",
+                 password = "...")
+```
+```{r, echo = FALSE}
+con <- dbConnect(duckdb::duckdb(), CDMConnector::eunomia_dir())
+```
+
+And then we can create the cdm object:
+```{r, eval = FALSE}
+library(CDMConnector)
+cdm <- cdmFromCon(con = con, cdmSchema = "public", writeSchema = "results")
+```
+```{r, echo = FALSE, output = FALSE}
+library(CDMConnector)
+cdm <- cdmFromCon(con = con, cdmSchema = "main", writeSchema = "main")
+```
+
+The cdm object has a print that shows all the tables that you are connected to:
+```{r}
+cdm
+```
+
+And you can easily access to one of this tables with:
+```{r}
+cdm$person
+```
+
+In the other tutorials you will learn more how to program and use the cdm object.
+
+Once you finished using it you can close the connection of the cdm object with:
+
+```{r}
+cdmDisconnect(cdm)
+```
+
+This is equivalent to do:
+```{r, eval = FALSE}
+dbDisconnect(con)
+```
+
 
 ## Change password
 
@@ -214,6 +264,18 @@ MY_SECRET = "123456789"
 It is like writing in the `Sys.setenv()` function, but these secrets will be permanent and always be loaded in your session.
 
 Secrets are loaded every time our session starts, so if we modify the .Renviron file and we want the new secrets to be loaded we should restart the R session (Control+Shift+F10).
+
+Try writing your username, password, port and host there and create a connection with the following code:
+
+```{r, eval = FALSE}
+con <- dbConnect(drv = Postgres(),
+                 dbname = "...",
+                 host = Sys.getenv("HOST"),
+                 port = Sys.getenv("PORT"),
+                 user = Sys.getenv("USER"),
+                 password = Sys.getenv("PASSWORD"))
+```
+
 
 ## Final remark
 
