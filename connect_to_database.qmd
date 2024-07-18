@@ -14,6 +14,11 @@ Connect to database (standard way) and set up the environment
 
 The following libraries will be used in this chapter: DBI, RPostgres, dplyr, dbplyr, usethis and here. If you do not have them installed you can install them with the following command:
 
+```{r, echo = FALSE}
+options(width = 120)
+```
+
+
 ```{r, eval = FALSE}
 install.packages(c("DBI", "RPostgres", "dplyr", "dbplyr", "usethis", "here"))
 ```
@@ -45,6 +50,24 @@ To get a user and password or if you are not sure of what are the parameters of 
 
 ## Create a connection
 
+There are several ways to create a connection as seen [here](https://darwin-eu.github.io/CDMConnector/articles/a04_DBI_connection_examples.html) and this depends on the Database Management System (DBMS) of your back-end.
+
+In our case for the moment all our databases are in [PostgreSQL](https://www.postgresql.org/) (also refereed as Postgres) one of the most popular free dbms that exist. To connect to a Postgres we have to populate with the following information the connection details:
+
+```{r, eval = FALSE}
+con <- dbConnect(drv = Postgres(),
+                 dbname = "...",
+                 host = "...",
+                 port = "...",
+                 user = "...",
+                 password = "...")
+```
+
+To test that the connection that you created works you can test the following command:
+
+```{r, eval = FALSE}
+tbl(con, sql("SELECT * FROM public.person limit 1"))
+```
 ```{r, echo = FALSE, message=FALSE}
 if (Sys.getenv("EUNOMIA_DATA_FOLDER") == "") {
   Sys.setenv("EUNOMIA_DATA_FOLDER" = here::here())
@@ -54,20 +77,28 @@ con <- dbConnect(duckdb::duckdb(), CDMConnector::eunomia_dir())
 tbl(con, sql("SELECT * FROM main.person limit 1"))
 ```
 
-We can have multiple connections open at the same time, but it is recommended to not open more than one connection simultaniously, and close connections when we finish using them.
+Note that the result will be different as this one is from a synthetic database.
+
+We can have multiple connections open at the same time, but it is recommended to not open more than one connection simultaneously, and close connections when we finish using them.
+
+Once checked that we are able to connect to the database we can disconnect using:
 
 ```{r}
 dbDisconnect(conn = con)
 ```
 
+## Database schemas
+
+## Create the cdm object
+
 ## Change password
 
 The database administrator will give us a password it is **extremely important** that you change it after you connect to the database for first time. To change your password you must:
 
-1. open a connection to the database:
+1. open a connection to any of our databases:
 ```{r, eval = FALSE}
 con <- dbConnect(drv = Postgres(),
-                 dbname = "...",
+                 dbname = "...", # here you can connect to any of our databases
                  host = "...",
                  port = "...",
                  user = "...",
@@ -104,6 +135,8 @@ con <- dbConnect(drv = Postgres(),
 ```{r, eval = FALSE}
 dbDisconnect(con)
 ```
+
+*NOTE: even you connect to a particular database to change the password, username and password are unique for all databases, so changing it only once changes for any `dbname` in our evironment.
 
 ## Set your .Renviron
 
