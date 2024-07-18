@@ -7,6 +7,8 @@ book:
   date: today
   chapters:
   - index.qmd
+  - the_team.qmd
+  - useful_contacts.qmd
   - connect_to_database.qmd
   - references.qmd
 

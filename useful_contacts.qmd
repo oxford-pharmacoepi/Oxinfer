@@ -1,0 +1,19 @@
+# Useful people to know
+
+Below are useful people to know in the team when you get stuck:
+
+-   Have a problem with the servers? [Hez](mailto:hezekiah.omulo@ndorms.ox.ac.uk).
+
+-   Need access to a database?
+
+    -   Information governance training: Lydia Underdown
+
+    -   Specific access to database: Hez & Antonella (you must get approval from your line manager and cc your line manager when requesting access to databases)
+
+-   Need access to our GitHub? Marti, Ed, Danielle, Dani
+
+-   Need access to teams channels? Mahki
+
+-   Have a question about a database and/or mapping? Teen
+
+-   Need help booking flights/accommodation/admin/submitting a paper? Mahki, Sachi, Francesca (on mat leave)
