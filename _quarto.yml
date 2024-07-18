@@ -9,7 +9,10 @@ book:
   - index.qmd
   - the_team.qmd
   - useful_contacts.qmd
+  - databases_and_servers.qmd
   - connect_to_database.qmd
+  - checklist.qmd
+  - useful_terms.qmd
   - references.qmd
 
 bibliography: references.bib
