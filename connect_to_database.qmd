@@ -68,11 +68,13 @@ To test that the connection that you created works you can test the following co
 ```{r, eval = FALSE}
 tbl(con, sql("SELECT * FROM public.person limit 1"))
 ```
-```{r, echo = FALSE, message=FALSE}
+```{r, echo = FALSE, output = FALSE}
 if (Sys.getenv("EUNOMIA_DATA_FOLDER") == "") {
   Sys.setenv("EUNOMIA_DATA_FOLDER" = here::here())
   CDMConnector::downloadEunomiaData()
 }
+```
+```{r, echo = FALSE}
 con <- dbConnect(duckdb::duckdb(), CDMConnector::eunomia_dir())
 tbl(con, sql("SELECT * FROM main.person limit 1"))
 ```
@@ -81,13 +83,21 @@ Note that the result will be different as this one is from a synthetic database.
 
 We can have multiple connections open at the same time, but it is recommended to not open more than one connection simultaneously, and close connections when we finish using them.
 
-Once checked that we are able to connect to the database we can disconnect using:
+Once checked that we are able to connect to the database we can disconnect:
 
 ```{r}
 dbDisconnect(conn = con)
 ```
 
 ## Database schemas
+
+Databases are organised in schemas. Schemas are the internal structure of a database, they are like "folders". In general when we work with an OMOP database we will have to schemas:
+
+- `cdmSchema` this schema contains all the OMOP [Standard tables](https://ohdsi.github.io/CommonDataModel/images/cdm54.png). Typically we would only have reading permissions to this schema, because these tables are not meant to be edited.
+
+- `writeSchema` this schema is usually empty and is for the user to save their tables (usually cohorts) of intermediate results that you want to keep or reuse later. Typically you would have writing and reading permissions for this schema. In our database we can only read and edit the tables that we created, so we can not edit or read other people tables. It is a good practice to write your own tables with a starting prefix so it is easier to avoid name conflicts.
+
+For our databases the `cdmSchema = `**public** and the `writeSchema = `**results**.
 
 ## Create the cdm object
 
