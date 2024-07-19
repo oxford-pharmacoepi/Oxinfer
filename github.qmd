@@ -1,26 +1,35 @@
 # Github
 
-## What is github?
+## Git, Github and Github desktop
 
-Github is a version control platform that allows users from all over the world to build software collaboratively.
+Git is a powerful tool that helps developers manage and track changes in their projects. It allows multiple people to work on the same project simultaneously without causing conflicts or losing any work. Git keeps a record of every change made, which makes it easy to go back to previous versions if needed. This makes collaboration smoother and ensures that the project evolves in an organized and reliable way.
 
-Github is organised in different *repositories* where we can work collaboratively.
+GitHub is a web platform built on top of Git where developers can host their projects and collaborate more effectively. It provides a space where people can share their code, discuss issues, and plan their work.
 
-The main benefits that github has is that is free, a way to store your code and have version control of it.
+Github desktop is a user-friendly way to use git and github interface from an app. You can download it here: <https://github.com/apps/desktop>. We usually use github desktop to perform commits, push, pull and perform the different github operations. If you are very skilled you can also use git from the terminal.
+
+If you are interested to know more you can read it here, you can follow this [tutorial](https://www.w3schools.com/git/default.asp?remote=github).
+
+## Use
 
 We will use github for three different purposes:
 
 1. Develop study code in a collaborative way. Multiple users will contribute to the same repo. This repositories will be usually kept as `private` so we will have to give them access to the individuals that can edit it.
 
-2. Share study code for a network
+2. Share study code for a network study.
 
-If you don't have a github account you can create one at <github.com>
+3. Develop an R package in a collaborative way.
 
-## Github desktop
+If you don't have a github account you can create one at <https://github.com>
 
-## Github in Rstudio
+## The basis
 
-## the basis
+Manage projects with Repositories
+Clone a project to work on a local copy
+Control and track changes with Staging and Committing
+Branch and Merge to allow for work on different parts and versions of a project
+Pull the latest version of the project to a local copy
+Push local updates to the main project
 
 - commit
 
@@ -37,6 +46,12 @@ If you don't have a github account you can create one at <github.com>
 ## github actions
 
 ## .gitignore
+
+## Github in Rstudio
+
+You can configure your github account in your RStudio session so it is easier to use it. This is mainly recommended when you can not use github desktop (e.g. on the server).
+
+You can learn how to configure git and github in Rstudio following this [tutorial](https://sites.northwestern.edu/researchcomputing/resources/using-git-and-github-with-r-rstudio/).
 
 ## Final remarks
 
