@@ -1,0 +1,50 @@
+# Github
+
+## What is github?
+
+Github is a version control platform that allows users from all over the world to build software collaboratively.
+
+Github is organised in different *repositories* where we can work collaboratively.
+
+The main benefits that github has is that is free, a way to store your code and have version control of it.
+
+We will use github for three different purposes:
+
+1. Develop study code in a collaborative way. Multiple users will contribute to the same repo. This repositories will be usually kept as `private` so we will have to give them access to the individuals that can edit it.
+
+2. Share study code for a network
+
+If you don't have a github account you can create one at <github.com>
+
+## Github desktop
+
+## Github in Rstudio
+
+## the basis
+
+- commit
+
+- push
+
+- pull
+
+## issues
+
+## branches
+
+## pull request
+
+## github actions
+
+## .gitignore
+
+## Final remarks
+
+::: {.callout-important}
+It is very important that we do not commit to github:
+- **personal information**
+- **study results**
+- **database credentials**
+
+Keep in mind that after you push some changes in a github repo, even if you delete them later those changes will remain in the commit history.
+:::

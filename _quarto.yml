@@ -11,6 +11,7 @@ book:
   - useful_contacts.qmd
   - databases_and_servers.qmd
   - connect_to_database.qmd
+  - github.qmd
   - checklist.qmd
   - useful_terms.qmd
   - references.qmd
