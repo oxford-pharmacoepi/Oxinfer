@@ -7,3 +7,5 @@
 .Rproj.user
 *.zip
 *.duckdb
+*.html
+/*_files/
