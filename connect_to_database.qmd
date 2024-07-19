@@ -276,7 +276,6 @@ con <- dbConnect(drv = Postgres(),
                  password = Sys.getenv("PASSWORD"))
 ```
 
-
 ## Final remark
 
 **YOU MUST NEVER INCLUDE CONNECTION DETAILS IN A SCRIPT THAT IS PUBLIC OR YOU SHARE WITH SOMEONE, EVEN IF YOU TRUST THAT PERSON OR IS IN THE SAME ORGANIZATION.**
