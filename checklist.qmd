@@ -18,4 +18,8 @@ Have you completed the following tasks?
 
 -   Register yourself as a NDORMS CPRD user
 
+-   Got your user account for the servers
+
+-   Set up your R studio environment
+
 -   Completed mandatory health and safety training

@@ -1,8 +1,8 @@
 # Authorship and Conference attendance
 
-# Authorship
+## Authorship
 
-In our subteam we work on lots of things from running studies, writing code for studies and developing packages that others use for studies. In other teams, data scientists can sometimes be overlooked in authorship for papers however this is something we don't want to happen in our team. Therefore we have created a guidance on authorship when we work within the team or with external collaborators. We are currently finalizing this document and in general terms, and unless previously agreed otherwise in writing, these principles will be used to decide on authorship and authorship positions:
+In our sub team we work on lots of things from running studies, writing code for studies and developing packages that others use for studies. In other teams, data scientists can sometimes be overlooked in authorship for papers however this is something we don't want to happen in our team. Therefore we have created a guidance on authorship when we work within the team or with external collaborators. We are currently finalizing this document and in general terms, and unless previously agreed otherwise in writing, these principles will be used to decide on authorship and authorship positions:
 
 **1) No external collaborators or authors**
 
@@ -36,7 +36,7 @@ In our subteam we work on lots of things from running studies, writing code for 
 
 Main take home: **agree the authorship and know the conflict of interest policies before you start any study it will save a lot of hassle or unexpected conflict**. Please discuss with your line manager about your contributions to your current studies and publications.
 
-# Conference attendance
+## Conference attendance
 
 -   **Funding for Attendance:** Our internal rule is that everyone in the team should be funded to attend at least one conference per year. We do not have any bespoke funding for this, but we will try to achieve this, and your line manager/main supervisor is responsible for securing this funding for you. You will only be eligible for this if you have a poster/abstract/talk to present at the target conference, so please make sure you submit something of quality to secure this.
 
