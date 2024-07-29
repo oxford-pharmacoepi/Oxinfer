@@ -34,11 +34,21 @@ OMOP CDM is an open community data standard, designed to standardize the structu
 
 This is a program which is a global collaborative program to bring out the value of health data through large-scale analytics. Includes academia and industry. People in this collaboration use the OMOP CDM. More information [here](https://ohdsi.org/who-we-are/). **Note**: We lead the OHDSI UK hub.
 
--   **Data partner** This is the term we use for a database source usually this is a person/s responsible for executing the analytical code.
+-   **Data partner** 
+
+This is the term we use for a database source usually this is a person/s responsible for executing the analytical code.
+
+-   **Individual/patient level data**
+
+Patient level data. i.e for each patient all the information. We only have access to patient level data for our datasets based within the team. We never have access to patient level data from other data partners.
+
+-   **Aggregated level data**
+
+As the name suggests the data only contains aggregated results such as results from a study. Aggregated data from data partners can be shared subject to the protocol and data sharing agreement with data partner.
 
 -   **Federated network studies**
 
-When the same analytical code is run across multiple databases/data partners across the UK, Europe, Globe etc in one study **Note** we only share analytical code with a data partner and they run the code.
+When the same analytical code is run across multiple databases/data partners across the UK, Europe, Globe etc in one study **Note** we only share analytical code with a data partner and they run the code we never have access to individual/patient level data.
 
 -   **EHDEN** (European Health Data Evidence Network)
 
