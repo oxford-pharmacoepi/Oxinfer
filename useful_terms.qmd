@@ -2,7 +2,7 @@
 
 Sometimes we can use words interchangeably which can cause confusion so below are some terms we use a lot in the team and what they mean and synonyms.
 
--   **NDORMS** (Nuffield Department of Orthopaedics, Rheumatology and Musculoskeletal Sciences). 
+-   **NDORMS** (Nuffield Department of Orthopaedics, Rheumatology and Musculoskeletal Sciences).
 
 This is our department. [NDORMS](https://www.ndorms.ox.ac.uk/about) is part of the Medical Sciences Division of the University of Oxford.
 
@@ -15,8 +15,6 @@ This is where you work (if you dont why are you reading this?!). The research wo
 The Botnar Institute is structured into four academic divisions. From the divisions there are sections. We work under academic section Health Data Sciences.
 
 ![Botnar Divisions](images/botnar-structure-1.png){.lightbox}
-
-
 
 -   **CSM** (Centre for Statistics in Medicine)
 
@@ -34,7 +32,7 @@ OMOP CDM is an open community data standard, designed to standardize the structu
 
 This is a program which is a global collaborative program to bring out the value of health data through large-scale analytics. Includes academia and industry. People in this collaboration use the OMOP CDM. More information [here](https://ohdsi.org/who-we-are/). **Note**: We lead the OHDSI UK hub.
 
--   **Data partner** 
+-   **Data partner**
 
 This is the term we use for a database source usually this is a person/s responsible for executing the analytical code.
 
@@ -48,13 +46,14 @@ As the name suggests the data only contains aggregated results such as results f
 
 -   **Federated network studies**
 
-When the same analytical code is run across multiple databases/data partners across the UK, Europe, Globe etc in one study **Note** we only share analytical code with a data partner and they run the code we never have access to individual/patient level data.
+When the same analytical code is run across multiple databases/data partners across the UK, Europe, Globe etc in one study. **Note** we only share analytical code with a data partner and they run the code we never have access to individual/patient level data.
 
 -   **EHDEN** (European Health Data Evidence Network)
 
 This is a large consortium with 25 partners operating in Europe. **Note** We are apart of this consortium and have led and participated in various federated network studies. More information here [here](https://www.ehden.eu/).
 
--   **DARWIN** The European Medicines Agency (EMA) and the European Medicines Regulatory Network established a coordination centre to provide timely and reliable evidence on the use, safety and effectiveness of medicines for human use, including vaccines, from real world healthcare databases across the European Union (EU). This capability is called the Data Analysis and Real World Interrogation Network (DARWIN EU®). Dani is a deputy director. **Note** We lead and participate in studies that are requested by EMA. Furthermore, we develop R code and packages that are used in this project. More information [here](https://www.darwin-eu.org/).
+-   **DARWIN** 
+The European Medicines Agency (EMA) and the European Medicines Regulatory Network established a coordination centre to provide timely and reliable evidence on the use, safety and effectiveness of medicines for human use, including vaccines, from real world healthcare databases across the European Union (EU). This capability is called the Data Analysis and Real World Interrogation Network (DARWIN EU®). Dani is a deputy director. **Note** We lead and participate in studies that are requested by EMA. Furthermore, we develop R code and packages that are used in this project. More information [here](https://www.darwin-eu.org/).
 
 -   **Instantiating**
 
