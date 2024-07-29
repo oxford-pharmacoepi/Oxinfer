@@ -12,6 +12,7 @@ book:
   - databases_and_servers.qmd
   - connect_to_database.qmd
   - github.qmd
+  - studies_and_authorship.qmd
   - checklist.qmd
   - useful_terms.qmd
   - references.qmd

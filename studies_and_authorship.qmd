@@ -1,0 +1,47 @@
+# Authorship and Conference attendance
+
+# Authorship
+
+In our subteam we work on lots of things from running studies, writing code for studies and developing packages that others use for studies. In other teams, data scientists can sometimes be overlooked in authorship for papers however this is something we don't want to happen in our team. Therefore we have created a guidance on authorship when we work within the team or with external collaborators. We are currently finalizing this document and in general terms, and unless previously agreed otherwise in writing, these principles will be used to decide on authorship and authorship positions:
+
+**1) No external collaborators or authors**
+
+-   Everyone named in the study protocol or analysis plan will in principle be eligible for authorship.
+
+-   People not mentioned in the protocol/analysis plan can be invited to participate. The study lead/co-lead will be responsible for the decision. This decision will be made in line and must be fully compliant with the [ICMJE](http://www.icmje.org/recommendations/) "Recommendations for the Conduct, Reporting, Editing, and Publication of Scholarly work in Medical Journals".
+
+-   The Senior study lead/s will have the right to name the first and last authors, with these being themselves or another member of the team
+
+-   In cases with more than one study lead, joint last or corresponding author positions will be used to recognise joint senior leadership roles
+
+-   The Junior study lead/s will be named as first author/joint first author in the resulting abstract or manuscript
+
+-   All other involved staff mentioned in the study protocol/analysis plan will be offered an authorship position after the (two) first and before the (two) last authors
+
+-   All people involved in the management, access, or curation of the data used for the study must be mentioned in the study protocol/analysis plan, and offered authorship
+
+**2) External collaborators or authors**
+
+-   All the principles above will apply. Additional principles will be used to establish authorship for manuscripts co-authored by external staff:
+
+-   Where external collaborators are mentioned and documented as co-authors or researchers in the study protocol/analysis plan, all these people should be invited to co-author scientific outputs as early as possible in the process, and before writing of the output/s
+
+-   Where external collaborators are not mentioned and documented as co-authors or researchers in the study protocol/analysis plan, only the Senior study lead/s will be responsible for inviting them to be co-authors in scientific outputs. In this case, all co-authors should be notified as early as possible in the process, and before writing of the output/s
+
+-   To qualify for co-authorship, external researchers will have to confirm their compliance with the [ICMJE](http://www.icmje.org/recommendations/) "Recommendations for the Conduct, Reporting, Editing, and Publication of Scholarly work in Medical Journals".
+
+-   Manuscripts including external as co-authors will require that all external co-authors report any (Conflict of interest) CoIs as early as possible. If they fail to do this by the planned time of submission, they will be excluded as co-authors. The Senior Study lead will be responsible for handling these discussions and/or exclusions (where applicable)
+
+-   Where external co-authors work for a regulatory agency (e.g. EMA, MHRA, NICE) or a similar stakeholder, they should be consulted about their internal authorship and CoI policies as early as possible, as to assess if these are compatible with ours.
+
+Main take home: **agree the authorship and know the conflict of interest policies before you start any study it will save a lot of hassle or unexpected conflict**. Please discuss with your line manager about your contributions to your current studies and publications.
+
+# Conference attendance
+
+-   **Funding for Attendance:** Our internal rule is that everyone in the team should be funded to attend at least one conference per year. We do not have any bespoke funding for this, but we will try to achieve this, and your line manager/main supervisor is responsible for securing this funding for you. You will only be eligible for this if you have a poster/abstract/talk to present at the target conference, so please make sure you submit something of quality to secure this.
+
+-   **More than 1 conference per year?:** some people might be attending more than 1 conference per year. The group rule is that if this is your idea you need to find your own funding or have it ready before you submit your abstract.
+
+-   **Visa Arrangements:** Ensure that your visa is in order before proceeding with the registration process/travel bookings. We cannot help you much with this, so please make sure you do this early.
+
+-   **Travel expenses and bookings**: You can ask Mahki and her team to book your flights and travel for conference attendance and/or project meetings abroad.If you leave it to the last minute it will be up to you to sort flights/accommodation yourself and claim the costs back (which we do not recommend as claims can take many months). For other expenses that occur on your trip you can claim these back (within reason). Remember that university rules state that you must claim any expenses back via the e-expense app/website (SAP Concur) within 3 months from the purchase/expense date. For information about the expenses system see [here](https://finance.admin.ox.ac.uk/claimants-expenses-guidance)
