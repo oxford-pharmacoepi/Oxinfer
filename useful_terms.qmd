@@ -2,6 +2,26 @@
 
 Sometimes we can use words interchangeably which can cause confusion so below are some terms we use a lot in the team and what they mean and synonyms.
 
+-   **NDORMS** (Nuffield Department of Orthopaedics, Rheumatology and Musculoskeletal Sciences). 
+
+This is our department. [NDORMS](https://www.ndorms.ox.ac.uk/about) is part of the Medical Sciences Division of the University of Oxford.
+
+-   **Botnar** (Botnar Institute for Musculoskeletal Sciences)
+
+This is where you work (if you dont why are you reading this?!). The research work in the department (NDORMS) takes place across three world-leading research institutes: the Botnar Institute for Musculoskeletal Sciences, the Kennedy Institute for Rheumatology and the Kadoorie Centre.
+
+-   **HDS** (Health Data Sciences)
+
+The Botnar Institute is structured into four academic divisions. From the divisions there are sections. We work under academic section Health Data Sciences.
+
+![Botnar Divisions](images/botnar-structure-1.png){.lightbox}
+
+
+
+-   **CSM** (Centre for Statistics in Medicine)
+
+The [CSM](https://www.ndorms.ox.ac.uk/csm) is based at Botnar with an aim to advance healthcare practice and policy that changes lives, through excellent research. [Our group](https://www.ndorms.ox.ac.uk/csm/csm-research) is one of the teams as well as others apart of the CSM.
+
 -   **CDM** (Common Data Model)
 
 A common data model is a standard that defines a common language. If people use this common language for their databases this means data can be harmonized. Think of it like a foreign plug adaptor, which turns data into one format. What this means is all databases are in the same format we can run the same code without writing bespoke code for each database we want to use for a study.
