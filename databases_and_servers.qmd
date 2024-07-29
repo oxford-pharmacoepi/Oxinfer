@@ -2,42 +2,44 @@
 
 ## Databases
 
-We have access to a few different databases in the team. However, access will be provided based on the projects you are working on and completion of training. Databases we have access too:
+We have access to a few different databases in the team (as of {{< meta date >}}). However, access will be provided based on the projects you are working on and completion of training. Databases we have access too:
 
--   CPRD GOLD and AURUM (primary care data from the UK)
+-   [CPRD GOLD and AURUM](https://www.cprd.com/) (primary care data from the UK)
 
--   THIN (UK, France, Belgium, spain, romania, italy)
+-   [THIN](https://www.cegedim-health-data.com/cegedim-health-data/thin-the-health-improvement-network/) (UK, France, Belgium, Spain, Romania, Italy)
 
--   UKBiobank (UK)
+-   [UKBiobank](https://www.ukbiobank.ac.uk/) (UK)
 
-To get access to any of these databases you will need to complete the information governance training. This involves completing the online training and face to face training.
+To get access to any of these databases you will need to complete the information governance training (links on the [intranet](https://intranet.ndorms.ox.ac.uk/information-governance/information-governance-training) but also [here](https://infosec.ox.ac.uk/do-the-online-training). This involves completing the online training and face to face training. [Lydia Underdown](malto:infogov@ndorms.ox.ac.uk) is the Governance manager in the department.
 
-For CPRD database access you will need to complete additional training provided by them and register at ndorms as a user of CPRD. You will also need to create an account on CPRD eRap and then be added onto a new or existing application to be granted access to CPRD on our servers. Things to note:
+For CPRD database access you will need to complete additional training provided by them and register at ndorms as a user of CPRD. See [here](https://intranet.ndorms.ox.ac.uk/information-governance/big-data-at-ndorms/clinical-practice-research-datalink-cprd-1) on the intranet for more information. You will also need to create an account on [CPRD eRap](https://www.erap.cprd.com/) and then be added onto a new or existing application to be granted access to CPRD on our servers. Things to note:
 
--   Antonella is the key fob holder to CPRD for the department.
+-   [Antonella](mailto:antonella.delmestri@ndorms.ox.ac.uk) is the key fob holder to CPRD for the department.
 
--   Antonella needs to be including as a collaborator on ALL CPRD applications you make to CPRD.
+-   [Antonella](mailto:antonella.delmestri@ndorms.ox.ac.uk) needs to be including as a collaborator on **ALL** CPRD applications you make to CPRD.
 
--   Antonella and whoever mapped the database need to be added as co-authors for publications
+-   [Antonella](mailto:antonella.delmestri@ndorms.ox.ac.uk) and whoever mapped the database need to be added as co-authors for publications.
 
-For THIN, you will need to be added onto an approved protocol and/or write one for submission. Your line manager will be able to help with this. There is also a dedicated teams channel for THIN applications. The experts for THIN are Danielle, Antonella and Marta Snr.
+For THIN, you will need to be added onto an approved protocol and/or write one for submission. Your line manager will be able to help with this. There is also a dedicated teams channel for THIN applications. The main people for THIN are [Danielle](mailto:danielle.newby@ndorms.ox.ac.uk) and [Antonella](mailto:antonella.delmestri@ndorms.ox.ac.uk).
 
-For UKBiobank you will need to register and complete the application (you will need to provide a CV). The UKBiobank experts are Frank, Marta Jnr and Danielle. NOTE for new applications of UKB data you will have to do the analysis on their dedicated servers.
+For UKBiobank you will need to register and complete the application (you will need to provide a CV). The main users for UKBiobank are [Frank](mailto:junqing.xie@ndorms.ox.ac.uk), [Marta Jnr](mailto:marta.alcaldeherraiz@ndorms.ox.ac.uk) and [Danielle](mailto:danielle.newby@ndorms.ox.ac.uk). **NOTE** for new applications of UKB data you will have to do the analysis on their [dedicated servers](https://ukbiobank.dnanexus.com/landing).
 
-Once you have completed the training you can then contact Hez and Antonella about getting access on our servers to the specific database cc'ing your line manager in. When requesting access please specify which data cut you require and if you want both Rstudio and ATLAS access for the database in question. If you are unsure speak to your line manager.
+Once you have completed the training you can then contact [Hez](mailto:hezekiah.omulo@ndorms.ox.ac.uk) and [Antonella](mailto:antonella.delmestri@ndorms.ox.ac.uk) about getting access on our servers to the specific database cc'ing your line manager in. When requesting access please specify which data cut you require and if you want both Rstudio and ATLAS access for the database in question. **If you are unsure speak to your line manager.**
 
 ## The servers
 
-We have two servers with a R studio interface one for running your final code and one for running code that is under development. When we develop code for studies we only use a subset of a database we do not run on the main one until we have tested our code. This subset is a random 100k people and is provided for each database we have. Please use it when developing code on the development server. Links to the servers can be found below:
+We have two servers with a R studio interface one for running your final code and one for running code that is under development. When we develop code for studies we only use a subset of a database and we do not run on the main one until we have tested our code. This subset is a random 100k people and is provided for each database we have. Please **use the 100k** when developing code on the development server. Links to the servers can be found below:
 
--   Study/main server
+-   [Study/main server](https://rstudio01.ndorms.ox.ac.uk/auth-sign-in?appUri=%2F)
 
--   Development server
+-   [Development server](https://rstudiodev.ndorms.ox.ac.uk/auth-sign-in?appUri=%2F)
 
-Documents for helping to configure Rstudio and GitHub on the servers can be found here.
+**NOTE** if you are on a laptop you need to be connected to University's virtual private network (VPN)
+
+Documents for helping to configure Rstudio and GitHub on the servers can be found in other chapters in this book or [here](https://github.com/oxford-pharmacoepi/ServerOnboarding/tree/main/2_SettingUp).
 
 ## Jobs on the servers
 
 Sometimes we need to see what jobs are running on the servers. If you have a desktop you can access a tool which shows what jobs are running on the servers and by who. **NOTE!** this tool does not work on laptops due to firewall restrictions by the university. The link is [here](http://ohdsi02.ndorms.ox.ac.uk:8080/database_connection_dashboard/).
 
-If you do not have access to this, you can check what jobs you have running on the server via RStudio. Please see here on how to do this and how to kill these jobs. You can also ask [Hez](mailto:hezekiah.omulo@ndorms.ox.ac.uk) to kill jobs.
+If you do not have access to this, you can check what jobs you have running on the [server via RStudio](https://github.com/oxford-pharmacoepi/ServerOnboarding/blob/main/3_UsefulSnippets/Job_management.md) and how to kill these jobs. You can also ask [Hez](mailto:hezekiah.omulo@ndorms.ox.ac.uk) to kill jobs.

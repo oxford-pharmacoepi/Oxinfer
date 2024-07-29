@@ -6,7 +6,7 @@ Have you completed the following tasks?
 
 -   Been added to the PDE GitHub account
 
--   Been added to PDE teams channel and relevant channels
+-   Been added to PDE teams channel and relevant channels (OHDSI server users, Oxinfer, DARWIN etc)
 
 -   Get access to intranet to get documents for information governance training
 
@@ -17,3 +17,5 @@ Have you completed the following tasks?
 -   Register and complete CPRD database training (CPRD E-Learning module)
 
 -   Register yourself as a NDORMS CPRD user
+
+-   Completed mandatory health and safety training

@@ -1,4 +1,4 @@
-# Useful people to know
+# Useful people and things to know
 
 Below are useful people to know in the team when you get stuck:
 
@@ -6,14 +6,22 @@ Below are useful people to know in the team when you get stuck:
 
 -   Need access to a database?
 
-    -   Information governance training: Lydia Underdown
+    -   Information governance training: [Lydia Underdown](malto:infogov@ndorms.ox.ac.uk)
 
-    -   Specific access to database: Hez & Antonella (you must get approval from your line manager and cc your line manager when requesting access to databases)
+    -   Specific access to database: [Hez](mailto:hezekiah.omulo@ndorms.ox.ac.uk). & [Antonella](mailto:antonella.delmestri@ndorms.ox.ac.uk) (you must get approval from your line manager and cc your line manager when requesting access to databases)
 
--   Need access to our GitHub? Marti, Ed, Danielle, Dani
+-   Need access to our GitHub? [Marti](marti.catalasabate@ndorms.ox.ac.uk), [Ed](mailto:edward.burn@ndorms.ox.ac.uk), [Danielle](mailto:danielle.newby@ndorms.ox.ac.uk), [Dani](mailto:daniel.prietoalhambra@ndorms.ox.ac.uk)
 
--   Need access to teams channels? Mahki
+-   Need access to teams channels? [Mahki](mailto:mahkameh.mafi@ndorms.ox.ac.uk)
 
--   Have a question about a database and/or mapping? Teen
+-   Have a question about a database and/or mapping? [Teen](malto:waiyi.man@ndorms.ox.ac.uk) & [Antonella](mailto:antonella.delmestri@ndorms.ox.ac.uk)
 
--   Need help booking flights/accommodation/admin/submitting a paper? Mahki, Sachi, Francesca (on mat leave)
+-   Need help booking flights/accommodation/admin/submitting a paper? [Mahki](mailto:mahkameh.mafi@ndorms.ox.ac.uk), [Sachi](malto:sachi.chan@ndorms.ox.ac.uk), [Francesca](malto:francesca.walker@ndorms.ox.ac.uk) (on mat leave)
+
+-   Work related issue? Line manager and/or [HR](hr@ndorms.ox.ac.uk)
+
+-   Health related issue? Line manager and/or [HR](hr@ndorms.ox.ac.uk)
+
+*Holidays:* **Please take all your entitled annual leave otherwise you will lose it!**. At the moment for wellbeing the department will NOT allow you to carry over leave to the next year apart from exceptional circumstances (holiday year runs from Sept to sept).
+
+*Overworking:* As a team we **do not** endorse overworking i.e. working outside normal working hours, weekends etc. If you receive emails/teams notifications outside of normal working it is **NOT** expected for you to respond (unless life or death..which rarely work related is).
