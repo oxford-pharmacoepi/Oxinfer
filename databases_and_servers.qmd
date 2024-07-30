@@ -12,7 +12,7 @@ We have access to a few different databases in the team (as of {{< meta date >}}
 
 To get access to any of these databases you will need to complete the information governance training (links on the [intranet](https://intranet.ndorms.ox.ac.uk/information-governance/information-governance-training) but also [here](https://infosec.ox.ac.uk/do-the-online-training)). This involves completing the online training and face to face training. [Lydia Underdown](malto:infogov@ndorms.ox.ac.uk) is the Governance manager in the department.
 
-For CPRD database access you will need to complete additional training provided by them and register at ndorms as a user of CPRD. See [here](https://intranet.ndorms.ox.ac.uk/information-governance/big-data-at-ndorms/clinical-practice-research-datalink-cprd-1) on the intranet for more information. You will also need to create an account on [CPRD eRap](https://www.erap.cprd.com/) and then be added onto a new or existing application to be granted access to CPRD on our servers. Things to note:
+For CPRD database access you will need to complete additional training provided by them and register at ndorms as a user of CPRD. See [here](https://intranet.ndorms.ox.ac.uk/information-governance/big-data-at-ndorms/clinical-practice-research-datalink-cprd-1) on the intranet for more information or you can access directly [here](https://www.cprd.com/training-modules). You will also need to create an account on [CPRD eRap](https://www.erap.cprd.com/) and then be added onto a new or existing application to be granted access to CPRD on our servers. Things to note:
 
 -   [Antonella](mailto:antonella.delmestri@ndorms.ox.ac.uk) is the key fob holder to CPRD for the department.
 
