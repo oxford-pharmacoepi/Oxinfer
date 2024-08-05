@@ -24,34 +24,131 @@ If you don't have a github account you can create one at <https://github.com>
 
 ## The basis
 
-Manage projects with Repositories
-Clone a project to work on a local copy
-Control and track changes with Staging and Committing
-Branch and Merge to allow for work on different parts and versions of a project
-Pull the latest version of the project to a local copy
-Push local updates to the main project
+### What is a Repository?
+A repository, often shortened to "repo" is a storage space where your project lives. It can contain files, folders, images, videos, spreadsheets, data sets, and anything else your project needs. A GitHub repository also includes a history of all changes made to the files within it, making it easy to track and manage your project's development.
 
-- commit
+### How to Clone a Repository
 
-- push
+Cloning a repository means creating a local copy of a project that is stored on GitHub. This allows you to work on the project on your own machine. To clone a repository, you can use the following steps (Github desktop):
 
-- pull
+1. Top left: *Add* -> *Clone Repository...*
 
-## issues
+2. provide user or organization name and the name of the repo that you want to clone separated by "/". Example: 'oxford-pharmacoepi/OxinferOnboarding'.
 
-## branches
+3. *Clone*
 
-## pull request
+If your repo contains an R project you can open it from RStidio and edit there what you want.
 
-## github actions
+### What is a Branch?
 
-## .gitignore
+A branch in GitHub is a parallel version of a repository. It diverges from the main working project to work on something without affecting the main branch. Branches are used to develop features, fix bugs, or experiment safely. For example it is useful if you are working collaboratively to make some changes to a repository without affecting the others and submitting your changes so someone can review them.
+
+In general if the repo is for your use only you will always work on the "main" branch. You can switch or create a new branch using the branch tab in Github desktop.
+
+### What is a Commit?
+
+A commit is a snapshot of your repository at a specific point in time. When you make changes to files in your repository, you can "commit" those changes, which records them in the repository's history. Each commit has a unique identifier (a hash), a message describing the changes, and metadata like the author's name and the timestamp.
+
+To create a commit you just have to tick the files that you want to commit, add a message and click **commit** to create the commit.
+
+Initially this commit will be only local, you could send it online using **push**. Then all your changes have been uploaded to the github platform.
+
+### What is to Push and to Pull?
+
+- **Push**: When you push changes, you send your committed changes from your local repository to a remote repository on GitHub. This makes your changes available to others.
+
+- **Pull**: Pulling is the process of fetching updates from a remote repository and merging them into your local repository. This ensures your local repository is up to date with the latest changes made by others.
+
+### What is a Pull Request?
+
+A pull request (PR) is a way to propose changes to a repository. After you've made changes in a branch (not main), you can open a pull request to merge those changes into another branch, typically the main branch. Other team members can review, comment, and approve the changes before they are merged.
+
+By understanding these fundamental concepts, you can effectively use GitHub to manage your projects and collaborate with others.
+
+### What is an Issue?
+
+Issues on GitHub are used to track tasks, enhancements, and bugs for your projects. They are a great way to organize and prioritize your work. Each issue can include a title, a detailed description, labels, and comments from collaborators.
+
+To create an issue:
+
+1. Go to the repository on GitHub.
+
+2. Click the "Issues" tab.
+
+3. Click the "New issue" button.
+
+4. Fill in the title and description, and submit the issue.
+
+Issues can be assigned to team members, labeled with tags, and linked to pull requests, making them a powerful tool for project management.
+
+### How to Use the .gitignore File
+
+The `.gitignore` file is used to specify files and directories that Git should ignore. This is useful for excluding files that are not meant to be tracked, such as temporary files, build outputs, and sensitive information.
+
+To create and use a `.gitignore` file:
+
+1. Create a file named `.gitignore` in the root of your repository.
+
+2. Add the files and directories you want to ignore. For example:
+
+```{r, eval = FALSE}
+# Ignore all .csv files
+*.csv
+   
+# Ignore the Results directory
+Results/
+   
+# Ignore sensitive files (in this case)
+connectToDatabase.R
+```
+
+By using a `.gitignore` file, you can keep your repository clean and free of unnecessary files, ensuring that only relevant files are tracked and shared.
 
 ## Github in Rstudio
 
 You can configure your github account in your RStudio session so it is easier to use it. This is mainly recommended when you can not use github desktop (e.g. on the server).
 
 You can learn how to configure git and github in Rstudio following this [tutorial](https://sites.northwestern.edu/researchcomputing/resources/using-git-and-github-with-r-rstudio/).
+
+### Set up your GITHUB_PAT
+
+In general you can install an R package from github using devtools or remotes package:
+
+```{r, eval = FALSE}
+remotes::install_github("darwin-eu/CDMConnector")
+```
+
+Sometimes we keep the development of some packages private, so we can include mentions of specific studies or keep the issues private. For example there exist a private version of CDMConnector in darwin-eu-dev, if you try to install it you would get the following error:
+
+```{r, error=TRUE}
+remotes::install_github("darwin-eu-dev/CDMConnector")
+```
+
+So you can install private packages (that you have access to) you need to set up the `GITHUB_PAT`. You can set it up with the following steps:
+
+1. Log in to github and go to the tokens section: <https://github.com/settings/tokens>.
+
+2. Select the option: *Generate new token (classic)* (it is in the top-right dropdown menu *Generate new token* -> *Generate new token (classic)*).
+
+3. Add a note so you know what is this token for and tick at least the following box: **repo**; and click on *Generate token*.
+
+4. Copy the token (it should be a combination of letters and numbers that starts with `ghp_...`).
+
+5. Set a new .Renviron variable called `GITHUB_PAT`.
+
+```{r, eval=FALSE}
+usethis::edit_r_environ()
+# write there
+GITHUB_PAT = "ghp_..."
+```
+
+6. Restart your R session.
+
+Now you should be able to install the private repo (if you have access to it):
+
+```{r, eval=FALSE}
+remotes::install_github("darwin-eu-dev/CDMConnector")
+```
 
 ## Final remarks
 
