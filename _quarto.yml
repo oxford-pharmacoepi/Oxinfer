@@ -8,13 +8,16 @@ book:
   chapters:
   - index.qmd
   - the_team.qmd
-  - useful_contacts.qmd
+  - epi_basis.qmd
+  - omop.qmd
+  - R_basis.qmd
   - databases_and_servers.qmd
   - connect_to_database.qmd
   - github.qmd
   - studies_and_authorship.qmd
-  - checklist.qmd
+  - useful_contacts.qmd
   - useful_terms.qmd
+  - checklist.qmd
   - references.qmd
 
 bibliography: references.bib
@@ -25,5 +28,6 @@ format:
 
 editor: visual
 
+number-sections: true
 
   

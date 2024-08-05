@@ -10,7 +10,7 @@ Below are useful people to know in the team when you get stuck:
 
     -   Specific access to database: [Hez](mailto:hezekiah.omulo@ndorms.ox.ac.uk). & [Antonella](mailto:antonella.delmestri@ndorms.ox.ac.uk) (you must get approval from your line manager and cc your line manager when requesting access to databases)
 
--   Need access to our GitHub? [Marti](marti.catalasabate@ndorms.ox.ac.uk), [Ed](mailto:edward.burn@ndorms.ox.ac.uk), [Danielle](mailto:danielle.newby@ndorms.ox.ac.uk), [Dani](mailto:daniel.prietoalhambra@ndorms.ox.ac.uk)
+-   Need access to our GitHub? [Marti](marti.catalasabate@ndorms.ox.ac.uk), [Ed](mailto:edward.burn@ndorms.ox.ac.uk), [Danielle](mailto:danielle.newby@ndorms.ox.ac.uk)
 
 -   Need access to teams channels? [Mahki](mailto:mahkameh.mafi@ndorms.ox.ac.uk) or line manager
 

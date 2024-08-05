@@ -1,4 +1,4 @@
-# Checklist
+# Checklist {#sec-checklist}
 
 Have you completed the following tasks?
 
@@ -23,3 +23,5 @@ Have you completed the following tasks?
 -   Set up your R studio environment
 
 -   Completed mandatory health and safety training
+
+-   Write a brief description of yourself and how you like to work to be included in the group website.

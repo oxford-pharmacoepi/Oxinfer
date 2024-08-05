@@ -1,0 +1,3 @@
+# R basis {#sec-R}
+
+New to R? We recommend you compliment the book with [R for data science](https://r4ds.had.co.nz/)

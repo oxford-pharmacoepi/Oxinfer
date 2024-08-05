@@ -1,0 +1,15 @@
+# OMOP the basis {#sec-omop}
+
+New to the OMOP CDM? We'd recommend you pare this book with [The Book of OHDSI](https://ohdsi.github.io/TheBookOfOhdsi/)
+
+## Why a Common Data Model?
+
+## OMOP basis
+
+![](https://ohdsi.github.io/CommonDataModel/images/cdm54.png)
+
+## OHDSI
+
+## Edhden Academy
+
+## Athena

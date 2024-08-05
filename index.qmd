@@ -1,12 +1,29 @@
 # Preface {.unnumbered}
 
-## Onboarding to the oxinfer group
+[**Please be aware some of the sections of this website are still under construction**]{style="color:red; font-size: 25px;"}
 
-We've written this book for anyone interested in a working with databases mapped to the OMOP Common Data Model (CDM) in a tidyverse inspired approach. That is, human centered, consistent, composable, and inclusive (see <https://design.tidyverse.org/unifying.html> for more details on these principles).
+![](https://pngimg.com/d/under_construction_PNG34.png){width=50% fig-align="center"}
 
-New to the OMOP CDM? We'd recommend you pare this book with [The Book of OHDSI](https://ohdsi.github.io/TheBookOfOhdsi/)
+Please if you detect inconsistencies or incompletness please open issues:
+<https://github.com/oxford-pharmacoepi/OxinferOnboarding>
 
-New to R? We recommend you compliment the book with [R for data science](https://r4ds.had.co.nz/)
+## Introduction
+
+This website covers the basis to know what is the Oxinfer group working on and which are the crucial concepts one must know when you start to work with us. 
+
+This book starts with an overall description of the team, its aim and scope, and its members in @sec-team. It is particularly interesting to know about the members of our team and how to work with them.
+
+The next 3 chapters provide the basis of our work:
+
+- Epidemiology (@sec-epi).
+
+- The OMOP Common Data Model (@sec-omop).
+
+- R (@sec-R)
+
+These 3 chapters cover resources and basic knowledge that you can skip if you are familiar with.
+
+Finally, the last chapter (@sec-checklist) provides a checklist of all the steps that you need to follow to be onboarded to the group.
 
 ## License
 
