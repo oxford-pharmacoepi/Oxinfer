@@ -9,3 +9,4 @@
 *.duckdb
 *.html
 /*_files/
+.DS_Store
