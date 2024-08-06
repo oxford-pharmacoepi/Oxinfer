@@ -8,9 +8,9 @@ book:
   chapters:
   - index.qmd
   - chapters/the_team.qmd
-  - chapters/epi_basis.qmd
+  - chapters/what_we_do.qmd
+  - chapters/basics.qmd
   - chapters/omop.qmd
-  - chapters/R_basis.qmd
   - chapters/databases_and_servers.qmd
   - chapters/connect_to_database.qmd
   - chapters/github.qmd

@@ -1,0 +1,45 @@
+# Getting started {#sec-epi}
+
+Although our expertise in the different domains is going to differ, everyone in OxInfer needs at least a basic understanding on the programming we do to develop study code and create R packages, our development workflow for doing this as a team, and core epidemiological concepts that underpin what we do. Below are various links to help you get started, but remember that many of the answers to the specific questions you might have will be in the heads of other team members so don't hesitate to ask questions!
+
+## Programming
+
+R is the main language we use for both writing the code for studies and creating software (R packages we distribute via cran).
+
+-   R for data science <https://r4ds.had.co.nz/>
+
+-   Advanced R <https://adv-r.hadley.nz/>
+
+-   R packages <https://r-pkgs.org/>
+
+When creating R packages, we largely follow the tidyverse style and their design guide provides a nice overview of their approach.
+
+-   Tidyverse deign guide <https://design.tidyverse.org/>
+
+Although we rarely write SQL directly, often our R code gets translated into SQL when we're working with a database (via the dbplyr package <https://dbplyr.tidyverse.org/>). So its also important to know the basics of SQL. There are a lot of resources online for learning SQL, but some that are nice to get started are (there is a lot of overlap between these so going through one of them should give you most of the basics):
+
+-   SQLBolt <https://sqlbolt.com/>
+
+-   Mode SQL tutorial <https://mode.com/sql-tutorial>
+
+-   SQLZoo tutorial <https://www.sqlzoo.net/wiki/SQL_Tutorial>
+
+## Development workflow
+
+We do our development of study code and software on github. In fact, even this book has it's repo there <https://github.com/oxford-pharmacoepi/OxinferOnboarding> To understand why and how we use github see the below links
+
+-   <https://medium.com/nyc-planning-digital/git-what-extolling-githubs-virtues-to-non-coders-6cc11f1a5fd2>
+
+-   <https://docs.github.com/en/get-started/using-github/github-flow>
+
+-   <https://happygitwithr.com/rstudio-git-github>
+
+## Epidemiology
+
+1.  As you'll see in the next chapter, our work focuses on epidemiology with real world data that has been transformed into a common data model. Before getting into the weeds of this, in is important to know more generally what the field of epidemiology is all about:
+
+-   [What is epidemiology?](https://www.bmj.com/about-bmj/resources-readers/publications/epidemiology-uninitiated/1-what-epidemiology)
+
+-   <https://epirhandbook.com/>
+
+## 
