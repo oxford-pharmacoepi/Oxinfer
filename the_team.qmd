@@ -10,126 +10,123 @@ Although you might be in a certain team within the group we constantly work with
 
 ## The Oxinfer team
 
-- scope of the team and bla bla bla... Ed to provide a first version
+-   scope of the team and bla bla bla... Ed to provide a first version
 
 ## Work with me
 
 In this section each one of the members of the group described themselves, their role in the team, and some details how to work with them.
 
 ### Ed Burn {.unnumbered}
+
 ::: columns
 ::: {.column width="40%"}
-![](https://www.ndorms.ox.ac.uk/team/edward-burn/@@haiku.profiles.portrait/8fbaee61a0be4f4dbc4f7cd361fefc36/@@images/image/w1140?4db309e6-9449-4ab8-8483-dea0e10579e3){width=3in} 
+![](https://www.ndorms.ox.ac.uk/team/edward-burn/@@haiku.profiles.portrait/8fbaee61a0be4f4dbc4f7cd361fefc36/@@images/image/w1140?4db309e6-9449-4ab8-8483-dea0e10579e3){width="3in"}
 :::
+
 ::: {.column width="60%"}
-
 Hi I am Ed ...
-
 :::
 :::
 
 ### Martí Català {.unnumbered}
+
 ::: columns
 ::: {.column width="40%"}
-![](https://www.ndorms.ox.ac.uk/team/marti-catala-sabate/@@haiku.profiles.portrait/9bb5a30b6c384dcfa014de76a46854e7/@@images/image/w1140?37853d57-cfc1-487f-a9e4-bcb27dfedba8){width=3in}
+![](https://www.ndorms.ox.ac.uk/team/marti-catala-sabate/@@haiku.profiles.portrait/9bb5a30b6c384dcfa014de76a46854e7/@@images/image/w1140?37853d57-cfc1-487f-a9e4-bcb27dfedba8){width="3in"}
 :::
+
 ::: {.column width="60%"}
-
 Hi I am Martí...
-
 :::
 :::
-
 
 ### Danielle Newby {.unnumbered}
+
 ::: columns
 ::: {.column width="40%"}
-![](https://www.ndorms.ox.ac.uk/team/danielle-newby/@@haiku.profiles.portrait/15445b9f7e354d318bbd643eb4fa07ad/@@images/image/w1140?64a07266-d5fc-4c8b-a34b-99cb96fb35d0){width=3in}
+![](https://www.ndorms.ox.ac.uk/team/danielle-newby/@@haiku.profiles.portrait/15445b9f7e354d318bbd643eb4fa07ad/@@images/image/w1140?64a07266-d5fc-4c8b-a34b-99cb96fb35d0){width="3in"}
 :::
-::: {.column width="60%"}
 
+::: {.column width="60%"}
 Hi I am Danielle...
+
 
 :::
 :::
 
 ### Mike Du {.unnumbered}
+
 ::: columns
 ::: {.column width="40%"}
-![](https://www.ndorms.ox.ac.uk/team/mike-du/@@haiku.profiles.portrait/440d77a80c0e4febbea6996b8bfb4ea7/@@images/image/w1140?cc114566-adb6-4827-8071-2a66b476fc12){width=3in}
+![](https://www.ndorms.ox.ac.uk/team/mike-du/@@haiku.profiles.portrait/440d77a80c0e4febbea6996b8bfb4ea7/@@images/image/w1140?cc114566-adb6-4827-8071-2a66b476fc12){width="3in"}
 :::
+
 ::: {.column width="60%"}
-
 Hi I am Mike...
-
 :::
 :::
-
 
 ### Yuchen Guo {.unnumbered}
+
 ::: columns
 ::: {.column width="40%"}
-![](https://www.ndorms.ox.ac.uk/team/yuchen-guo/@@haiku.profiles.portrait/93fc61674bc741f3a8d18a44ebf1e246/@@images/image/w1140?37ffc97a-d914-41e1-927e-d203460d53e1){width=3in}
+![](https://www.ndorms.ox.ac.uk/team/yuchen-guo/@@haiku.profiles.portrait/93fc61674bc741f3a8d18a44ebf1e246/@@images/image/w1140?37ffc97a-d914-41e1-927e-d203460d53e1){width="3in"}
 :::
+
 ::: {.column width="60%"}
-
 Hi I am Mimi...
-
 :::
 :::
-
 
 ### Theresa Burkard {.unnumbered}
+
 ::: columns
 ::: {.column width="40%"}
-![](https://www.ndorms.ox.ac.uk/team/theresa-burkard/@@haiku.profiles.portrait/71d8cbc2ac624b37ae10642dab9cf1f8/@@images/image/w1140?cbeb5956-ea48-4b07-a6ec-2cf334b62103){width=3in}
+![](https://www.ndorms.ox.ac.uk/team/theresa-burkard/@@haiku.profiles.portrait/71d8cbc2ac624b37ae10642dab9cf1f8/@@images/image/w1140?cbeb5956-ea48-4b07-a6ec-2cf334b62103){width="3in"}
 :::
+
 ::: {.column width="60%"}
-
 Hi I am Theresa
-
 :::
 :::
 
 ### Xihang Chen {.unnumbered}
+
 ::: columns
 ::: {.column width="40%"}
-![](https://www.ndorms.ox.ac.uk/team/xihang-chen/@@haiku.profiles.portrait/12d40ba82b1b4458bf413afe6764eef4/@@images/image/w1140?2c7ee87c-efa8-4f73-a9ea-d58d66eee3a6){width=3in}
+![](https://www.ndorms.ox.ac.uk/team/xihang-chen/@@haiku.profiles.portrait/12d40ba82b1b4458bf413afe6764eef4/@@images/image/w1140?2c7ee87c-efa8-4f73-a9ea-d58d66eee3a6){width="3in"}
 :::
+
 ::: {.column width="60%"}
-
 Hi I am Xihang...
-
 :::
 :::
-
 
 ### Kim Lopez-Guell {.unnumbered}
+
 ::: columns
 ::: {.column width="40%"}
-![](https://www.ndorms.ox.ac.uk/team/kim-lopez-guell/@@haiku.profiles.portrait/1f6345dce5934625a5785db65233eb33/@@images/image/w1140?3338ab65-3735-425e-bf2d-dd66b510a2a5){width=3in}
+![](https://www.ndorms.ox.ac.uk/team/kim-lopez-guell/@@haiku.profiles.portrait/1f6345dce5934625a5785db65233eb33/@@images/image/w1140?3338ab65-3735-425e-bf2d-dd66b510a2a5){width="3in"}
 :::
+
 ::: {.column width="60%"}
-
 Hi I am Kim...
-
 :::
 :::
-
 
 ### Pablo Spivakovsky Gonzalez {.unnumbered}
 
 Hi I am Pablo...
 
 ### Marta Alcalde-Herraiz {.unnumbered}
+
 ::: columns
 ::: {.column width="40%"}
-![](https://www.ndorms.ox.ac.uk/team/marta-alcalde-herraiz/@@haiku.profiles.portrait/dbc27382a34143f5b8c20955defec358/@@images/image/w1140?31536312-1ce7-4ee9-981d-9c2ff2c561d9){width=3in}
+![](https://www.ndorms.ox.ac.uk/team/marta-alcalde-herraiz/@@haiku.profiles.portrait/dbc27382a34143f5b8c20955defec358/@@images/image/w1140?31536312-1ce7-4ee9-981d-9c2ff2c561d9){width="3in"}
 :::
+
 ::: {.column width="60%"}
-
 Hi I am Marta...
-
 :::
 :::
 
