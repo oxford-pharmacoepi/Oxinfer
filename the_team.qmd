@@ -10,7 +10,7 @@ Although you might be in a certain team within the group we constantly work with
 
 ## The Oxinfer team
 
--   scope of the team and bla bla bla... Ed to provide a first version
+-   scope of the team ... TBC
 
 ## Work with me
 
@@ -25,6 +25,12 @@ In this section each one of the members of the group described themselves, their
 
 ::: {.column width="60%"}
 Hi I am Ed ...
+
+-   Facts: loves being at home
+
+-   The best way to contact me: When in office or github issue
+
+-   What I value: peace
 :::
 :::
 
@@ -37,6 +43,13 @@ Hi I am Ed ...
 
 ::: {.column width="60%"}
 Hi I am Martí...
+
+-   Facts: hates small talk and loves catalunà
+
+-   The best way to contact me: Teams
+
+-   What I value: anything catalunà
+
 :::
 :::
 
@@ -50,6 +63,11 @@ Hi I am Martí...
 ::: {.column width="60%"}
 Hi I am Danielle...
 
+-   Facts: loves small talk, sleeping and eating
+
+-   The best way to contact me: Teams
+
+-   What I value: honesty and people asking questions
 
 :::
 :::
