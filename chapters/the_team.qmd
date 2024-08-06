@@ -44,11 +44,11 @@ Hi I am Ed ...
 ::: {.column width="60%"}
 Hi I am Martí...
 
--   Facts: hates small talk and loves catalunà
+-   Facts: hates small talk and loves catalunya.
 
--   The best way to contact me: Teams
+-   The best way to contact me: If I am in the office just come to speak with me. Otherwise try Teams. If I don't answer in the first 5 hours good luck with that... try it again :)
 
--   What I value: anything catalunà
+-   What I value: honesty and anything catalan.
 :::
 :::
 
@@ -62,11 +62,11 @@ Hi I am Martí...
 ::: {.column width="60%"}
 Hi I am Danielle...
 
--   Facts: loves small talk, sleeping and eating
+-   Facts: loves small talk, sleeping and eating. She doesn't like hugs.
 
 -   The best way to contact me: Teams
 
--   What I value: honesty and people asking questions
+-   What I value: honesty and people asking questions. People not hugging me.
 :::
 :::
 
