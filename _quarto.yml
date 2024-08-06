@@ -7,18 +7,18 @@ book:
   date: today
   chapters:
   - index.qmd
-  - the_team.qmd
-  - epi_basis.qmd
-  - omop.qmd
-  - R_basis.qmd
-  - databases_and_servers.qmd
-  - connect_to_database.qmd
-  - github.qmd
-  - studies_and_authorship.qmd
-  - useful_contacts.qmd
-  - useful_terms.qmd
-  - checklist.qmd
-  - references.qmd
+  - chapters/the_team.qmd
+  - chapters/epi_basis.qmd
+  - chapters/omop.qmd
+  - chapters/R_basis.qmd
+  - chapters/databases_and_servers.qmd
+  - chapters/connect_to_database.qmd
+  - chapters/github.qmd
+  - chapters/studies_and_authorship.qmd
+  - chapters/useful_contacts.qmd
+  - chapters/useful_terms.qmd
+  - chapters/checklist.qmd
+  - chapters/references.qmd
 
 bibliography: references.bib
 
@@ -29,5 +29,3 @@ format:
 editor: visual
 
 number-sections: true
-
-  
