@@ -25,3 +25,9 @@ Have you completed the following tasks?
 -   Completed mandatory health and safety training
 
 -   Write a brief description of yourself and how you like to work to be included in the group website.
+
+-   Download GitHub Desktop.
+
+-   Been invited to the PDE meetings (Mahki).
+
+-   Been invited to the OxInfer meetings (Ed).
