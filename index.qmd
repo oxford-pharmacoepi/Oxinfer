@@ -2,24 +2,23 @@
 
 [**Please be aware some of the sections of this website are still under construction**]{style="color:red; font-size: 25px;"}
 
-![](https://pngimg.com/d/under_construction_PNG34.png){width=50% fig-align="center"}
+![](https://pngimg.com/d/under_construction_PNG34.png){width="50%" fig-align="center"}
 
-Please if you detect inconsistencies or incompletness please open issues:
-<https://github.com/oxford-pharmacoepi/OxinferOnboarding>
+Please if you detect inconsistencies or incompletness please open issues: <https://github.com/oxford-pharmacoepi/OxinferOnboarding>
 
 ## Introduction
 
-This website covers the basis to know what is the Oxinfer group working on and which are the crucial concepts one must know when you start to work with us. 
+This website covers the basis to know what is the Oxinfer group working on and which are the crucial concepts one must know when you start to work with us.
 
 This book starts with an overall description of the team, its aim and scope, and its members in @sec-team. It is particularly interesting to know about the members of our team and how to work with them.
 
 The next 3 chapters provide the basis of our work:
 
-- Epidemiology (@sec-epi).
+-   Epidemiology (@sec-epi).
 
-- The OMOP Common Data Model (@sec-omop).
+-   The OMOP Common Data Model (@sec-omop).
 
-- R (@sec-R)
+-   R (@sec-R)
 
 These 3 chapters cover resources and basic knowledge that you can skip if you are familiar with.
 
