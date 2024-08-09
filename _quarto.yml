@@ -14,6 +14,7 @@ book:
   - chapters/databases_and_servers.qmd
   - chapters/connect_to_database.qmd
   - chapters/github.qmd
+  - chapters/code_review.qmd
   - chapters/studies_and_authorship.qmd
   - chapters/useful_contacts.qmd
   - chapters/useful_terms.qmd
