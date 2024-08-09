@@ -1,0 +1,27 @@
+# Code Review {#sec-code_review}
+
+Some useful text here to explain who and what and when this should be done.. TBC
+
+1)  Basic checks:
+
+-   Code is on github
+-   Study is organised as an R project
+-   Renv is used to list all dependencies needed
+-   Study code has a clear logical flow, with any particularly long scripts split up into separate files
+-   Study code doesn't have a lot of complex, custom code (that should be in a package with tests)
+-   The code runs on a 100k dataset without error
+-   How are the results visualised and reported?
+-   Is there a shiny to go with the study code?
+-   Review results for plausibility
+
+2.  Check whether the code does what is intended:
+
+-   Does the code match the protocol?
+-   Have any analyses been missed?
+-   For each analysis, are cohorts defined in the right way (e.g. typically no exclusion criteria for an incidence outcome) - this has been the most common source of issues
+
+3.  Check whether the code can be optimised:
+
+-   Is any code repeated unnecessarily?
+-   Can code be simplified?
+-   Review the sql that gets executed for any obvious inefficiencies
