@@ -1,3 +1,32 @@
 # Packages
 
 Oxinfer developed several packages to work with the OMOP Common Data Model:
+
+```{r, results='asis', echo=FALSE}
+darwin <- c(
+  "PatientProfiles", "DrugUtilisation", "CohortSurvival", "omopgenerics",
+  "CohortCharacteristics"
+)
+darwin2 <- c("CodelistGenerator", "visOmopResults", "IncidencePrevalence")
+oxford <- c("CohortSymmetry", "OmopSketch", "PhenotypeR")
+ohdsi <- c("omock", "CohortConstructor")
+element <- function(pkg, org) {
+  web <- "https://github.com/{org}/{pkg}/blob/main/man/figures/logo.png?raw=true" |>
+    glue::glue()
+  if (RCurl::url.exists(web)) {
+    web <- '<img src="{web}" alt="{pkg}" style="width:150px;">' |>
+      glue::glue()
+  } else {
+    web <- pkg
+  }
+  '<a class = "hexsticker" href="https://{org}.github.io/{pkg}/">\n {web}\n </a>' |>
+    glue::glue()
+}
+text <- "<div>\n"
+for (el in darwin) text <- paste0(text, element(el, "darwin-eu-dev"), "\n")
+for (el in darwin2) text <- paste0(text, element(el, "darwin-eu"), "\n")
+for (el in oxford) text <- paste0(text, element(el, "oxford-pharmacoepi"), "\n")
+for (el in ohdsi) text <- paste0(text, element(el, "ohdsi"), "\n")
+cat(text)
+```
+
