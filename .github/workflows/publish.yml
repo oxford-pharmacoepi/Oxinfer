@@ -21,9 +21,16 @@ jobs:
       - name: Install R libraries in renv
         uses: r-lib/actions/setup-renv@v2
         
-      - name: Render and Publish 
+      - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
-          target: quarto-pub
-          render: true
-          QUARTO_PUB_AUTH_TOKEN: ${{ secrets.QUARTO_PUB_AUTH_TOKEN }}
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      # - name: Render and Publish 
+      #   uses: quarto-dev/quarto-actions/publish@v2
+      #   with:
+      #     target: quarto-pub
+      #     render: true
+      #     QUARTO_PUB_AUTH_TOKEN: ${{ secrets.QUARTO_PUB_AUTH_TOKEN }}

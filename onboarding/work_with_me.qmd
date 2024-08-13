@@ -1,18 +1,4 @@
-# Our Team {#sec-team}
-
-Welcome to the team! Below is some useful information and links about getting help with certain aspects of your role. You can check out our website where you can put names to faces [here](https://www.ndorms.ox.ac.uk/research/research-groups/Musculoskeletal-Pharmacoepidemiology).
-
-![Our Team Dec 23](images/team_dec23.jpg)
-
-Although you might be in a certain team within the group we constantly work with people in other teams. This is why we provide training on both the epidemiology and data science to give everyone a well-rounded understanding to produce world leading research 😊. As you can see in the organagram below Dani leads the group with Ed, Annika, Mahki, Trishna and Antonella leading specific teams/themes in the team.
-
-![Team Structure Jul 24](images/organigram_jul24.jpg){.lightbox}
-
-## The Oxinfer team
-
--   scope of the team ... TBC
-
-## Work with me
+# Work with me
 
 In this section each one of the members of the group described themselves, their role in the team, and some details how to work with them.
 
