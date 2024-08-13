@@ -1,8 +1,6 @@
-# Tidy R programming with the OMOP common data model
+# Oxinfer website
 
-## 📕 Read the book
-
-<https://quartopub.com/sites/dpa-pde-oxford/oxinfer-onboarding>
+<https://oxford-pharmacoepi.github.io/OxinferOnboarding/>
 
 ## :star: Reader questions and clarifications
 
