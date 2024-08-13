@@ -21,11 +21,15 @@ element <- function(pkg, org) {
   } else {
     web <- pkg
   }
-  '<a class = "hexsticker" href="https://{org}.github.io/{pkg}/">\n {web}\n </a>' |>
+  '<a class = "hexsticker" href="https://{org}.github.io/{pkg}/">{web}</a>' |>
     glue::glue()
 }
 text <- "<div>\n"
-for (el in darwin) text <- paste0(text, element(el, "darwin-eu-dev"), "\n")
+repos <- character()
+for (el in darwin) {
+  text <- paste0(text, element(el, "darwin-eu-dev"), "\n")
+  repos <- c(repos, paste0("https://github.com/darwin-eu-dev/", el))
+}
 for (el in darwin2) text <- paste0(text, element(el, "darwin-eu"), "\n")
 for (el in oxford) text <- paste0(text, element(el, "oxford-pharmacoepi"), "\n")
 for (el in ohdsi) text <- paste0(text, element(el, "ohdsi"), "\n")
@@ -35,9 +39,8 @@ cat(text)
 ## Dashboard
 
 ```{r, echo = FALSE}
-
+repos <- 
 ```
-
 
 - package name
 - repo
