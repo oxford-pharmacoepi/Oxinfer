@@ -19,16 +19,13 @@ https://www.ndorms.ox.ac.uk/team/edward-burn
 
 ## Members
 
-members
-
-```{r, echo = FALSE, eval = FALSE}
+```{r, echo = FALSE, eval = TRUE, results='asis', warning=FALSE, message=FALSE}
 web <- "https://www.ndorms.ox.ac.uk/team/"
-x <- c("edward-burn", "marti-catala-sabate")
-nm <- x[1]
-# webpage <- getURL("http://www.haaretz.com/")
-# webpage <- readLines(tc <- textConnection(webpage)); close(tc)
-content <- readLines(paste0(web, nm, "/"))
-
+x <- c(
+  "edward-burn", "marti-catala-sabate", "danielle-newby", "mike-du", 
+  "yuchen-guo", "theresa-burkard", "xihang-chen", "kim-lopez-guell",
+  "pablo-spivakovsky-gonzalez", "marta-alcalde-herraiz",
+  "nuria-mercade-besora", "elin-rowlands")
 getLab <- function(line, lab) {
   cometes <- stringr::str_locate_all(string = line, pattern = '"')
   cometes <- cometes[[1]] |> 
@@ -42,15 +39,41 @@ getLab <- function(line, lab) {
   name <- substr(line, start = idName[1]+1, stop = idName[2]-1)
   return(name)
 }
-
-line <- content[grepl("og:title", content)]
-name <- getLab(line, '"og:title"')
-position <- getLab(line, '"og:description"') |>
-  stringr::str_split(pattern = " - ") |>
-  unlist() |>
-  dplyr::nth(2)
-description <- ''
-picture <- getLab(line, '"og:image"')
-
+for (k in seq_along(x)) {
+  nm <- x[k]
+  content <- readLines(paste0(web, nm, "/"))
+  line <- content[grepl("og:title", content)]
+  name <- getLab(line, '"og:title"')
+  position <- getLab(line, '"og:description"') |>
+    stringr::str_split(pattern = " - ") |>
+    unlist() |>
+    dplyr::nth(2)
+  idStart <- which(grepl('<div class="rich-text">', content)) + 1
+  description <- content[idStart]
+  if (length(description) == 0) {
+    description <- character()
+  } else {
+    description <- trimws(description)
+    if (description == "<p></p>") {
+      description <- character()
+    }
+  }
+  picture <- getLab(line, '"og:image"')
+  if (is.na(picture)) {
+    cat(paste0("### ", name, '\n\n'))
+  } else {
+    cat(paste0(
+      "### ", name, '<a href="', web, nm, '/"><img src="', picture, 
+      '" align="right" alt="HTML tutorial" style="width:200px; 
+      padding-left:20px; padding-bottom:20px;"></a>\n\n'
+    ))
+  }
+  cat(paste0("**", position, "**\n\n"))
+  if (length(description) == 0 & !is.na(picture)) {
+    cat('<br>\n<br>\n<br>\n<br>\n\n')
+  } else {
+    cat(paste0(description, "\n\n"))
+  }
+}
 ```
 
