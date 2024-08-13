@@ -33,6 +33,9 @@ website:
       - text: Recent publications
         href: publications.qmd
         icon: book
+      - text: Packages
+        href: packages.qmd
+        icon: boxes
     right: 
       - text: Github
         href: https://github.com/oxford-pharmacoepi
