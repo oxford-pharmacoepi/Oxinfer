@@ -2,7 +2,7 @@
 
 ## Books
 
--   Burn E, Black A, Raventós B, Guo Y, Du M, López-Güell K, Mercadé-Besora N, Català M (2024). *Tidy-R-programming-with-OMOP* <https://github.com/oxford-pharmacoepi/Tidy-R-programming-with-OMOP>
+-   <span class="author_publication">Burn E</span>, Black A, Raventós B, <span class="author_publication">Guo Y</span>, <span class="author_publication">Du M</span>, <span class="author_publication">López-Güell K</span>, <span class="author_publication">Mercadé-Besora N</span>, <span class="author_publication">Català M</span> (2024). *Tidy-R-programming-with-OMOP* <https://github.com/oxford-pharmacoepi/Tidy-R-programming-with-OMOP>
 
 ## Articles
 
@@ -21,16 +21,29 @@ M1 <- pubmedR::pmApi2df(x) |>
   dplyr::mutate(PY = as.numeric(PY)) |>
   dplyr::arrange(dplyr::desc(PY)) |>
   suppressMessages()
+getAuthors <- function(all, us) {
+  us <- us |> 
+    stringr::str_split(pattern = " |,") |>
+    lapply(dplyr::first) |>
+    unlist() |>
+    tolower() |>
+    paste0(collapse = "|")
+  all <- all |> 
+    stringr::str_split(pattern = ";") |> 
+    unlist() |> 
+    tolower()
+  id <- grepl(pattern = us, x = all)
+  all <- stringr::str_to_title(all)
+  all[id] <- paste0(
+    '<span class="author_publication">', all[id], '</span>')
+  stringr::str_flatten(all, collapse = ", ")
+}
 text <- character()
 for (k in seq_len(nrow(M1))) {
   text <- paste0(
     text, 
     "- ", 
-    M1$AU[k] |> 
-      stringr::str_split(pattern = ";") |> 
-      unlist() |> 
-      stringr::str_to_title() |> 
-      stringr::str_flatten(collapse = ", "), 
+    getAuthors(M1$AU[k], authors), 
     ". *", 
     stringr::str_to_sentence(M1$TI[k]),
     "*; ", stringr::str_to_sentence(M1$JI[k]),

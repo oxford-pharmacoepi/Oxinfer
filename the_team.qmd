@@ -6,7 +6,7 @@ Oxford distributed analytics for network research group (oxinfer) is a research 
 
 Oxinfer is part of the wider [Health Data Sciences section](https://www.ndorms.ox.ac.uk/research/research-groups/Musculoskeletal-Pharmacoepidemiology) (lead by [Prof. Daniel Prieto-Alhambra](https://www.ndorms.ox.ac.uk/team/daniel-prieto-alhambra))
 
-![Our Team Dec 23](images/awayday2024.jpeg)
+![Our Team May 2024](images/awayday2024.jpeg)
 
 ## The Oxinfer team
 
@@ -15,6 +15,13 @@ Oxinfer is part of the wider [Health Data Sciences section](https://www.ndorms.o
 ## Members
 
 Meet the members of the team.
+
+TODO:
+
+- Github
+- LinkedIn
+- Twitter
+- email
 
 ::: {.callout-note collapse="true"}
 ### Edit your description

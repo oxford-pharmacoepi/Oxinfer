@@ -1,6 +1,8 @@
 # Packages
 
-Oxinfer developed several packages to work with the OMOP Common Data Model:
+## Our packages
+
+Oxinfer developed several packages to work with the OMOP Common Data Model, if you click to any of the package hexstickers you will be redirected to the each package website.
 
 ```{r, results='asis', echo=FALSE}
 darwin <- c(
@@ -30,3 +32,25 @@ for (el in ohdsi) text <- paste0(text, element(el, "ohdsi"), "\n")
 cat(text)
 ```
 
+## Dashboard
+
+```{r, echo = FALSE}
+
+```
+
+
+- package name
+- repo
+- website
+- citation
+- article
+- verison
+- Last cran release date
+- First cran release date
+- checks
+- cran
+- test coverage
+- lifecycle
+- reverse dependencies
+- maintainer
+- open issues

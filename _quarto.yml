@@ -68,4 +68,4 @@ format:
     backgroundcolor: white
     mainfont: Roboto
     #monofont: to edit fonts
-    theme: [cosmo, styles.scss]
+    theme: [styles.scss, cosmo]
