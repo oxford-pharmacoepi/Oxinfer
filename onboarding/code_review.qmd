@@ -13,6 +13,7 @@ Some useful text here to explain who and what and when this should be done.. TBC
 -   How are the results visualised and reported?
 -   Is there a shiny to go with the study code?
 -   Review results for plausibility
+-   Connection details are not displayed in scripts such as CodeToRun
 
 2.  Check whether the code does what is intended:
 
