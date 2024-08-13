@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Oxinfer</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<meta property="og:title" content="Oxinfer">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="Oxinfer">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Oxinfer</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../what_we_do.html"> <i class="bi bi-person-workspace" role="img">
+</i> 
+<span class="menu-text">What we do</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../the_team.html"> <i class="bi bi-people" role="img">
+</i> 
+<span class="menu-text">Meet the team</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../onboarding/index.html" aria-current="page"> <i class="bi bi-clipboard-check" role="img">
+</i> 
+<span class="menu-text">Onboarding</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../publications.qmd"> <i class="bi bi-book" role="img">
+</i> 
+<span class="menu-text">Recent publications</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/oxford-pharmacoepi"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text">Github</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.youtube.com/@oxinfer"> <i class="bi bi-youtube" role="img">
+</i> 
+<span class="menu-text">Youtube Channel</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../onboarding/omop.html">OMOP the basis</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../onboarding/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Onboarding</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../onboarding/checklist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Checklist</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../onboarding/basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Getting started</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../onboarding/omop.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">OMOP the basis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../onboarding/organigram.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Organigram</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../onboarding/work_with_me.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Work with me</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../onboarding/code_review.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Code Review</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../onboarding/connect_to_database.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connect to the database</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../onboarding/github.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Github</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../onboarding/databases_and_servers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Databases and the servers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../onboarding/studies_and_authorship.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Authorship and Conference attendance</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../onboarding/useful_contacts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Useful people and things to know</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../onboarding/useful_terms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Useful terms and terminologies</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sec-omop" id="toc-sec-omop" class="nav-link active" data-scroll-target="#sec-omop">OMOP the basis</a>
+  <ul class="collapse">
+  <li><a href="#real-word-data" id="toc-real-word-data" class="nav-link" data-scroll-target="#real-word-data">Real Word Data</a>
+  <ul class="collapse">
+  <li><a href="#uses-of-real-world-data" id="toc-uses-of-real-world-data" class="nav-link" data-scroll-target="#uses-of-real-world-data">Uses of Real World Data</a></li>
+  <li><a href="#challenges-with-real-world-data" id="toc-challenges-with-real-world-data" class="nav-link" data-scroll-target="#challenges-with-real-world-data">Challenges with Real World Data</a></li>
+  <li><a href="#real-world-evidence" id="toc-real-world-evidence" class="nav-link" data-scroll-target="#real-world-evidence">Real World Evidence</a></li>
+  </ul></li>
+  <li><a href="#why-a-common-data-model" id="toc-why-a-common-data-model" class="nav-link" data-scroll-target="#why-a-common-data-model">Why a Common Data Model?</a></li>
+  <li><a href="#omop-basis" id="toc-omop-basis" class="nav-link" data-scroll-target="#omop-basis">OMOP basis</a></li>
+  <li><a href="#ohdsi" id="toc-ohdsi" class="nav-link" data-scroll-target="#ohdsi">OHDSI</a></li>
+  <li><a href="#edhden-academy" id="toc-edhden-academy" class="nav-link" data-scroll-target="#edhden-academy">Edhden Academy</a></li>
+  <li><a href="#vocabularies" id="toc-vocabularies" class="nav-link" data-scroll-target="#vocabularies">Vocabularies</a></li>
+  <li><a href="#final-remark" id="toc-final-remark" class="nav-link" data-scroll-target="#final-remark">Final remark</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/oxford-pharmacoepi/OxinferOnboarding/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="sec-omop" class="level1">
+<h1>OMOP the basis</h1>
+<p>New to the OMOP CDM? We’d recommend you pare this book with <a href="https://ohdsi.github.io/TheBookOfOhdsi/">The Book of OHDSI</a></p>
+<section id="real-word-data" class="level2">
+<h2 class="anchored" data-anchor-id="real-word-data">Real Word Data</h2>
+<p>All our studies are done with what it is called Real World Data (RWD). It refers to data collected from various sources outside of traditional clinical trials. It encompasses information about the health status, treatment, and outcomes of patients in real-world settings.</p>
+<p>For example, the most common source that we use is <strong>Electronic Health Records (EHRs)</strong>: Data collected from healthcare providers during routine clinical care, including patient demographics, diagnoses, treatments, and outcomes.</p>
+<p>There exist also other sources of RWD: <em>Claims and Billing Activities</em> (from health insurance claims), <em>Registries</em> (databases that collect information on patients with specific diseases or conditions), <em>Pharmacy Data</em> (prescription medications), among others…</p>
+<section id="uses-of-real-world-data" class="level3">
+<h3 class="anchored" data-anchor-id="uses-of-real-world-data">Uses of Real World Data</h3>
+<p>RWD can be used in many different ways:</p>
+<ol type="1">
+<li><p><strong>Regulatory Decision Making</strong>: Regulatory agencies, like the FDA, use RWD to support approval of new treatments, label expansions, and post-market surveillance.</p></li>
+<li><p><strong>Clinical Decision Support</strong>: RWD helps healthcare providers make more informed decisions about patient care by providing insights into treatment effectiveness and safety in broader populations.</p></li>
+<li><p><strong>Health Economics and Outcomes Research (HEOR)</strong>: RWD is used to assess the cost-effectiveness and value of medical interventions.</p></li>
+<li><p><strong>Epidemiology</strong>: RWD aids in understanding the prevalence, incidence, and burden of diseases in the population.</p></li>
+<li><p><strong>Comparative Effectiveness Research</strong>: Researchers use RWD to compare the effectiveness of different treatments in real-world settings.</p></li>
+<li><p><strong>Pharmacovigilance</strong>: RWD is crucial for monitoring the safety of medications post-approval to identify and mitigate adverse effects.</p></li>
+</ol>
+</section>
+<section id="challenges-with-real-world-data" class="level3">
+<h3 class="anchored" data-anchor-id="challenges-with-real-world-data">Challenges with Real World Data</h3>
+<p>When working with RWD we have to be aware of some challenges and limitations:</p>
+<ul>
+<li><p><strong>Data Quality</strong>: Inconsistencies, missing information, and variations in data collection methods can affect the reliability of RWD.</p></li>
+<li><p><strong>Data Integration</strong>: Combining data from diverse sources can be complex due to differences in formats, standards, and terminologies.</p></li>
+<li><p><strong>Privacy and Security</strong>: Ensuring patient confidentiality and data security is paramount when handling RWD.</p></li>
+<li><p><strong>Bias and Confounding</strong>: Real-world studies may be subject to biases and confounders that can impact the validity of findings.</p></li>
+</ul>
+</section>
+<section id="real-world-evidence" class="level3">
+<h3 class="anchored" data-anchor-id="real-world-evidence">Real World Evidence</h3>
+<p>We call the evidence generated by RWD as <strong>Real World Evidence</strong>. This will be our end goal, to generate reliable Real World Evidence in a transparent and fast way.</p>
+</section>
+</section>
+<section id="why-a-common-data-model" class="level2">
+<h2 class="anchored" data-anchor-id="why-a-common-data-model">Why a Common Data Model?</h2>
+<p>As we have just seen RWD can come from many different sources and it is usually not collected for research purposes. This leads to diverse structures, coding systems and can become quite a nightmare to reproduce an study in different databases. This is why common data models started gaining popularity.</p>
+<p>Using a common data model (CDM) is crucial for standardising and harmonising data from disparate sources, ensuring consistency and interoperability. A CDM facilitates the integration and analysis of data from various healthcare systems by providing a unified structure and standardised terminologies. This standardisation enables researchers and healthcare professionals to perform meaningful comparisons, aggregate data efficiently, and derive robust, generalisable insights. Additionally, a CDM enhances data quality and reliability, reduces the potential for errors, and supports regulatory compliance and collaborative research efforts. Ultimately, adopting a common data model accelerates the translation of real-world data into actionable knowledge, improving patient outcomes and advancing medical research.</p>
+</section>
+<section id="omop-basis" class="level2">
+<h2 class="anchored" data-anchor-id="omop-basis">OMOP basis</h2>
+<p>The Observational Medical Outcomes Partnership (OMOP) is a common data model for organising healthcare data from various sources. It is ones of the most popular growing CDM world wide with more than 800 million patients’ health care data transformed into this format.</p>
+<p>The OMOP CDM is a person-centric relational data model. Patients’ data is spread across various tables related to different clinical domains with, for example, the condition occurrence table containing diagnoses while the drug exposure table contains drug prescriptions. These different clinical tables are all linked back to the person table which contains a unique identifier for each individual along with some key demographic data such as their date of birth. Meanwhile, records in the observation period table define the period of calendar time over which an individual is followed-up.</p>
+<p>In this figure you can see the different tables that exist in the OMOP CDM and how are they related:</p>
+<p><img src="https://ohdsi.github.io/CommonDataModel/images/cdm54.png" class="img-fluid"></p>
+</section>
+<section id="ohdsi" class="level2">
+<h2 class="anchored" data-anchor-id="ohdsi">OHDSI</h2>
+<p>The OHDSI (Observational Health Data Sciences and Informatics) community is a global, multi-stakeholder, interdisciplinary collaborative that aims to improve health by empowering the community to collaboratively generate evidence that promotes better health decisions and better care.</p>
+<ul>
+<li><p>The primary mission is to create a research community that produces high-quality, reproducible, and reliable evidence about health and healthcare.</p></li>
+<li><p>A key component of OHDSI’s infrastructure is the OMOP (Observational Medical Outcomes Partnership) Common Data Model.</p></li>
+<li><p>OHDSI emphasizes open science principles, making their tools, methods, and research findings freely available to the public though their github: <a href="https://github.com/ohdsi" class="uri">https://github.com/ohdsi</a>.</p></li>
+<li><p>Annual symposiums and other events foster collaboration and the sharing of ideas within the community.</p></li>
+</ul>
+<p>You can find more about ohdsi community on their website: <a href="https://ohdsi.org" class="uri">https://ohdsi.org</a>.</p>
+</section>
+<section id="edhden-academy" class="level2">
+<h2 class="anchored" data-anchor-id="edhden-academy">Edhden Academy</h2>
+<p>The <a href="https://academy.ehden.eu">Ehden Academy</a> is an educational initiative that contains lots of resources on the basis of OMOP and how the OMOP CDM is structured, its vocabularies and so…</p>
+<p>In particular we would recommend these courses:</p>
+<ul>
+<li>…</li>
+</ul>
+</section>
+<section id="vocabularies" class="level2">
+<h2 class="anchored" data-anchor-id="vocabularies">Vocabularies</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>That’s a brief introduction to a very complicated topic, please refer to the provided links to learn more and get a more in depth view.</p>
+</div>
+</div>
+<p>Every record in a RWD database gets coded into a numeric identifier (code), there exist many different <a href="https://en.wikipedia.org/wiki/Medical_classification">Medical Classifications</a> that are different vocabularies. Each vocabulary has its pros and its cons. Each database generally will come with a different vocabulary. OMOP CDM has some standard vicabularies that are the ones commonly used. In general this vocabulary will be different to the source one (originl of your data).</p>
+<p>We call mapping to the process to convert a source data (original format of the data) that can be in many different formats to the OMOP CDM. In our team <a href="https://www.ndorms.ox.ac.uk/team/antonella-delmestri">Antonella</a> and <a href="https://www.ndorms.ox.ac.uk/team/wai-yi-man">Teen</a> are the ones in charge of the mapping process.</p>
+<p><a href="https://athena.ohdsi.org/">Athena</a> contains the last version of the vocabularies and it is used to track its changes. You can use athena to search for OMOP concepts and see how they are related.</p>
+</section>
+<section id="final-remark" class="level2">
+<h2 class="anchored" data-anchor-id="final-remark">Final remark</h2>
+<p>This was a very general introduction to the OMOP CDM as there are many resources out there that can help you to familiarise with OMOP. We recomend to take a look to <a href="https://ohdsi.github.io/TheBookOfOhdsi/">The Book of OHDSI</a> and the recommended courses from <a href="https://academy.ehden.eu">Ehden Academy</a>, but the best way to learn about OMOP is to do an study with one of our OMOP instances, <strong>learning by doing :)</strong>.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/oxford-pharmacoepi\.github\.io\/OxinferOnboarding\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2024, Oxinfer</p>
+</div>   
+    <div class="nav-footer-center">
+<p>Rendered today</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/oxford-pharmacoepi/OxinferOnboarding/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/oxford-pharmacoepi">
+<p>Github</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://www.youtube.com/@oxinfer">
+<p>Youtube Channel</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
