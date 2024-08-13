@@ -2,12 +2,11 @@
 
 Oxford distributed analytics for network research group (oxinfer) is a research group at the University of Oxford with three key purposes:
 
-- 
+-   
 
 Oxinfer is part of the wider [Health Data Sciences section](https://www.ndorms.ox.ac.uk/research/research-groups/Musculoskeletal-Pharmacoepidemiology) (lead by [Prof. Daniel Prieto-Alhambra](https://www.ndorms.ox.ac.uk/team/daniel-prieto-alhambra))
 
-Welcome to the team! Below is some useful information and links about getting help with certain aspects of your role. You can check out our website where you can put names to faces [here].
-
+Welcome to the team! Below is some useful information and links about getting help with certain aspects of your role. You can check out our website where you can put names to faces \[here\].
 
 https://www.ndorms.ox.ac.uk/team/edward-burn
 

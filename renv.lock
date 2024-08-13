@@ -12,13 +12,8 @@
     "CDMConnector": {
       "Package": "CDMConnector",
       "Version": "1.5.0",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteRepo": "CDMConnector",
-      "RemoteUsername": "darwin-eu-dev",
-      "RemoteRef": "HEAD",
-      "RemoteSha": "d35ff2c32872dd8eea18a87cc64a766543ada572",
+      "Source": "Repository",
+      "Repository": "RSPM",
       "Requirements": [
         "DBI",
         "R",
@@ -43,7 +38,7 @@
         "waldo",
         "withr"
       ],
-      "Hash": "84acd02fbdac009326b541a44d6dc65c"
+      "Hash": "2bae94aed83da2007c938f3d2fa1a48f"
     },
     "DBI": {
       "Package": "DBI",
