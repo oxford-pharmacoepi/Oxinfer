@@ -66,6 +66,6 @@ format:
     fontcolor: black
     linkcolor: blue
     backgroundcolor: white
-    mainfont: ui-rounded
-    monofont: cursive
+    mainfont: Roboto
+    #monofont: to edit fonts
     theme: [cosmo, styles.scss]

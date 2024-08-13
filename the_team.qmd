@@ -10,13 +10,20 @@ Welcome to the team! Below is some useful information and links about getting he
 
 https://www.ndorms.ox.ac.uk/team/edward-burn
 
-![Our Team Dec 23](images/team_dec23.jpg)
+![Our Team Dec 23](images/awayday2024.jpeg)
 
 ## The Oxinfer team
 
 -   scope of the team ... TBC
 
 ## Members
+
+Meet the members of the team.
+
+::: {.callout-note collapse="true"}
+### Edit your description
+Name, picture, job title and description of each member of the team is pulled from <https://www.ndorms.ox.ac.uk> please refer to the relevant team to edit it.
+:::
 
 ```{r, echo = FALSE, eval = TRUE, results='asis', warning=FALSE, message=FALSE}
 web <- "https://www.ndorms.ox.ac.uk/team/"

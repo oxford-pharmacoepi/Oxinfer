@@ -2,11 +2,11 @@
 
 ## Books
 
-- Burn E, Black A, Raventós B, Guo Y, Du M, López-Güell K, Mercadé-Besora N, Català M (2024). *Tidy-R-programming-with-OMOP* <https://github.com/oxford-pharmacoepi/Tidy-R-programming-with-OMOP>
+-   Burn E, Black A, Raventós B, Guo Y, Du M, López-Güell K, Mercadé-Besora N, Català M (2024). *Tidy-R-programming-with-OMOP* <https://github.com/oxford-pharmacoepi/Tidy-R-programming-with-OMOP>
 
 ## Articles
 
-```{r, results='asis', message=FALSE, echo=FALSE}
+```{r, results='hide', message=FALSE, echo=FALSE}
 authors <- c(
   "burn, edward", "catala, marti", "newby, danielle", "du, mike", "guo, yuchen",
   "burkard, theresa", "chen, xihang", "lopez guell, kim", 
@@ -14,13 +14,17 @@ authors <- c(
   "mercade besora, marta"
 )
 x <- pubmedR::pmApiRequest(
-  paste0(authors, "[Author]", collapse = " OR "), limit = Inf)
+  paste0(authors, "[Author]", collapse = " OR "), limit = Inf) |>
+  suppressMessages()
 M1 <- pubmedR::pmApi2df(x) |>
   dplyr::as_tibble() |>
   dplyr::mutate(PY = as.numeric(PY)) |>
-  dplyr::arrange(dplyr::desc(PY))
+  dplyr::arrange(dplyr::desc(PY)) |>
+  suppressMessages()
+text <- character()
 for (k in seq_len(nrow(M1))) {
-  cat(paste0(
+  text <- paste0(
+    text, 
     "- ", 
     M1$AU[k] |> 
       stringr::str_split(pattern = ";") |> 
@@ -33,7 +37,11 @@ for (k in seq_len(nrow(M1))) {
     " (**",
     M1$PY[k],
     "**).\n\n"
-    ))
+    )
 }
+```
+
+```{r, results='asis', echo=FALSE}
+cat(text)
 ```
 
