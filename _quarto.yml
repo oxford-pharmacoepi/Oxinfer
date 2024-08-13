@@ -1,32 +1,68 @@
 project:
-  type: book
+  type: website
 
-book:
-  title: "Oxinfer onboarding"
-  author: "Danielle Newby, Martí Català, Edward Burn"
-  date: today
-  chapters:
-  - index.qmd
-  - chapters/the_team.qmd
-  - chapters/what_we_do.qmd
-  - chapters/basics.qmd
-  - chapters/omop.qmd
-  - chapters/databases_and_servers.qmd
-  - chapters/connect_to_database.qmd
-  - chapters/github.qmd
-  - chapters/code_review.qmd
-  - chapters/studies_and_authorship.qmd
-  - chapters/useful_contacts.qmd
-  - chapters/useful_terms.qmd
-  - chapters/checklist.qmd
-  - chapters/references.qmd
-
-bibliography: references.bib
-
+website:
+  title: "Oxinfer"
+  open-graph: true # https://quarto.org/docs/websites/website-tools.html#open-graph
+  repo-url: https://github.com/oxford-pharmacoepi/OxinferOnboarding
+  repo-actions: [issue]
+  page-footer: 
+    center: "Rendered today"
+    left: "Copyright 2024, Oxinfer"
+    right: 
+      - text: Github
+        href: https://github.com/oxford-pharmacoepi
+        icon: github
+      - text: Youtube Channel
+        href: https://www.youtube.com/@oxinfer
+        icon: youtube
+  navbar:
+    search: false
+    left: 
+      - text: Home
+        href: index.qmd
+      - text: What we do
+        href: what_we_do.qmd
+        icon: person-workspace
+      - text: Meet the team
+        href: the_team.qmd
+        icon: people
+      - text: Onboarding
+        href: onboarding/index.qmd
+        icon: clipboard-check
+      - text: Recent publications
+        href: publications.qmd
+        icon: book
+    right: 
+      - text: Github
+        href: https://github.com/oxford-pharmacoepi
+        icon: github
+      - text: Youtube Channel
+        href: https://www.youtube.com/@oxinfer
+        icon: youtube
+  sidebar:
+    - title: Onboarding
+      contents:
+        - onboarding/index.qmd
+        - onboarding/checklist.qmd
+        - onboarding/basics.qmd
+        - onboarding/omop.qmd
+        - onboarding/organigram.qmd
+        - onboarding/work_with_me.qmd
+        - onboarding/code_review.qmd
+        - onboarding/connect_to_database.qmd
+        - onboarding/github.qmd
+        - onboarding/databases_and_servers.qmd
+        - onboarding/studies_and_authorship.qmd
+        - onboarding/useful_contacts.qmd
+        - onboarding/useful_terms.qmd
+      
 format:
   html:
-    theme: cosmo
-
-editor: visual
-
-number-sections: true
+    toc: true
+    fontcolor: black
+    linkcolor: blue
+    backgroundcolor: white
+    mainfont: ui-rounded
+    monofont: cursive
+    theme: [cosmo, styles.scss]

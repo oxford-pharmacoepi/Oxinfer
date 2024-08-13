@@ -30,13 +30,13 @@ RWD can be used in many different ways:
 
 When working with RWD we have to be aware of some challenges and limitations:
 
-- **Data Quality**: Inconsistencies, missing information, and variations in data collection methods can affect the reliability of RWD.
+-   **Data Quality**: Inconsistencies, missing information, and variations in data collection methods can affect the reliability of RWD.
 
-- **Data Integration**: Combining data from diverse sources can be complex due to differences in formats, standards, and terminologies.
+-   **Data Integration**: Combining data from diverse sources can be complex due to differences in formats, standards, and terminologies.
 
-- **Privacy and Security**: Ensuring patient confidentiality and data security is paramount when handling RWD.
+-   **Privacy and Security**: Ensuring patient confidentiality and data security is paramount when handling RWD.
 
-- **Bias and Confounding**: Real-world studies may be subject to biases and confounders that can impact the validity of findings.
+-   **Bias and Confounding**: Real-world studies may be subject to biases and confounders that can impact the validity of findings.
 
 ### Real World Evidence
 
@@ -60,33 +60,33 @@ In this figure you can see the different tables that exist in the OMOP CDM and h
 
 ## OHDSI
 
-The OHDSI (Observational Health Data Sciences and Informatics) community is a global, multi-stakeholder, interdisciplinary collaborative that aims to improve health by empowering the community to collaboratively generate evidence that promotes better health decisions and better care. 
+The OHDSI (Observational Health Data Sciences and Informatics) community is a global, multi-stakeholder, interdisciplinary collaborative that aims to improve health by empowering the community to collaboratively generate evidence that promotes better health decisions and better care.
 
-- The primary mission is to create a research community that produces high-quality, reproducible, and reliable evidence about health and healthcare.
+-   The primary mission is to create a research community that produces high-quality, reproducible, and reliable evidence about health and healthcare.
 
-- A key component of OHDSI's infrastructure is the OMOP (Observational Medical Outcomes Partnership) Common Data Model.
+-   A key component of OHDSI's infrastructure is the OMOP (Observational Medical Outcomes Partnership) Common Data Model.
 
-- OHDSI emphasizes open science principles, making their tools, methods, and research findings freely available to the public though their github: <https://github.com/ohdsi>.
+-   OHDSI emphasizes open science principles, making their tools, methods, and research findings freely available to the public though their github: <https://github.com/ohdsi>.
 
-- Annual symposiums and other events foster collaboration and the sharing of ideas within the community.
+-   Annual symposiums and other events foster collaboration and the sharing of ideas within the community.
 
 You can find more about ohdsi community on their website: <https://ohdsi.org>.
 
 ## Edhden Academy
 
-The [Ehden Academy](https://academy.ehden.eu) is an educational initiative that contains lots of resources on the basis of OMOP and how the OMOP CDM is structured, its vocabularies and so... 
+The [Ehden Academy](https://academy.ehden.eu) is an educational initiative that contains lots of resources on the basis of OMOP and how the OMOP CDM is structured, its vocabularies and so...
 
 In particular we would recommend these courses:
 
-- ...
+-   ...
 
 ## Vocabularies
 
-::: {.callout-warning}
+::: callout-warning
 That's a brief introduction to a very complicated topic, please refer to the provided links to learn more and get a more in depth view.
 :::
 
-Every record in a RWD database gets coded into a numeric identifier (code), there exist many different [Medical Classifications](https://en.wikipedia.org/wiki/Medical_classification) that are different vocabularies. Each vocabulary has its pros and its cons. Each database generally will come with a different vocabulary. OMOP CDM has some standard vicabularies that are the ones commonly used. In general this vocabulary will be different to the source one (originl of your data). 
+Every record in a RWD database gets coded into a numeric identifier (code), there exist many different [Medical Classifications](https://en.wikipedia.org/wiki/Medical_classification) that are different vocabularies. Each vocabulary has its pros and its cons. Each database generally will come with a different vocabulary. OMOP CDM has some standard vicabularies that are the ones commonly used. In general this vocabulary will be different to the source one (originl of your data).
 
 We call mapping to the process to convert a source data (original format of the data) that can be in many different formats to the OMOP CDM. In our team [Antonella](https://www.ndorms.ox.ac.uk/team/antonella-delmestri) and [Teen](https://www.ndorms.ox.ac.uk/team/wai-yi-man) are the ones in charge of the mapping process.
 

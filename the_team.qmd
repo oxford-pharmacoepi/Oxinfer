@@ -1,0 +1,56 @@
+# Oxinfer
+
+Oxford distributed analytics for network research group (oxinfer) is a research group at the University of Oxford with three key purposes:
+
+- 
+
+Oxinfer is part of the wider [Health Data Sciences section](https://www.ndorms.ox.ac.uk/research/research-groups/Musculoskeletal-Pharmacoepidemiology) (lead by [Prof. Daniel Prieto-Alhambra](https://www.ndorms.ox.ac.uk/team/daniel-prieto-alhambra))
+
+Welcome to the team! Below is some useful information and links about getting help with certain aspects of your role. You can check out our website where you can put names to faces [here].
+
+
+https://www.ndorms.ox.ac.uk/team/edward-burn
+
+![Our Team Dec 23](images/team_dec23.jpg)
+
+## The Oxinfer team
+
+-   scope of the team ... TBC
+
+## Members
+
+members
+
+```{r, echo = FALSE, eval = FALSE}
+web <- "https://www.ndorms.ox.ac.uk/team/"
+x <- c("edward-burn", "marti-catala-sabate")
+nm <- x[1]
+# webpage <- getURL("http://www.haaretz.com/")
+# webpage <- readLines(tc <- textConnection(webpage)); close(tc)
+content <- readLines(paste0(web, nm, "/"))
+
+getLab <- function(line, lab) {
+  cometes <- stringr::str_locate_all(string = line, pattern = '"')
+  cometes <- cometes[[1]] |> 
+    dplyr::as_tibble() |> 
+    dplyr::pull("start")
+  id <- stringr::str_locate(string = line, pattern = lab) |> 
+    as.numeric()
+  id <- id[2]
+  idName <- cometes[cometes > id]
+  idName <- idName[1:2]
+  name <- substr(line, start = idName[1]+1, stop = idName[2]-1)
+  return(name)
+}
+
+line <- content[grepl("og:title", content)]
+name <- getLab(line, '"og:title"')
+position <- getLab(line, '"og:description"') |>
+  stringr::str_split(pattern = " - ") |>
+  unlist() |>
+  dplyr::nth(2)
+description <- ''
+picture <- getLab(line, '"og:image"')
+
+```
+
