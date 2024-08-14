@@ -1,16 +1,27 @@
 # Packages
 
+## Our packages
+
 Oxinfer developed several packages to work with the OMOP Common Data Model:
 
 ```{r, results='asis', echo=FALSE}
-darwin <- c(
-  "PatientProfiles", "DrugUtilisation", "CohortSurvival", "omopgenerics",
-  "CohortCharacteristics"
+packages <- dplyr::tribble(
+  ~package_name, ~organisation,
+  "omopgenerics", "darwin-eu-dev",
+  "PatientProfiles", "dariwn-eu-dev",
+  "CohortConstructor", "ohdsi",
+  "CodelistGenerator", "darwin-eu",
+  "visOmopResults", "darwin-eu",
+  "IncidencePrevalence", "darwin-eu",
+  "DrugUtilisation", "darwin-eu-dev",
+  "CohortCharacteristics", "darwin-eu-dev",
+  "CohortSurvival", "darwin-eu-dev",
+  "CohortSymmetry", "oxford-pharmacoepi",
+  "OmopSketch", "oxford-pharmacoepi",
+  "PhenotypeR", "oxford-pharmacoepi",
+  "omock", "ohdsi",
 )
-darwin2 <- c("CodelistGenerator", "visOmopResults", "IncidencePrevalence")
-oxford <- c("CohortSymmetry", "OmopSketch", "PhenotypeR")
-ohdsi <- c("omock", "CohortConstructor")
-element <- function(pkg, org) {
+hexsticker <- function(pkg, org) {
   web <- "https://github.com/{org}/{pkg}/blob/main/man/figures/logo.png?raw=true" |>
     glue::glue()
   if (RCurl::url.exists(web)) {
@@ -19,14 +30,42 @@ element <- function(pkg, org) {
   } else {
     web <- pkg
   }
-  '<a class = "hexsticker" href="https://{org}.github.io/{pkg}/">\n {web}\n </a>' |>
+  '<a class = "hexsticker" href="https://{org}.github.io/{pkg}/">{web}</a>' |>
+    glue::glue()
+  web
+}
+repo <- function(pkg, org) {
+  web <- "https://github.com/{org}/{pkg}/issues/new/choose" |>
+    glue::glue()
+  '<a class="report_issue" href="{web}"><i class="bi bi-github" role="img"></i>   Report an issue</a>' |>
     glue::glue()
 }
-text <- "<div>\n"
-for (el in darwin) text <- paste0(text, element(el, "darwin-eu-dev"), "\n")
-for (el in darwin2) text <- paste0(text, element(el, "darwin-eu"), "\n")
-for (el in oxford) text <- paste0(text, element(el, "oxford-pharmacoepi"), "\n")
-for (el in ohdsi) text <- paste0(text, element(el, "ohdsi"), "\n")
-cat(text)
+website <- function(pkg, org) {
+  web <- "https://{org}.github.io/{pkg}/" |>
+    glue::glue()
+  '<a class="documentation_website" href="{web}"><i class="bi bi-book" role="img"></i>   Documentation website</a>' |>
+    glue::glue()
+}
+packages <- packages |>
+  dplyr::rowwise() |>
+  dplyr::mutate(
+    hexsticker = hexsticker(package_name, organisation),
+    repo_link = repo(package_name, organisation),
+    website = website(package_name, organisation),
+    text = paste0(
+      "### ", package_name, "\n", hexsticker, '\n', website, "\n", repo_link, "\n"
+    )
+  )
 ```
 
+```{r, echo = FALSE, results='asis'}
+cat(paste0(packages$text, collapse = "\n"))
+# DT::datatable(
+#   x, escape = F, rownames = F, 
+#   options = list(scrollX = TRUE, dom = 't', pageLength = 100))
+```
+
+-   lifecycle
+-   website
+-   cran + version + Last cran release date
+-   article

@@ -1,5 +1,6 @@
 /*-- scss:defaults --*/
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 // Sass Variables
 // https://quarto.org/docs/output-formats/html-themes.html#sass-variables
 
@@ -7,9 +8,41 @@
 $body-bg: #FFFFFF;
 $body-color: rgb(55, 58, 60);
 $link-color: rgb(39, 128, 227);
+$color-authors: rgb(221, 110, 85);
 
 /* Fonts */
 $font-family-sans-serif: "Source Sans Pro", -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $font-size-root: 17px;
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+.author_publication {
+  color: $color-authors; 
+  font-weight: bold;
+}
+
+.hexsticker {
+  padding: 50px;
+}
+
+.report_issue {
+  color: black;
+  font-weight: bold;
+  background-color: #f6f6f6;
+  border-style: solid;
+  border-color: black;
+  border-radius: 10px;
+  border-width: 2px;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.documentation_website {
+  color: black;
+  font-weight: bold;
+  background-color: #b3d9cf;
+  border-style: solid;
+  border-color: #1f816a;
+  border-radius: 10px;
+  border-width: 2px;
+  padding: 5px;
+  text-decoration: none;
+}
