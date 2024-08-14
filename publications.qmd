@@ -8,14 +8,14 @@
 
 ```{r, results='hide', message=FALSE, echo=FALSE}
 authors <- c(
-  "burn, edward", "catala, marti", "newby, danielle", "du, mike", "guo, yuchen",
-  "burkard, theresa", "chen, xihang", "lopez guell, kim", 
-  "spivakovsky gonzalez, pablo", "alcalde herraiz, marta",
-  "mercade besora, nuria"
+  "burn, edward", "catala, marti", "newby, danielle", "du, mike", 
+  "burkard, theresa", "lopez guell, kim", "spivakovsky gonzalez, pablo", 
+  "alcalde herraiz, marta", "mercade besora, nuria"
 )
 x <- pubmedR::pmApiRequest(
-  paste0(authors, "[Author]", collapse = " OR "), limit = Inf) |>
-  suppressMessages()
+  paste0(authors, "[Author]", collapse = " OR "), limit = Inf)
+
+authors <- c(authors, "guo, yuchen", "chen, xihang")
 
 getIds <- function(xx) {
   res <- list(pubmed = NA_character_, doi = NA_character_)
@@ -49,23 +49,36 @@ cleanName <- function(y) {
     stringr::str_replace(pattern = "á", replacement = "a") |>
     stringr::str_replace(pattern = "è", replacement = "e") |>
     stringr::str_replace(pattern = "é", replacement = "e") |>
-    stringr::str_replace(pattern = "í", replacement = "i")
+    stringr::str_replace(pattern = "í", replacement = "i") |>
+    stringr::str_replace(pattern = "ó", replacement = "o") |>
+    stringr::str_replace(pattern = "ò", replacement = "o") |>
+    stringr::str_replace(pattern = "ú", replacement = "u") |>
+    stringr::str_replace(pattern = "ü", replacement = "u") 
 }
-ours <- authors |>
-  stringr::str_split(pattern = ",| ") |>
+ours <- list()
+ours$last_name <- authors |>
+  stringr::str_split(pattern = ", ") |>
   lapply(dplyr::first) |>
+  lapply(cleanName) |>
   unlist()
+ours$fore_name <- authors |>
+  stringr::str_split(pattern = ", ") |>
+  lapply(dplyr::nth, 2) |>
+  lapply(cleanName) |>
+  unlist()
+ours <- dplyr::as_tibble(ours)
 getAuthor <- function(xx, ours) {
-  ids <- rep(0, length(ours))
+  ids <- rep(0, nrow(ours))
   auts <- xx$MedlineCitation$Article$AuthorList
   aut <- character()
   for (i in seq_along(auts)) {
     au <- auts[[i]]
-    if ("LastName" %in% names(au)) {
+    if (all(c("LastName", "ForeName") %in% names(au))) {
       a <- paste(au$LastName, au$Initials)
-      cn <- cleanName(au$LastName)
-      if (cn %in% ours) {
-        ids[ours %in% cn] <- 1
+      ln <- cleanName(au$LastName)
+      fn <- cleanName(au$ForeName)
+      if (ln %in% ours$last_name & fn %in% ours$fore_name) {
+        ids[ours$last_name == ln & ours$fore_name == fn] <- 1
         a <- paste0('<span class="author_publication">', a, '</span>')
       }
       aut[i] <- a
@@ -81,7 +94,7 @@ for (k in seq_along(x$data)) {
   aut <- getAuthor(xx, ours)
   nms <- aut$ids |>
     as.list() |>
-    rlang::set_names(ours)
+    rlang::set_names(ours$last_name)
   data <- data |>
     dplyr::union_all(dplyr::tibble(
       id = k, 
@@ -104,6 +117,8 @@ data <- data |>
     )
   ) |>
   dplyr::arrange(dplyr::desc(date))
+data <- data |>
+  dplyr::mutate(sum = dplyr::select(data, dplyr::all_of(ours$last_name)) |> rowSums(na.rm = TRUE))
 
 text <- paste0(data$cite, collapse = "\n")
 ```
