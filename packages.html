@@ -69,7 +69,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Oxinfer">
-<meta property="og:description" content="">
 <meta property="og:site_name" content="Oxinfer">
 </head>
 
@@ -147,7 +146,25 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#packages" id="toc-packages" class="nav-link active" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link active" data-scroll-target="#packages">Packages</a>
+  <ul class="collapse">
+  <li><a href="#our-packages" id="toc-our-packages" class="nav-link" data-scroll-target="#our-packages">Our packages</a>
+  <ul class="collapse">
+  <li><a href="#omopgenerics" id="toc-omopgenerics" class="nav-link" data-scroll-target="#omopgenerics">omopgenerics</a></li>
+  <li><a href="#patientprofiles" id="toc-patientprofiles" class="nav-link" data-scroll-target="#patientprofiles">PatientProfiles</a></li>
+  <li><a href="#cohortconstructor" id="toc-cohortconstructor" class="nav-link" data-scroll-target="#cohortconstructor">CohortConstructor</a></li>
+  <li><a href="#codelistgenerator" id="toc-codelistgenerator" class="nav-link" data-scroll-target="#codelistgenerator">CodelistGenerator</a></li>
+  <li><a href="#visomopresults" id="toc-visomopresults" class="nav-link" data-scroll-target="#visomopresults">visOmopResults</a></li>
+  <li><a href="#incidenceprevalence" id="toc-incidenceprevalence" class="nav-link" data-scroll-target="#incidenceprevalence">IncidencePrevalence</a></li>
+  <li><a href="#drugutilisation" id="toc-drugutilisation" class="nav-link" data-scroll-target="#drugutilisation">DrugUtilisation</a></li>
+  <li><a href="#cohortcharacteristics" id="toc-cohortcharacteristics" class="nav-link" data-scroll-target="#cohortcharacteristics">CohortCharacteristics</a></li>
+  <li><a href="#cohortsurvival" id="toc-cohortsurvival" class="nav-link" data-scroll-target="#cohortsurvival">CohortSurvival</a></li>
+  <li><a href="#cohortsymmetry" id="toc-cohortsymmetry" class="nav-link" data-scroll-target="#cohortsymmetry">CohortSymmetry</a></li>
+  <li><a href="#omopsketch" id="toc-omopsketch" class="nav-link" data-scroll-target="#omopsketch">OmopSketch</a></li>
+  <li><a href="#phenotyper" id="toc-phenotyper" class="nav-link" data-scroll-target="#phenotyper">PhenotypeR</a></li>
+  <li><a href="#omock" id="toc-omock" class="nav-link" data-scroll-target="#omock">omock</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/oxford-pharmacoepi/OxinferOnboarding/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -159,12 +176,70 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="packages" class="level1">
 <h1>Packages</h1>
+<section id="our-packages" class="level2">
+<h2 class="anchored" data-anchor-id="our-packages">Our packages</h2>
 <p>Oxinfer developed several packages to work with the OMOP Common Data Model:</p>
-<div>
-<p><a class="hexsticker" href="https://darwin-eu-dev.github.io/PatientProfiles/"> <img src="https://github.com/darwin-eu-dev/PatientProfiles/blob/main/man/figures/logo.png?raw=true" alt="PatientProfiles" style="width:150px;"> </a> <a class="hexsticker" href="https://darwin-eu-dev.github.io/DrugUtilisation/"> <img src="https://github.com/darwin-eu-dev/DrugUtilisation/blob/main/man/figures/logo.png?raw=true" alt="DrugUtilisation" style="width:150px;"> </a> <a class="hexsticker" href="https://darwin-eu-dev.github.io/CohortSurvival/"> CohortSurvival </a> <a class="hexsticker" href="https://darwin-eu-dev.github.io/omopgenerics/"> omopgenerics </a> <a class="hexsticker" href="https://darwin-eu-dev.github.io/CohortCharacteristics/"> <img src="https://github.com/darwin-eu-dev/CohortCharacteristics/blob/main/man/figures/logo.png?raw=true" alt="CohortCharacteristics" style="width:150px;"> </a> <a class="hexsticker" href="https://darwin-eu.github.io/CodelistGenerator/"> <img src="https://github.com/darwin-eu/CodelistGenerator/blob/main/man/figures/logo.png?raw=true" alt="CodelistGenerator" style="width:150px;"> </a> <a class="hexsticker" href="https://darwin-eu.github.io/visOmopResults/"> <img src="https://github.com/darwin-eu/visOmopResults/blob/main/man/figures/logo.png?raw=true" alt="visOmopResults" style="width:150px;"> </a> <a class="hexsticker" href="https://darwin-eu.github.io/IncidencePrevalence/"> IncidencePrevalence </a> <a class="hexsticker" href="https://oxford-pharmacoepi.github.io/CohortSymmetry/"> CohortSymmetry </a> <a class="hexsticker" href="https://oxford-pharmacoepi.github.io/OmopSketch/"> <img src="https://github.com/oxford-pharmacoepi/OmopSketch/blob/main/man/figures/logo.png?raw=true" alt="OmopSketch" style="width:150px;"> </a> <a class="hexsticker" href="https://oxford-pharmacoepi.github.io/PhenotypeR/"> <img src="https://github.com/oxford-pharmacoepi/PhenotypeR/blob/main/man/figures/logo.png?raw=true" alt="PhenotypeR" style="width:150px;"> </a> <a class="hexsticker" href="https://ohdsi.github.io/omock/"> <img src="https://github.com/ohdsi/omock/blob/main/man/figures/logo.png?raw=true" alt="omock" style="width:150px;"> </a> <a class="hexsticker" href="https://ohdsi.github.io/CohortConstructor/"> <img src="https://github.com/ohdsi/CohortConstructor/blob/main/man/figures/logo.png?raw=true" alt="CohortConstructor" style="width:150px;"> </a></p>
+<section id="omopgenerics" class="level3">
+<h3 class="anchored" data-anchor-id="omopgenerics">omopgenerics</h3>
+<p>omopgenerics <a class="documentation_website" href="https://darwin-eu-dev.github.io/omopgenerics/"><i class="bi bi-book" role="img"></i> Documentation website</a> <a class="report_issue" href="https://github.com/darwin-eu-dev/omopgenerics/issues/new/choose"><i class="bi bi-github" role="img"></i> Report an issue</a></p>
+</section>
+<section id="patientprofiles" class="level3">
+<h3 class="anchored" data-anchor-id="patientprofiles">PatientProfiles</h3>
+<p>PatientProfiles <a class="documentation_website" href="https://dariwn-eu-dev.github.io/PatientProfiles/"><i class="bi bi-book" role="img"></i> Documentation website</a> <a class="report_issue" href="https://github.com/dariwn-eu-dev/PatientProfiles/issues/new/choose"><i class="bi bi-github" role="img"></i> Report an issue</a></p>
+</section>
+<section id="cohortconstructor" class="level3">
+<h3 class="anchored" data-anchor-id="cohortconstructor">CohortConstructor</h3>
+<p><img src="https://github.com/ohdsi/CohortConstructor/blob/main/man/figures/logo.png?raw=true" alt="CohortConstructor" style="width:150px;"> <a class="documentation_website" href="https://ohdsi.github.io/CohortConstructor/"><i class="bi bi-book" role="img"></i> Documentation website</a> <a class="report_issue" href="https://github.com/ohdsi/CohortConstructor/issues/new/choose"><i class="bi bi-github" role="img"></i> Report an issue</a></p>
+</section>
+<section id="codelistgenerator" class="level3">
+<h3 class="anchored" data-anchor-id="codelistgenerator">CodelistGenerator</h3>
+<p><img src="https://github.com/darwin-eu/CodelistGenerator/blob/main/man/figures/logo.png?raw=true" alt="CodelistGenerator" style="width:150px;"> <a class="documentation_website" href="https://darwin-eu.github.io/CodelistGenerator/"><i class="bi bi-book" role="img"></i> Documentation website</a> <a class="report_issue" href="https://github.com/darwin-eu/CodelistGenerator/issues/new/choose"><i class="bi bi-github" role="img"></i> Report an issue</a></p>
+</section>
+<section id="visomopresults" class="level3">
+<h3 class="anchored" data-anchor-id="visomopresults">visOmopResults</h3>
+<p><img src="https://github.com/darwin-eu/visOmopResults/blob/main/man/figures/logo.png?raw=true" alt="visOmopResults" style="width:150px;"> <a class="documentation_website" href="https://darwin-eu.github.io/visOmopResults/"><i class="bi bi-book" role="img"></i> Documentation website</a> <a class="report_issue" href="https://github.com/darwin-eu/visOmopResults/issues/new/choose"><i class="bi bi-github" role="img"></i> Report an issue</a></p>
+</section>
+<section id="incidenceprevalence" class="level3">
+<h3 class="anchored" data-anchor-id="incidenceprevalence">IncidencePrevalence</h3>
+<p>IncidencePrevalence <a class="documentation_website" href="https://darwin-eu.github.io/IncidencePrevalence/"><i class="bi bi-book" role="img"></i> Documentation website</a> <a class="report_issue" href="https://github.com/darwin-eu/IncidencePrevalence/issues/new/choose"><i class="bi bi-github" role="img"></i> Report an issue</a></p>
+</section>
+<section id="drugutilisation" class="level3">
+<h3 class="anchored" data-anchor-id="drugutilisation">DrugUtilisation</h3>
+<p><img src="https://github.com/darwin-eu-dev/DrugUtilisation/blob/main/man/figures/logo.png?raw=true" alt="DrugUtilisation" style="width:150px;"> <a class="documentation_website" href="https://darwin-eu-dev.github.io/DrugUtilisation/"><i class="bi bi-book" role="img"></i> Documentation website</a> <a class="report_issue" href="https://github.com/darwin-eu-dev/DrugUtilisation/issues/new/choose"><i class="bi bi-github" role="img"></i> Report an issue</a></p>
+</section>
+<section id="cohortcharacteristics" class="level3">
+<h3 class="anchored" data-anchor-id="cohortcharacteristics">CohortCharacteristics</h3>
+<p><img src="https://github.com/darwin-eu-dev/CohortCharacteristics/blob/main/man/figures/logo.png?raw=true" alt="CohortCharacteristics" style="width:150px;"> <a class="documentation_website" href="https://darwin-eu-dev.github.io/CohortCharacteristics/"><i class="bi bi-book" role="img"></i> Documentation website</a> <a class="report_issue" href="https://github.com/darwin-eu-dev/CohortCharacteristics/issues/new/choose"><i class="bi bi-github" role="img"></i> Report an issue</a></p>
+</section>
+<section id="cohortsurvival" class="level3">
+<h3 class="anchored" data-anchor-id="cohortsurvival">CohortSurvival</h3>
+<p>CohortSurvival <a class="documentation_website" href="https://darwin-eu-dev.github.io/CohortSurvival/"><i class="bi bi-book" role="img"></i> Documentation website</a> <a class="report_issue" href="https://github.com/darwin-eu-dev/CohortSurvival/issues/new/choose"><i class="bi bi-github" role="img"></i> Report an issue</a></p>
+</section>
+<section id="cohortsymmetry" class="level3">
+<h3 class="anchored" data-anchor-id="cohortsymmetry">CohortSymmetry</h3>
+<p>CohortSymmetry <a class="documentation_website" href="https://oxford-pharmacoepi.github.io/CohortSymmetry/"><i class="bi bi-book" role="img"></i> Documentation website</a> <a class="report_issue" href="https://github.com/oxford-pharmacoepi/CohortSymmetry/issues/new/choose"><i class="bi bi-github" role="img"></i> Report an issue</a></p>
+</section>
+<section id="omopsketch" class="level3">
+<h3 class="anchored" data-anchor-id="omopsketch">OmopSketch</h3>
+<p><img src="https://github.com/oxford-pharmacoepi/OmopSketch/blob/main/man/figures/logo.png?raw=true" alt="OmopSketch" style="width:150px;"> <a class="documentation_website" href="https://oxford-pharmacoepi.github.io/OmopSketch/"><i class="bi bi-book" role="img"></i> Documentation website</a> <a class="report_issue" href="https://github.com/oxford-pharmacoepi/OmopSketch/issues/new/choose"><i class="bi bi-github" role="img"></i> Report an issue</a></p>
+</section>
+<section id="phenotyper" class="level3">
+<h3 class="anchored" data-anchor-id="phenotyper">PhenotypeR</h3>
+<p><img src="https://github.com/oxford-pharmacoepi/PhenotypeR/blob/main/man/figures/logo.png?raw=true" alt="PhenotypeR" style="width:150px;"> <a class="documentation_website" href="https://oxford-pharmacoepi.github.io/PhenotypeR/"><i class="bi bi-book" role="img"></i> Documentation website</a> <a class="report_issue" href="https://github.com/oxford-pharmacoepi/PhenotypeR/issues/new/choose"><i class="bi bi-github" role="img"></i> Report an issue</a></p>
+</section>
+<section id="omock" class="level3">
+<h3 class="anchored" data-anchor-id="omock">omock</h3>
+<p><img src="https://github.com/ohdsi/omock/blob/main/man/figures/logo.png?raw=true" alt="omock" style="width:150px;"> <a class="documentation_website" href="https://ohdsi.github.io/omock/"><i class="bi bi-book" role="img"></i> Documentation website</a> <a class="report_issue" href="https://github.com/ohdsi/omock/issues/new/choose"><i class="bi bi-github" role="img"></i> Report an issue</a></p>
+<ul>
+<li>lifecycle</li>
+<li>website</li>
+<li>cran + version + Last cran release date</li>
+<li>article</li>
+</ul>
 
 
-</div>
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
