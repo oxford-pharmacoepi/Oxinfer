@@ -39,7 +39,7 @@ cat(text)
 ## Dashboard
 
 ```{r, echo = FALSE}
-repos <- 
+
 ```
 
 - package name
