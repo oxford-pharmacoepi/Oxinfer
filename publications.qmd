@@ -11,47 +11,101 @@ authors <- c(
   "burn, edward", "catala, marti", "newby, danielle", "du, mike", "guo, yuchen",
   "burkard, theresa", "chen, xihang", "lopez guell, kim", 
   "spivakovsky gonzalez, pablo", "alcalde herraiz, marta",
-  "mercade besora, marta"
+  "mercade besora, nuria"
 )
 x <- pubmedR::pmApiRequest(
   paste0(authors, "[Author]", collapse = " OR "), limit = Inf) |>
   suppressMessages()
-M1 <- pubmedR::pmApi2df(x) |>
-  dplyr::as_tibble() |>
-  dplyr::mutate(PY = as.numeric(PY)) |>
-  dplyr::arrange(dplyr::desc(PY)) |>
-  suppressMessages()
-getAuthors <- function(all, us) {
-  us <- us |> 
-    stringr::str_split(pattern = " |,") |>
+
+getIds <- function(xx) {
+  res <- list(pubmed = NA_character_, doi = NA_character_)
+  dat <- xx$PubmedData$ArticleIdList
+  for (i in seq_along(dat)) {
+    nm <- dat[[i]]$.attrs |> unname()
+    val <- dat[[i]]$text
+    if (nm %in% c("pubmed", "doi")) {
+      if (nm == "doi") val <- paste0("https://doi.org/", val)
+      res[[nm]] <- val
+    }
+  }
+  return(res)
+}
+getDate <- function(xx) {
+   dat <- xx$MedlineCitation$Article$ArticleDate
+   x <- as.Date(paste0(dat$Year, "-", dat$Month, "-", dat$Day), format = "%Y-%m-%d")
+   if (is.na(x)) {
+     dat <- xx$PubmedData$History$PubMedPubDate
+     x <- as.Date(paste0(dat$Year, "-", dat$Month, "-", dat$Day), format = "%Y-%m-%d")
+   }
+   return(x)
+}
+cleanName <- function(y) {
+  y |>
+    stringr::str_to_lower() |>
+    stringr::str_split(pattern = ",| |-") |>
     lapply(dplyr::first) |>
-    unlist() |>
-    tolower() |>
-    paste0(collapse = "|")
-  all <- all |> 
-    stringr::str_split(pattern = ";") |> 
-    unlist() |> 
-    tolower()
-  id <- grepl(pattern = us, x = all)
-  all <- stringr::str_to_title(all)
-  all[id] <- paste0(
-    '<span class="author_publication">', all[id], '</span>')
-  stringr::str_flatten(all, collapse = ", ")
+    unlist()  |>
+    stringr::str_replace(pattern = "à", replacement = "a") |>
+    stringr::str_replace(pattern = "á", replacement = "a") |>
+    stringr::str_replace(pattern = "è", replacement = "e") |>
+    stringr::str_replace(pattern = "é", replacement = "e") |>
+    stringr::str_replace(pattern = "í", replacement = "i")
 }
-text <- character()
-for (k in seq_len(nrow(M1))) {
-  text <- paste0(
-    text, 
-    "- ", 
-    getAuthors(M1$AU[k], authors), 
-    ". *", 
-    stringr::str_to_sentence(M1$TI[k]),
-    "*; ", stringr::str_to_sentence(M1$JI[k]),
-    " (**",
-    M1$PY[k],
-    "**).\n\n"
+ours <- authors |>
+  stringr::str_split(pattern = ",| ") |>
+  lapply(dplyr::first) |>
+  unlist()
+getAuthor <- function(xx, ours) {
+  ids <- rep(0, length(ours))
+  auts <- xx$MedlineCitation$Article$AuthorList
+  aut <- character()
+  for (i in seq_along(auts)) {
+    au <- auts[[i]]
+    if ("LastName" %in% names(au)) {
+      a <- paste(au$LastName, au$Initials)
+      cn <- cleanName(au$LastName)
+      if (cn %in% ours) {
+        ids[ours %in% cn] <- 1
+        a <- paste0('<span class="author_publication">', a, '</span>')
+      }
+      aut[i] <- a
+    }
+  }
+  aut <- paste0(aut, collapse = ", ")
+  return(list(aut = aut, ids = ids))
+}
+data <- NULL
+for (k in seq_along(x$data)) {
+  xx <- x$data[[k]]
+  ids <- getIds(xx)
+  aut <- getAuthor(xx, ours)
+  nms <- aut$ids |>
+    as.list() |>
+    rlang::set_names(ours)
+  data <- data |>
+    dplyr::union_all(dplyr::tibble(
+      id = k, 
+      article = xx$MedlineCitation$Article$ArticleTitle |> 
+        stringr::str_flatten(),
+      date = getDate(xx), 
+      pubmed = as.numeric(ids$pubmed), 
+      doi = ids$doi, 
+      journal = xx$MedlineCitation$Article$Journal$Title,
+      authors = aut$aut,
+      !!!nms
+    ))
+}
+data <- data |>
+  dplyr::mutate(
+    year = clock::get_year(date),
+    cite = paste0(
+      "- ", authors, ". ", article, " (**", year, "**), *", journal, "*. <", doi,
+      ">"
     )
-}
+  ) |>
+  dplyr::arrange(dplyr::desc(date))
+
+text <- paste0(data$cite, collapse = "\n")
 ```
 
 ```{r, results='asis', echo=FALSE}
