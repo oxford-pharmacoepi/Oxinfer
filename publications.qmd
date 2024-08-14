@@ -2,7 +2,7 @@
 
 ## Books
 
--   <span class="author_publication">Burn E</span>, Black A, Raventós B, <span class="author_publication">Guo Y</span>, <span class="author_publication">Du M</span>, <span class="author_publication">López-Güell K</span>, <span class="author_publication">Mercadé-Besora N</span>, <span class="author_publication">Català M</span> (2024). *Tidy-R-programming-with-OMOP* <https://github.com/oxford-pharmacoepi/Tidy-R-programming-with-OMOP>
+-   <span class="author_publication">Burn E</span>, Black A, Raventós B, <span class="author_publication">Guo Y</span>, <span class="author_publication">Du M</span>, <span class="author_publication">López-Güell K</span>, <span class="author_publication">Mercadé-Besora N</span>, <span class="author_publication">Català M</span>. *Tidy-R-programming-with-OMOP* (**2024**). <https://github.com/oxford-pharmacoepi/Tidy-R-programming-with-OMOP>
 
 ## Articles
 
