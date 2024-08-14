@@ -8,7 +8,7 @@ Oxinfer developed several packages to work with the OMOP Common Data Model:
 packages <- dplyr::tribble(
   ~package_name, ~organisation,
   "omopgenerics", "darwin-eu-dev",
-  "PatientProfiles", "dariwn-eu-dev",
+  "PatientProfiles", "darwin-eu-dev",
   "CohortConstructor", "ohdsi",
   "CodelistGenerator", "darwin-eu",
   "visOmopResults", "darwin-eu",
