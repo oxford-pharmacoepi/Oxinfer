@@ -15,7 +15,7 @@ packages <- dplyr::tribble(
   "IncidencePrevalence", "darwin-eu",
   "DrugUtilisation", "darwin-eu-dev",
   "CohortCharacteristics", "darwin-eu-dev",
-  "CohortSurvival", "darwin-eu-dev",
+  "CohortSurvival", "darwin-eu",
   "CohortSymmetry", "oxford-pharmacoepi",
   "OmopSketch", "oxford-pharmacoepi",
   "PhenotypeR", "oxford-pharmacoepi",
@@ -35,9 +35,11 @@ hexsticker <- function(pkg, org) {
   web
 }
 repo <- function(pkg, org) {
-  web <- "https://github.com/{org}/{pkg}/issues/new/choose" |>
+  "https://github.com/{org}/{pkg}/" |>
     glue::glue()
-  '<a class="report_issue" href="{web}"><i class="bi bi-github" role="img"></i>   Report an issue</a>' |>
+}
+open_issue <- function(pkg, org) {
+  '<a class="report_issue" href="{repo(pkg, org)}issues/new/choose"><i class="bi bi-github" role="img"></i>   Report an issue</a>' |>
     glue::glue()
 }
 website <- function(pkg, org) {
@@ -46,14 +48,28 @@ website <- function(pkg, org) {
   '<a class="documentation_website" href="{web}"><i class="bi bi-book" role="img"></i>   Documentation website</a>' |>
     glue::glue()
 }
+readme <- function(repo) {
+  repo |>
+    stringr::str_replace(pattern = "github", replacement = "raw.githubusercontent") |>
+    paste0("main/README.Rmd") |>
+    readLines()
+}
+get_lifecycle <- function(repo) {
+  x <- readme(repo)
+  x <- x[grepl("[![Lifecycle:", x, fixed = TRUE)]
+  if (length(x) != 1) x <- "no lifecycle"
+  return(x)
+}
 packages <- packages |>
   dplyr::rowwise() |>
   dplyr::mutate(
     hexsticker = hexsticker(package_name, organisation),
     repo_link = repo(package_name, organisation),
+    issue = open_issue(package_name, organisation),
     website = website(package_name, organisation),
+    lifecycle = get_lifecycle(repo_link),
     text = paste0(
-      "### ", package_name, "\n", hexsticker, '\n', website, "\n", repo_link, "\n"
+      "### ", package_name, "\n", lifecycle, "\n", hexsticker, '\n', website, "\n", issue, "\n"
     )
   )
 ```
@@ -65,7 +81,4 @@ cat(paste0(packages$text, collapse = "\n"))
 #   options = list(scrollX = TRUE, dom = 't', pageLength = 100))
 ```
 
--   lifecycle
--   website
 -   cran + version + Last cran release date
--   article
