@@ -4,7 +4,9 @@
 
 Oxinfer developed several packages to work with the OMOP Common Data Model:
 
-```{r, results='asis', echo=FALSE}
+```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
+lifeExp <- "[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)"
+lifeSta <- "[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)"
 packages <- dplyr::tribble(
   ~package_name, ~organisation,
   "omopgenerics", "darwin-eu-dev",
@@ -19,20 +21,19 @@ packages <- dplyr::tribble(
   "CohortSymmetry", "oxford-pharmacoepi",
   "OmopSketch", "oxford-pharmacoepi",
   "PhenotypeR", "oxford-pharmacoepi",
-  "omock", "ohdsi",
+  "omock", "ohdsi"
 )
 hexsticker <- function(pkg, org) {
   web <- "https://github.com/{org}/{pkg}/blob/main/man/figures/logo.png?raw=true" |>
     glue::glue()
   if (RCurl::url.exists(web)) {
-    web <- '<img src="{web}" alt="{pkg}" style="width:150px;">' |>
+    web <- '<img src="{web}" alt="{pkg}" class="hexsticker">' |>
       glue::glue()
   } else {
     web <- pkg
   }
-  '<a class = "hexsticker" href="https://{org}.github.io/{pkg}/">{web}</a>' |>
+  '<a href="https://{org}.github.io/{pkg}/">{web}</a>' |>
     glue::glue()
-  web
 }
 repo <- function(pkg, org) {
   "https://github.com/{org}/{pkg}/" |>
@@ -60,6 +61,55 @@ get_lifecycle <- function(repo) {
   if (length(x) != 1) x <- "no lifecycle"
   return(x)
 }
+getLastRelease <- function(name) {
+  x <- tryCatch(
+    {
+      x <- "https://CRAN.R-project.org/package={name}" |>
+        glue::glue() |>
+        readLines()
+      id <- which(x == "<td>Published:</td>")
+      substr(x[id + 1], 5, 14) |>
+        as.Date("%Y-%m-%d") |>
+        format("%d_%b_%y")
+    },
+    error = function(cond) {
+      return("not_published")
+    }
+  )
+  return(x)
+}
+getFirstRelease <- function(name) {
+  x <- tryCatch(
+    {
+      x <- "https://cran.r-project.org/src/contrib/Archive/{name}/" |>
+        glue::glue() |>
+        readLines()
+      x <- x[grepl("align=\"right\">", x)][2]
+      id <- stringr::str_locate(x, "align=\"right\">")
+      substr(x, id[2]+1, id[2]+10) |>
+        as.Date("%Y-%m-%d") |>
+        format("%d_%b_%y")
+    },
+    error = function(cond) {
+      return("not_published")
+    }
+  )
+  return(x)
+}
+createGrid <- function(hex, life, cran, first, last, web, issue) {
+  '<div class="parent">
+    <div class="div1"> {hex} </div>
+    <div class="div2"> 
+    <div class="div3"> {life} </div>
+    <div class="div3"> {cran} </div>
+    <div class="div3"> {first} </div>
+    <div class="div3"> {last} </div>
+    <div class="div3"> {web} </div>
+    <div class="div3"> {issue} </div>
+    </div>
+  </div>' |>
+    glue::glue()
+}
 packages <- packages |>
   dplyr::rowwise() |>
   dplyr::mutate(
@@ -67,18 +117,44 @@ packages <- packages |>
     repo_link = repo(package_name, organisation),
     issue = open_issue(package_name, organisation),
     website = website(package_name, organisation),
-    lifecycle = get_lifecycle(repo_link),
+    lifecycle = get_lifecycle(repo_link) |>
+      stringr::str_to_lower(),
+    lifecycle = dplyr::case_when(
+      grepl("experimental", .data$lifecycle) ~ lifeExp,
+      grepl("stable", .data$lifecycle) ~ lifeSta,
+      .default = ""
+    ),
+    cran = paste0(
+      "[![CRAN status](https://www.r-pkg.org/badges/version/",
+      package_name,
+      ")](https://CRAN.R-project.org/package=",
+      package_name,
+      ")"),
+    last_release = paste0(
+      "[![last release](https://img.shields.io/badge/last_release-",
+      getLastRelease(package_name),
+      "-blue.svg)](https://CRAN.R-project.org/package=",
+      package_name,
+      ")"),
+    first_release = paste0(
+      "[![first release](https://img.shields.io/badge/first_release-",
+      getFirstRelease(package_name),
+      "-red.svg)](https://CRAN.R-project.org/package=",
+      package_name,
+      ")"),
     text = paste0(
-      "### ", package_name, "\n", lifecycle, "\n", hexsticker, '\n', website, "\n", issue, "\n"
+      "### ", 
+      package_name, 
+      "\n", 
+      createGrid(
+        hexsticker, lifecycle, cran, first_release, last_release, website,
+        issue),
+      "\n"
     )
   )
 ```
 
 ```{r, echo = FALSE, results='asis'}
 cat(paste0(packages$text, collapse = "\n"))
-# DT::datatable(
-#   x, escape = F, rownames = F, 
-#   options = list(scrollX = TRUE, dom = 't', pageLength = 100))
 ```
 
--   cran + version + Last cran release date
