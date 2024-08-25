@@ -40,13 +40,17 @@ repo <- function(pkg, org) {
     glue::glue()
 }
 open_issue <- function(pkg, org) {
-  '<a class="report_issue" href="{repo(pkg, org)}issues/new/choose"><i class="bi bi-github" role="img"></i>   Report an issue</a>' |>
+  # '<a class="report_issue" href="{repo(pkg, org)}issues/new/choose"><i class="bi bi-github" role="img"></i>   Report an issue</a>' |>
+  #   glue::glue()
+  '<a href="{repo(pkg, org)}issues/new/choose"><img src="https://img.shields.io/badge/report_issue-f6f6f6?logo=github&logoColor=black" class="img-fluid" alt="report_issue"></a>' |>
     glue::glue()
 }
 website <- function(pkg, org) {
-  web <- "https://{org}.github.io/{pkg}/" |>
-    glue::glue()
-  '<a class="documentation_website" href="{web}"><i class="bi bi-book" role="img"></i>   Documentation website</a>' |>
+  # web <- "https://{org}.github.io/{pkg}/" |>
+  #   glue::glue()
+  # '<a class="documentation_website" href="{web}"><i class="bi bi-book" role="img"></i>   Documentation website</a>' |>
+  #   glue::glue()
+  '<a href="https://{org}.github.io/{pkg}/"><img src="https://img.shields.io/badge/documentation-b3d9cf?logo=gitbook&logoColor=black" class="img-fluid" alt="documentation"></a>' |>
     glue::glue()
 }
 readme <- function(repo) {
