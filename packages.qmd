@@ -125,11 +125,11 @@ packages <- packages |>
       .default = ""
     ),
     cran = paste0(
-      "[![CRAN status](https://www.r-pkg.org/badges/version/",
+      '<a href="https://CRAN.R-project.org/package=',
       package_name,
-      ".svg)](https://CRAN.R-project.org/package=",
+      '"><img src="https://www.r-pkg.org/badges/version/',
       package_name,
-      ")"),
+      '" class="img-fluid" alt="CRAN status"></a>'),
     last_release = paste0(
       "[![last release](https://img.shields.io/badge/last_release-",
       getLastRelease(package_name),
