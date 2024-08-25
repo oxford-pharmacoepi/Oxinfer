@@ -54,33 +54,31 @@ $font-size-root: 17px;
 }
 
 .hexsticker {
-  display: inline-block;
   width: 100%;
 }
 
 .parent {
-  display: inline-block;
-  height: fit-content;
+  display: inline;
+  height: 200px;
+  position: relative;
 }
 
 .div1 { 
   display: inline-block;
   width: 200px;
   padding: 10px;
-  margin-right: 5px;
-  top: -50px;
-  position: relative;
+  margin: auto;
+  position: absolute;
 }
 
 .div2 { 
-  left: 0;
-  top: 0;
   display: inline-block;
   padding: 10px;
   position: relative;
+  left: 200px;
 }
 
 .div3 {
   display: block;
-  margin: 3px;
+  padding: 3px;
 }
