@@ -127,7 +127,7 @@ packages <- packages |>
     cran = paste0(
       "[![CRAN status](https://www.r-pkg.org/badges/version/",
       package_name,
-      ")](https://CRAN.R-project.org/package=",
+      ".svg)](https://CRAN.R-project.org/package=",
       package_name,
       ")"),
     last_release = paste0(
