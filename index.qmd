@@ -1,31 +1,7 @@
-# Oxinfer
 
-[**Please be aware some of the sections of this website are still under construction**]{style="color:red; font-size: 25px;"}
-
-![](https://pngimg.com/d/under_construction_PNG34.png){width="50%" fig-align="center"}
-
-Please if you detect inconsistencies or incompletness please open issues: <https://github.com/oxford-pharmacoepi/OxinferOnboarding>
-
-## Introduction
-
-This website covers the basis to know what is the Oxinfer group working on and which are the crucial concepts one must know when you start to work with us.
-
-This book starts with an overall description of the team, its aim and scope, and its members in @sec-team. It is particularly interesting to know about the members of our team and how to work with them.
-
-The next 3 chapters provide the basis of our work:
-
--   Epidemiology (@sec-epi).
-
--   The OMOP Common Data Model (@sec-omop).
-
--   R (@sec-R)
-
-These 3 chapters cover resources and basic knowledge that you can skip if you are familiar with.
-
-Finally, the last chapter (@sec-checklist) provides a checklist of all the steps that you need to follow to be onboarded to the group.
-
-## License
-
-```{=html}
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" alt="Creative Commons License" style="border-width:0"/></a> <br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
-```
+<div class="title_oxinfer">Oxinfer</div>
+<a class="hex_title team_title" href="the_team.qmd">Meet the team</a>
+<a class="hex_title publ_title" href="publications.qmd">Publications</a>
+<a class="hex_title pack_title" href="packages.qmd">Packages</a>
+<a class="hex_title goal_title" href="what_we_do.qmd">Our goals</a>
+<a class="hex_title join_title" href="onboarding/index.qmd">Join the journey</a>

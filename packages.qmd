@@ -20,7 +20,7 @@ packages <- dplyr::tribble(
   "CohortSurvival", "darwin-eu",
   "CohortSymmetry", "oxford-pharmacoepi",
   "OmopSketch", "oxford-pharmacoepi",
-  "PhenotypeR", "oxford-pharmacoepi",
+  "PhenotypeR", "ohdsi",
   "omock", "ohdsi"
 )
 hexsticker <- function(pkg, org) {

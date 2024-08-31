@@ -1,15 +1,17 @@
 project:
   type: website
 
+date: today
+
 website:
   title: "Oxinfer"
   open-graph: true # https://quarto.org/docs/websites/website-tools.html#open-graph
   repo-url: https://github.com/oxford-pharmacoepi/OxinferOnboarding
   repo-actions: [issue]
-  page-footer: 
-    center: "Rendered today"
+  page-footer:
+    center: "Rendered on {{< meta date >}}"
     left: "Copyright 2024, Oxinfer"
-    right: 
+    right:
       - text: Github
         href: https://github.com/oxford-pharmacoepi
         icon: github
@@ -19,8 +21,6 @@ website:
   navbar:
     search: false
     left: 
-      - text: Home
-        href: index.qmd
       - text: What we do
         href: what_we_do.qmd
         icon: person-workspace
@@ -44,28 +44,41 @@ website:
         href: https://www.youtube.com/@oxinfer
         icon: youtube
   sidebar:
-    - title: Onboarding
+    - id: Onboarding
+      style: "docked"
+      title: "Onboarding"
       contents:
-        - onboarding/index.qmd
-        - onboarding/checklist.qmd
-        - onboarding/basics.qmd
-        - onboarding/omop.qmd
-        - onboarding/organigram.qmd
-        - onboarding/work_with_me.qmd
-        - onboarding/code_review.qmd
-        - onboarding/connect_to_database.qmd
-        - onboarding/github.qmd
-        - onboarding/databases_and_servers.qmd
-        - onboarding/studies_and_authorship.qmd
-        - onboarding/useful_contacts.qmd
-        - onboarding/useful_terms.qmd
-      
+        - section: "Introduction"
+          contents:
+            - onboarding/index.qmd
+            - onboarding/checklist.qmd
+        - section: "Basics"
+          contents:
+            - onboarding/basics.qmd
+            - onboarding/omop.qmd
+        - section: "The team"
+          contents:
+            - onboarding/organigram.qmd
+            - onboarding/work_with_me.qmd
+            - onboarding/studies_and_authorship.qmd
+            - onboarding/useful_contacts.qmd
+        - section: "Induction"
+          contents:
+            - onboarding/useful_terms.qmd
+            - onboarding/code_review.qmd
+            - onboarding/connect_to_database.qmd
+            - onboarding/github.qmd
+            - onboarding/databases_and_servers.qmd
+
 format:
   html:
     toc: true
-    fontcolor: black
-    linkcolor: blue
-    backgroundcolor: white
-    mainfont: Roboto
+    #fontcolor: black
+    #linkcolor: blue
+    #backgroundcolor: black
+    #mainfont: Roboto
     #monofont: to edit fonts
-    theme: [styles.scss, cosmo]
+    theme: 
+      light: [flatly, styles.scss]
+      dark: [darkly, styles.scss]
+  
