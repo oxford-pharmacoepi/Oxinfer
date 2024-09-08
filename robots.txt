@@ -1,1 +1,1 @@
-Sitemap: https://oxford-pharmacoepi.github.io/OxinferOnboarding/sitemap.xml
+Sitemap: https://oxford-pharmacoepi.github.io/Oxinfer/sitemap.xml
