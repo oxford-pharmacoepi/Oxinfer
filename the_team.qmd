@@ -1,27 +1,12 @@
 # Oxinfer
 
-Oxford distributed analytics for network research group (oxinfer) is a research group at the University of Oxford with three key purposes:
-
--   
-
 Oxinfer is part of the wider [Health Data Sciences section](https://www.ndorms.ox.ac.uk/research/research-groups/Musculoskeletal-Pharmacoepidemiology) (lead by [Prof. Daniel Prieto-Alhambra](https://www.ndorms.ox.ac.uk/team/daniel-prieto-alhambra))
 
 ![Our Team May 2024](images/awayday2024.jpeg)
 
 ## The Oxinfer team
 
--   scope of the team ... TBC
-
-## Members
-
 Meet the members of the team.
-
-TODO:
-
-- Github
-- LinkedIn
-- Twitter
-- email
 
 ::: {.callout-note collapse="true"}
 ### Edit your description
@@ -30,11 +15,29 @@ Name, picture, job title and description of each member of the team is pulled fr
 
 ```{r, echo = FALSE, eval = TRUE, results='asis', warning=FALSE, message=FALSE}
 web <- "https://www.ndorms.ox.ac.uk/team/"
-x <- c(
-  "edward-burn", "marti-catala-sabate", "danielle-newby", "mike-du", 
-  "yuchen-guo", "theresa-burkard", "xihang-chen", "kim-lopez-guell",
-  "pablo-spivakovsky-gonzalez", "marta-alcalde-herraiz",
-  "nuria-mercade-besora", "elin-rowlands")
+
+x <- dplyr::tibble(
+  ndorms_id = c(
+    "edward-burn", "marti-catala-sabate", "danielle-newby", "mike-du", 
+    "yuchen-guo", "theresa-burkard", "xihang-chen", "kim-lopez-guell",
+    "pablo-spivakovsky-gonzalez", "marta-alcalde-herraiz",
+    "nuria-mercade-besora", "elin-rowlands"),
+  github = c(
+    "edward-burn", "catalamarti", "daniellenewby", "ilovemane", "MimiYuchenGuo",
+    "tiozab", "xihang-chen", "KimLopezGuell", "pablosg713", "martaalcalde",
+    "nmercadeb", "elinrow"
+  ),
+  email = c(
+    "edarwd.burn@ndorms", "marti.catalasabate@ndorms", "danielle.newby@ndorms", 
+    "mike.du@ndorms", "yuchen.guo@ndorms", "theresa.burkard@ndorms", 
+    "xihang.chen@ndorms", "kim.lopez@spc", "pablo.spivakovskygonzalez@ndorms",
+    "marta.alcaldeherraiz@ndorms", "nuria.mercadebesora@ndorms", 
+    "elin.rowlands@ndorms"
+  ),
+  twitter = "",
+  linkedin = ""
+)
+
 getLab <- function(line, lab) {
   cometes <- stringr::str_locate_all(string = line, pattern = '"')
   cometes <- cometes[[1]] |> 
@@ -48,8 +51,8 @@ getLab <- function(line, lab) {
   name <- substr(line, start = idName[1]+1, stop = idName[2]-1)
   return(name)
 }
-for (k in seq_along(x)) {
-  nm <- x[k]
+for (k in seq_len(nrow(x))) {
+  nm <- x$ndorms_id[k]
   content <- readLines(paste0(web, nm, "/"))
   line <- content[grepl("og:title", content)]
   name <- getLab(line, '"og:title"')
@@ -78,6 +81,19 @@ for (k in seq_along(x)) {
     ))
   }
   cat(paste0("**", position, "**\n\n"))
+  links <- c(
+    # github
+    "https://github.com/{x$github[k]}", 
+    # email
+    "mailto:{x$email[k]}.ox.ac.uk"
+    # TO ADD twitter
+    # TO ADD linkedIn
+  ) |>
+    purrr::map_chr(glue::glue)
+  icon <- c("github", "envelope")
+  '<a href="{links}" class="bi bi-{icon} profile_icon"></a>' |>
+    glue::glue() |>
+    cat()
   if (length(description) == 0 & !is.na(picture)) {
     cat('<br>\n<br>\n<br>\n<br>\n\n')
   } else {
