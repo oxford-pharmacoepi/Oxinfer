@@ -1,6 +1,6 @@
 # Oxinfer website
 
-<https://oxford-pharmacoepi.github.io/OxinferOnboarding/>
+<https://oxford-pharmacoepi.github.io/Oxinfer/>
 
 ## :star: Reader questions and clarifications
 
