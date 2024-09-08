@@ -1,7 +1,7 @@
 
 <div class="title_oxinfer">Oxinfer</div>
-<a class="hex_title team_title" href="the_team.qmd">Meet the team</a>
-<a class="hex_title publ_title" href="publications.qmd">Publications</a>
-<a class="hex_title pack_title" href="packages.qmd">Packages</a>
-<a class="hex_title goal_title" href="what_we_do.qmd">Our goals</a>
-<a class="hex_title join_title" href="onboarding/index.qmd">Join the journey</a>
+<div class="subtitle_oxinfer">Oxford distributed analytics for network research</div>
+<div class="images_container">
+![](images/hds_logo_noline.svg){fig-alt="Health Data Sciences section" class="image_title" id="hds"}
+![](images/oxford.svg){fig-alt="University of Oxford" class="image_title" id="oxford"}
+</div>
