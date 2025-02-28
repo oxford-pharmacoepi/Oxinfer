@@ -1,6 +1,4 @@
-# Code Review {#sec-code_review}
-
-# Code Review – Checklist
+# Code review for network studies {#sec-code_review}
 
 ## Study code organisation
 
@@ -62,10 +60,10 @@
     Ensure that no warning messages appear when running the code. If any do, address them to improve the reliability of the analysis.
 
 -   **Check whether any code is repeated unnecessarily or could be simplified**\
-    Check for repetitive code that can be simplified 
+    Check for repetitive code that can be simplified
 
 -   **Review the SQL that gets executed for any obvious inefficiencies**\
-    Check the SQL queries executed by the study to identify any potential inefficiencies. 
+    Check the SQL queries executed by the study to identify any potential inefficiencies.
 
 -   **Review the renv lock - can any packages be removed?**\
     Inspect the `renv` lock file to ensure that only necessary packages are included.
