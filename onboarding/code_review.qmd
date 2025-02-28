@@ -1,28 +1,100 @@
 # Code Review {#sec-code_review}
 
-Some useful text here to explain who and what and when this should be done.. TBC
+# Code Review – Checklist
 
-1)  Basic checks:
+## Study code organisation
 
--   Code is on github
--   Study is organised as an R project
--   Renv is used to list all dependencies needed
--   Study code has a clear logical flow, with any particularly long scripts split up into separate files
--   Study code doesn't have a lot of complex, custom code (that should be in a package with tests)
--   The code runs on a 100k dataset without error
--   How are the results visualised and reported?
--   Is there a shiny to go with the study code?
--   Review results for plausibility
--   Connection details are not displayed in scripts such as CodeToRun
+-   **The study code is organised as an R project**\
+    The study should be structured as an R project, using the `.Rproj` file to keep the project settings consistent. Make sure there is no R project in a subfolder with the parent having another R project so that the project is self-contained while avoiding conflicts in dependencies and project settings.
 
-2.  Check whether the code does what is intended:
+-   **There is a `code_to_run.R` file to run the study code** To run the study, data partners should only need to interact with the `codeToRun.R` file. In this file, the data partner chooses a study prefix which will be used when creating tables in the database (avoiding conflicts with other users and studies) and sets a mimum cell count (with the default being 5) under which results will be suppressed. If the study includes multiple analyses, the data partner has the option to run specific analyses. In the codeToRun file the data parner will connect to their database and create the cdm object, before sourcing the principal analysis script. A line of code should also be provided at the end of script so that the data partner can use to drop any tables created during the course of running the study (using the study prefix).
 
--   Does the code match the protocol?
--   Have any analyses been missed?
--   For each analysis, are cohorts defined in the right way (e.g. typically no exclusion criteria for an incidence outcome) - this has been the most common source of issues
+-   **There is a `run_analysis.R` file to coordinate the study code** This file is sourced at the end of the codeToRun.R file. It is the main file for running the study code, where simple self-contained code is kept and sources longer, more involved scripts.
 
-3.  Check whether the code can be optimised:
+-   **There is a `cohorts` directory with cohort definitions and an `instantiate_cohorts.R` file**\
+    Almost every study will need cohorts to be created. The deifinitions for these are kept in the cohorts directory, and a all cohorts are created and added to the cdm reference in the instantiate_cohorts.R file.
 
--   Is any code repeated unnecessarily?
--   Can code be simplified?
--   Review the sql that gets executed for any obvious inefficiencies
+-   **Independent analyses are split up into separate files (e.g. `incidence_analysis.R`)**\
+    Study analyses are in self-contained files.
+
+-   **There is a `results` directory for study results to be saved**\
+    Study results will be saved here, along with a log file that captures the progress of the analysis. Include a md file so that it will be present when pushing to GitHub.
+
+## Shiny app
+
+-   **There is a shiny app to review results**\
+    In a separate directory, a Shiny app should be available to allow users to interactively review the results of the analysis. The app should display all exported results.
+
+-   **App has sensible defaults for input choices**\
+    Provide sensible default values for input parameters in the Shiny app, minimising the need for the user to make unnecessary adjustments.
+
+-   **App does not have redundant UI inputs**\
+    Ensure that the user interface is streamlined by removing redundant inputs, such as drop-down menus or selectors where there is only one choice.
+
+-   **Check for slow performance of tables/plots**\
+    Assess the performance of tables and plots within the Shiny app.
+
+## Documentation
+
+-   **There is a central readme explaining how to run the study code**\
+    A README file should be present and clearly explain the steps needed to run the analysis, including any prerequisites, how to set up the environment, and how to execute the study. This aids the data partner or team members who may not be familiar with the project.
+
+## Reproducibility
+
+-   **Renv is used to list all dependencies needed**\
+    Using `renv` ensures that all package dependencies are properly tracked and can be restored for the project. This prevents issues with missing or incorrect package versions when running the analysis on different machines. One renv is provided for the study code and another is provided for the shiny app.
+
+-   **Renv file only includes packages from CRAN**\
+    The `renv` file should only list packages from CRAN to ensure compatibility and avoid issues with non-CRAN packages that may not be easily accessible or reproducible across environments.
+
+-   **Study code renv does not include MASS or Matrix (because of dependency of R version)**\
+    Excluding `MASS` and `Matrix` ensures that the study remains compatible with various R versions and avoids potential conflicts or versioning issues that arise from these packages. This is particularly important for study code.
+
+-   **Most recent versions of analytic packages are being used**\
+    Ensure that the latest versions of analytic packages are being used to take advantage of bug fixes, performance improvements, and new features.
+
+## Efficient study code
+
+-   **The code runs on synthetic test database**\
+    Ensure that the code runs without error on test database. Normally start with duckdb "synthea-covid19-10k" and then run on dbms that will be used for the study (postgres, sql server, etc). If analyses return zero results, tweak the synthetic data so results are returned. Following this, if possible, run the code on a real dataset.
+
+-   **Ensure any warning messages that could be resolved when running**\
+    Ensure that no warning messages appear when running the code. If any do, address them to improve the reliability of the analysis.
+
+-   **Check whether any code is repeated unnecessarily or could be simplified**\
+    Check for repetitive code that can be simplified 
+
+-   **Review the SQL that gets executed for any obvious inefficiencies**\
+    Check the SQL queries executed by the study to identify any potential inefficiencies. 
+
+-   **Review the renv lock - can any packages be removed?**\
+    Inspect the `renv` lock file to ensure that only necessary packages are included.
+
+-   **Use `readr::read_csv` for importing CSVs and specify column types**\
+    To ensure fast and efficient CSV imports, use `readr::read_csv` rather than base R functions. Specifying column types improves speed and prevents errors from automatic type guessing.
+
+-   **Use `stringr` for string manipulation**\
+    Use the `stringr` package for string manipulation as it provides a more efficient and consistent approach compared to base R functions.
+
+-   **Study code doesn’t have a lot of complex, custom code unless unavoidable**\
+    Avoid writing overly complex or custom code unless absolutely necessary. Reusable functions and libraries should be leveraged to maintain readability and reduce the chances of errors.
+
+-   **Study code does not have if-else statements based on data partner names unless unavoidable**\
+    Avoid writing code that depends on specific names of data partners unless it's absolutely required. This limits flexibility and makes the code less adaptable in different environments.
+
+-   **Output of the study is saved as a CSV**\
+    Ensure that the final output of the study is saved in a CSV format, making it easy to share and import into other systems for analysis or visualization.
+
+-   **Database snapshot is included in results using `OmopSketch::summariseOmopSnapshot()`**\
+    Include a snapshot of the database in the results to provide context and documentation for the analysis. Using `OmopSketch::summariseOmopSnapshot()` will give a summary of the database schema, which is crucial for understanding the data used in the study.
+
+## Review results for plausibility
+
+-   **Does the code and results shown match the protocol?**\
+    Verify that the code adheres to the study protocol. Ensure that all steps, analyses, and calculations are consistent with the agreed-upon methodology.
+
+-   **Have any analyses been missed?**\
+    Double-check that all planned analyses are present in the code and that none have been overlooked or omitted.
+
+-   **For each analysis, are cohorts defined in the right way (e.g., typically no exclusion criteria for an incidence outcome)?**\
+    Review the cohort definitions for each analysis to ensure that they are consistent with standard practices and the study protocol. For instance, be cautious about applying exclusion criteria where they may not be appropriate, such as in incidence outcomes.
