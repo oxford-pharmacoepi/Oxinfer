@@ -9,14 +9,14 @@ lifeExp <- "[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-e
 lifeSta <- "[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)"
 packages <- dplyr::tribble(
   ~package_name, ~organisation,
-  "omopgenerics", "darwin-eu-dev",
-  "PatientProfiles", "darwin-eu-dev",
+  "omopgenerics", "darwin-eu",
+  "PatientProfiles", "darwin-eu",
   "CohortConstructor", "ohdsi",
   "CodelistGenerator", "darwin-eu",
   "visOmopResults", "darwin-eu",
   "IncidencePrevalence", "darwin-eu",
-  "DrugUtilisation", "darwin-eu-dev",
-  "CohortCharacteristics", "darwin-eu-dev",
+  "DrugUtilisation", "darwin-eu",
+  "CohortCharacteristics", "darwin-eu",
   "CohortSurvival", "darwin-eu",
   "CohortSymmetry", "oxford-pharmacoepi",
   "OmopSketch", "oxford-pharmacoepi",
