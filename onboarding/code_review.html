@@ -287,10 +287,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#sec-code_review" id="toc-sec-code_review" class="nav-link active" data-scroll-target="#sec-code_review">Code review for network studies</a>
   <ul class="collapse">
   <li><a href="#study-code-organisation" id="toc-study-code-organisation" class="nav-link" data-scroll-target="#study-code-organisation">Study code organisation</a></li>
+  <li><a href="#standard-analyses" id="toc-standard-analyses" class="nav-link" data-scroll-target="#standard-analyses">Standard analyses</a></li>
   <li><a href="#shiny-app" id="toc-shiny-app" class="nav-link" data-scroll-target="#shiny-app">Shiny app</a></li>
-  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation">Documentation</a></li>
   <li><a href="#reproducibility" id="toc-reproducibility" class="nav-link" data-scroll-target="#reproducibility">Reproducibility</a></li>
-  <li><a href="#efficient-study-code" id="toc-efficient-study-code" class="nav-link" data-scroll-target="#efficient-study-code">Efficient study code</a></li>
+  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation">Documentation</a></li>
+  <li><a href="#efficient-and-robust-study-code" id="toc-efficient-and-robust-study-code" class="nav-link" data-scroll-target="#efficient-and-robust-study-code">Efficient and robust study code</a></li>
   <li><a href="#review-results-for-plausibility" id="toc-review-results-for-plausibility" class="nav-link" data-scroll-target="#review-results-for-plausibility">Review results for plausibility</a></li>
   </ul></li>
   </ul>
@@ -345,24 +346,33 @@ Study results will be saved here, along with a log file that captures the progre
 </ul></li>
 </ul>
 </section>
+<section id="standard-analyses" class="level2">
+<h2 class="anchored" data-anchor-id="standard-analyses">Standard analyses</h2>
+<p>The following analyses would be useful to perform in almost any study.</p>
+<ul>
+<li><p><strong>Database snapshot using <code>OmopSketch::summariseOmopSnapshot()</code></strong><br>
+This will produce a table on metadata on the database the analysis is being run against (number of people in the database, vocabulary version being used, and so on).</p></li>
+<li><p><strong>Observation period summary using <code>OmopSketch::summariseObservationPeriod()</code></strong><br>
+To get a snapshot of the database in the results to provide context and documentation for the analysis. Using <code>OmopSketch::summariseOmopSnapshot()</code> will give a summary of the database schema, which is crucial for understanding the data used in the study.</p></li>
+<li><p><strong>Cohort count summary using <code>CodelistGenerator::summariseCohortCodeUse()</code></strong><br>
+To get a count of the different codes that led to inclusion into a study cohort, along with the source codes these were mapped from.</p></li>
+<li><p><strong>Cohort attrition summary using <code>CohortCharacteristics::summariseCohortCounts()</code></strong><br>
+To get counts of each study cohort.</p></li>
+<li><p><strong>Cohort attrition summary using <code>CohortCharacteristics::summariseCohortAttrition()</code></strong><br>
+To get a summary of attrition for each cohort.</p></li>
+</ul>
+</section>
 <section id="shiny-app" class="level2">
 <h2 class="anchored" data-anchor-id="shiny-app">Shiny app</h2>
 <ul>
 <li><p><strong>There is a shiny app to review results</strong><br>
-In a separate directory, a Shiny app should be available to allow users to interactively review the results of the analysis. The app should display all exported results.</p></li>
-<li><p><strong>App has sensible defaults for input choices</strong><br>
+In a separate directory, a shiny app should be available to allow users to interactively review the results of the analysis. The app should display all exported results.</p></li>
+<li><p><strong>The app has sensible defaults for input choices</strong><br>
 Provide sensible default values for input parameters in the Shiny app, minimising the need for the user to make unnecessary adjustments.</p></li>
-<li><p><strong>App does not have redundant UI inputs</strong><br>
+<li><p><strong>The app does not have redundant UI inputs</strong><br>
 Ensure that the user interface is streamlined by removing redundant inputs, such as drop-down menus or selectors where there is only one choice.</p></li>
-<li><p><strong>Check for slow performance of tables/plots</strong><br>
+<li><p><strong>There is no particularly slow performance when generating tables or plots</strong><br>
 Assess the performance of tables and plots within the Shiny app.</p></li>
-</ul>
-</section>
-<section id="documentation" class="level2">
-<h2 class="anchored" data-anchor-id="documentation">Documentation</h2>
-<ul>
-<li><strong>There is a central readme explaining how to run the study code</strong><br>
-A README file should be present and clearly explain the steps needed to run the analysis, including any prerequisites, how to set up the environment, and how to execute the study. This aids the data partner or team members who may not be familiar with the project.</li>
 </ul>
 </section>
 <section id="reproducibility" class="level2">
@@ -378,8 +388,15 @@ Excluding <code>MASS</code> and <code>Matrix</code> ensures that the study remai
 Ensure that the latest versions of analytic packages are being used to take advantage of bug fixes, performance improvements, and new features.</p></li>
 </ul>
 </section>
-<section id="efficient-study-code" class="level2">
-<h2 class="anchored" data-anchor-id="efficient-study-code">Efficient study code</h2>
+<section id="documentation" class="level2">
+<h2 class="anchored" data-anchor-id="documentation">Documentation</h2>
+<ul>
+<li><strong>There is a central readme explaining how to run the study code and review the results</strong><br>
+A README file should be present and clearly explain the steps needed to run the study code and review the results returned.</li>
+</ul>
+</section>
+<section id="efficient-and-robust-study-code" class="level2">
+<h2 class="anchored" data-anchor-id="efficient-and-robust-study-code">Efficient and robust study code</h2>
 <ul>
 <li><p><strong>The code runs on synthetic test database</strong><br>
 Ensure that the code runs without error on test database. Normally start with duckdb “synthea-covid19-10k” and then run on dbms that will be used for the study (postgres, sql server, etc). If analyses return zero results, tweak the synthetic data so results are returned. Following this, if possible, run the code on a real dataset.</p></li>
@@ -398,11 +415,9 @@ Use the <code>stringr</code> package for string manipulation as it provides a mo
 <li><p><strong>Study code doesn’t have a lot of complex, custom code unless unavoidable</strong><br>
 Avoid writing overly complex or custom code unless absolutely necessary. Reusable functions and libraries should be leveraged to maintain readability and reduce the chances of errors.</p></li>
 <li><p><strong>Study code does not have if-else statements based on data partner names unless unavoidable</strong><br>
-Avoid writing code that depends on specific names of data partners unless it’s absolutely required. This limits flexibility and makes the code less adaptable in different environments.</p></li>
+Avoid writing code that depends on specific names of data partners unless it’s absolutely required.</p></li>
 <li><p><strong>Output of the study is saved as a CSV</strong><br>
 Ensure that the final output of the study is saved in a CSV format, making it easy to share and import into other systems for analysis or visualization.</p></li>
-<li><p><strong>Database snapshot is included in results using <code>OmopSketch::summariseOmopSnapshot()</code></strong><br>
-Include a snapshot of the database in the results to provide context and documentation for the analysis. Using <code>OmopSketch::summariseOmopSnapshot()</code> will give a summary of the database schema, which is crucial for understanding the data used in the study.</p></li>
 </ul>
 </section>
 <section id="review-results-for-plausibility" class="level2">
