@@ -23,25 +23,39 @@
     -   `styler::style_dir()`
 
     -   `lintr::lint_dir()`
+    
+## Standard analyses 
+
+The following analyses would be useful to perform in almost any study. 
+
+-   **Database snapshot using `OmopSketch::summariseOmopSnapshot()`**\
+    This will produce a table on metadata on the database the analysis is being run against (number of people in the database, vocabulary version being used, and so on). 
+ 
+-   **Observation period summary using `OmopSketch::summariseObservationPeriod()`**\
+    To get a snapshot of the database in the results to provide context and documentation for the analysis. Using `OmopSketch::summariseOmopSnapshot()` will give a summary of the database schema, which is crucial for understanding the data used in the study.
+
+-  **Cohort count summary using `CodelistGenerator::summariseCohortCodeUse()`**\
+    To get a count of the different codes that led to inclusion into a study cohort, along with the source codes these were mapped from.
+    
+-  **Cohort attrition summary using `CohortCharacteristics::summariseCohortCounts()`**\
+    To get counts of each study cohort.  
+    
+-  **Cohort attrition summary using `CohortCharacteristics::summariseCohortAttrition()`**\
+    To get a summary of attrition for each cohort.  
 
 ## Shiny app
 
 -   **There is a shiny app to review results**\
-    In a separate directory, a Shiny app should be available to allow users to interactively review the results of the analysis. The app should display all exported results.
+    In a separate directory, a shiny app should be available to allow users to interactively review the results of the analysis. The app should display all exported results.
 
--   **App has sensible defaults for input choices**\
+-   **The app has sensible defaults for input choices**\
     Provide sensible default values for input parameters in the Shiny app, minimising the need for the user to make unnecessary adjustments.
 
--   **App does not have redundant UI inputs**\
+-   **The app does not have redundant UI inputs**\
     Ensure that the user interface is streamlined by removing redundant inputs, such as drop-down menus or selectors where there is only one choice.
 
--   **Check for slow performance of tables/plots**\
+-   **There is no particularly slow performance when generating tables or plots**\
     Assess the performance of tables and plots within the Shiny app.
-
-## Documentation
-
--   **There is a central readme explaining how to run the study code**\
-    A README file should be present and clearly explain the steps needed to run the analysis, including any prerequisites, how to set up the environment, and how to execute the study. This aids the data partner or team members who may not be familiar with the project.
 
 ## Reproducibility
 
@@ -57,7 +71,12 @@
 -   **Most recent versions of analytic packages are being used**\
     Ensure that the latest versions of analytic packages are being used to take advantage of bug fixes, performance improvements, and new features.
 
-## Efficient study code
+## Documentation
+
+-   **There is a central readme explaining how to run the study code and review the results**\
+    A README file should be present and clearly explain the steps needed to run the study code and review the results returned.
+
+## Efficient and robust study code
 
 -   **The code runs on synthetic test database**\
     Ensure that the code runs without error on test database. Normally start with duckdb "synthea-covid19-10k" and then run on dbms that will be used for the study (postgres, sql server, etc). If analyses return zero results, tweak the synthetic data so results are returned. Following this, if possible, run the code on a real dataset.
@@ -84,13 +103,11 @@
     Avoid writing overly complex or custom code unless absolutely necessary. Reusable functions and libraries should be leveraged to maintain readability and reduce the chances of errors.
 
 -   **Study code does not have if-else statements based on data partner names unless unavoidable**\
-    Avoid writing code that depends on specific names of data partners unless it's absolutely required. This limits flexibility and makes the code less adaptable in different environments.
-
+    Avoid writing code that depends on specific names of data partners unless it's absolutely required. 
+    
 -   **Output of the study is saved as a CSV**\
     Ensure that the final output of the study is saved in a CSV format, making it easy to share and import into other systems for analysis or visualization.
 
--   **Database snapshot is included in results using `OmopSketch::summariseOmopSnapshot()`**\
-    Include a snapshot of the database in the results to provide context and documentation for the analysis. Using `OmopSketch::summariseOmopSnapshot()` will give a summary of the database schema, which is crucial for understanding the data used in the study.
 
 ## Review results for plausibility
 
