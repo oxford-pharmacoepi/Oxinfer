@@ -329,15 +329,20 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="study-code-organisation">Study code organisation</h2>
 <ul>
 <li><p><strong>The study code is organised as an R project</strong><br>
-The study should be structured as an R project, using the <code>.Rproj</code> file to keep the project settings consistent. Make sure there is no R project in a subfolder with the parent having another R project so that the project is self-contained while avoiding conflicts in dependencies and project settings.</p></li>
+The study should be structured as an R project, using the <code>.Rproj</code> file to keep the project settings consistent. Make sure there is no R project in a sub-folder with the parent having another R project so that the project is self-contained while avoiding conflicts in dependencies and project settings.</p></li>
 <li><p><strong>There is a <code>code_to_run.R</code> file to run the study code</strong> To run the study, data partners should only need to interact with the <code>codeToRun.R</code> file. In this file, the data partner chooses a study prefix which will be used when creating tables in the database (avoiding conflicts with other users and studies) and sets a mimum cell count (with the default being 5) under which results will be suppressed. If the study includes multiple analyses, the data partner has the option to run specific analyses. In the codeToRun file the data parner will connect to their database and create the cdm object, before sourcing the principal analysis script. A line of code should also be provided at the end of script so that the data partner can use to drop any tables created during the course of running the study (using the study prefix).</p></li>
 <li><p><strong>There is a <code>run_analysis.R</code> file to coordinate the study code</strong> This file is sourced at the end of the codeToRun.R file. It is the main file for running the study code, where simple self-contained code is kept and sources longer, more involved scripts.</p></li>
 <li><p><strong>There is a <code>cohorts</code> directory with cohort definitions and an <code>instantiate_cohorts.R</code> file</strong><br>
-Almost every study will need cohorts to be created. The deifinitions for these are kept in the cohorts directory, and a all cohorts are created and added to the cdm reference in the instantiate_cohorts.R file.</p></li>
+Almost every study will need cohorts to be created. The definitions for these are kept in the cohorts directory, and a all cohorts are created and added to the cdm reference in the instantiate_cohorts.R file.</p></li>
 <li><p><strong>Independent analyses are split up into separate files (e.g.&nbsp;<code>incidence_analysis.R</code>)</strong><br>
 Study analyses are in self-contained files.</p></li>
 <li><p><strong>There is a <code>results</code> directory for study results to be saved</strong><br>
 Study results will be saved here, along with a log file that captures the progress of the analysis. Include a md file so that it will be present when pushing to GitHub.</p></li>
+<li><p><strong>Code is formatted and styled</strong> Use the following to style the code and identify formatting issues to be fixed.</p>
+<ul>
+<li><p><code>styler::style_dir()</code></p></li>
+<li><p><code>lintr::lint_dir()</code></p></li>
+</ul></li>
 </ul>
 </section>
 <section id="shiny-app" class="level2">
