@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-09-08">
+<meta name="dcterms.date" content="2025-02-28">
 
 <title>code_review – Oxinfer</title>
 <style>
@@ -36,12 +36,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-06b3f3f2020dbcbf4fe265908f720f3c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-47eab3a4174606269bb2aa0bb8095553.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,7 +72,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Oxinfer">
-<meta property="og:description" content="">
 <meta property="og:site_name" content="Oxinfer">
 </head>
 
@@ -87,7 +86,6 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Oxinfer</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -287,6 +285,15 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#sec-code_review" id="toc-sec-code_review" class="nav-link active" data-scroll-target="#sec-code_review">Code Review</a></li>
+  <li><a href="#code-review-checklist" id="toc-code-review-checklist" class="nav-link" data-scroll-target="#code-review-checklist">Code Review – Checklist</a>
+  <ul class="collapse">
+  <li><a href="#study-code-organisation" id="toc-study-code-organisation" class="nav-link" data-scroll-target="#study-code-organisation">Study code organisation</a></li>
+  <li><a href="#shiny-app" id="toc-shiny-app" class="nav-link" data-scroll-target="#shiny-app">Shiny app</a></li>
+  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation">Documentation</a></li>
+  <li><a href="#reproducibility" id="toc-reproducibility" class="nav-link" data-scroll-target="#reproducibility">Reproducibility</a></li>
+  <li><a href="#efficient-study-code" id="toc-efficient-study-code" class="nav-link" data-scroll-target="#efficient-study-code">Efficient study code</a></li>
+  <li><a href="#review-results-for-plausibility" id="toc-review-results-for-plausibility" class="nav-link" data-scroll-target="#review-results-for-plausibility">Review results for plausibility</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/oxford-pharmacoepi/OxinferOnboarding/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -305,7 +312,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 8, 2024</p>
+      <p class="date">February 28, 2025</p>
     </div>
   </div>
   
@@ -319,40 +326,97 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="sec-code_review" class="level1">
 <h1>Code Review</h1>
-<p>Some useful text here to explain who and what and when this should be done.. TBC</p>
-<ol type="1">
-<li>Basic checks:</li>
-</ol>
+</section>
+<section id="code-review-checklist" class="level1">
+<h1>Code Review – Checklist</h1>
+<section id="study-code-organisation" class="level2">
+<h2 class="anchored" data-anchor-id="study-code-organisation">Study code organisation</h2>
 <ul>
-<li>Code is on github</li>
-<li>Study is organised as an R project</li>
-<li>Renv is used to list all dependencies needed</li>
-<li>Study code has a clear logical flow, with any particularly long scripts split up into separate files</li>
-<li>Study code doesn’t have a lot of complex, custom code (that should be in a package with tests)</li>
-<li>The code runs on a 100k dataset without error</li>
-<li>How are the results visualised and reported?</li>
-<li>Is there a shiny to go with the study code?</li>
-<li>Review results for plausibility</li>
-<li>Connection details are not displayed in scripts such as CodeToRun</li>
+<li><p><strong>The study code is organised as an R project</strong><br>
+The study should be structured as an R project, using the <code>.Rproj</code> file to keep the project settings consistent. Make sure there is no R project in a subfolder with the parent having another R project so that the project is self-contained while avoiding conflicts in dependencies and project settings.</p></li>
+<li><p><strong>There is a <code>code_to_run.R</code> file to run the study code</strong> To run the study, data partners should only need to interact with the <code>codeToRun.R</code> file. In this file, the data partner chooses a study prefix which will be used when creating tables in the database (avoiding conflicts with other users and studies) and sets a mimum cell count (with the default being 5) under which results will be suppressed. If the study includes multiple analyses, the data partner has the option to run specific analyses. In the codeToRun file the data parner will connect to their database and create the cdm object, before sourcing the principal analysis script. A line of code should also be provided at the end of script so that the data partner can use to drop any tables created during the course of running the study (using the study prefix).</p></li>
+<li><p><strong>There is a <code>run_analysis.R</code> file to coordinate the study code</strong> This file is sourced at the end of the codeToRun.R file. It is the main file for running the study code, where simple self-contained code is kept and sources longer, more involved scripts.</p></li>
+<li><p><strong>There is a <code>cohorts</code> directory with cohort definitions and an <code>instantiate_cohorts.R</code> file</strong><br>
+Almost every study will need cohorts to be created. The deifinitions for these are kept in the cohorts directory, and a all cohorts are created and added to the cdm reference in the instantiate_cohorts.R file.</p></li>
+<li><p><strong>Independent analyses are split up into separate files (e.g.&nbsp;<code>incidence_analysis.R</code>)</strong><br>
+Study analyses are in self-contained files.</p></li>
+<li><p><strong>There is a <code>results</code> directory for study results to be saved</strong><br>
+Study results will be saved here, along with a log file that captures the progress of the analysis. Include a md file so that it will be present when pushing to GitHub.</p></li>
 </ul>
-<ol start="2" type="1">
-<li>Check whether the code does what is intended:</li>
-</ol>
+</section>
+<section id="shiny-app" class="level2">
+<h2 class="anchored" data-anchor-id="shiny-app">Shiny app</h2>
 <ul>
-<li>Does the code match the protocol?</li>
-<li>Have any analyses been missed?</li>
-<li>For each analysis, are cohorts defined in the right way (e.g.&nbsp;typically no exclusion criteria for an incidence outcome) - this has been the most common source of issues</li>
+<li><p><strong>There is a shiny app to review results</strong><br>
+In a separate directory, a Shiny app should be available to allow users to interactively review the results of the analysis. The app should display all exported results.</p></li>
+<li><p><strong>App has sensible defaults for input choices</strong><br>
+Provide sensible default values for input parameters in the Shiny app, minimising the need for the user to make unnecessary adjustments.</p></li>
+<li><p><strong>App does not have redundant UI inputs</strong><br>
+Ensure that the user interface is streamlined by removing redundant inputs, such as drop-down menus or selectors where there is only one choice.</p></li>
+<li><p><strong>Check for slow performance of tables/plots</strong><br>
+Assess the performance of tables and plots within the Shiny app.</p></li>
 </ul>
-<ol start="3" type="1">
-<li>Check whether the code can be optimised:</li>
-</ol>
+</section>
+<section id="documentation" class="level2">
+<h2 class="anchored" data-anchor-id="documentation">Documentation</h2>
 <ul>
-<li>Is any code repeated unnecessarily?</li>
-<li>Can code be simplified?</li>
-<li>Review the sql that gets executed for any obvious inefficiencies</li>
+<li><strong>There is a central readme explaining how to run the study code</strong><br>
+A README file should be present and clearly explain the steps needed to run the analysis, including any prerequisites, how to set up the environment, and how to execute the study. This aids the data partner or team members who may not be familiar with the project.</li>
+</ul>
+</section>
+<section id="reproducibility" class="level2">
+<h2 class="anchored" data-anchor-id="reproducibility">Reproducibility</h2>
+<ul>
+<li><p><strong>Renv is used to list all dependencies needed</strong><br>
+Using <code>renv</code> ensures that all package dependencies are properly tracked and can be restored for the project. This prevents issues with missing or incorrect package versions when running the analysis on different machines. One renv is provided for the study code and another is provided for the shiny app.</p></li>
+<li><p><strong>Renv file only includes packages from CRAN</strong><br>
+The <code>renv</code> file should only list packages from CRAN to ensure compatibility and avoid issues with non-CRAN packages that may not be easily accessible or reproducible across environments.</p></li>
+<li><p><strong>Study code renv does not include MASS or Matrix (because of dependency of R version)</strong><br>
+Excluding <code>MASS</code> and <code>Matrix</code> ensures that the study remains compatible with various R versions and avoids potential conflicts or versioning issues that arise from these packages. This is particularly important for study code.</p></li>
+<li><p><strong>Most recent versions of analytic packages are being used</strong><br>
+Ensure that the latest versions of analytic packages are being used to take advantage of bug fixes, performance improvements, and new features.</p></li>
+</ul>
+</section>
+<section id="efficient-study-code" class="level2">
+<h2 class="anchored" data-anchor-id="efficient-study-code">Efficient study code</h2>
+<ul>
+<li><p><strong>The code runs on synthetic test database</strong><br>
+Ensure that the code runs without error on test database. Normally start with duckdb “synthea-covid19-10k” and then run on dbms that will be used for the study (postgres, sql server, etc). If analyses return zero results, tweak the synthetic data so results are returned. Following this, if possible, run the code on a real dataset.</p></li>
+<li><p><strong>Ensure any warning messages that could be resolved when running</strong><br>
+Ensure that no warning messages appear when running the code. If any do, address them to improve the reliability of the analysis.</p></li>
+<li><p><strong>Check whether any code is repeated unnecessarily or could be simplified</strong><br>
+Check for repetitive code that can be simplified</p></li>
+<li><p><strong>Review the SQL that gets executed for any obvious inefficiencies</strong><br>
+Check the SQL queries executed by the study to identify any potential inefficiencies.</p></li>
+<li><p><strong>Review the renv lock - can any packages be removed?</strong><br>
+Inspect the <code>renv</code> lock file to ensure that only necessary packages are included.</p></li>
+<li><p><strong>Use <code>readr::read_csv</code> for importing CSVs and specify column types</strong><br>
+To ensure fast and efficient CSV imports, use <code>readr::read_csv</code> rather than base R functions. Specifying column types improves speed and prevents errors from automatic type guessing.</p></li>
+<li><p><strong>Use <code>stringr</code> for string manipulation</strong><br>
+Use the <code>stringr</code> package for string manipulation as it provides a more efficient and consistent approach compared to base R functions.</p></li>
+<li><p><strong>Study code doesn’t have a lot of complex, custom code unless unavoidable</strong><br>
+Avoid writing overly complex or custom code unless absolutely necessary. Reusable functions and libraries should be leveraged to maintain readability and reduce the chances of errors.</p></li>
+<li><p><strong>Study code does not have if-else statements based on data partner names unless unavoidable</strong><br>
+Avoid writing code that depends on specific names of data partners unless it’s absolutely required. This limits flexibility and makes the code less adaptable in different environments.</p></li>
+<li><p><strong>Output of the study is saved as a CSV</strong><br>
+Ensure that the final output of the study is saved in a CSV format, making it easy to share and import into other systems for analysis or visualization.</p></li>
+<li><p><strong>Database snapshot is included in results using <code>OmopSketch::summariseOmopSnapshot()</code></strong><br>
+Include a snapshot of the database in the results to provide context and documentation for the analysis. Using <code>OmopSketch::summariseOmopSnapshot()</code> will give a summary of the database schema, which is crucial for understanding the data used in the study.</p></li>
+</ul>
+</section>
+<section id="review-results-for-plausibility" class="level2">
+<h2 class="anchored" data-anchor-id="review-results-for-plausibility">Review results for plausibility</h2>
+<ul>
+<li><p><strong>Does the code and results shown match the protocol?</strong><br>
+Verify that the code adheres to the study protocol. Ensure that all steps, analyses, and calculations are consistent with the agreed-upon methodology.</p></li>
+<li><p><strong>Have any analyses been missed?</strong><br>
+Double-check that all planned analyses are present in the code and that none have been overlooked or omitted.</p></li>
+<li><p><strong>For each analysis, are cohorts defined in the right way (e.g., typically no exclusion criteria for an incidence outcome)?</strong><br>
+Review the cohort definitions for each analysis to ensure that they are consistent with standard practices and the study protocol. For instance, be cautious about applying exclusion criteria where they may not be appropriate, such as in incidence outcomes.</p></li>
 </ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -582,8 +646,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -694,7 +756,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -927,7 +988,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <p>Copyright 2024, Oxinfer</p>
 </div>   
     <div class="nav-footer-center">
-<p>Rendered on September 8, 2024</p>
+<p>Rendered on February 28, 2025</p>
 <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/oxford-pharmacoepi/OxinferOnboarding/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
