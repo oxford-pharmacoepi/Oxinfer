@@ -3,20 +3,26 @@
 ## Study code organisation
 
 -   **The study code is organised as an R project**\
-    The study should be structured as an R project, using the `.Rproj` file to keep the project settings consistent. Make sure there is no R project in a subfolder with the parent having another R project so that the project is self-contained while avoiding conflicts in dependencies and project settings.
+    The study should be structured as an R project, using the `.Rproj` file to keep the project settings consistent. Make sure there is no R project in a sub-folder with the parent having another R project so that the project is self-contained while avoiding conflicts in dependencies and project settings.
 
 -   **There is a `code_to_run.R` file to run the study code** To run the study, data partners should only need to interact with the `codeToRun.R` file. In this file, the data partner chooses a study prefix which will be used when creating tables in the database (avoiding conflicts with other users and studies) and sets a mimum cell count (with the default being 5) under which results will be suppressed. If the study includes multiple analyses, the data partner has the option to run specific analyses. In the codeToRun file the data parner will connect to their database and create the cdm object, before sourcing the principal analysis script. A line of code should also be provided at the end of script so that the data partner can use to drop any tables created during the course of running the study (using the study prefix).
 
 -   **There is a `run_analysis.R` file to coordinate the study code** This file is sourced at the end of the codeToRun.R file. It is the main file for running the study code, where simple self-contained code is kept and sources longer, more involved scripts.
 
 -   **There is a `cohorts` directory with cohort definitions and an `instantiate_cohorts.R` file**\
-    Almost every study will need cohorts to be created. The deifinitions for these are kept in the cohorts directory, and a all cohorts are created and added to the cdm reference in the instantiate_cohorts.R file.
+    Almost every study will need cohorts to be created. The definitions for these are kept in the cohorts directory, and a all cohorts are created and added to the cdm reference in the instantiate_cohorts.R file.
 
 -   **Independent analyses are split up into separate files (e.g. `incidence_analysis.R`)**\
     Study analyses are in self-contained files.
 
 -   **There is a `results` directory for study results to be saved**\
     Study results will be saved here, along with a log file that captures the progress of the analysis. Include a md file so that it will be present when pushing to GitHub.
+
+-   **Code is formatted and styled** Use the following to style the code and identify formatting issues to be fixed.
+
+    -   `styler::style_dir()`
+
+    -   `lintr::lint_dir()`
 
 ## Shiny app
 
