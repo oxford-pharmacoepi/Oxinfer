@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-02-28">
+<meta name="dcterms.date" content="2025-05-14">
 
 <title>publications – Oxinfer</title>
 <style>
@@ -31,17 +31,20 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-06b3f3f2020dbcbf4fe265908f720f3c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-47eab3a4174606269bb2aa0bb8095553.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-454915a529813eb292347205846836a4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-2274e146958393fbcdef6dca828a1dc8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-454915a529813eb292347205846836a4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,7 +78,169 @@ ul.task-list li input[type="checkbox"] {
 <meta property="og:site_name" content="Oxinfer">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -156,6 +321,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 </div>
@@ -168,7 +334,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 28, 2025</p>
+      <p class="date">May 14, 2025</p>
     </div>
   </div>
   
@@ -191,11 +357,14 @@ ul.task-list li input[type="checkbox"] {
 <section id="articles" class="level2">
 <h2 class="anchored" data-anchor-id="articles">Articles</h2>
 <ul>
+<li>Chen L, <span class="author_publication">Guo Y</span>, <span class="author_publication">López-Güell K</span>, Ma J, Dong Y, Xie J, Alhambra DP. Immunity Debt for Seasonal Influenza After the COVID-19 Pandemic and as a Result of Nonpharmaceutical Interventions: An Ecological Analysis and Cohort Study. (<strong>2025</strong>), <em>Advanced science (Weinheim, Baden-Wurttemberg, Germany)</em>. <a href="https://doi.org/10.1002/advs.202410513" class="uri">https://doi.org/10.1002/advs.202410513</a></li>
+<li>Pedregal-Pascual P, Guarner-Argente C, Tan EH, Golozar A, Duarte-Salles T, Rosen AW, Delmestri A, Man WY, <span class="author_publication">Burn E</span>, Prieto-Alhambra D, <span class="author_publication">Newby D</span>. Incidence and survival of colorectal cancer in the United Kingdom from 2000-2021: a population-based cohort study. (<strong>2025</strong>), <em>The American journal of gastroenterology</em>. <a href="https://doi.org/10.14309/ajg.0000000000003460" class="uri">https://doi.org/10.14309/ajg.0000000000003460</a></li>
+<li>Allen H, Hassell K, Rawlinson C, Pullen O, Campbell C, Jödicke AM, <span class="author_publication">Català M</span>, Prats-Uribe A, Dabrera G, Prieto-Alhambra D, Campos-Matos I. Development of the ECHOES national dataset: a resource for monitoring post-acute and long-term COVID-19 health outcomes in England. (<strong>2025</strong>), <em>Frontiers in public health</em>. <a href="https://doi.org/10.3389/fpubh.2025.1513508" class="uri">https://doi.org/10.3389/fpubh.2025.1513508</a></li>
 <li>Wang Y, <span class="author_publication">Alcalde-Herraiz M</span>, Güell KL, Chen L, Mateu L, Li C, Ali R, Wareham N, Paredes R, Prieto-Alhambra D, Xie J. Refinement of post-COVID condition core symptoms, subtypes, determinants, and health impacts: a cohort study integrating real-world data and patient-reported outcomes. (<strong>2024</strong>), <em>EBioMedicine</em>. <a href="https://doi.org/10.1016/j.ebiom.2024.105493" class="uri">https://doi.org/10.1016/j.ebiom.2024.105493</a></li>
+<li>Abellan A, <span class="author_publication">Burn E</span>, Trinh NTH, Burkard T, Callahan A, Fernández-Bertolín S, Hurley E, Rodriguez C, Segundo E, Morales DR, M E Nordeng H, Duarte-Salles T. Expanding the OMOP Common Data Model to Support Perinatal Research in Network Studies. (<strong>2024</strong>), <em>Pharmacoepidemiology and drug safety</em>. <a href="https://doi.org/10.1002/pds.70106" class="uri">https://doi.org/10.1002/pds.70106</a></li>
 <li><span class="author_publication">Du M</span>, Johnston S, Coplan PM, Strauss VY, Khalid S, Prieto-Alhambra D. Cardinality matching versus propensity score matching for addressing cluster-level residual confounding in implantable medical device and surgical epidemiology: a parametric and plasmode simulation study. (<strong>2024</strong>), <em>BMC medical research methodology</em>. <a href="https://doi.org/10.1186/s12874-024-02406-z" class="uri">https://doi.org/10.1186/s12874-024-02406-z</a></li>
-<li>Burden AM, Martinez-De la Torre A, <span class="author_publication">Burkard T</span>, Immoos M, Hofbauer LC, Steinbicker AU, Rauner M. Increased risk of fracture among patients with iron overload: a population-based matched cohort study. (<strong>2024</strong>), <em>The Journal of clinical endocrinology and metabolism</em>. <a href="https://doi.org/10.1210/clinem/dgae807" class="uri">https://doi.org/10.1210/clinem/dgae807</a></li>
 <li><span class="author_publication">Alcalde-Herraiz M</span>, Xie J, <span class="author_publication">Newby D</span>, Prats C, Gill D, Gordillo-Marañón M, Prieto-Alhambra D, <span class="author_publication">Català M</span>, Prats-Uribe A. Effect of genetically predicted sclerostin on cardiovascular biomarkers, risk factors, and disease outcomes. (<strong>2024</strong>), <em>Nature communications</em>. <a href="https://doi.org/10.1038/s41467-024-53623-5" class="uri">https://doi.org/10.1038/s41467-024-53623-5</a></li>
-<li>Xie J, <span class="author_publication">López-Güell K</span>, Dedman D, Duarte-Salles T, Kolde R, López-Blasco R, Martínez Á, Mercier G, Abellan A, Arinze JT, Cuccu Z, Delmestri A, Delseny D, Khalid S, Kim C, Kim JW, Kostka K, Loste C, Mateu L, Mayer MA, Meléndez-Cardiel J, <span class="author_publication">Mercadé-Besora N</span>, Mosseveld M, Nishimura A, Nordeng HME, Oyinlola JO, Pérez-Crespo L, Pineda-Moncusí M, Ramírez-Anguita JM, Trinh NTH, Uusküla A, Valdivieso B, <span class="author_publication">Burkard T</span>, <span class="author_publication">Burn E</span>, <span class="author_publication">Català M</span>, Prieto-Alhambra D, Paredes R, Jödicke AM. Incidence of post-acute COVID-19 symptoms across healthcare settings in seven countries: an international retrospective cohort study using routinely-collected data. (<strong>2024</strong>), <em>EClinicalMedicine</em>. <a href="https://doi.org/10.1016/j.eclinm.2024.102903" class="uri">https://doi.org/10.1016/j.eclinm.2024.102903</a></li>
+<li>Xie J, <span class="author_publication">López-Güell K</span>, Dedman D, Duarte-Salles T, Kolde R, López-Blasco R, Martínez Á, Mercier G, Abellan A, Arinze JT, Cuccu Z, Delmestri A, Delseny D, Khalid S, Kim C, Kim JW, Kostka K, Loste C, Mateu L, Mayer MA, Meléndez-Cardiel J, <span class="author_publication">Mercadé-Besora N</span>, Mosseveld M, Nishimura A, Nordeng HME, Oyinlola JO, Pérez-Crespo L, Pineda-Moncusí M, Ramírez-Anguita JM, Trinh NTH, Uusküla A, Valdivieso B, Burkard T, <span class="author_publication">Burn E</span>, <span class="author_publication">Català M</span>, Prieto-Alhambra D, Paredes R, Jödicke AM. Incidence of post-acute COVID-19 symptoms across healthcare settings in seven countries: an international retrospective cohort study using routinely-collected data. (<strong>2024</strong>), <em>EClinicalMedicine</em>. <a href="https://doi.org/10.1016/j.eclinm.2024.102903" class="uri">https://doi.org/10.1016/j.eclinm.2024.102903</a></li>
 <li><span class="author_publication">Guo Y</span>, Strauss VY, <span class="author_publication">Català M</span>, Jödicke AM, Khalid S, Prieto-Alhambra D. Machine learning methods for propensity and disease risk score estimation in high-dimensional data: a plasmode simulation and real-world data cohort analysis. (<strong>2024</strong>), <em>Frontiers in pharmacology</em>. <a href="https://doi.org/10.3389/fphar.2024.1395707" class="uri">https://doi.org/10.3389/fphar.2024.1395707</a></li>
 <li><span class="author_publication">Alcalde-Herraiz M</span>, <span class="author_publication">Català M</span>, Prats-Uribe A, Paredes R, Xie J, Prieto-Alhambra D. Genome-wide association studies of COVID-19 vaccine seroconversion and breakthrough outcomes in UK Biobank. (<strong>2024</strong>), <em>Nature communications</em>. <a href="https://doi.org/10.1038/s41467-024-52890-6" class="uri">https://doi.org/10.1038/s41467-024-52890-6</a></li>
 <li>Dernie F, Corby G, Robinson A, Bezer J, <span class="author_publication">Mercade-Besora N</span>, Griffier R, Verdy G, Leis A, Ramirez-Anguita JM, Mayer MA, Brash JT, Seager S, Parry R, Jodicke A, Duarte-Salles T, Rijnbeek PR, Verhamme K, Pacurariu A, Morales D, Pinheiro L, Prieto-Alhambra D, Prats-Uribe A. Standardised and Reproducible Phenotyping Using Distributed Analytics and Tools in the Data Analysis and Real World Interrogation Network (DARWIN EU). (<strong>2024</strong>), <em>Pharmacoepidemiology and drug safety</em>. <a href="https://doi.org/10.1002/pds.70042" class="uri">https://doi.org/10.1002/pds.70042</a></li>
@@ -206,22 +375,20 @@ ul.task-list li input[type="checkbox"] {
 <li><span class="author_publication">Du M</span>, Dernie F, <span class="author_publication">Català M</span>, Delmestri A, Man WY, Brash JT, van Ballegooijen H, <span class="author_publication">Mercadé-Besora N</span>, Duarte-Salles T, Mayer MA, Leis A, Ramírez-Anguita JM, Griffier R, Verdy G, Prats-Uribe A, Pacurariu A, Morales DR, De Lisa R, Galluzzo S, Egger GF, Prieto-Alhambra D, Tan EH. Treatment of systemic lupus erythematosus: Analysis of treatment patterns in adult and paediatric patients across four European countries. (<strong>2024</strong>), <em>European journal of internal medicine</em>. <a href="https://doi.org/10.1016/j.ejim.2024.08.008" class="uri">https://doi.org/10.1016/j.ejim.2024.08.008</a></li>
 <li>Wang Y, Su B, <span class="author_publication">Alcalde-Herraiz M</span>, Barclay NL, Tian Y, Li C, Wareham NJ, Paredes R, Xie J, Prieto-Alhambra D. Modifiable lifestyle factors and the risk of post-COVID-19 multisystem sequelae, hospitalization, and death. (<strong>2024</strong>), <em>Nature communications</em>. <a href="https://doi.org/10.1038/s41467-024-50495-7" class="uri">https://doi.org/10.1038/s41467-024-50495-7</a></li>
 <li><span class="author_publication">Guo Y</span>, Raventós B, <span class="author_publication">Català M</span>, Elhussein L, <span class="author_publication">López-Güell K</span>, Tan EH, Prats-Uribe A, Dedman D, Man WY, Omulo H, Delmestri A, Lane JCE, Rahman U, Griffin XL, Gao C, Cole C, Batty P, Connelly J, Booth H, Cave A, Donegan K, Prieto-Alhambra D, <span class="author_publication">Burn E</span>, Jödicke AM. Time Series Methods to Assess the Impact of Regulatory Action: A Study of UK Primary Care and Hospital Data on the Use of Fluoroquinolones. (<strong>2024</strong>), <em>Pharmacoepidemiology and drug safety</em>. <a href="https://doi.org/10.1002/pds.70022" class="uri">https://doi.org/10.1002/pds.70022</a></li>
-<li>Lane J, Holmberg D, Thorell A, Burden AM, Furniss D, <span class="author_publication">Burkard T</span>. The association of bariatric surgery and carpal tunnel syndrome: A propensity score-matched cohort study. (<strong>2024</strong>), <em>Journal of plastic, reconstructive &amp; aesthetic surgery : JPRAS</em>. <a href="https://doi.org/10.1016/j.bjps.2024.07.015" class="uri">https://doi.org/10.1016/j.bjps.2024.07.015</a></li>
 <li>Lazar Neto F, <span class="author_publication">Mercadé-Besora N</span>, Raventós B, Pérez-Crespo L, Castro Junior G, Ranzani OT, Duarte-Salles T. Effectiveness of COVID-19 vaccines against severe COVID-19 among patients with cancer in Catalonia, Spain. (<strong>2024</strong>), <em>Nature communications</em>. <a href="https://doi.org/10.1038/s41467-024-49285-y" class="uri">https://doi.org/10.1038/s41467-024-49285-y</a></li>
-<li>Barclay NL, <span class="author_publication">Burkard T</span>, <span class="author_publication">Burn E</span>, Delmestri A, Miquel Dominguez A, Golozar A, Guarner-Argente C, Avilés-Jurado FX, Man WY, Roselló Serrano À, Rosen AW, Tan EH, Tietzova I, Prieto Alhambra D, <span class="author_publication">Newby D</span>. The Impact of the COVID-19 Pandemic on Incidence and Short-Term Survival for Common Solid Tumours in the United Kingdom: A Cohort Analysis. (<strong>2024</strong>), <em>Clinical epidemiology</em>. <a href="https://doi.org/10.2147/CLEP.S463160" class="uri">https://doi.org/10.2147/CLEP.S463160</a></li>
+<li>Barclay NL, Burkard T, <span class="author_publication">Burn E</span>, Delmestri A, Miquel Dominguez A, Golozar A, Guarner-Argente C, Avilés-Jurado FX, Man WY, Roselló Serrano À, Rosen AW, Tan EH, Tietzova I, Prieto Alhambra D, <span class="author_publication">Newby D</span>. The Impact of the COVID-19 Pandemic on Incidence and Short-Term Survival for Common Solid Tumours in the United Kingdom: A Cohort Analysis. (<strong>2024</strong>), <em>Clinical epidemiology</em>. <a href="https://doi.org/10.2147/CLEP.S463160" class="uri">https://doi.org/10.2147/CLEP.S463160</a></li>
 <li>Barclay NL, <span class="author_publication">Català M</span>, Jödicke AM, Prieto-Alhambra D, <span class="author_publication">Newby D</span>, Delmestri A, Man WY, Serrano ÀR, Moncusí MP. Collateral effects of the COVID-19 pandemic on endocrine treatments for breast and prostate cancer in the UK: a cohort study. (<strong>2024</strong>), <em>Therapeutic advances in medical oncology</em>. <a href="https://doi.org/10.1177/17588359241253115" class="uri">https://doi.org/10.1177/17588359241253115</a></li>
 <li><span class="author_publication">Newby D</span>, Taylor N, Joyce DW, Winchester LM. Optimising the use of electronic medical records for large scale research in psychiatry. (<strong>2024</strong>), <em>Translational psychiatry</em>. <a href="https://doi.org/10.1038/s41398-024-02911-1" class="uri">https://doi.org/10.1038/s41398-024-02911-1</a></li>
 <li>de Rioja VL, Perramon-Malavez A, Alonso S, Andrés C, Antón A, Bordoy AE, Càmara J, Cardona PJ, <span class="author_publication">Català M</span>, López D, Martí S, Martró E, Saludes V, Prats C, Alvarez-Lacalle E. Mathematical modeling of SARS-CoV-2 variant substitutions in European countries: transmission dynamics and epidemiological insights. (<strong>2024</strong>), <em>Frontiers in public health</em>. <a href="https://doi.org/10.3389/fpubh.2024.1339267" class="uri">https://doi.org/10.3389/fpubh.2024.1339267</a></li>
 <li>Xie J, Mothe B, <span class="author_publication">Alcalde Herraiz M</span>, Li C, Xu Y, Jödicke AM, Gao Y, Wang Y, Feng S, Wei J, Chen Z, Hong S, Wu Y, Su B, Zheng X, Cohet C, Ali R, Wareham N, Alhambra DP. Relationship between HLA genetic variations, COVID-19 vaccine antibody response, and risk of breakthrough outcomes. (<strong>2024</strong>), <em>Nature communications</em>. <a href="https://doi.org/10.1038/s41467-024-48339-5" class="uri">https://doi.org/10.1038/s41467-024-48339-5</a></li>
 <li><span class="author_publication">Mercadé-Besora N</span>, <span class="author_publication">Guo Y</span>, <span class="author_publication">Du M</span>, Li X, Ramírez-Anguita JM, Moreno A, Valente A, Villalobos F, Cheng IL, Carrasco-Ribelles LA, van Swieten MMH, Merkelbach M, Magoya M, Lasalvia P, Pericàs-Pulido P, Berg P, Bosco-Lévy P, Lillini R, Ribeiro R, Bagga TK, Ramella V, Khalid S, Mayer MA, Leis A, Jödicke AM, <span class="author_publication">Burn E</span>, Prieto-Alhambra D, <span class="author_publication">Català M</span>, Prats-Uribe A. Incident Use of Hydroxychloroquine for the Treatment of Rheumatoid Arthritis and Systemic Lupus Erythematosus During the COVID-19 Pandemic. (<strong>2024</strong>), <em>Arthritis care &amp; research</em>. <a href="https://doi.org/10.1002/acr.25331" class="uri">https://doi.org/10.1002/acr.25331</a></li>
-<li><span class="author_publication">Burkard T</span>, <span class="author_publication">López-Güell K</span>, Gorbachev A, Bellas L, Jödicke AM, <span class="author_publication">Burn E</span>, de Ridder M, Mosseveld M, Gratton J, Seager S, Vojinovic D, Mayer MA, Ramírez-Anguita JM, Machín AL, Oja M, Kolde R, Bonadt K, Prieto-Alhambra D, Reich C, <span class="author_publication">Català M</span>. Calculating daily dose in the Observational Medical Outcomes Partnership Common Data Model. (<strong>2024</strong>), <em>Pharmacoepidemiology and drug safety</em>. <a href="https://doi.org/10.1002/pds.5809" class="uri">https://doi.org/10.1002/pds.5809</a></li>
+<li>Burkard T, <span class="author_publication">López-Güell K</span>, Gorbachev A, Bellas L, Jödicke AM, <span class="author_publication">Burn E</span>, de Ridder M, Mosseveld M, Gratton J, Seager S, Vojinovic D, Mayer MA, Ramírez-Anguita JM, Machín AL, Oja M, Kolde R, Bonadt K, Prieto-Alhambra D, Reich C, <span class="author_publication">Català M</span>. Calculating daily dose in the Observational Medical Outcomes Partnership Common Data Model. (<strong>2024</strong>), <em>Pharmacoepidemiology and drug safety</em>. <a href="https://doi.org/10.1002/pds.5809" class="uri">https://doi.org/10.1002/pds.5809</a></li>
 <li><span class="author_publication">Mercadé-Besora N</span>, Li X, Kolde R, Trinh NT, Sanchez-Santos MT, Man WY, Roel E, Reyes C, Delmestri A, Nordeng HME, Uusküla A, Duarte-Salles T, Prats C, Prieto-Alhambra D, Jödicke AM, <span class="author_publication">Català M</span>. The role of COVID-19 vaccines in preventing post-COVID-19 thromboembolic and cardiovascular complications. (<strong>2024</strong>), <em>Heart (British Cardiac Society)</em>. <a href="https://doi.org/10.1136/heartjnl-2023-323483" class="uri">https://doi.org/10.1136/heartjnl-2023-323483</a></li>
 <li>Trinh NT, Jödicke AM, <span class="author_publication">Català M</span>, <span class="author_publication">Mercadé-Besora N</span>, Hayati S, Lupattelli A, Prieto-Alhambra D, Nordeng HM. Effectiveness of COVID-19 vaccines to prevent long COVID: data from Norway. (<strong>2024</strong>), <em>The Lancet. Respiratory medicine</em>. <a href="https://doi.org/10.1016/S2213-2600(24)00082-1" class="uri">https://doi.org/10.1016/S2213-2600(24)00082-1</a></li>
 <li>Barclay NL, Pineda Moncusí M, Jödicke AM, Prieto-Alhambra D, Raventós B, <span class="author_publication">Newby D</span>, Delmestri A, Man WY, <span class="author_publication">Chen X</span>, <span class="author_publication">Català M</span>. The impact of the UK COVID-19 lockdown on the screening, diagnostics and incidence of breast, colorectal, lung and prostate cancer in the UK: a population-based cohort study. (<strong>2024</strong>), <em>Frontiers in oncology</em>. <a href="https://doi.org/10.3389/fonc.2024.1370862" class="uri">https://doi.org/10.3389/fonc.2024.1370862</a></li>
 <li>Pavarini G, Lyreskog DM, <span class="author_publication">Newby D</span>, Lorimer J, Bennett V, Jacobs E, Winchester L, Nevado-Holgado A, Singh I. Tracing Tomorrow: young people’s preferences and values related to use of personal sensing to predict mental health, using a digital game methodology. (<strong>2024</strong>), <em>BMJ mental health</em>. <a href="https://doi.org/10.1136/bmjment-2023-300897" class="uri">https://doi.org/10.1136/bmjment-2023-300897</a></li>
 <li>Markus AF, Rijnbeek PR, Kors JA, <span class="author_publication">Burn E</span>, Duarte-Salles T, Haug M, Kim C, Kolde R, Lee Y, Park HS, Park RW, Prieto-Alhambra D, Reyes C, Krishnan JA, Brusselle GG, Verhamme KM. Real-world treatment trajectories of adults with newly diagnosed asthma or COPD. (<strong>2024</strong>), <em>BMJ open respiratory research</em>. <a href="https://doi.org/10.1136/bmjresp-2023-002127" class="uri">https://doi.org/10.1136/bmjresp-2023-002127</a></li>
 <li>Lo Re Iii V, Cocoros NM, Hubbard RA, Dutcher SK, Newcomb CW, Connolly JG, Perez-Vilar S, Carbonari DM, Kempner ME, Hernández-Muñoz JJ, Petrone AB, Pishko AM, Rogers Driscoll ME, Brash JT, Burnett S, Cohet C, Dahl M, DeFor TA, Delmestri A, Djibo DA, Duarte-Salles T, Harrington LB, Kampman M, Kuntz JL, Kurz X, <span class="author_publication">Mercadé-Besora N</span>, Pawloski PA, Rijnbeek PR, Seager S, Steiner CA, Verhamme K, Wu F, Zhou Y, <span class="author_publication">Burn E</span>, Paterson JM, Prieto-Alhambra D. Risk of Arterial and Venous Thrombotic Events Among Patients with COVID-19: A Multi-National Collaboration of Regulatory Agencies from Canada, Europe, and United States. (<strong>2024</strong>), <em>Clinical epidemiology</em>. <a href="https://doi.org/10.2147/CLEP.S448980" class="uri">https://doi.org/10.2147/CLEP.S448980</a></li>
-<li>Vallejo-Yagüe E, <span class="author_publication">Burkard T</span>, Finckh A, Burden AM. Comparative effectiveness of biologics in patients with rheumatoid arthritis stratified by body mass index: a cohort study in a Swiss registry. (<strong>2024</strong>), <em>BMJ open</em>. <a href="https://doi.org/10.1136/bmjopen-2023-074864" class="uri">https://doi.org/10.1136/bmjopen-2023-074864</a></li>
 <li>Winchester LM, <span class="author_publication">Newby D</span>, Ghose U, Hu P, Green H, Chien S, Ranson J, Faul J, Llewellyn D, Lee J, Bauermeister S, Nevado-Holgado A. Anemia, hemoglobin concentration and cognitive function in the Longitudinal Ageing Study in India-Harmonized Diagnostic Assessment of Dementia (LASI-DAD) and the Health and Retirement Study. (<strong>2024</strong>), <em>medRxiv : the preprint server for health sciences</em>. <a href="https://doi.org/10.1101/2024.01.22.24301583" class="uri">https://doi.org/10.1101/2024.01.22.24301583</a></li>
 <li><span class="author_publication">Català M</span>, <span class="author_publication">Mercadé-Besora N</span>, Kolde R, Trinh NTH, Roel E, <span class="author_publication">Burn E</span>, Rathod-Mistry T, Kostka K, Man WY, Delmestri A, Nordeng HME, Uusküla A, Duarte-Salles T, Prieto-Alhambra D, Jödicke AM. The effectiveness of COVID-19 vaccines to prevent long COVID symptoms: staggered cohort study of data from the UK, Spain, and Estonia. (<strong>2024</strong>), <em>The Lancet. Respiratory medicine</em>. <a href="https://doi.org/10.1016/S2213-2600(23)00414-9" class="uri">https://doi.org/10.1016/S2213-2600(23)00414-9</a></li>
 <li>Perramon-Malavez A, Bravo M, de Rioja VL, <span class="author_publication">Català M</span>, Alonso S, Álvarez-Lacalle E, López D, Soriano-Arandes A, Prats C. A semi-empirical risk panel to monitor epidemics: multi-faceted tool to assist healthcare and public health professionals. (<strong>2024</strong>), <em>Frontiers in public health</em>. <a href="https://doi.org/10.3389/fpubh.2023.1307425" class="uri">https://doi.org/10.3389/fpubh.2023.1307425</a></li>
@@ -236,9 +403,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Borchert RJ, Azevedo T, Badhwar A, Bernal J, Betts M, Bruffaerts R, Burkhart MC, Dewachter I, Gellersen HM, Low A, Lourida I, Machado L, Madan CR, Malpetti M, Mejia J, Michopoulou S, Muñoz-Neira C, Pepys J, Peres M, Phillips V, Ramanan S, Tamburin S, Tantiangco HM, Thakur L, Tomassini A, Vipin A, Tang E, <span class="author_publication">Newby D</span>, NA, Ranson JM, Llewellyn DJ, Veldsman M, Rittman T. Artificial intelligence for diagnostic and prognostic neuroimaging in dementia: A systematic review. (<strong>2023</strong>), <em>Alzheimer’s &amp; dementia : the journal of the Alzheimer’s Association</em>. <a href="https://doi.org/10.1002/alz.13412" class="uri">https://doi.org/10.1002/alz.13412</a></li>
 <li>Xie J, Feng Y, <span class="author_publication">Newby D</span>, Zheng B, Feng Q, Prats-Uribe A, Li C, Wareham NJ, Paredes R, Prieto-Alhambra D. Genetic risk, adherence to healthy lifestyle and acute cardiovascular and thromboembolic complications following SARS-COV-2 infection. (<strong>2023</strong>), <em>Nature communications</em>. <a href="https://doi.org/10.1038/s41467-023-40310-0" class="uri">https://doi.org/10.1038/s41467-023-40310-0</a></li>
 <li>Lyall DM, Kormilitzin A, Lancaster C, Sousa J, Petermann-Rocha F, Buckley C, Harshfield EL, Iveson MH, Madan CR, McArdle R, <span class="author_publication">Newby D</span>, Orgeta V, Tang E, Tamburin S, Thakur LS, Lourida I, NA, Llewellyn DJ, Ranson JM. Artificial intelligence for dementia-Applied models and digital health. (<strong>2023</strong>), <em>Alzheimer’s &amp; dementia : the journal of the Alzheimer’s Association</em>. <a href="https://doi.org/10.1002/alz.13391" class="uri">https://doi.org/10.1002/alz.13391</a></li>
-<li><span class="author_publication">Burkard T</span>, Vallejo-Yagüe E, Lauper K, Finckh A, Hügle T, Burden AM. Longitudinal associations between body mass index and changes in disease activity and radiographic progression in rheumatoid arthritis patients treated with infliximab. (<strong>2023</strong>), <em>RMD open</em>. <a href="https://doi.org/10.1136/rmdopen-2023-003396" class="uri">https://doi.org/10.1136/rmdopen-2023-003396</a></li>
 <li>Amin N, Liu J, Bonnechere B, MahmoudianDehkordi S, Arnold M, Batra R, Chiou YJ, Fernandes M, Ikram MA, Kraaij R, Krumsiek J, <span class="author_publication">Newby D</span>, Nho K, Radjabzadeh D, Saykin AJ, Shi L, Sproviero W, Winchester L, Yang Y, Nevado-Holgado AJ, Kastenmüller G, Kaddurah-Daouk R, van Duijn CM. Interplay of Metabolome and Gut Microbiome in Individuals With Major Depressive Disorder vs Control Individuals. (<strong>2023</strong>), <em>JAMA psychiatry</em>. <a href="https://doi.org/10.1001/jamapsychiatry.2023.0685" class="uri">https://doi.org/10.1001/jamapsychiatry.2023.0685</a></li>
-<li>Kalweit M, Burden AM, Boedecker J, Hügle T, <span class="author_publication">Burkard T</span>. Patient groups in Rheumatoid arthritis identified by deep learning respond differently to biologic or targeted synthetic DMARDs. (<strong>2023</strong>), <em>PLoS computational biology</em>. <a href="https://doi.org/10.1371/journal.pcbi.1011073" class="uri">https://doi.org/10.1371/journal.pcbi.1011073</a></li>
 <li>Sherratt K, Gruson H, Grah R, Johnson H, Niehus R, Prasse B, Sandmann F, Deuschel J, Wolffram D, Abbott S, Ullrich A, Gibson G, Ray EL, Reich NG, Sheldon D, Wang Y, Wattanachit N, Wang L, Trnka J, Obozinski G, Sun T, Thanou D, Pottier L, Krymova E, Meinke JH, Barbarossa MV, Leithauser N, Mohring J, Schneider J, Wlazlo J, Fuhrmann J, Lange B, Rodiah I, Baccam P, Gurung H, Stage S, Suchoski B, Budzinski J, Walraven R, Villanueva I, Tucek V, Smid M, Zajicek M, Perez Alvarez C, Reina B, Bosse NI, Meakin SR, Castro L, Fairchild G, Michaud I, Osthus D, Alaimo Di Loro P, Maruotti A, Eclerova V, Kraus A, Kraus D, Pribylova L, Dimitris B, Li ML, Saksham S, Dehning J, Mohr S, Priesemann V, Redlarski G, Bejar B, Ardenghi G, Parolini N, Ziarelli G, Bock W, Heyder S, Hotz T, Singh DE, Guzman-Merino M, Aznarte JL, Morina D, Alonso S, Alvarez E, Lopez D, Prats C, Burgard JP, Rodloff A, Zimmermann T, Kuhlmann A, Zibert J, Pennoni F, Divino F, <span class="author_publication">Catala M</span>, Lovison G, Giudici P, Tarantino B, Bartolucci F, Jona Lasinio G, Mingione M, Farcomeni A, Srivastava A, Montero-Manso P, Adiga A, Hurt B, Lewis B, Marathe M, Porebski P, Venkatramanan S, Bartczuk RP, Dreger F, Gambin A, Gogolewski K, Gruziel-Slomka M, Krupa B, Moszyński A, Niedzielewski K, Nowosielski J, Radwan M, Rakowski F, Semeniuk M, Szczurek E, Zielinski J, Kisielewski J, Pabjan B, Holger K, Kheifetz Y, Scholz M, Przemyslaw B, Bodych M, Filinski M, Idzikowski R, Krueger T, Ozanski T, Bracher J, Funk S. Predictive performance of multi-model ensemble forecasts of COVID-19 across European nations. (<strong>2023</strong>), <em>eLife</em>. <a href="https://doi.org/10.7554/eLife.81916" class="uri">https://doi.org/10.7554/eLife.81916</a></li>
 <li>Anatürk M, Patel R, Ebmeier KP, Georgiopoulos G, <span class="author_publication">Newby D</span>, Topiwala A, de Lange AG, Cole JH, Jansen MG, Singh-Manoux A, Kivimäki M, Suri S. Development and validation of a dementia risk score in the UK Biobank and Whitehall II cohorts. (<strong>2023</strong>), <em>BMJ mental health</em>. <a href="https://doi.org/10.1136/bmjment-2023-300719" class="uri">https://doi.org/10.1136/bmjment-2023-300719</a></li>
 <li>Markus AF, Strauss VY, <span class="author_publication">Burn E</span>, Li X, Delmestri A, Reich C, Yin C, Mayer MA, Ramírez-Anguita JM, Marti E, Verhamme KMC, Rijnbeek PR, Prieto-Alhambra D, Jödicke AM. Characterising the treatment of thromboembolic events after COVID-19 vaccination in 4 European countries and the US: An international network cohort study. (<strong>2023</strong>), <em>Frontiers in pharmacology</em>. <a href="https://doi.org/10.3389/fphar.2023.1118203" class="uri">https://doi.org/10.3389/fphar.2023.1118203</a></li>
@@ -251,7 +416,6 @@ ul.task-list li input[type="checkbox"] {
 <li>Pinedo-Villanueva R, Kolovos S, <span class="author_publication">Burn E</span>, Delmestri A, Smith LK, Judge A, Kingsbury SR, Stone MH, Conaghan PG. Association between outpatient follow-up and incidence of revision after knee and hip replacements: a population-based cohort study. (<strong>2023</strong>), <em>BMC musculoskeletal disorders</em>. <a href="https://doi.org/10.1186/s12891-023-06190-7" class="uri">https://doi.org/10.1186/s12891-023-06190-7</a></li>
 <li>Nogueira I, <span class="author_publication">Català M</span>, White AD, Sharpe SA, Bechini J, Prats C, Vilaplana C, Cardona PJ. Surveillance of Daughter Micronodule Formation Is a Key Factor for Vaccine Evaluation Using Experimental Infection Models of Tuberculosis in Macaques. (<strong>2023</strong>), <em>Pathogens (Basel, Switzerland)</em>. <a href="https://doi.org/10.3390/pathogens12020236" class="uri">https://doi.org/10.3390/pathogens12020236</a></li>
 <li>Pinedo-Villanueva R, <span class="author_publication">Burn E</span>, Maronga C, Cooper C, Javaid MK. Expected Benefits and Budget Impact From a Microsimulation Model Support the Prioritization and Implementation of Fracture Liaison Services. (<strong>2023</strong>), <em>Journal of bone and mineral research : the official journal of the American Society for Bone and Mineral Research</em>. <a href="https://doi.org/10.1002/jbmr.4775" class="uri">https://doi.org/10.1002/jbmr.4775</a></li>
-<li>Faquetti ML, la Torre AM, <span class="author_publication">Burkard T</span>, Obozinski G, Burden AM. Identification of polypharmacy patterns in new-users of metformin using the Apriori algorithm: A novel framework for investigating concomitant drug utilization through association rule mining. (<strong>2023</strong>), <em>Pharmacoepidemiology and drug safety</em>. <a href="https://doi.org/10.1002/pds.5583" class="uri">https://doi.org/10.1002/pds.5583</a></li>
 <li><span class="author_publication">Burn E</span>, Roel E, Pistillo A, Fernández-Bertolín S, Aragón M, Raventós B, Reyes C, Verhamme K, Rijnbeek P, Li X, Strauss VY, Prieto-Alhambra D, Duarte-Salles T. Thrombosis and thrombocytopenia after vaccination against and infection with SARS-CoV-2 in Catalonia, Spain. (<strong>2022</strong>), <em>Nature communications</em>. <a href="https://doi.org/10.1038/s41467-022-34669-9" class="uri">https://doi.org/10.1038/s41467-022-34669-9</a></li>
 <li><span class="author_publication">Burn E</span>, Li X, Delmestri A, Jones N, Duarte-Salles T, Reyes C, Martinez-Hernandez E, Marti E, Verhamme KMC, Rijnbeek PR, Strauss VY, Prieto-Alhambra D. Thrombosis and thrombocytopenia after vaccination against and infection with SARS-CoV-2 in the United Kingdom. (<strong>2022</strong>), <em>Nature communications</em>. <a href="https://doi.org/10.1038/s41467-022-34668-w" class="uri">https://doi.org/10.1038/s41467-022-34668-w</a></li>
 <li>Broekstra DC, Kuo RYL, <span class="author_publication">Burn E</span>, Prieto-Alhambra D, Furniss D. Dupuytren Disease: Prevalence, Incidence, and Lifetime Risk of Surgical Intervention. A Population-Based Cohort Analysis. (<strong>2022</strong>), <em>Plastic and reconstructive surgery</em>. <a href="https://doi.org/10.1097/PRS.0000000000009919" class="uri">https://doi.org/10.1097/PRS.0000000000009919</a></li>
@@ -261,12 +425,10 @@ ul.task-list li input[type="checkbox"] {
 <li><span class="author_publication">Català M</span>, Coma E, Alonso S, Andrés C, Blanco I, Antón A, Bordoy AE, Cardona PJ, Fina F, Martró E, Medina M, Mora N, Saludes V, Prats C, Prieto-Alhambra D, Alvarez-Lacalle E. Corrigendum: Transmissibility, hospitalization, and intensive care admissions due to omicron compared to delta variants of SARS-CoV-2 in Catalonia: A cohort study and ecological analysis. (<strong>2022</strong>), <em>Frontiers in public health</em>. <a href="https://doi.org/10.3389/fpubh.2022.1060328" class="uri">https://doi.org/10.3389/fpubh.2022.1060328</a></li>
 <li>Li X, <span class="author_publication">Burn E</span>, Duarte-Salles T, Yin C, Reich C, Delmestri A, Verhamme K, Rijnbeek P, Suchard MA, Li K, Mosseveld M, John LH, Mayer MA, Ramirez-Anguita JM, Cohet C, Strauss V, Prieto-Alhambra D. Comparative risk of thrombosis with thrombocytopenia syndrome or thromboembolic events associated with different covid-19 vaccines: international network cohort study from five European countries and the US. (<strong>2022</strong>), <em>BMJ (Clinical research ed.)</em>. <a href="https://doi.org/10.1136/bmj-2022-071594" class="uri">https://doi.org/10.1136/bmj-2022-071594</a></li>
 <li>Buonsenso D, Perramon A, <span class="author_publication">Català M</span>, Torres JP, Camacho-Moreno G, Rojas-Solano M, Ulloa-Gutierrez R, Camacho-Badilla K, Pérez-Corrales C, Cotugno N, Yamazaki-Nakashimada MA, Estripeaut D, Buddingh EP, von Asmuth E, van Rossum AMC, Soler-Palacin P, Rivière JG, Prats C, Pino R, Paredes-Carmona F, Visa-Reñé N, García-Salido A, Martínez-Mejias A, Soriano-Arandes A. Multisystem Inflammatory Syndrome in Children in Western Countries? Decreasing Incidence as the Pandemic Progresses?: An Observational Multicenter International Cross-sectional Study. (<strong>2022</strong>), <em>The Pediatric infectious disease journal</em>. <a href="https://doi.org/10.1097/INF.0000000000003713" class="uri">https://doi.org/10.1097/INF.0000000000003713</a></li>
-<li>Vallejo-Yagüe E, Pfund JN, <span class="author_publication">Burkard T</span>, Clair C, Micheroli R, Möller B, Finckh A, Burden AM. Lower odds of remission among women with rheumatoid arthritis: A cohort study in the Swiss Clinical Quality Management cohort. (<strong>2022</strong>), <em>PloS one</em>. <a href="https://doi.org/10.1371/journal.pone.0275026" class="uri">https://doi.org/10.1371/journal.pone.0275026</a></li>
 <li>Ward J, Lyall LM, Strawbridge RJ, Stanciu I, Veldsman M, Garfield V, Celis-Morales C, <span class="author_publication">Newby D</span>, Stewart W, Pell JP, Sattar N, Lyall DM. Testing for association between exonic glucagon-like peptide 1 receptor mutation with physical and brain health traits in UK Biobank. (<strong>2022</strong>), <em>Diabetes, obesity &amp; metabolism</em>. <a href="https://doi.org/10.1111/dom.14879" class="uri">https://doi.org/10.1111/dom.14879</a></li>
 <li><span class="author_publication">Newby D</span>. Are phosphodiesterase Type 5 inhibitors potential therapies for Alzheimer’s disease and related dementias? (<strong>2022</strong>), <em>Brain communications</em>. <a href="https://doi.org/10.1093/braincomms/fcac260" class="uri">https://doi.org/10.1093/braincomms/fcac260</a></li>
 <li>Roel E, Raventós B, <span class="author_publication">Burn E</span>, Pistillo A, Prieto-Alhambra D, Duarte-Salles T. Socioeconomic Inequalities in COVID-19 Vaccination and Infection in Adults, Catalonia, Spain. (<strong>2022</strong>), <em>Emerging infectious diseases</em>. <a href="https://doi.org/10.3201/eid2811.220614" class="uri">https://doi.org/10.3201/eid2811.220614</a></li>
 <li><span class="author_publication">López-Güell K</span>, Forrer N, Cartoixà X, Zardo I, Rurali R. Phonon Transport in GaAs and InAs Twinning Superlattices. (<strong>2022</strong>), <em>The journal of physical chemistry. C, Nanomaterials and interfaces</em>. <a href="https://doi.org/10.1021/acs.jpcc.2c04859" class="uri">https://doi.org/10.1021/acs.jpcc.2c04859</a></li>
-<li>Vallejo-Yagüe E, <span class="author_publication">Burkard T</span>, Micheroli R, Burden AM. Minimal disease activity and remission in patients with psoriatic arthritis with elevated body mass index: an observational cohort study in the Swiss Clinical Quality Management cohort. (<strong>2022</strong>), <em>BMJ open</em>. <a href="https://doi.org/10.1136/bmjopen-2022-061474" class="uri">https://doi.org/10.1136/bmjopen-2022-061474</a></li>
 <li>Joseph-Duran B, Serra-Compte A, Sàrrias M, Gonzalez S, López D, Prats C, <span class="author_publication">Català M</span>, Alvarez-Lacalle E, Alonso S, Arnaldos M. Assessing wastewater-based epidemiology for the prediction of SARS-CoV-2 incidence in Catalonia. (<strong>2022</strong>), <em>Scientific reports</em>. <a href="https://doi.org/10.1038/s41598-022-18518-9" class="uri">https://doi.org/10.1038/s41598-022-18518-9</a></li>
 <li>Coma E, <span class="author_publication">Català M</span>, Méndez-Boo L, Alonso S, Hermosilla E, Alvarez-Lacalle E, Pino D, Medina M, Asso L, Gatell A, Bassat Q, Mas A, Soriano-Arandes A, Fina Avilés F, Prats C. Unravelling the role of the mandatory use of face covering masks for the control of SARS-CoV-2 in schools: a quasi-experimental study nested in a population-based cohort in Catalonia (Spain). (<strong>2022</strong>), <em>Archives of disease in childhood</em>. <a href="https://doi.org/10.1136/archdischild-2022-324172" class="uri">https://doi.org/10.1136/archdischild-2022-324172</a></li>
 <li><span class="author_publication">Català M</span>, Coma E, Alonso S, Andrés C, Blanco I, Antón A, Bordoy AE, Cardona PJ, Fina F, Martró E, Medina M, Mora N, Saludes V, Prats C, Prieto-Alhambra D, Alvarez-Lacalle E. Transmissibility, hospitalization, and intensive care admissions due to omicron compared to delta variants of SARS-CoV-2 in Catalonia: A cohort study and ecological analysis. (<strong>2022</strong>), <em>Frontiers in public health</em>. <a href="https://doi.org/10.3389/fpubh.2022.961030" class="uri">https://doi.org/10.3389/fpubh.2022.961030</a></li>
@@ -279,19 +441,14 @@ ul.task-list li input[type="checkbox"] {
 <li>Kostka K, Duarte-Salles T, Prats-Uribe A, Sena AG, Pistillo A, Khalid S, Lai LYH, Golozar A, Alshammari TM, Dawoud DM, Nyberg F, Wilcox AB, Andryc A, Williams A, Ostropolets A, Areia C, Jung CY, Harle CA, Reich CG, Blacketer C, Morales DR, Dorr DA, <span class="author_publication">Burn E</span>, Roel E, Tan EH, Minty E, DeFalco F, de Maeztu G, Lipori G, Alghoul H, Zhu H, Thomas JA, Bian J, Park J, Martínez Roldán J, Posada JD, Banda JM, Horcajada JP, Kohler J, Shah K, Natarajan K, Lynch KE, Liu L, Schilling LM, Recalde M, Spotnitz M, Gong M, Matheny ME, Valveny N, Weiskopf NG, Shah N, Alser O, Casajust P, Park RW, Schuff R, Seager S, DuVall SL, You SC, Song S, Fernández-Bertolín S, Fortin S, Magoc T, Falconer T, Subbian V, Huser V, Ahmed WU, Carter W, Guan Y, Galvan Y, He X, Rijnbeek PR, Hripcsak G, Ryan PB, Suchard MA, Prieto-Alhambra D. Unraveling COVID-19: A Large-Scale Characterization of 4.5 Million COVID-19 Cases Using CHARYBDIS. (<strong>2022</strong>), <em>Clinical epidemiology</em>. <a href="https://doi.org/10.2147/CLEP.S323292" class="uri">https://doi.org/10.2147/CLEP.S323292</a></li>
 <li>Cardona PJ, <span class="author_publication">Català M</span>, Prats C. The Origin and Maintenance of Tuberculosis Is Explained by the Induction of Smear-Negative Disease in the Paleolithic. (<strong>2022</strong>), <em>Pathogens (Basel, Switzerland)</em>. <a href="https://doi.org/10.3390/pathogens11030366" class="uri">https://doi.org/10.3390/pathogens11030366</a></li>
 <li>Li X, Raventós B, Roel E, Pistillo A, Martinez-Hernandez E, Delmestri A, Reyes C, Strauss V, Prieto-Alhambra D, <span class="author_publication">Burn E</span>, Duarte-Salles T. Association between covid-19 vaccination, SARS-CoV-2 infection, and risk of immune mediated neurological events: population based cohort and self-controlled case series analysis. (<strong>2022</strong>), <em>BMJ (Clinical research ed.)</em>. <a href="https://doi.org/10.1136/bmj-2021-068373" class="uri">https://doi.org/10.1136/bmj-2021-068373</a></li>
-<li><span class="author_publication">Burkard T</span>, Vallejo-Yagüe E, Hügle T, Finckh A, Burden AM. Interruptions of biological and targeted synthetic disease-modifying antirheumatic drugs in rheumatoid arthritis: a descriptive cohort study assessing trends in patient characteristics in Switzerland. (<strong>2022</strong>), <em>BMJ open</em>. <a href="https://doi.org/10.1136/bmjopen-2021-056352" class="uri">https://doi.org/10.1136/bmjopen-2021-056352</a></li>
 <li><span class="author_publication">Burn E</span>, Li X, Kostka K, Stewart HM, Reich C, Seager S, Duarte-Salles T, Fernandez-Bertolin S, Aragón M, Reyes C, Martinez-Hernandez E, Marti E, Delmestri A, Verhamme K, Rijnbeek P, Horban S, Morales DR, Prieto-Alhambra D. Background rates of five thrombosis with thrombocytopenia syndromes of special interest for COVID-19 vaccine safety surveillance: Incidence between 2017 and 2019 and patient profiles from 38.6 million people in six European countries. (<strong>2022</strong>), <em>Pharmacoepidemiology and drug safety</em>. <a href="https://doi.org/10.1002/pds.5419" class="uri">https://doi.org/10.1002/pds.5419</a></li>
 <li><span class="author_publication">Newby D</span>, Garfield V. Understanding the inter-relationships of type 2 diabetes and hypertension with brain and cognitive health: A UK Biobank study. (<strong>2022</strong>), <em>Diabetes, obesity &amp; metabolism</em>. <a href="https://doi.org/10.1111/dom.14658" class="uri">https://doi.org/10.1111/dom.14658</a></li>
-<li><span class="author_publication">Burkard T</span>, Holmberg D, Wretenberg P, Thorell A, Hügle T, Burden AM. The associations between bariatric surgery and hip or knee arthroplasty, and hip or knee osteoarthritis: Propensity score-matched cohort studies. (<strong>2022</strong>), <em>Osteoarthritis and cartilage open</em>. <a href="https://doi.org/10.1016/j.ocarto.2022.100249" class="uri">https://doi.org/10.1016/j.ocarto.2022.100249</a></li>
 <li>Alonso S, <span class="author_publication">Català M</span>, López D, Álvarez-Lacalle E, Jordan I, García-García JJ, Fumadó V, Muñoz-Almagro C, Gratacós E, Balanza N, Varo R, Millat P, Baro B, Ajanovic S, Arias S, Claverol J, de Sevilla MF, Bonet-Carne E, Garcia-Miquel A, Coma E, Medina-Peralta M, Fina F, Prats C, Bassat Q. Individual prevention and containment measures in schools in Catalonia, Spain, and community transmission of SARS-CoV-2 after school re-opening. (<strong>2022</strong>), <em>PloS one</em>. <a href="https://doi.org/10.1371/journal.pone.0263741" class="uri">https://doi.org/10.1371/journal.pone.0263741</a></li>
 <li>Morales DR, Ostropolets A, Lai L, Sena A, Duvall S, Suchard M, Verhamme K, Rjinbeek P, Posada J, Ahmed W, Alshammary T, Alghoul H, Alser O, Areia C, Blacketer C, <span class="author_publication">Burn E</span>, Casajust P, You SC, Dawoud D, Golozar A, Gong M, Jonnagaddala J, Lynch K, Matheny M, Minty E, Nyberg F, Uribe A, Recalde M, Reich C, Scheumie M, Shah K, Shah N, Schilling L, Vizcaya D, Zhang L, Hripcsak G, Ryan P, Prieto-Alhambra D, Durate-Salles T, Kostka K. Characteristics and outcomes of COVID-19 patients with and without asthma from the United States, South Korea, and Europe. (<strong>2022</strong>), <em>The Journal of asthma : official journal of the Association for the Care of Asthma</em>. <a href="https://doi.org/10.1080/02770903.2021.2025392" class="uri">https://doi.org/10.1080/02770903.2021.2025392</a></li>
 <li>Williams RD, Markus AF, Yang C, Duarte-Salles T, DuVall SL, Falconer T, Jonnagaddala J, Kim C, Rho Y, Williams AE, Machado AA, An MH, Aragón M, Areia C, <span class="author_publication">Burn E</span>, Choi YH, Drakos I, Abrahão MTF, Fernández-Bertolín S, Hripcsak G, Kaas-Hansen BS, Kandukuri PL, Kors JA, Kostka K, Liaw ST, Lynch KE, Machnicki G, Matheny ME, Morales D, Nyberg F, Park RW, Prats-Uribe A, Pratt N, Rao G, Reich CG, Rivera M, Seinen T, Shoaibi A, Spotnitz ME, Steyerberg EW, Suchard MA, You SC, Zhang L, Zhou L, Ryan PB, Prieto-Alhambra D, Reps JM, Rijnbeek PR. Seek COVER: using a disease proxy to rapidly develop and validate a personalized risk calculator for COVID-19 outcomes in an international network. (<strong>2022</strong>), <em>BMC medical research methodology</em>. <a href="https://doi.org/10.1186/s12874-022-01505-z" class="uri">https://doi.org/10.1186/s12874-022-01505-z</a></li>
 <li>Li Z, Kormilitzin A, Fernandes M, Vaci N, Liu Q, <span class="author_publication">Newby D</span>, Goodday S, Smith T, Nevado-Holgado AJ, Winchester L. Validation of UK Biobank data for mental health outcomes: A pilot study using secondary care electronic health records. (<strong>2022</strong>), <em>International journal of medical informatics</em>. <a href="https://doi.org/10.1016/j.ijmedinf.2022.104704" class="uri">https://doi.org/10.1016/j.ijmedinf.2022.104704</a></li>
 <li>López F, <span class="author_publication">Català M</span>, Prats C, Estrada O, Oliva I, Prat N, Isnard M, Vallès R, Vilar M, Clotet B, Argimon JM, Aran A, Ara J. A Cost-Benefit Analysis of COVID-19 Vaccination in Catalonia. (<strong>2021</strong>), <em>Vaccines</em>. <a href="https://doi.org/10.3390/vaccines10010059" class="uri">https://doi.org/10.3390/vaccines10010059</a></li>
 <li>Antoñanzas JM, Perramon A, López C, Boneta M, Aguilera C, Capdevila R, Gatell A, Serrano P, Poblet M, Canadell D, Vilà M, Catasús G, Valldepérez C, <span class="author_publication">Català M</span>, Soler-Palacín P, Prats C, Soriano-Arandes A. Symptom-Based Predictive Model of COVID-19 Disease in Children. (<strong>2021</strong>), <em>Viruses</em>. <a href="https://doi.org/10.3390/v14010063" class="uri">https://doi.org/10.3390/v14010063</a></li>
-<li><span class="author_publication">Burkard T</span>, Lane JCE, Holmberg D, Thorell A, Burden AM, Furniss D. The association of bariatric surgery and Dupuytren’s disease: a propensity score-matched cohort study. (<strong>2021</strong>), <em>The Journal of hand surgery, European volume</em>. <a href="https://doi.org/10.1177/17531934211062023" class="uri">https://doi.org/10.1177/17531934211062023</a></li>
-<li><span class="author_publication">Burkard T</span>, Williams RD, Vallejo-Yagüe E, Hügle T, Finckh A, Kyburz D, Burden AM. Prediction of sustained biologic and targeted synthetic DMARD-free remission in rheumatoid arthritis patients. (<strong>2021</strong>), <em>Rheumatology advances in practice</em>. <a href="https://doi.org/10.1093/rap/rkab087" class="uri">https://doi.org/10.1093/rap/rkab087</a></li>
-<li><span class="author_publication">Burkard T</span>, Holmberg D, Thorell A, Hafezi F, Burden AM. The association between bariatric surgery and cataract: a propensity score-matched cohort study. (<strong>2021</strong>), <em>Surgery for obesity and related diseases : official journal of the American Society for Bariatric Surgery</em>. <a href="https://doi.org/10.1016/j.soard.2021.10.021" class="uri">https://doi.org/10.1016/j.soard.2021.10.021</a></li>
 <li>Recalde M, Rodríguez C, <span class="author_publication">Burn E</span>, Far M, García D, Carrere-Molina J, Benítez M, Moleras A, Pistillo A, Bolíbar B, Aragón M, Duarte-Salles T. Data Resource Profile: The Information System for Research in Primary Care (SIDIAP). (<strong>2021</strong>), <em>International journal of epidemiology</em>. <a href="https://doi.org/10.1093/ije/dyac068" class="uri">https://doi.org/10.1093/ije/dyac068</a></li>
 <li>Roel E, Pistillo A, Recalde M, Fernández-Bertolín S, Aragón M, Soerjomataram I, Jenab M, Puente D, Prieto-Alhambra D, <span class="author_publication">Burn E</span>, Duarte-Salles T. Cancer and the risk of coronavirus disease 2019 diagnosis, hospitalisation and death: A population-based multistate cohort study including 4 618 377 adults in Catalonia, Spain. (<strong>2021</strong>), <em>International journal of cancer</em>. <a href="https://doi.org/10.1002/ijc.33846" class="uri">https://doi.org/10.1002/ijc.33846</a></li>
 <li><span class="author_publication">Newby D</span>, Winchester L, Sproviero W, Fernandes M, Wang D, Kormilitzin A, Launer LJ, Nevado-Holgado AJ. Associations Between Brain Volumes and Cognitive Tests with Hypertensive Burden in UK Biobank. (<strong>2021</strong>), <em>Journal of Alzheimer’s disease : JAD</em>. <a href="https://doi.org/10.3233/JAD-210512" class="uri">https://doi.org/10.3233/JAD-210512</a></li>
@@ -299,16 +456,12 @@ ul.task-list li input[type="checkbox"] {
 <li>Perramon A, Soriano-Arandes A, Pino D, Lazcano U, Andrés C, <span class="author_publication">Català M</span>, Gatell A, Carulla M, Canadell D, Ricós G, Riera-Bosch MT, Burgaya S, Salvadó O, Cantero J, Vilà M, Poblet M, Sánchez A, Ristol AM, Serrano P, Antón A, Prats C, Soler-Palacin P. Schools as a Framework for COVID-19 Epidemiological Surveillance of Children in Catalonia, Spain: A Population-Based Study. (<strong>2021</strong>), <em>Frontiers in pediatrics</em>. <a href="https://doi.org/10.3389/fped.2021.754744" class="uri">https://doi.org/10.3389/fped.2021.754744</a></li>
 <li>Alonso S, Alvarez-Lacalle E, <span class="author_publication">Català M</span>, López D, Jordan I, García-García JJ, Soriano-Arandes A, Lazcano U, Sallés P, Masats M, Urrutia J, Gatell A, Capdevila R, Soler-Palacin P, Bassat Q, Prats C. Age-dependency of the Propagation Rate of Coronavirus Disease 2019 Inside School Bubble Groups in Catalonia, Spain. (<strong>2021</strong>), <em>The Pediatric infectious disease journal</em>. <a href="https://doi.org/10.1097/INF.0000000000003279" class="uri">https://doi.org/10.1097/INF.0000000000003279</a></li>
 <li>Mansfield KL, <span class="author_publication">Newby D</span>, Soneson E, Vaci N, Jindra C, Geulayov G, Gallacher J, Fazel M. COVID-19 partial school closures and mental health problems: A cross-sectional survey of 11,000 adolescents to determine those most at risk. (<strong>2021</strong>), <em>JCPP advances</em>. <a href="https://doi.org/10.1002/jcv2.12021" class="uri">https://doi.org/10.1002/jcv2.12021</a></li>
-<li>Vallejo-Yagüe E, <span class="author_publication">Burkard T</span>, Möller B, Finckh A, Burden AM. Comparison of Psoriatic Arthritis and Rheumatoid Arthritis Patients across Body Mass Index Categories in Switzerland. (<strong>2021</strong>), <em>Journal of clinical medicine</em>. <a href="https://doi.org/10.3390/jcm10143194" class="uri">https://doi.org/10.3390/jcm10143194</a></li>
 <li>Recalde M, Roel E, Pistillo A, Sena AG, Prats-Uribe A, Ahmed WU, Alghoul H, Alshammari TM, Alser O, Areia C, <span class="author_publication">Burn E</span>, Casajust P, Dawoud D, DuVall SL, Falconer T, Fernández-Bertolín S, Golozar A, Gong M, Lai LYH, Lane JCE, Lynch KE, Matheny ME, Mehta PP, Morales DR, Natarjan K, Nyberg F, Posada JD, Reich CG, Rijnbeek PR, Schilling LM, Shah K, Shah NH, Subbian V, Zhang L, Zhu H, Ryan P, Prieto-Alhambra D, Kostka K, Duarte-Salles T. Characteristics and outcomes of 627 044 COVID-19 patients living with and without obesity in the United States, Spain, and the United Kingdom. (<strong>2021</strong>), <em>International journal of obesity (2005)</em>. <a href="https://doi.org/10.1038/s41366-021-00893-4" class="uri">https://doi.org/10.1038/s41366-021-00893-4</a></li>
 <li><span class="author_publication">Català M</span>, Marchena M, Conesa D, Palacios P, Urdiales T, Alonso S, Alvarez-Lacalle E, Lopez D, Cardona PJ, Prats C. Monitoring and Analysis of COVID-19 Pandemic: The Need for an Empirical Approach. (<strong>2021</strong>), <em>Frontiers in public health</em>. <a href="https://doi.org/10.3389/fpubh.2021.633123" class="uri">https://doi.org/10.3389/fpubh.2021.633123</a></li>
 <li><span class="author_publication">Catala M</span>, Coma E, Alonso S, Álvarez-Lacalle E, Cordomi S, López D, Fina F, Medina-Peralta M, Prats C, Prieto-Alhambra D. Risk Diagrams Based on Primary Care Electronic Medical Records and Linked Real-Time PCR Data to Monitor Local COVID-19 Outbreaks During the Summer 2020: A Prospective Study Including 7,671,862 People in Catalonia. (<strong>2021</strong>), <em>Frontiers in public health</em>. <a href="https://doi.org/10.3389/fpubh.2021.693956" class="uri">https://doi.org/10.3389/fpubh.2021.693956</a></li>
 <li>Duarte-Salles T, Vizcaya D, Pistillo A, Casajust P, Sena AG, Lai LYH, Prats-Uribe A, Ahmed WU, Alshammari TM, Alghoul H, Alser O, <span class="author_publication">Burn E</span>, You SC, Areia C, Blacketer C, DuVall S, Falconer T, Fernandez-Bertolin S, Fortin S, Golozar A, Gong M, Tan EH, Huser V, Iveli P, Morales DR, Nyberg F, Posada JD, Recalde M, Roel E, Schilling LM, Shah NH, Shah K, Suchard MA, Zhang L, Zhang Y, Williams AE, Reich CG, Hripcsak G, Rijnbeek P, Ryan P, Kostka K, Prieto-Alhambra D. Thirty-Day Outcomes of Children and Adolescents With COVID-19: An International Experience. (<strong>2021</strong>), <em>Pediatrics</em>. <a href="https://doi.org/10.1542/peds.2020-042929" class="uri">https://doi.org/10.1542/peds.2020-042929</a></li>
 <li>Prats-Uribe A, Sena AG, Lai LYH, Ahmed WU, Alghoul H, Alser O, Alshammari TM, Areia C, Carter W, Casajust P, Dawoud D, Golozar A, Jonnagaddala J, Mehta PP, Gong M, Morales DR, Nyberg F, Posada JD, Recalde M, Roel E, Shah K, Shah NH, Schilling LM, Subbian V, Vizcaya D, Zhang L, Zhang Y, Zhu H, Liu L, Cho J, Lynch KE, Matheny ME, You SC, Rijnbeek PR, Hripcsak G, Lane JC, <span class="author_publication">Burn E</span>, Reich C, Suchard MA, Duarte-Salles T, Kostka K, Ryan PB, Prieto-Alhambra D. Use of repurposed and adjuvant drugs in hospital patients with covid-19: multinational network cohort study. (<strong>2021</strong>), <em>BMJ (Clinical research ed.)</em>. <a href="https://doi.org/10.1136/bmj.n1038" class="uri">https://doi.org/10.1136/bmj.n1038</a></li>
-<li>Hayes KN, <span class="author_publication">Burkard T</span>, Weiler S, Tadrous M, Burden AM. Global adverse events reported for direct-acting antiviral therapies for the treatment of hepatitis C: an analysis of the World Health Organization VigiBase. (<strong>2021</strong>), <em>European journal of gastroenterology &amp; hepatology</em>. <a href="https://doi.org/10.1097/MEG.0000000000002173" class="uri">https://doi.org/10.1097/MEG.0000000000002173</a></li>
 <li>Recalde M, Pistillo A, Fernandez-Bertolin S, Roel E, Aragon M, Freisling H, Prieto-Alhambra D, <span class="author_publication">Burn E</span>, Duarte-Salles T. Body Mass Index and Risk of COVID-19 Diagnosis, Hospitalization, and Death: A Cohort Study of 2 524 926 Catalans. (<strong>2021</strong>), <em>The Journal of clinical endocrinology and metabolism</em>. <a href="https://doi.org/10.1210/clinem/dgab546" class="uri">https://doi.org/10.1210/clinem/dgab546</a></li>
-<li><span class="author_publication">Burkard T</span>, Rauch M, Jick SS, Meier CR. Validity of bariatric surgery codes in the UK Clinical Practice Research Datalink (CPRD) GOLD compared with Hospital Episodes Statistics. (<strong>2021</strong>), <em>Pharmacoepidemiology and drug safety</em>. <a href="https://doi.org/10.1002/pds.5221" class="uri">https://doi.org/10.1002/pds.5221</a></li>
-<li>Mueller AM, Liakoni E, Schneider C, <span class="author_publication">Burkard T</span>, Jick SS, Krähenbühl S, Meier CR, Spoendlin J. The Risk of Muscular Events Among New Users of Hydrophilic and Lipophilic Statins: an Observational Cohort Study. (<strong>2021</strong>), <em>Journal of general internal medicine</em>. <a href="https://doi.org/10.1007/s11606-021-06651-6" class="uri">https://doi.org/10.1007/s11606-021-06651-6</a></li>
 <li>Prieto-Alhambra D, Kostka K, Duarte-Salles T, Prats-Uribe A, Sena A, Pistillo A, Khalid S, Lai L, Golozar A, Alshammari TM, Dawoud D, Nyberg F, Wilcox A, Andryc A, Williams A, Ostropolets A, Areia C, Jung CY, Harle C, Reich C, Blacketer C, Morales D, Dorr DA, <span class="author_publication">Burn E</span>, Roel E, Tan EH, Minty E, DeFalco F, de Maeztu G, Lipori G, Alghoul H, Zhu H, Thomas J, Bian J, Park J, Roldán JM, Posada J, Banda JM, Horcajada JP, Kohler J, Shah K, Natarajan K, Lynch K, Liu L, Schilling L, Recalde M, Spotnitz M, Gong M, Matheny M, Valveny N, Weiskopf N, Shah N, Alser O, Casajust P, Park RW, Schuff R, Seager S, DuVall S, You SC, Song S, Fernández-Bertolín S, Fortin S, Magoc T, Falconer T, Subbian V, Huser V, Ahmed WU, Carter W, Guan Y, Galvan Y, He X, Rijnbeek P, Hripcsak G, Ryan P, Suchard M. Unraveling COVID-19: a large-scale characterization of 4.5 million COVID-19 cases using CHARYBDIS. (<strong>2021</strong>), <em>Research square</em>. <a href="https://doi.org/10.21203/rs.3.rs-279400/v1" class="uri">https://doi.org/10.21203/rs.3.rs-279400/v1</a></li>
 <li><span class="author_publication">Burn E</span>, Sena AG, Prats-Uribe A, Spotnitz M, DuVall S, Lynch KE, Matheny ME, Nyberg F, Ahmed WU, Alser O, Alghoul H, Alshammari T, Zhang L, Casajust P, Areia C, Shah K, Reich C, Blacketer C, Andryc A, Fortin S, Natarajan K, Gong M, Golozar A, Morales D, Rijnbeek P, Subbian V, Roel E, Recalde M, Lane JCE, Vizcaya D, Posada JD, Shah NH, Jonnagaddala J, Lai LYH, Avilés-Jurado FX, Hripcsak G, Suchard MA, Ranzani OT, Ryan P, Prieto-Alhambra D, Kostka K, Duarte-Salles T. Use of dialysis, tracheostomy, and extracorporeal membrane oxygenation among 842,928 patients hospitalized with COVID-19 in the United States. (<strong>2021</strong>), <em>medRxiv : the preprint server for health sciences</em>. <a href="https://doi.org/10.1101/2020.11.25.20229088" class="uri">https://doi.org/10.1101/2020.11.25.20229088</a></li>
 <li><span class="author_publication">Burn E</span>, Tebé C, Fernandez-Bertolin S, Aragon M, Recalde M, Roel E, Prats-Uribe A, Prieto-Alhambra D, Duarte-Salles T. The natural history of symptomatic COVID-19 during the first wave in Catalonia. (<strong>2021</strong>), <em>Nature communications</em>. <a href="https://doi.org/10.1038/s41467-021-21100-y" class="uri">https://doi.org/10.1038/s41467-021-21100-y</a></li>
@@ -332,15 +485,12 @@ ul.task-list li input[type="checkbox"] {
 <li>Prieto-Alhambra D, <span class="author_publication">Burn E</span>, Ryan P, Weaver J. Is there a need for review-a-thons? - Authors’ reply. (<strong>2020</strong>), <em>The Lancet. Rheumatology</em>. <a href="https://doi.org/10.1016/S2665-9913(20)30055-2" class="uri">https://doi.org/10.1016/S2665-9913(20)30055-2</a></li>
 <li>Arias L, Cardona P, <span class="author_publication">Català M</span>, Campo-Pérez V, Prats C, Vilaplana C, Julián E, Cardona PJ. Cording Mycobacterium tuberculosis Bacilli Have a Key Role in the Progression towards Active Tuberculosis, Which is Stopped by Previous Immune Response. (<strong>2020</strong>), <em>Microorganisms</em>. <a href="https://doi.org/10.3390/microorganisms8020228" class="uri">https://doi.org/10.3390/microorganisms8020228</a></li>
 <li>Cardona PJ, <span class="author_publication">Català M</span>, Prats C. Origin of tuberculosis in the Paleolithic predicts unprecedented population growth and female resistance. (<strong>2020</strong>), <em>Scientific reports</em>. <a href="https://doi.org/10.1038/s41598-019-56769-1" class="uri">https://doi.org/10.1038/s41598-019-56769-1</a></li>
-<li><span class="author_publication">Burkard T</span>, Rauch M, Spoendlin J, Prieto-Alhambra D, Jick SS, Meier CR. Risk of hand osteoarthritis in new users of hormone replacement therapy: A nested case-control analysis. (<strong>2019</strong>), <em>Maturitas</em>. <a href="https://doi.org/10.1016/j.maturitas.2019.11.006" class="uri">https://doi.org/10.1016/j.maturitas.2019.11.006</a></li>
-<li><span class="author_publication">Burn E</span>, Weaver J, Morales D, Prats-Uribe A, Delmestri A, Strauss VY, He Y, Robinson DE, Pinedo-Villanueva R, Kolovos S, Duarte-Salles T, Sproviero W, Yu D, Van Speybroeck M, Williams R, John LH, Hughes N, Sena AG, Costello R, Birlie B, Culliford D, O’Leary C, Morgan H, <span class="author_publication">Burkard T</span>, Prieto-Alhambra D, Ryan P. Opioid use, postoperative complications, and implant survival after unicompartmental versus total knee replacement: a population-based network study. (<strong>2019</strong>), <em>The Lancet. Rheumatology</em>. <a href="https://doi.org/10.1016/S2665-9913(19)30075-X" class="uri">https://doi.org/10.1016/S2665-9913(19)30075-X</a></li>
+<li><span class="author_publication">Burn E</span>, Weaver J, Morales D, Prats-Uribe A, Delmestri A, Strauss VY, He Y, Robinson DE, Pinedo-Villanueva R, Kolovos S, Duarte-Salles T, Sproviero W, Yu D, Van Speybroeck M, Williams R, John LH, Hughes N, Sena AG, Costello R, Birlie B, Culliford D, O’Leary C, Morgan H, Burkard T, Prieto-Alhambra D, Ryan P. Opioid use, postoperative complications, and implant survival after unicompartmental versus total knee replacement: a population-based network study. (<strong>2019</strong>), <em>The Lancet. Rheumatology</em>. <a href="https://doi.org/10.1016/S2665-9913(19)30075-X" class="uri">https://doi.org/10.1016/S2665-9913(19)30075-X</a></li>
 <li>Mokaya J, <span class="author_publication">Burn EAO</span>, Tamandjou CR, Goedhals D, Barnes EJ, Andersson M, Pinedo-Villanueva R, Matthews PC. Modelling cost-effectiveness of tenofovir for prevention of mother to child transmission of hepatitis B virus (HBV) infection in South Africa. (<strong>2019</strong>), <em>BMC public health</em>. <a href="https://doi.org/10.1186/s12889-019-7095-4" class="uri">https://doi.org/10.1186/s12889-019-7095-4</a></li>
 <li><span class="author_publication">Burn E</span>, Edwards CJ, Murray DW, Silman A, Cooper C, Arden NK, Pinedo-Villanueva R, Prieto-Alhambra D. Lifetime risk of knee and hip replacement following a diagnosis of RA: findings from a cohort of 13 961 patients from England. (<strong>2019</strong>), <em>Rheumatology (Oxford, England)</em>. <a href="https://doi.org/10.1093/rheumatology/kez223" class="uri">https://doi.org/10.1093/rheumatology/kez223</a></li>
-<li><span class="author_publication">Burkard T</span>, Moser M, Rauch M, Jick SS, Meier CR. Utilization pattern of hormone therapy in UK general practice between 1996 and 2015: a descriptive study. (<strong>2019</strong>), <em>Menopause (New York, N.Y.)</em>. <a href="https://doi.org/10.1097/GME.0000000000001300" class="uri">https://doi.org/10.1097/GME.0000000000001300</a></li>
 <li><span class="author_publication">Burn E</span>, Murray DW, Pinedo-Villanueva R, Prieto-Alhambra D. Knee and hip replacements and the risk of revision. (<strong>2019</strong>), <em>Lancet (London, England)</em>. <a href="https://doi.org/10.1016/S0140-6736(19)31780-5" class="uri">https://doi.org/10.1016/S0140-6736(19)31780-5</a></li>
 <li><span class="author_publication">Burn E</span>, Edwards CJ, Murray DW, Silman A, Cooper C, Arden NK, Pinedo-Villanueva R, Prieto-Alhambra D. Lifetime risk of knee and hip replacement following a diagnosis of RA: findings from a cohort of 13 961 patients from England. (<strong>2019</strong>), <em>Rheumatology (Oxford, England)</em>. <a href="https://doi.org/10.1093/rheumatology/kez143" class="uri">https://doi.org/10.1093/rheumatology/kez143</a></li>
 <li>Westwood S, Baird AL, Hye A, Ashton NJ, Nevado-Holgado AJ, Anand SN, Liu B, <span class="author_publication">Newby D</span>, Bazenet C, Kiddle SJ, Ward M, Newton B, Desai K, Tan Hehir C, Zanette M, Galimberti D, Parnetti L, Lleó A, Baker S, Narayan VA, van der Flier WM, Scheltens P, Teunissen CE, Visser PJ, Lovestone S. Plasma Protein Biomarkers for the Prediction of CSF Amyloid and Tau and [18F]-Flutemetamol PET Scan Result. (<strong>2018</strong>), <em>Frontiers in aging neuroscience</em>. <a href="https://doi.org/10.3389/fnagi.2018.00409" class="uri">https://doi.org/10.3389/fnagi.2018.00409</a></li>
-<li><span class="author_publication">Burkard T</span>, Hügle T, Layton JB, Glynn RJ, Bloechliger M, Frey N, Jick SS, Meier CR, Spoendlin J. Risk of Incident Osteoarthritis of the Hand in Statin Initiators: A Sequential Cohort Study. (<strong>2018</strong>), <em>Arthritis care &amp; research</em>. <a href="https://doi.org/10.1002/acr.23616" class="uri">https://doi.org/10.1002/acr.23616</a></li>
 <li><span class="author_publication">Burn E</span>, Edwards CJ, Murray DW, Silman A, Cooper C, Arden NK, Pinedo-Villanueva R, Prieto-Alhambra D. The effect of rheumatoid arthritis on patient-reported outcomes following knee and hip replacement: evidence from routinely collected data. (<strong>2018</strong>), <em>Rheumatology (Oxford, England)</em>. <a href="https://doi.org/10.1093/rheumatology/key409" class="uri">https://doi.org/10.1093/rheumatology/key409</a></li>
 <li>Cullen B, <span class="author_publication">Newby D</span>, Lee D, Lyall DM, Nevado-Holgado AJ, Evans JJ, Pell JP, Lovestone S, Cavanagh J. Cross-sectional and longitudinal analyses of outdoor air pollution exposure and cognitive function in UK Biobank. (<strong>2018</strong>), <em>Scientific reports</em>. <a href="https://doi.org/10.1038/s41598-018-30568-6" class="uri">https://doi.org/10.1038/s41598-018-30568-6</a></li>
 <li>Graves N, Barnett AG, <span class="author_publication">Burn E</span>, Cook D. Smaller clinical trials for decision making; a case study to show p-values are costly. (<strong>2018</strong>), <em>F1000Research</em>. <a href="https://doi.org/10.12688/f1000research.15522.2" class="uri">https://doi.org/10.12688/f1000research.15522.2</a></li>
@@ -369,380 +519,255 @@ ul.task-list li input[type="checkbox"] {
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
       });
     }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/oxford-pharmacoepi\.github\.io\/Oxinfer\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        return container.innerHTML
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -750,185 +775,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -936,7 +937,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <p>Copyright 2024, Oxinfer</p>
 </div>   
     <div class="nav-footer-center">
-<p>Rendered on February 28, 2025</p>
+<p>Rendered on May 14, 2025</p>
 <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/oxford-pharmacoepi/OxinferOnboarding/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
