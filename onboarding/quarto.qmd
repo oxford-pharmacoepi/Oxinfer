@@ -1,0 +1,19 @@
+# Quarto
+
+## Deploy quarto documents
+
+If you want to learn more about how to publish using quarto the official documentation that covers the different cases can be found [here](https://quarto.org/docs/publishing/). 
+
+In this section we will cover the three ways that we use to deploy quarto documents:
+
+- deploy using **quarto pub**
+
+- deploy using **Github Actions**
+
+### Let's get started
+
+### Deploy using **quarto pub**
+
+### Deploy using **Github pages** and **Github Actions**
+
+### Pros and cons

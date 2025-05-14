@@ -2,7 +2,7 @@
 
 This section is for people joining the team. In this section you will find:
 
-- [Checklist](onboarding/checklist.qmd): list of things to do to be fully onboarded.
-- [Basics](onboarding/basics.qmd): some links where to get useful knowledge such as how the omop cdm works, epidemiology basis, R programming...
-- [The team](onboarding/organigram.qmd): internal policies.
-- [Induction](onboarding/useful_terms.qmd): useful terms and particular things to do.
+- [Checklist](checklist.qmd): list of things to do to be fully onboarded.
+- [Basics](basics.qmd): some links where to get useful knowledge such as how the omop cdm works, epidemiology basis, R programming...
+- [The team](organigram.qmd): internal policies.
+- [Induction and Tutorials](useful_terms.qmd): useful terms and particular things to do.

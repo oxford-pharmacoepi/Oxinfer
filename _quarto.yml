@@ -69,6 +69,8 @@ website:
             - onboarding/connect_to_database.qmd
             - onboarding/github.qmd
             - onboarding/databases_and_servers.qmd
+            - onboarding/deploy_quarto.qmd
+            - onboarding/deploy_shinyapps.qmd
 
 format:
   html:
