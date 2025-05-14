@@ -80,18 +80,6 @@ Hi I am Mimi...
 :::
 :::
 
-### Theresa Burkard {.unnumbered}
-
-::: columns
-::: {.column width="40%"}
-![](https://www.ndorms.ox.ac.uk/team/theresa-burkard/@@haiku.profiles.portrait/71d8cbc2ac624b37ae10642dab9cf1f8/@@images/image/w1140?cbeb5956-ea48-4b07-a6ec-2cf334b62103){width="3in"}
-:::
-
-::: {.column width="60%"}
-Hi I am Theresa
-:::
-:::
-
 ### Xihang Chen {.unnumbered}
 
 ::: columns
@@ -115,10 +103,6 @@ Hi I am Xihang...
 Hi I am Kim...
 :::
 :::
-
-### Pablo Spivakovsky Gonzalez {.unnumbered}
-
-Hi I am Pablo...
 
 ### Marta Alcalde-Herraiz {.unnumbered}
 

@@ -9,8 +9,7 @@
 ```{r, results='hide', message=FALSE, echo=FALSE}
 authors <- c(
   "burn, edward", "catala, marti", "newby, danielle", "du, mike", 
-  "burkard, theresa", "lopez guell, kim", "spivakovsky gonzalez, pablo", 
-  "alcalde herraiz, marta", "mercade besora, nuria"
+  "lopez guell, kim", "alcalde herraiz, marta", "mercade besora, nuria"
 )
 x <- pubmedR::pmApiRequest(
   paste0(authors, "[Author]", collapse = " OR "), limit = Inf)
