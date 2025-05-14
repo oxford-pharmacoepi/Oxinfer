@@ -75,7 +75,7 @@ if (Sys.getenv("EUNOMIA_DATA_FOLDER") == "") {
 }
 ```
 ```{r, echo = FALSE}
-con <- dbConnect(duckdb::duckdb(), CDMConnector::eunomia_dir())
+con <- dbConnect(duckdb::duckdb(), CDMConnector::eunomiaDir())
 tbl(con, sql("SELECT * FROM main.person limit 1"))
 ```
 
@@ -114,7 +114,7 @@ con <- dbConnect(drv = Postgres(),
                  password = "...")
 ```
 ```{r, echo = FALSE}
-con <- dbConnect(duckdb::duckdb(), CDMConnector::eunomia_dir())
+con <- dbConnect(duckdb::duckdb(), CDMConnector::eunomiaDir())
 ```
 
 And then we can create the cdm object:
