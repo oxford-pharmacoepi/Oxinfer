@@ -250,8 +250,8 @@ jobs:
 
 ### Pros and Cons
   
-| Method           | Pros                                                                        | Cons                                                     |
-| - |  | -- |
+| Method | Pros | Cons |
+|--|----|----|
 | **GitHub Pages** | ✅ Fully automated with GitHub Actions<br>✅ Great for collaborative projects | ❌ Source code (and potentially data) must be public      |
 | **Quarto Pub**   | ✅ Simple, fast for one-off projects<br>✅ No need to push source data        | ❌ Manual rendering each time<br>❌ Not ideal for teamwork |
   
