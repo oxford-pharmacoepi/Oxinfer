@@ -1,6 +1,7 @@
 # Newsletter
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, results='asis', message=FALSE, warning=FALSE}
+library(lubridate)
 source(here::here("packages", "scrapePackages.R"))
 
 pkgs <- readr::read_csv(here::here("packages", "packages.csv"), show_col_types = FALSE) |>
@@ -13,24 +14,26 @@ commits <- getInfo(pkgs, "commits") |>
   dplyr::mutate(date = as.Date(date)) |>
   dplyr::group_by(package_name, date) |>
   dplyr::summarise(n = dplyr::n(), .groups = "drop")
+
 issues <- getInfo(pkgs, "issues") |>
   dplyr::mutate(created_at = as.Date(created_at),
                 closed_at = as.Date(closed_at))
+
 pulls <- getInfo(pkgs, "pulls") |>
   dplyr::filter(target == "main") |>
   dplyr::mutate(created_at = as.Date(created_at),
                 merged_at = as.Date(merged_at))
 
-releases <- versionsDates(pkgs$package_name)
+releases <- versionsDates(pkgs)
 
 newsletter <- rev(seq(from = start, to = end, by = "month")) |>
   purrr::map(\(x) {
     start <- x
-    end <- x + months(1) - 1
+    end <- x + months(1L) - 1
     title <- format(x, "%B %Y")
     releases <- releases |>
       dplyr::filter(.data$date >= .env$start & .data$date <= .env$end) |>
-      dplyr::arrange(.data$date) |>
+      dplyr::arrange(dplyr::desc(.data$date)) |>
       addNews()
     activity <- pkgs |>
       dplyr::select(package_name) |>
@@ -69,6 +72,8 @@ newsletter <- rev(seq(from = start, to = end, by = "month")) |>
     
     list(title = title, start = start, end = end, releases = releases, activity = activity)
   })
+
+formatNewsletter(newsletter)
 ```
 
 ## Subscribe to Our Newsletter (Not available yet)

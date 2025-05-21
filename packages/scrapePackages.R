@@ -187,7 +187,7 @@ versionsDates <- function(pkgs) {
   x <- tools::CRAN_package_db() |>
     dplyr::as_tibble() |>
     dplyr::select(package_name = "Package", version = "Version", date = "Published") |>
-    dplyr::filter(.data$package_name %in%.env$pkgs) |>
+    dplyr::filter(.data$package_name %in%.env$pkgs$package_name) |>
     dplyr::mutate(date = as.Date(.data$date))
   
   for (pkg in x$package_name) {
@@ -209,8 +209,51 @@ versionsDates <- function(pkgs) {
   }
   
   x |>
+    dplyr::inner_join(pkgs, by = "package_name") |>
     dplyr::arrange(.data$package_name, .data$version)
 }
 addNews <- function(x) {
-  
+  pkgs <- unique(x$package_name)
+  x <- x |>
+    dplyr::mutate(news = NA_character_)
+  for (pkg in pkgs) {
+    org <- unique(x$organisation[x$package_name == pkg])
+    website <- paste0("https://", org, ".github.io/", pkg, "/news/index.html")
+    page <- tryCatch(
+      rvest::read_html(website),
+      error = function(e) return(NULL)
+    )
+    if (!is.null(page)) {
+      versions <- x$version[x$package_name == pkg]
+      for (ver in versions) {
+        tag <- paste0("#", pkg, "-", gsub("\\.", "", ver))
+        if (!is.na(rvest::html_element(page, tag))) {
+          web <- paste0(website, tag)
+          x$news[x$package_name == pkg & x$version == ver] <- web
+        }
+      }
+    }
+  }
+  x
+}
+formatNewsletter <- function(newsletter) {
+  for (x in newsletter) {
+    x$releases <- x$releases |>
+      dplyr::mutate(message = paste0(
+        "* ", .data$date, " **", .data$package_name, "** *", .data$version, "*",
+        dplyr::if_else(is.na(.data$news), "", paste0(" [changelog](", .data$news, ")"))
+      ))
+    
+    # title
+    cat("##", x$title, "\n\n")
+    
+    # releases
+    cat("### Releases\n\n")
+    cat(paste0(x$releases$message, collapse = "\n"), "\n\n")
+
+    # activity
+    cat("### Activity\n\n")
+    print(knitr::kable(x$activity))
+    cat("\n\n")
+  }
 }
