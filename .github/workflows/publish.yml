@@ -36,6 +36,8 @@ jobs:
         
       - name: Render quarto website
         run: quarto render
+        env:
+          GITHUB_PAT: ${{ secrets.GH_PAT }}
         
       - name: Publish
         if: github.event_name != 'pull_request'
