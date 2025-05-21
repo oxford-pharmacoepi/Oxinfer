@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-05-15">
+<meta name="dcterms.date" content="2025-05-21">
 
 <title>github – Oxinfer</title>
 <style>
@@ -311,11 +311,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </i> 
 <span class="menu-text">Recent publications</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../packages.html"> <i class="bi bi-boxes" role="img">
-</i> 
-<span class="menu-text">Packages</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-packages" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Packages</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-packages">    
+        <li>
+    <a class="dropdown-item" href="../packages/summary.html">
+ <span class="dropdown-text">Summary</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../packages/newsletter.html">
+ <span class="dropdown-text">Newsletter</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../packages/dashboard.html">
+ <span class="dropdown-text">Dashboard</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
@@ -536,7 +550,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 15, 2025</p>
+      <p class="date">May 21, 2025</p>
     </div>
   </div>
   
@@ -653,17 +667,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"darwin-eu-dev/CDMConnector"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Using bundled GitHub PAT. Please add your own PAT using `gitcreds::gitcreds_set()`</code></pre>
+<pre><code>Using github PAT from envvar GITHUB_PAT. Use `gitcreds::gitcreds_set()` and unset GITHUB_PAT in .Renviron (or elsewhere) if you want to use the more secure git credential store instead.</code></pre>
 </div>
-<div class="cell-output cell-output-error">
-<pre><code>Error: Failed to install 'CDMConnector' from GitHub:
-  HTTP error 401.
-  Bad credentials
-
-  Rate limit remaining: 51/60
-  Rate limit reset at: 2025-05-15 01:35:48 UTC
-
-  </code></pre>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading GitHub repo darwin-eu-dev/CDMConnector@HEAD</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Running `R CMD build`...</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>* checking for file ‘/tmp/RtmpEDZzMM/remotes204843a43ec7/darwin-eu-dev-CDMConnector-9e4d3935086b5341f1434b7ac646009a4833148b/DESCRIPTION’ ... OK
+* preparing ‘CDMConnector’:
+* checking DESCRIPTION meta-information ... OK
+* checking for LF line-endings in source and make files and shell scripts
+* checking for empty or unneeded directories
+* looking to see if a ‘data/datalist’ file should be added
+* building ‘CDMConnector_2.0.0.tar.gz’</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Installing package into '/home/runner/work/Oxinfer/Oxinfer/renv/library/linux-ubuntu-noble/R-4.5/x86_64-pc-linux-gnu'
+(as 'lib' is unspecified)</code></pre>
 </div>
 </div>
 <p>So you can install private packages (that you have access to) you need to set up the <code>GITHUB_PAT</code>. You can set it up with the following steps:</p>
@@ -675,16 +698,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Set a new .Renviron variable called <code>GITHUB_PAT</code>.</p></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">edit_r_environ</span>()</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># write there</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>GITHUB_PAT <span class="ot">=</span> <span class="st">"ghp_..."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">edit_r_environ</span>()</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># write there</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>GITHUB_PAT <span class="ot">=</span> <span class="st">"ghp_..."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="6" type="1">
 <li>Restart your R session.</li>
 </ol>
 <p>Now you should be able to install the private repo (if you have access to it):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"darwin-eu-dev/CDMConnector"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"darwin-eu-dev/CDMConnector"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -1129,7 +1152,7 @@ Important
 <p>Copyright 2024, Oxinfer</p>
 </div>   
     <div class="nav-footer-center">
-<p>Rendered on May 15, 2025</p>
+<p>Rendered on May 21, 2025</p>
 <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/oxford-pharmacoepi/OxinferOnboarding/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
