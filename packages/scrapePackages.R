@@ -51,10 +51,10 @@ getLastRelease <- function(pkg) {
     link <- ""
     x <- "not_published"
   }
-  '<a href="{link}"><img src="https://img.shields.io/badge/last_release-1E90FF?logo=r&logoColor=black" class="img-fluid" alt="manual"></a>' |>
-    glue::glue() |>
-    as.character()
-  return(x)
+  paste0(
+    "[![last release](https://img.shields.io/badge/last_release-", x,
+    "-blue.svg)](https://CRAN.R-project.org/package=", pkg, ")"
+  )
 }
 getFirstRelease <- function(name) {
   x <- tryCatch(
@@ -115,7 +115,9 @@ summarisePackage <- function(pkg, org) {
     # manual
     manual(pkg),
     # version
-    getVersion(pkg)
+    getVersion(pkg),
+    # last release
+    getLastRelease(pkg)
   ) |>
     paste0(collapse = "\n")
 }
