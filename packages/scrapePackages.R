@@ -35,8 +35,8 @@ manual <- function(pkg) {
 }
 getVersion <- function(pkg) {
   paste0(
-    "[![CRANstatus](https://www.r-pkg.org/badges/version/", pkg, 
-    ")](https://CRAN.R-project.org/package=", pkg, ")"
+    '[<img src="https://www.r-pkg.org/badges/version/', pkg, 
+    '" alt="CRAN version badge">](https://CRAN.R-project.org/package=', pkg, ")"
   )
 }
 getLastRelease <- function(pkg) {
