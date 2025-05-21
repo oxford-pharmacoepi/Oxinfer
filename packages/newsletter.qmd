@@ -1,0 +1,125 @@
+# Newsletter
+
+```{r, echo=FALSE, results='asis', message=FALSE, warning=FALSE}
+library(lubridate)
+source(here::here("packages", "scrapePackages.R"))
+
+pkgs <- readr::read_csv(here::here("packages", "packages.csv"), show_col_types = FALSE) |>
+  dplyr::filter(.data$dev == "ox") |>
+  dplyr::select(!"dev")
+start <- as.Date("2025-01-01")
+end <- as.Date(format(Sys.Date(), "%Y-%m-01"))
+
+commits <- getInfo(pkgs, "commits") |>
+  dplyr::mutate(date = as.Date(date)) |>
+  dplyr::group_by(package_name, date) |>
+  dplyr::summarise(n = dplyr::n(), .groups = "drop")
+
+issues <- getInfo(pkgs, "issues") |>
+  dplyr::mutate(created_at = as.Date(created_at),
+                closed_at = as.Date(closed_at))
+
+pulls <- getInfo(pkgs, "pulls") |>
+  dplyr::filter(target == "main") |>
+  dplyr::mutate(created_at = as.Date(created_at),
+                merged_at = as.Date(merged_at))
+
+releases <- versionsDates(pkgs)
+
+newsletter <- rev(seq(from = start, to = end, by = "month")) |>
+  purrr::map(\(x) {
+    start <- x
+    end <- x + months(1L) - 1
+    title <- format(x, "%B %Y")
+    releases <- releases |>
+      dplyr::filter(.data$date >= .env$start & .data$date <= .env$end) |>
+      dplyr::arrange(dplyr::desc(.data$date)) |>
+      addNews()
+    activity <- pkgs |>
+      dplyr::select(package_name) |>
+      dplyr::left_join(
+        commits |>
+          dplyr::filter(.data$date >= .env$start & .data$date <= .env$end) |>
+          dplyr::group_by(.data$package_name) |>
+          dplyr::summarise(commits = sum(.data$n)),
+        by = "package_name"
+      ) |>
+      dplyr::left_join(
+        issues |>
+          dplyr::filter(.data$created_at >= .env$start & .data$created_at <= .env$end) |>
+          dplyr::group_by(.data$package_name) |>
+          dplyr::summarise(new_issues = dplyr::n()),
+        by = "package_name"
+      ) |>
+      dplyr::left_join(
+        issues |>
+          dplyr::filter(.data$closed_at >= .env$start & .data$closed_at <= .env$end) |>
+          dplyr::group_by(.data$package_name) |>
+          dplyr::summarise(closed_issues = dplyr::n()),
+        by = "package_name"
+      ) |>
+      dplyr::left_join(
+        pulls |>
+          dplyr::filter(.data$merged_at >= .env$start & .data$merged_at <= .env$end) |>
+          dplyr::group_by(.data$package_name) |>
+          dplyr::summarise(merged_pr = dplyr::n()),
+        by = "package_name"
+      ) |>
+      dplyr::mutate(dplyr::across(
+        c("commits", "new_issues", "closed_issues", "merged_pr"),
+        \(x) dplyr::coalesce(x, 0)
+      ))
+    
+    list(title = title, start = start, end = end, releases = releases, activity = activity)
+  })
+
+formatNewsletter(newsletter)
+```
+
+## Subscribe to Our Newsletter (Not available yet)
+
+```{=html}
+<div id="email-form-wrapper">
+  <form id="email-form" action="https://formspree.io/f/mnndrkyl" method="POST">
+    <input 
+      type="email" 
+      name="email" 
+      placeholder="Enter your email" 
+      required
+      style="padding: 0.5em; width: 250px; max-width: 100%;"
+    >
+    <button 
+      type="submit"
+      style="padding: 0.5em 1em; margin-left: 0.5em;"
+    >
+      Subscribe
+    </button>
+  </form>
+  
+  <div id="thank-you" style="display: none; padding-top: 1em; color: green;">
+    ✅ Thanks for subscribing!
+  </div>
+</div>
+
+<script>
+document.getElementById("email-form").addEventListener("submit", async function(event) {
+  event.preventDefault(); // Stop default form submission
+
+  const form = event.target;
+  const data = new FormData(form);
+
+  const response = await fetch(form.action, {
+    method: form.method,
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  });
+
+  if (response.ok) {
+    form.style.display = "none";
+    document.getElementById("thank-you").style.display = "block";
+  } else {
+    alert("Oops! There was a problem. Please try again.");
+  }
+});
+</script>
+```
