@@ -19,32 +19,4 @@ readr::read_csv(here::here("packages", "packages.csv"), show_col_types = FALSE) 
   }) |>
   paste0(collapse = "\n\n") |>
   cat()
-#     cran = paste0(
-#       '<a href="https://CRAN.R-project.org/package=',
-#       package_name,
-#       '"><img src="https://www.r-pkg.org/badges/version/',
-#       package_name,
-#       '" class="img-fluid" alt="CRAN status"></a>'),
-#     last_release = paste0(
-#       "[![last release](https://img.shields.io/badge/last_release-",
-#       getLastRelease(package_name),
-#       "-blue.svg)](https://CRAN.R-project.org/package=",
-#       package_name,
-#       ")"),
-#     first_release = paste0(
-#       "[![first release](https://img.shields.io/badge/first_release-",
-#       getFirstRelease(package_name),
-#       "-red.svg)](https://CRAN.R-project.org/package=",
-#       package_name,
-#       ")"),
-#     text = paste0(
-#       "### ", 
-#       package_name, 
-#       "\n", 
-#       createGrid(
-#         hexsticker, lifecycle, cran, first_release, last_release, website,
-#         issue),
-#       "\n"
-#     )
-#   )
 ```

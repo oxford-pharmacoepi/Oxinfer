@@ -35,8 +35,8 @@ manual <- function(pkg) {
 }
 getVersion <- function(pkg) {
   paste0(
-    "[![CRANstatus](https://www.r-pkg.org/badges/version/", pkg, 
-    ")](https://CRAN.R-project.org/package=", pkg, ")"
+    '[<img src="https://www.r-pkg.org/badges/version/', pkg, 
+    '" alt="CRAN version badge">](https://CRAN.R-project.org/package=', pkg, ")"
   )
 }
 getLastRelease <- function(pkg) {
@@ -51,28 +51,26 @@ getLastRelease <- function(pkg) {
     link <- ""
     x <- "not_published"
   }
-  '<a href="{link}"><img src="https://img.shields.io/badge/last_release-1E90FF?logo=r&logoColor=black" class="img-fluid" alt="manual"></a>' |>
-    glue::glue() |>
-    as.character()
-  return(x)
-}
-getFirstRelease <- function(name) {
-  x <- tryCatch(
-    {
-      x <- "https://cran.r-project.org/src/contrib/Archive/{name}/" |>
-        glue::glue() |>
-        readLines()
-      x <- x[grepl("align=\"right\">", x)][2]
-      id <- stringr::str_locate(x, "align=\"right\">")
-      substr(x, id[2]+1, id[2]+10) |>
-        as.Date("%Y-%m-%d") |>
-        format("%d_%b_%y")
-    },
-    error = function(cond) {
-      return("not_published")
-    }
+  paste0(
+    "[![last release](https://img.shields.io/badge/last_release-", x,
+    "-blue.svg)](https://CRAN.R-project.org/package=", pkg, ")"
   )
-  return(x)
+}
+getFirstRelease <- function(pkg) {
+  if (is_on_cran(pkg)) {
+    x <- versionsDates(dplyr::tibble(package_name = pkg)) |>
+      dplyr::pull("date") |>
+      min() |>
+      format("%d_%b_%y")
+    link <- paste0("https://CRAN.R-project.org/package=", pkg)
+  } else {
+    link <- ""
+    x <- "not_published"
+  }
+  paste0(
+    "[![first release](https://img.shields.io/badge/first_release-", x,
+    "-red.svg)](https://CRAN.R-project.org/package=", pkg, ")"
+  )
 }
 createGrid <- function(hex, life, cran, first, last, web, issue) {
   '<div class="parent">
@@ -115,7 +113,11 @@ summarisePackage <- function(pkg, org) {
     # manual
     manual(pkg),
     # version
-    getVersion(pkg)
+    getVersion(pkg),
+    # last release
+    getLastRelease(pkg),
+    # first release
+    getFirstRelease(pkg)
   ) |>
     paste0(collapse = "\n")
 }
