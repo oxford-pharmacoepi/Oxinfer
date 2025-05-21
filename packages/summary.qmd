@@ -19,11 +19,4 @@ readr::read_csv(here::here("packages", "packages.csv"), show_col_types = FALSE) 
   }) |>
   paste0(collapse = "\n\n") |>
   cat()
-#     first_release = paste0(
-#       "[![first release](https://img.shields.io/badge/first_release-",
-#       getFirstRelease(package_name),
-#       "-red.svg)](https://CRAN.R-project.org/package=",
-#       package_name,
-#       ")"),
-
 ```
