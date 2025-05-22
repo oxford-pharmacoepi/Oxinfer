@@ -233,7 +233,7 @@ addNews <- function(x) {
     if (!is.null(page)) {
       versions <- x$version[x$package_name == pkg]
       for (ver in versions) {
-        tag <- paste0("#", pkg, "-", gsub("\\.", "", ver))
+        tag <- paste0("#", tolower(pkg), "-", gsub("\\.", "", ver))
         if (!is.na(rvest::html_element(page, tag))) {
           web <- paste0(website, tag)
           x$news[x$package_name == pkg & x$version == ver] <- web
