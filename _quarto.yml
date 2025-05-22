@@ -40,8 +40,6 @@ website:
             href: packages/summary.qmd
           - text: Newsletter
             href: packages/newsletter.qmd
-          - text: Dashboard
-            href: packages/dashboard.qmd
     right: 
       - text: Github
         href: https://github.com/oxford-pharmacoepi

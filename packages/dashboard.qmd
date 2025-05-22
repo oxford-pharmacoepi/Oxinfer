@@ -1,5 +1,0 @@
-# Dashboard
-
-```{=html}
-<iframe src="https://dpa-pde-oxford.shinyapps.io/PackagesDashboard/" width="100%" height="500px"></iframe>
-```
