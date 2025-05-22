@@ -86,9 +86,9 @@ createGrid <- function(hex, life, cran, first, last, web, issue) {
   </div>' |>
     glue::glue()
 }
-readDescription <- function(pkg, org) {
+readDescription <- function(package_name, organisation) {
   pat <- Sys.getenv("GITHUB_PAT")
-  url <- paste0("https://raw.githubusercontent.com/", org, "/", pkg, "/refs/heads/main/DESCRIPTION")
+  url <- paste0("https://raw.githubusercontent.com/", organisation, "/", package_name, "/refs/heads/main/DESCRIPTION")
   description <- httr::GET(url, httr::add_headers(Authorization = paste("token", pat))) |>
     httr::content(as = "text", encoding = "UTF-8")
   as.list(read.dcf(textConnection(description))[1,])
@@ -154,19 +154,24 @@ formatInfo <- function(x, info) {
   if (info == "commits") {
     dplyr::tibble(
       date   = x$commit$author$date,
-      author = x$commit$author$name
+      author = x$commit$author$name,
+      message = x$commit$message
     )
   } else if (info == "issues") {
     dplyr::tibble(
       created_at = x$created_at,
-      closed_at = x$closed_at
+      closed_at = x$closed_at,
+      author = x$user$email,
+      comments = x$comments
     )
   } else if (info == "pulls") {
     dplyr::tibble(
       created_at = x$created_at,
       merged_at = x$merged_at,
       target = x$base$ref,
-      origin = x$head$ref
+      origin = x$head$ref,
+      author = x$user$email,
+      comments = x$comments
     )
   }
 }
@@ -258,4 +263,21 @@ formatNewsletter <- function(newsletter) {
     print(knitr::kable(x$activity))
     cat("\n\n")
   }
+}
+getDependencies <- function(pkgs) {
+  x <- purrr::pmap(pkgs, readDescription)
+  names(x) <- purrr::map_chr(x, \(x) x$Package)
+  splitPackages <- \(x) {
+    stringr::str_split(x, pattern = "\n") |>
+      purrr::flatten_chr() |>
+      stringr::str_replace_all(pattern = ",", replacement = "") |>
+      stringr::str_extract("^[^\\s]+")
+  }
+  x |>
+    purrr::map(\(xx) {
+      dplyr::tibble(to = splitPackages(xx$Imports), type = "Imports") |>
+        dplyr::union_all(dplyr::tibble(to = splitPackages(xx$Suggests), type = "Suggests"))
+    }) |>
+    dplyr::bind_rows(.id = "from") |>
+    dplyr::select("from", "to", "type")
 }
