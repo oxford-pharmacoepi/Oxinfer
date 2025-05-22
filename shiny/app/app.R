@@ -81,7 +81,8 @@ ui <- bslib::page_navbar(
           label = "Select packages",
           choices = unique(activity$package_name), 
           selected = unique(activity$package_name),
-          multiple = TRUE
+          multiple = TRUE,
+          list(`actions-box` = TRUE, size = 10, `selected-text-format` = "count > 3")
         ),
         shinyWidgets::pickerInput(
           inputId = "activity_type", 
