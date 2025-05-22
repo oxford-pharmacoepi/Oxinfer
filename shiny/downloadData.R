@@ -79,4 +79,4 @@ activity <- activity |>
       dplyr::ungroup()
   )
 
-save(pkgs, activity, commits, issues, pulls, releases, downloads, dependencies, file = here::here("shiny", "shinyData.RData"))
+save(pkgs, activity, commits, issues, pulls, releases, downloads, dependencies, file = here::here("shiny", "app", "shinyData.RData"))

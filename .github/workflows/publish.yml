@@ -48,4 +48,20 @@ jobs:
           publish_dir: ./_site
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Download data for shiny app
+        run: Rscript shiny/downloadData.R 
+        env:
+          GITHUB_PAT: ${{ secrets.GH_PAT }}
+      
+      - name: Create renv file
+        run: Rscript -e 'renv::init()'
+        working-directory: shiny/app
+          
+       - name: Deploy to shinyapps.io
+        if: github.event_name != 'pull_request'
+        env:
+          SHINYAPPS_TOKEN: ${{ secrets.SHINYAPPS_TOKEN }}
+          SHINYAPPS_SECRET: ${{ secrets.SHINYAPPS_SECRET }}
+        run: Rscript shiny/deployShiny.R
           

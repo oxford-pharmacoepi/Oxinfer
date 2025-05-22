@@ -1,5 +1,5 @@
 # load data
-load(file = here::here("shiny", "shinyData.RData"))
+load(file = here::here("shinyData.RData"))
 
 smooth <- function(x, sigma = 0) {
   if (sigma == 0) return(x)
@@ -18,9 +18,7 @@ smooth <- function(x, sigma = 0) {
   weights <- dnorm(xx, mean = 0, sd = sigma)
   weights <- weights / sum(weights)
   y <- 0 * x
-  for (k in length(weights)) {
-    print(shift_vector(x, xx[k]))
-    print(weights[k])
+  for (k in seq_along(weights)) {
     y <- y + weights[k] * shift_vector(x, xx[k])
   }
   
@@ -121,7 +119,11 @@ server <- function(input, output) {
       dplyr::filter(
         .data$activity == input$activity_type,
         .data$package_name %in% input$activity_packages
-      )
+      ) |>
+      dplyr::group_by(.data$package_name) |>
+      dplyr::arrange(.data$date) |>
+      dplyr::mutate(count = smooth(x = .data$count, sigma = input$activity_slider)) |>
+      dplyr::ungroup()
     p <- ggplot2::ggplot(
       data = x, mapping = ggplot2::aes(x = date, y = count, colour = package_name, fill = package_name)
     ) +
