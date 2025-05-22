@@ -1,11 +1,11 @@
 on:
   schedule:
     - cron: '0 0 * * *'  # Runs at 12:00 AM UTC every day
-  workflow_dispatch:
+  workflow_dispatch: null
   push:
-    branches: main
+    branches: [main]
   pull_request:
-    branches: main 
+    branches: [main]
 
 name: Quarto Publish
 
@@ -58,10 +58,9 @@ jobs:
         run: Rscript -e 'renv::init()'
         working-directory: shiny/app
           
-       - name: Deploy to shinyapps.io
+      - name: Deploy to shinyapps.io
         if: github.event_name != 'pull_request'
         env:
           SHINYAPPS_TOKEN: ${{ secrets.SHINYAPPS_TOKEN }}
           SHINYAPPS_SECRET: ${{ secrets.SHINYAPPS_SECRET }}
         run: Rscript shiny/deployShiny.R
-          
