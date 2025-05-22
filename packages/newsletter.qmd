@@ -76,11 +76,16 @@ newsletter <- rev(seq(from = start, to = end, by = "month")) |>
 formatNewsletter(newsletter)
 ```
 
-## Subscribe to Our Newsletter (Not available yet)
+## Subscribe to Our Newsletter
 
 ```{=html}
 <div id="email-form-wrapper">
-  <form id="email-form" action="https://formspree.io/f/mnndrkyl" method="POST">
+  <form 
+    id="email-form" 
+    action="https://formcarry.com/s/mKiteI9Elbo" 
+    method="POST" 
+    enctype="multipart/form-data"
+  >
     <input 
       type="email" 
       name="email" 
@@ -103,15 +108,14 @@ formatNewsletter(newsletter)
 
 <script>
 document.getElementById("email-form").addEventListener("submit", async function(event) {
-  event.preventDefault(); // Stop default form submission
+  event.preventDefault(); // Prevent default form submission
 
   const form = event.target;
   const data = new FormData(form);
 
   const response = await fetch(form.action, {
     method: form.method,
-    body: data,
-    headers: { 'Accept': 'application/json' }
+    body: data
   });
 
   if (response.ok) {
