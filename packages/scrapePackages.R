@@ -130,6 +130,9 @@ readInfo <- function(url, info) {
   if (info %in% c("pulls", "issues")) {
     query_params$state <- "all"
   }
+  if (info == "commits") {
+    query_params$since <- "2025-01-01"
+  }
   
   while (TRUE) {
     query_params$page <- page
@@ -243,6 +246,143 @@ addNews <- function(x) {
   }
   x
 }
+createNewsletter <- function(pkgs, period) {
+  # get releases
+  releases <- versionsDates(pkgs) |>
+    addNews()
+  
+  # get commits
+  commits <- getInfo(pkgs, "commits") |>
+    dplyr::mutate(date = as.Date(date)) |>
+    dplyr::group_by(package_name, date) |>
+    dplyr::summarise(n = dplyr::n(), .groups = "drop")
+  
+  # get issues
+  issues <- getInfo(pkgs, "issues") |>
+    dplyr::mutate(created_at = as.Date(created_at),
+                  closed_at = as.Date(closed_at))
+  open_isses <- issues |>
+    dplyr::rename(date = "created_at") |>
+    dplyr::filter(!is.na(.data$date)) |>
+    dplyr::group_by(package_name, date) |>
+    dplyr::summarise(n = dplyr::n(), .groups = "drop")
+  closed_isses <- issues |>
+    dplyr::rename(date = "closed_at") |>
+    dplyr::filter(!is.na(.data$date)) |>
+    dplyr::group_by(package_name, date) |>
+    dplyr::summarise(n = dplyr::n(), .groups = "drop")
+  
+  # get pulls
+  pulls <- getInfo(pkgs, "pulls") |>
+    dplyr::filter(target == "main") |>
+    dplyr::mutate(merged_at = as.Date(merged_at)) |>
+    dplyr::rename(date = "merged_at") |>
+    dplyr::filter(!is.na(.data$date)) |>
+    dplyr::group_by(package_name, date) |>
+    dplyr::summarise(n = dplyr::n(), .groups = "drop")
+  
+  # period
+  period <- dplyr::tibble(period = period) |>
+    # get start and end
+    dplyr::mutate(
+      start = as.Date(paste(.data$period, "1"), format = "%B %Y %d"),
+      end = .data$start + months(1) - 1
+    ) 
+  
+  # activity
+  x <- period |>
+    dplyr::cross_join(
+      pkgs |> 
+        dplyr::select(package_name)
+    )
+  activity <- x |>
+    # number of commits
+    dplyr::inner_join(
+      x |>
+        dplyr::full_join(commits, by = "package_name", relationship = "many-to-many") |>
+        dplyr::group_by(.data$period, .data$package_name) |>
+        dplyr::summarise(commits = dplyr::coalesce(sum(.data$n[.data$date >= .data$start & .data$date <= .data$end]), 0), .groups = "drop"),
+      by = c("period", "package_name")
+    ) |>
+    # opened of issues
+    dplyr::inner_join(
+      x |>
+        dplyr::full_join(open_isses, by = "package_name", relationship = "many-to-many") |>
+        dplyr::group_by(.data$period, .data$package_name) |>
+        dplyr::summarise(open_isses = dplyr::coalesce(sum(.data$n[.data$date >= .data$start & .data$date <= .data$end]), 0), .groups = "drop"),
+      by = c("period", "package_name")
+    ) |>
+    # closed of issues
+    dplyr::inner_join(
+      x |>
+        dplyr::full_join(closed_isses, by = "package_name", relationship = "many-to-many") |>
+        dplyr::group_by(.data$period, .data$package_name) |>
+        dplyr::summarise(closed_isses = dplyr::coalesce(sum(.data$n[.data$date >= .data$start & .data$date <= .data$end]), 0), .groups = "drop"),
+      by = c("period", "package_name")
+    ) |>
+    # pull requests
+    dplyr::inner_join(
+      x |>
+        dplyr::full_join(pulls, by = "package_name", relationship = "many-to-many") |>
+        dplyr::group_by(.data$period, .data$package_name) |>
+        dplyr::summarise(pulls = dplyr::coalesce(sum(.data$n[.data$date >= .data$start & .data$date <= .data$end]), 0), .groups = "drop"),
+      by = c("period", "package_name")
+    ) |>
+    dplyr::mutate(
+      activity = commits + open_isses + closed_isses + pulls,
+      activity_label = dplyr::case_when(
+        activity >= 40 ~ "On fire",
+        activity >= 20 ~ "Active",
+        activity > 0 ~ "Quiet",
+        activity == 0 ~ "No activity"
+      ),
+      activity_emoji = dplyr::case_when(
+        activity_label == "On fire" ~ "🔥",
+        activity_label == "Active" ~ "✨",
+        activity_label == "Quiet" ~ "🧊",
+        activity_label == "No activity" ~ "❄️️"
+      ),
+      activity_order = dplyr::case_when(
+        activity_label == "On fire" ~ 1,
+        activity_label == "Active" ~ 2,
+        activity_label == "Quiet" ~ 3,
+        activity_label == "No activity" ~ 4
+      )
+    ) |>
+    dplyr::group_by(.data$period, .data$activity_label, .data$activity_emoji, .data$activity_order) |>
+    dplyr::summarise(packages = paste0(package_name, collapse = ", "), .groups = "drop") |>
+    dplyr::arrange(.data$activity_order) |>
+    dplyr::mutate(activity = paste0("* ", .data$activity_emoji, " **", .data$activity_label, "**: ", .data$packages, ".")) |>
+    dplyr::group_by(.data$period) |>
+    dplyr::summarise(activity = paste0(.data$activity, collapse = "\n"), .groups = "drop")
+  
+  # releases
+  released <- releases |>
+    dplyr::cross_join(period) |>
+    dplyr::filter(.data$date >= .data$start & .data$date <= .data$end) |>
+    dplyr::mutate(release = paste0("* *", .data$date, "* **", .data$package_name, "** ", .data$version, dplyr::if_else(
+      is.na(.data$news), "", paste0(" [changelog](", .data$news, ")")
+    ))) |>
+    dplyr::arrange(dplyr::desc(.data$date)) |>
+    dplyr::group_by(.data$period) |>
+    dplyr::summarise(releases = paste0(.data$release, collapse = "\n"))
+  
+  # formatting
+  period |>
+    dplyr::left_join(released, by = "period") |>
+    dplyr::left_join(activity, by = "period") |>
+    dplyr::mutate(
+      message_releases = dplyr::if_else(is.na(.data$releases), "", paste0(
+        "\n\n### Releases\n\n", .data$releases
+      )),
+      message_activity = dplyr::if_else(is.na(.data$activity), "", paste0(
+        "\n\n### Activity\n\n", .data$activity
+      )),
+      message = paste0("## ", .data$period, .data$message_releases, .data$message_activity)
+    ) |>
+    dplyr::pull(message) |>
+    paste0(collapse = "\n\n")
+}
 formatNewsletter <- function(newsletter) {
   for (x in newsletter) {
     x$releases <- x$releases |>
@@ -260,7 +400,7 @@ formatNewsletter <- function(newsletter) {
 
     # activity
     cat("### Activity\n\n")
-    print(knitr::kable(x$activity))
+    cat(x$activity)
     cat("\n\n")
   }
 }
@@ -280,4 +420,10 @@ getDependencies <- function(pkgs) {
     }) |>
     dplyr::bind_rows(.id = "from") |>
     dplyr::select("from", "to", "type")
+}
+unsubscribeLink <- function(email) {
+  paste0(
+    "https://script.google.com/macros/s/AKfycbwPL438sqcd6WOqiKUMeD0OsT0QoSUAU5efR3Tj6rjggtdAoU8JqJjIEJnOJPjkB-8/exec?action=unsubscribe&email=",
+    email
+  )
 }
