@@ -304,7 +304,7 @@ createNewsletter <- function(pkgs, period) {
     # get start and end
     dplyr::mutate(
       start = as.Date(paste(.data$period, "1"), format = "%B %Y %d"),
-      end = .data$start + months(1) - 1
+      end = as.Date(cut(.data$start + 31, "month")) - 1
     ) 
   
   # activity
