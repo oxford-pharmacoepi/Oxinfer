@@ -50,17 +50,16 @@ for (email in emails) {
     footer = blastula::md(paste0("If you’d like to stop receiving this newsletter, you can [unsubscribe here](", unsubscribe, ")."))
   )
   
-  # Send the email
-  tryCatch({
-    blastula::smtp_send(
-      email = email_msg,
-      from = "oxinfer@gmail.com",
-      to = email,
-      subject = subject,
-      credentials = email_creds, 
-      verbose = TRUE
-    )
-  }, error = function(e) {
-    message(sprintf("Failed to send to %s: %s", email, e$message))
-  })
+  print(email)
+  print(email_msg)
+  
+  blastula::smtp_send(
+    email = email_msg,
+    from = "oxinfer@gmail.com",
+    to = email,
+    subject = subject,
+    credentials = email_creds, 
+    verbose = TRUE
+  )
+
 }
