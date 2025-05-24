@@ -270,7 +270,13 @@ createNewsletter <- function(pkgs, period) {
     addNews()
   
   # get commits
-  commits <- getInfo(pkgs, "commits") |>
+  commits <- getInfo(pkgs, "commits")
+  
+  print(class(commits$date))
+  print(commits$date)
+  print(as.Date(commits$date))
+  
+  commits <- commits |>
     dplyr::mutate(date = as.Date(date)) |>
     dplyr::group_by(package_name, date) |>
     dplyr::summarise(n = dplyr::n(), .groups = "drop")
