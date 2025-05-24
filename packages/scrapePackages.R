@@ -203,7 +203,25 @@ versionsDates <- function(pkgs) {
   for (pkg in x$package_name) {
     # Get archive info
     archive_url <- sprintf("https://cran.r-project.org/src/contrib/Archive/%s/", pkg)
-    page <- rvest::read_html(archive_url)
+    max_attempts <- 5
+    attempt <- 1
+    repeat {
+      result <- tryCatch(
+        {
+          page <- rvest::read_html(archive_url)
+          break  # Exit loop on success
+        },
+        error = function(e) {
+          message(sprintf("Attempt %d failed: %s", attempt, e$message))
+          if (attempt >= max_attempts) {
+            stop("Failed to connect after ", max_attempts, " attempts.")
+          }
+          attempt <<- attempt + 1
+          Sys.sleep(10)  # Wait before retrying
+          NULL
+        }
+      )
+    }
     
     # Extract table rows
     rows <- rvest::html_elements(page, "table tr") |>
