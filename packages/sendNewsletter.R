@@ -24,10 +24,7 @@ subject <- paste0("Oxinfer Newsletter (", period, ")")
 email_creds <- blastula::creds_envvar(
   user = "oxinfer@gmail.com",
   pass_envvar = "OXINFER_GMAIL",
-  host = "smtp.gmail.com",
-  port = 587,
-  use_ssl = FALSE,
-  use_tls = TRUE 
+  provider = "gmail"
 )
 
 # Loop through and send
