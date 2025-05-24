@@ -51,7 +51,6 @@ for (email in emails) {
   )
   
   print(email)
-  print(email_msg)
   
   blastula::smtp_send(
     email = email_msg,
