@@ -1,3 +1,5 @@
+library(lubridate)
+
 source(here::here("packages", "scrapePackages.R"))
 
 period <- format(Sys.Date() - 1, "%B %Y")
