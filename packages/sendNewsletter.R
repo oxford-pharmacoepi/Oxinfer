@@ -27,6 +27,7 @@ email_creds <- blastula::creds_envvar(
   provider = "gmail"
 )
 
+options(blastula.verbose = TRUE)
 # Loop through and send
 for (email in emails) {
   unsubscribe <- unsubscribeLink(email)
@@ -52,13 +53,17 @@ for (email in emails) {
   
   print(email)
   
-  blastula::smtp_send(
-    email = email_msg,
-    from = "oxinfer@gmail.com",
-    to = email,
-    subject = subject,
-    credentials = email_creds, 
-    verbose = TRUE
-  )
+  tryCatch({
+    blastula::smtp_send(
+      email = email_msg,
+      from = "oxinfer@gmail.com",
+      to = email,
+      subject = subject,
+      credentials = email_creds,
+      verbose = TRUE
+    )
+  }, error = function(e) {
+    message("SMTP error: ", conditionMessage(e))
+  })
 
 }
