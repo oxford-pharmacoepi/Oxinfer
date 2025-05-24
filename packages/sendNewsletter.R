@@ -1,3 +1,5 @@
+library(lubridate)
+
 source(here::here("packages", "scrapePackages.R"))
 
 period <- format(Sys.Date() - 1, "%B %Y")
@@ -22,12 +24,10 @@ subject <- paste0("Oxinfer Newsletter (", period, ")")
 email_creds <- blastula::creds_envvar(
   user = "oxinfer@gmail.com",
   pass_envvar = "OXINFER_GMAIL",
-  host = "smtp.gmail.com",
-  port = 587,
-  use_ssl = FALSE,
-  use_tls = TRUE 
+  provider = "gmail"
 )
 
+options(blastula.verbose = TRUE)
 # Loop through and send
 for (email in emails) {
   unsubscribe <- unsubscribeLink(email)
@@ -51,17 +51,19 @@ for (email in emails) {
     footer = blastula::md(paste0("If you’d like to stop receiving this newsletter, you can [unsubscribe here](", unsubscribe, ")."))
   )
   
-  # Send the email
+  print(email)
+  
   tryCatch({
     blastula::smtp_send(
       email = email_msg,
       from = "oxinfer@gmail.com",
       to = email,
       subject = subject,
-      credentials = email_creds, 
+      credentials = email_creds,
       verbose = TRUE
     )
   }, error = function(e) {
-    message(sprintf("Failed to send to %s: %s", email, e$message))
+    message("SMTP error: ", conditionMessage(e))
   })
+
 }
