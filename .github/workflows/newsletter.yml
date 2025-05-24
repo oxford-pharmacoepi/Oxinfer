@@ -1,0 +1,28 @@
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+name: Send Newsletter
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        
+      - name: Install system dependencies
+        run: sudo apt-get update && sudo apt-get install -y libssl-dev libcurl4-openssl-dev
+        
+      - name: Install R
+        uses: r-lib/actions/setup-r@v2
+
+      - name: Install R libraries in renv
+        uses: r-lib/actions/setup-renv@v2
+        
+      - name: Send newsletter
+        run: Rscript packages/sendNewsletter.R
+        env:
+          OXINFER_GMAIL: ${{ secrets.OXINFER_GMAIL }}
+          GITHUB_PAT: ${{ secrets.GH_PAT }}
