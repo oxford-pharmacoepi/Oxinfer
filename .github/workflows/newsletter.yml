@@ -3,6 +3,7 @@ on:
     - cron: '0 8 * * *'
   pull_request:
     branches: [main]
+  workflow_dispatch:
 
 name: Send Newsletter
 
@@ -23,3 +24,4 @@ jobs:
         run: Rscript packages/sendNewsletter.R
         env:
           OXINFER_GMAIL: ${{ secrets.OXINFER_GMAIL }}
+          GITHUB_PAT: ${{ secrets.GH_PAT }}
