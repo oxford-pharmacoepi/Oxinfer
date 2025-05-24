@@ -20,9 +20,10 @@ emails <- unique(df$email)
 
 smtp <- emayili::server(
   host = "smtp.gmail.com",
-  port = 465,
+  port = 587,
   username = "oxinfer@gmail.com",
-  password = Sys.getenv("OXINFER_GMAIL")
+  password = Sys.getenv("OXINFER_GMAIL"),
+  use_ssl = TRUE
 )
 
 subject <- paste0("Oxinfer Newsletter (", period, ")")
