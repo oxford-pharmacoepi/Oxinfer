@@ -1,4 +1,7 @@
 
+renv::status()
+renv::restore()
+
 source(here::here("packages", "scrapePackages.R"))
 
 period <- format(Sys.Date() - 1, "%B %Y")
