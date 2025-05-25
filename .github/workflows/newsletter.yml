@@ -1,41 +1,27 @@
+name: Send Newsletter
+
 on:
-  # schedule:
-  #   - cron: '0 * * * *'
-  workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *' 
+  workflow_dispatch:     # Allows manual triggering
   pull_request:
     branches: [main]
 
-name: Send Newsletter
-
 jobs:
-  build-deploy:
+  send-newsletter:
     runs-on: ubuntu-latest
+    
     steps:
-      - name: Check out repository
+      - name:️ Checkout code
         uses: actions/checkout@v4
-        
-        
-      - name: Install system dependencies
+    
+      - name: Build Docker image
+        working-directory: ./packages
+        run: docker build -t send-newsletter .
+    
+      - name:️ Send newsletter
         run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            libcurl4-openssl-dev \
-            libssl-dev \
-            libxml2-dev \
-            libx11-dev \
-            pandoc \
-            libgit2-dev
-        
-      - name: Install R
-        uses: r-lib/actions/setup-r@v2
-        with:
-          r-version: '4.4.1'
-
-      - name: Install R libraries in renv
-        uses: r-lib/actions/setup-renv@v2
-        
-      - name: Send newsletter
-        run: Rscript packages/sendNewsletter.R
-        env:
-          OXINFER_GMAIL: ${{ secrets.OXINFER_GMAIL }}
-          GITHUB_PAT: ${{ secrets.GH_PAT }}
+          docker run --rm \
+          -e GITHUB_PAT=${{ secrets.GITHUB_PAT }} \
+          -e OXINFER_GMAIL=${{ secrets.OXINFER_GMAIL }} \
+          send-newsletter
