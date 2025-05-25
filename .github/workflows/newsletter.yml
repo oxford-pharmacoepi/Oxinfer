@@ -28,7 +28,7 @@ jobs:
 
       - name: Install R libraries
         run: |
-          Rscript -e 'install.packages(c("readr", "dplyr", "stringr", "blastula", "purrr"))'
+          Rscript -e 'install.packages(c("readr", "dplyr", "stringr", "blastula", "purrr", "rvest"))'
         
       - name: Send newsletter
         run: Rscript packages/sendNewsletter.R
