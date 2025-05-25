@@ -12,15 +12,18 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name:️ Checkout code
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Build Docker image
-        working-directory: ./packages 
+        working-directory: ./packages
         run: |
           docker build -t send-newsletter .
-          docker image ls  # Debug: Verify image exists
+          docker image ls # check image exists
     
       - name: Send newsletter
         run: |
-          docker run --rm -e GITHUB_PAT=${{ secrets.GITHUB_PAT }} -e OXINFER_GMAIL=${{ secrets.OXINFER_GMAIL }} send-newsletter
+          docker run --rm \
+            -e GITHUB_PAT="${{ secrets.GITHUB_PAT }}" \
+            -e OXINFER_GMAIL="${{ secrets.OXINFER_GMAIL }}" \
+            send-newsletter
