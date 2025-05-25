@@ -1,11 +1,13 @@
-library(lubridate)
 
-source(here::here("packages", "scrapePackages.R"))
+renv::status()
+renv::restore()
+
+source(here::here("scrapePackages.R"))
 
 period <- format(Sys.Date() - 1, "%B %Y")
 
 # Generate newsletter content
-newsletter <- readr::read_csv(here::here("packages", "packages.csv"), show_col_types = FALSE) |>
+newsletter <- readr::read_csv(here::here("packages.csv"), show_col_types = FALSE) |>
   dplyr::filter(dev == "ox") |>
   dplyr::select(!dev) |>
   createNewsletter(period = period)
