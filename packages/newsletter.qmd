@@ -9,7 +9,7 @@ period <- seq.Date(from = as.Date("2025-01-01"), to = Sys.Date(), by = 1) |>
   format("%B %Y") |>
   unique()
 
-readr::read_csv(here::here("packages", "packages.csv"), show_col_types = FALSE) |>
+readr::read_csv(here::here("packages.csv"), show_col_types = FALSE) |>
   dplyr::filter(.data$dev == "ox") |>
   dplyr::select(!"dev") |>
   createNewsletter(period = period) |>
