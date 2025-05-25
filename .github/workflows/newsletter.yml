@@ -24,6 +24,6 @@ jobs:
       - name: Send newsletter
         run: |
           docker run --rm \
-            -e GITHUB_PAT=${{ secrets.GITHUB_PAT }} \
+            -e GITHUB_PAT=${{ secrets.GH_PAT }} \
             -e OXINFER_GMAIL=${{ secrets.OXINFER_GMAIL }} \
             send-newsletter

@@ -2,7 +2,7 @@
 
 ```{r, echo=FALSE, results='asis', message=FALSE, warning=FALSE}
 library(lubridate)
-source(here::here("packages", "scrapePackages.R"))
+source(here::here("scrapePackages.R"))
 
 period <- seq.Date(from = as.Date("2025-01-01"), to = Sys.Date(), by = 1) |>
   rev() |>
