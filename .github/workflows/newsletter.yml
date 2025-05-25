@@ -4,8 +4,6 @@ on:
   schedule:
     - cron: '0 * * * *'  # Runs at the start of every hour
   workflow_dispatch:      # Allows manual triggering
-  pull_request:
-    branches: [main]     # Runs on PRs to main branch
 
 jobs:
   send-newsletter:
