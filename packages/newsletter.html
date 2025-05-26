@@ -322,6 +322,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#newsletter" id="toc-newsletter" class="nav-link active" data-scroll-target="#newsletter">Newsletter</a>
   <ul class="collapse">
+  <li><a href="#subscribe-to-our-newsletter" id="toc-subscribe-to-our-newsletter" class="nav-link" data-scroll-target="#subscribe-to-our-newsletter">Subscribe to Our Newsletter</a></li>
   <li><a href="#may-2025" id="toc-may-2025" class="nav-link" data-scroll-target="#may-2025">May 2025</a>
   <ul class="collapse">
   <li><a href="#releases" id="toc-releases" class="nav-link" data-scroll-target="#releases">Releases</a></li>
@@ -347,7 +348,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#releases-4" id="toc-releases-4" class="nav-link" data-scroll-target="#releases-4">Releases</a></li>
   <li><a href="#activity-4" id="toc-activity-4" class="nav-link" data-scroll-target="#activity-4">Activity</a></li>
   </ul></li>
-  <li><a href="#subscribe-to-our-newsletter" id="toc-subscribe-to-our-newsletter" class="nav-link" data-scroll-target="#subscribe-to-our-newsletter">Subscribe to Our Newsletter</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/oxford-pharmacoepi/OxinferOnboarding/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -382,6 +382,41 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="newsletter" class="level1">
 <h1>Newsletter</h1>
+<section id="subscribe-to-our-newsletter" class="level2">
+<h2 class="anchored" data-anchor-id="subscribe-to-our-newsletter">Subscribe to Our Newsletter</h2>
+<form id="subscribe-form">
+  <input type="email" name="email" required="" placeholder="Enter your email">
+  <button type="submit">Subscribe</button>
+</form>
+
+<div id="message" style="display:none; color: green; font-weight: bold;">
+  ✔ You've been subscribed to the Oxinfer Newsletter :)
+</div>
+
+<script>
+  document.getElementById('subscribe-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Stop normal form submission
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    fetch('https://script.google.com/macros/s/AKfycbwPL438sqcd6WOqiKUMeD0OsT0QoSUAU5efR3Tj6rjggtdAoU8JqJjIEJnOJPjkB-8/exec', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.text())
+    .then(text => {
+      // Hide the form and show the success message
+      form.style.display = 'none';
+      document.getElementById('message').style.display = 'block';
+    })
+    .catch(error => {
+      alert('Oops, something went wrong. Please try again.');
+      console.error(error);
+    });
+  });
+</script>
+</section>
 <section id="may-2025" class="level2">
 <h2 class="anchored" data-anchor-id="may-2025">May 2025</h2>
 <section id="releases" class="level3">
@@ -514,44 +549,9 @@ ul.task-list li input[type="checkbox"] {
 <li>🧊 <strong>Quiet</strong>: PatientProfiles, DrugUtilisation, CohortCharacteristics, CohortSymmetry, omock, OmopViewer.</li>
 <li>❄️️ <strong>No activity</strong>: OmopConstructor, OmopStudyBuilder.</li>
 </ul>
+
+
 </section>
-</section>
-<section id="subscribe-to-our-newsletter" class="level2">
-<h2 class="anchored" data-anchor-id="subscribe-to-our-newsletter">Subscribe to Our Newsletter</h2>
-<form id="subscribe-form">
-  <input type="email" name="email" required="" placeholder="Enter your email">
-  <button type="submit">Subscribe</button>
-</form>
-
-<div id="message" style="display:none; color: green; font-weight: bold;">
-  ✔ You've been subscribed to the Oxinfer Newsletter :)
-</div>
-
-<script>
-  document.getElementById('subscribe-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Stop normal form submission
-
-    const form = event.target;
-    const formData = new FormData(form);
-
-    fetch('https://script.google.com/macros/s/AKfycbwPL438sqcd6WOqiKUMeD0OsT0QoSUAU5efR3Tj6rjggtdAoU8JqJjIEJnOJPjkB-8/exec', {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => response.text())
-    .then(text => {
-      // Hide the form and show the success message
-      form.style.display = 'none';
-      document.getElementById('message').style.display = 'block';
-    })
-    .catch(error => {
-      alert('Oops, something went wrong. Please try again.');
-      console.error(error);
-    });
-  });
-</script>
-
-
 </section>
 </section>
 
