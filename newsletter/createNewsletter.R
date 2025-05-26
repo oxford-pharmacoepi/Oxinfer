@@ -42,8 +42,8 @@ formatInfo <- function(x, info) {
     dplyr::tibble(
       created_at = as.Date(x$created_at %||% character()),
       closed_at = as.Date(x$closed_at %||% character()),
-      author = x$user$email %||% character(),
-      comments = x$comments %||% character()
+      author = x$user$login %||% character(),
+      comments = x$comments %||% numeric()
     )
   } else if (info == "pulls") {
     dplyr::tibble(
@@ -51,7 +51,7 @@ formatInfo <- function(x, info) {
       merged_at = as.Date(x$merged_at %||% character()),
       target = x$base$ref %||% character(),
       origin = x$head$ref %||% character(),
-      author = x$user$email %||% character()
+      author = x$user$login %||% character()
     )
   }
 }
