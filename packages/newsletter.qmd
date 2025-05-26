@@ -3,12 +3,67 @@
 ## Subscribe to Our Newsletter
 
 ```{=html}
+<style>
+  #subscribe-form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 500px;
+    gap: 10px;
+    margin: 1em 0;
+  }
+
+  #subscribe-form input[type="email"] {
+    flex: 1 1 auto;
+    min-width: 200px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+  }
+
+  #subscribe-form input[type="email"]:focus {
+    outline: none;
+    border-color: #007acc;
+  }
+
+  #subscribe-form button {
+    flex: 0 0 auto;
+    background: linear-gradient(90deg, #007acc, #00bfa5);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  #subscribe-form button:hover {
+    background: linear-gradient(90deg, #005fa3, #009e88);
+    transform: translateY(-2px);
+  }
+
+  #subscribe-form button:active {
+    transform: translateY(0);
+  }
+
+  #message {
+    display: none;
+    color: green;
+    font-weight: bold;
+    margin-top: 1em;
+  }
+</style>
+
 <form id="subscribe-form">
   <input type="email" name="email" required placeholder="Enter your email" />
-  <button type="submit">Subscribe</button>
+  <button type="submit">📬 Subscribe</button>
 </form>
 
-<div id="message" style="display:none; color: green; font-weight: bold;">
+<div id="message">
   ✔ You've been subscribed to the Oxinfer Newsletter :)
 </div>
 
