@@ -38,7 +38,7 @@
 ```
 
 ```{r, echo=FALSE, results='asis', message=FALSE, warning=FALSE}
-source(here::here("newsletter", "createNewsletter"))
+source(here::here("newsletter", "createNewsletter.R"))
 
 period <- seq.Date(from = as.Date("2025-01-01"), to = Sys.Date(), by = 1) |>
   rev() |>
