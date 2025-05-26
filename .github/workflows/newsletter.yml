@@ -2,7 +2,7 @@ name: Send Newsletter
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Runs at the start of every hour
+    - cron: '0 8 * * *'  # Runs every day at 8 am
   workflow_dispatch:      # Allows manual triggering
 
 jobs:
