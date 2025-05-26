@@ -3,7 +3,9 @@ name: Send Newsletter
 on:
   schedule:
     - cron: '0 8 * * *'  # Runs every day at 8 am
-  workflow_dispatch:      # Allows manual triggering
+  workflow_dispatch:     # Allows manual triggering
+  pull_request:          # test newsletter on pull requests
+    branches: [main]
 
 jobs:
   send-newsletter:
@@ -14,14 +16,25 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build Docker image
-        working-directory: ./packages
+        working-directory: ./newsletter
         run: |
           docker build -t send-newsletter .
           docker image ls # check image exists
-    
-      - name: Send newsletter
+          
+      - name: Test send newsletter
+        if: github.event_name == 'pull_request'
         run: |
           docker run --rm \
             -e GITHUB_PAT=${{ secrets.GH_PAT }} \
             -e OXINFER_GMAIL=${{ secrets.OXINFER_GMAIL }} \
+            -e TEST_RUN="true" \
+            send-newsletter
+    
+      - name: Send newsletter
+        if: github.event_name != 'pull_request'
+        run: |
+          docker run --rm \
+            -e GITHUB_PAT=${{ secrets.GH_PAT }} \
+            -e OXINFER_GMAIL=${{ secrets.OXINFER_GMAIL }} \
+            -e TEST_RUN="false" \
             send-newsletter

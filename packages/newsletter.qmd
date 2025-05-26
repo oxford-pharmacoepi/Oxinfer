@@ -1,21 +1,5 @@
 # Newsletter
 
-```{r, echo=FALSE, results='asis', message=FALSE, warning=FALSE}
-library(lubridate)
-source(here::here("scrapePackages.R"))
-
-period <- seq.Date(from = as.Date("2025-01-01"), to = Sys.Date(), by = 1) |>
-  rev() |>
-  format("%B %Y") |>
-  unique()
-
-readr::read_csv(here::here("packages.csv"), show_col_types = FALSE) |>
-  dplyr::filter(.data$dev == "ox") |>
-  dplyr::select(!"dev") |>
-  createNewsletter(period = period) |>
-  cat()
-```
-
 ## Subscribe to Our Newsletter
 
 ```{=html}
@@ -51,4 +35,19 @@ readr::read_csv(here::here("packages.csv"), show_col_types = FALSE) |>
     });
   });
 </script>
+```
+
+```{r, echo=FALSE, results='asis', message=FALSE, warning=FALSE}
+source(here::here("newsletter", "createNewsletter.R"))
+
+period <- seq.Date(from = as.Date("2025-01-01"), to = Sys.Date(), by = 1) |>
+  rev() |>
+  format("%B %Y") |>
+  unique()
+
+readr::read_csv(here::here("newsletter", "packages.csv"), show_col_types = FALSE) |>
+  dplyr::filter(.data$dev == "ox") |>
+  dplyr::select(!"dev") |>
+  createNewsletter(period = period) |>
+  cat()
 ```

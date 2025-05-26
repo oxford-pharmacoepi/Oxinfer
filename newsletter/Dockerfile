@@ -5,10 +5,12 @@ FROM ghcr.io/rocker-org/r-ver:4.4.1
 # Arguments
 ARG GITHUB_PAT
 ARG OXINFER_GMAIL
+ARG TEST_RUN
 
 # Set as environment variables
 ENV GITHUB_PAT=$GITHUB_PAT
 ENV OXINFER_GMAIL=$OXINFER_GMAIL
+ENV TEST_RUN=$TEST_RUN
 
 # First update package lists with retry logic
 RUN apt-get update || apt-get update
@@ -42,7 +44,7 @@ RUN R -e "renv::restore()"
 
 # Copy the rest of needed files
 COPY sendNewsletter.R .
-COPY scrapePackages.R .
+COPY createNewsletter.R .
 COPY packages.csv .
 
 # Command to run your script
