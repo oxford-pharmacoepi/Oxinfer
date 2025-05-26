@@ -44,7 +44,7 @@ RUN R -e "renv::restore()"
 
 # Copy the rest of needed files
 COPY sendNewsletter.R .
-COPY scrapePackages.R .
+COPY createNewsletter.R .
 COPY packages.csv .
 
 # Command to run your script
