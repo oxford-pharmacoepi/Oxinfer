@@ -36,4 +36,5 @@ jobs:
           docker run --rm \
             -e GITHUB_PAT=${{ secrets.GH_PAT }} \
             -e OXINFER_GMAIL=${{ secrets.OXINFER_GMAIL }} \
+            -e TEST_RUN="false" \
             send-newsletter
