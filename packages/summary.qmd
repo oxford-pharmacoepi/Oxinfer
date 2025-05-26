@@ -5,13 +5,12 @@
 Oxinfer developed several packages to work with the OMOP Common Data Model:
 
 ```{r, echo=FALSE}
-# options(repos = c(CRAN = "https://cran.r-project.org"))
 # db <- tools::CRAN_package_db()
-source(here::here("scrapePackages.R"))
+source(here::here("packages", "scrapePackages.R"))
 ```
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
-readr::read_csv(here::here("packages.csv"), show_col_types = FALSE) |>
+readr::read_csv(here::here("newsletter", "packages.csv"), show_col_types = FALSE) |>
   dplyr::filter(.data$dev == "ox") |>
   dplyr::select(!"dev") |>
   purrr::pmap(\(package_name, organisation) {
