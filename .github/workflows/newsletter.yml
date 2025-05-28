@@ -2,7 +2,7 @@ name: Send Newsletter
 
 on:
   schedule:
-    - cron: '0 8 * * *'  # Runs every day at 8 am
+    - cron: '0 8 1 * *'  # Runs 1st of the month at 8 am
   workflow_dispatch:     # Allows manual triggering
   pull_request:          # test newsletter on pull requests
     branches: [main]
