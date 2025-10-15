@@ -16,6 +16,6 @@ OmopConstructor, ohdsi, ox
 OmopViewer, ohdsi, ox
 OmopStudyBuilder, oxford-pharmacoepi, ox
 EpiStandard, oxford-pharmacoepi, ox
-OmopSparkConnector, oxford-pharmacoepi, ox
+OmopOnSpark, ohdsi, ox
 CDMConnector, darwin-eu, dw
 DrugExposureDiagnostics, darwin-eu, dw

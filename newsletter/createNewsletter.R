@@ -85,14 +85,15 @@ versionsDates <- function(pkgs) {
     repeat {
       result <- tryCatch(
         {
+          if (attempt > max_attempts) {
+            page <- NULL
+            break
+          }
           page <- rvest::read_html(archive_url)
           break  # Exit loop on success
         },
         error = function(e) {
           message(sprintf("Attempt %d failed: %s", attempt, e$message))
-          if (attempt >= max_attempts) {
-            stop("Failed to connect after ", max_attempts, " attempts.")
-          }
           attempt <<- attempt + 1
           Sys.sleep(10)  # Wait before retrying
           NULL
@@ -100,17 +101,27 @@ versionsDates <- function(pkgs) {
       )
     }
     
-    # Extract table rows
-    rows <- rvest::html_elements(page, "table tr") |>
-      as.character() |>
-      purrr::keep(\(x) grepl("/icons/compressed.gif", x))
-    version <- stringr::str_match(rows, paste0(">", pkg, "_(.*)\\.tar\\.gz<"))[, 2]
-    date <- as.Date(stringr::str_match(rows, "align=\"right\">(.*)</td>")[, 2])
+    if (is.null(page)) {
+      cont <- readLines(paste0("https://CRAN.R-project.org/package=", pkg))
+      id <- which(cont == "<td>Published:</td>")
+      date <- stringr::str_extract(cont[id + 1], "(?<=<td>).*?(?=</td>)") |>
+        as.Date("%Y-%m-%d")
+      id <- which(cont == "<td>Version:</td>")
+      version <- stringr::str_extract(cont[id + 1], "(?<=<td>).*?(?=</td>)")
+    } else {
+      # Extract table rows
+      rows <- rvest::html_elements(page, "table tr") |>
+        as.character() |>
+        purrr::keep(\(x) grepl("/icons/compressed.gif", x))
+      version <- stringr::str_match(rows, paste0(">", pkg, "_(.*)\\.tar\\.gz<"))[, 2]
+      date <- as.Date(stringr::str_match(rows, "align=\"right\">(.*)</td>")[, 2])
+    }
     
     x <- x |>
       dplyr::union_all(dplyr::tibble(
         package_name = pkg, version = version, date = date
       ))
+    
   }
   
   x |>
