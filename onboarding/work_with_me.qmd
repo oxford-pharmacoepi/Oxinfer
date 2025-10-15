@@ -68,18 +68,6 @@ Hi I am Mike...
 :::
 :::
 
-### Yuchen Guo {.unnumbered}
-
-::: columns
-::: {.column width="40%"}
-![](https://www.ndorms.ox.ac.uk/team/yuchen-guo/@@haiku.profiles.portrait/93fc61674bc741f3a8d18a44ebf1e246/@@images/image/w1140?37ffc97a-d914-41e1-927e-d203460d53e1){width="3in"}
-:::
-
-::: {.column width="60%"}
-Hi I am Mimi...
-:::
-:::
-
 ### Xihang Chen {.unnumbered}
 
 ::: columns
