@@ -91,7 +91,7 @@ To create and use a `.gitignore` file:
 
 2. Add the files and directories you want to ignore. For example:
 
-```{r, eval = FALSE}
+```
 # Ignore all .csv files
 *.csv
    
