@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-10-17">
+<meta name="dcterms.date" content="2025-10-18">
 
 <title>connect_to_database – Oxinfer</title>
 <style>
@@ -78,9 +78,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-df601b8b3cfc7b3c81335e0389e03e2a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-117ae1a76e887c7fb5f74f698f49bc41.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-df601b8b3cfc7b3c81335e0389e03e2a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-b61d72ead8c256596bc22e8e55a518ae.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-38c516caaefce7f318fe7c58edf4a279.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-b61d72ead8c256596bc22e8e55a518ae.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -548,7 +548,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 17, 2025</p>
+      <p class="date">October 18, 2025</p>
     </div>
   </div>
   
@@ -620,7 +620,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Source:   SQL [?? x 18]
-# Database: DuckDB 1.4.0 [unknown@Linux 6.11.0-1018-azure:R 4.5.1//tmp/RtmpqWsuHN/file20eb1eb24a1a.duckdb]
+# Database: DuckDB 1.4.0 [unknown@Linux 6.14.0-1012-azure:R 4.5.1//tmp/RtmpZSLeRh/file1be1ce47c0b.duckdb]
   person_id gender_concept_id year_of_birth month_of_birth day_of_birth
       &lt;int&gt;             &lt;int&gt;         &lt;int&gt;          &lt;int&gt;        &lt;int&gt;
 1         6              8532          1963             12           31
@@ -675,13 +675,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>── # OMOP CDM reference (duckdb) of Synthea ────────────────────────────────────</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>• omop tables: care_site, cdm_source, concept, concept_ancestor, concept_class,
-concept_relationship, concept_synonym, condition_era, condition_occurrence,
-cost, death, device_exposure, domain, dose_era, drug_era, drug_exposure,
-drug_strength, fact_relationship, location, measurement, metadata, note,
-note_nlp, observation, observation_period, payer_plan_period, person,
-procedure_occurrence, provider, relationship, source_to_concept_map, specimen,
-visit_detail, visit_occurrence, vocabulary</code></pre>
+<pre><code>• omop tables: person, observation_period, visit_occurrence, visit_detail,
+condition_occurrence, drug_exposure, procedure_occurrence, device_exposure,
+measurement, observation, death, note, note_nlp, specimen, fact_relationship,
+location, care_site, provider, payer_plan_period, cost, drug_era, dose_era,
+condition_era, metadata, cdm_source, concept, vocabulary, domain,
+concept_class, concept_relationship, relationship, concept_synonym,
+concept_ancestor, source_to_concept_map, drug_strength</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>• cohort tables: -</code></pre>
@@ -698,7 +698,7 @@ visit_detail, visit_occurrence, vocabulary</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>cdm<span class="sc">$</span>person</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Source:   table&lt;person&gt; [?? x 18]
-# Database: DuckDB 1.4.0 [unknown@Linux 6.11.0-1018-azure:R 4.5.1//tmp/RtmpqWsuHN/file20eb6d858e7a.duckdb]
+# Database: DuckDB 1.4.0 [unknown@Linux 6.14.0-1012-azure:R 4.5.1//tmp/RtmpZSLeRh/file1be14d70946f.duckdb]
    person_id gender_concept_id year_of_birth month_of_birth day_of_birth
        &lt;int&gt;             &lt;int&gt;         &lt;int&gt;          &lt;int&gt;        &lt;int&gt;
  1         6              8532          1963             12           31
@@ -1284,7 +1284,7 @@ visit_detail, visit_occurrence, vocabulary</code></pre>
 <p>Copyright 2024, Oxinfer</p>
 </div>   
     <div class="nav-footer-center">
-<p>Rendered on October 17, 2025</p>
+<p>Rendered on October 18, 2025</p>
 <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/oxford-pharmacoepi/OxinferOnboarding/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
