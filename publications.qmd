@@ -124,7 +124,7 @@ for (k in seq_along(x$data)) {
       !!!nms
     ))
 }
-data <- data |>
+text <- data |>
   dplyr::mutate(
     year = clock::get_year(date),
     cite = paste0(
@@ -132,14 +132,26 @@ data <- data |>
       ">"
     )
   ) |>
-  dplyr::arrange(dplyr::desc(date))
-data <- data |>
-  dplyr::mutate(sum = dplyr::select(data, dplyr::all_of(ours$last_name)) |> rowSums(na.rm = TRUE))
-
-text <- paste0(data$cite, collapse = "\n")
+  dplyr::arrange(dplyr::desc(date)) |>
+  dplyr::mutate(
+    sum = dplyr::select(data, dplyr::all_of(ours$last_name)) |> 
+      rowSums(na.rm = TRUE),
+    group = dplyr::if_else(
+      .data$year < 2022, "2021 and before", as.character(.data$year)
+    ),
+    group = factor(x = .data$group, levels = unique(.data$group))
+  ) |>
+  dplyr::group_by(.data$group) |>
+  dplyr::group_split() |>
+  as.list() |>
+  purrr::map_chr(\(x) {
+    title <- unique(x$group)
+    articles <- paste0(x$cite, collapse = "\n")
+    paste0("### ", title, "\n\n", articles, "\n")
+  }) |>
+  paste0(collapse = "\n")
 ```
 
 ```{r, results='asis', echo=FALSE}
 cat(text)
 ```
-
