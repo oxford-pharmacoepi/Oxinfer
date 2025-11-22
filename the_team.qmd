@@ -63,7 +63,9 @@ for (k in seq_len(nrow(x))) {
   if (length(description) == 0) {
     description <- character()
   } else {
-    description <- trimws(description)
+    # take last
+    # addition of projects not differentiated
+    description <- trimws(description |> tail(1))
     if (description == "<p></p>") {
       description <- character()
     }
