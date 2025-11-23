@@ -76,6 +76,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Oxinfer">
+<meta property="og:description" content="">
+<meta property="og:image" content="summary_files/figure-html/unnamed-chunk-2-1.png">
 <meta property="og:site_name" content="Oxinfer">
 </head>
 
@@ -321,29 +323,28 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#packages" id="toc-packages" class="nav-link active" data-scroll-target="#packages">Packages</a>
+  <li><a href="#oxinfer-software" id="toc-oxinfer-software" class="nav-link active" data-scroll-target="#oxinfer-software">OxInfer software</a>
   <ul class="collapse">
-  <li><a href="#our-packages" id="toc-our-packages" class="nav-link" data-scroll-target="#our-packages">Our packages</a>
-  <ul class="collapse">
+  <li><a href="#releases" id="toc-releases" class="nav-link" data-scroll-target="#releases">Releases</a></li>
+  <li><a href="#relationships" id="toc-relationships" class="nav-link" data-scroll-target="#relationships">Relationships</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
   <li><a href="#omopgenerics" id="toc-omopgenerics" class="nav-link" data-scroll-target="#omopgenerics">omopgenerics</a></li>
+  <li><a href="#omock" id="toc-omock" class="nav-link" data-scroll-target="#omock">omock</a></li>
+  <li><a href="#omopconstructor" id="toc-omopconstructor" class="nav-link" data-scroll-target="#omopconstructor">OmopConstructor</a></li>
+  <li><a href="#omoponspark" id="toc-omoponspark" class="nav-link" data-scroll-target="#omoponspark">OmopOnSpark</a></li>
+  <li><a href="#visomopresults" id="toc-visomopresults" class="nav-link" data-scroll-target="#visomopresults">visOmopResults</a></li>
+  <li><a href="#codelistgenerator" id="toc-codelistgenerator" class="nav-link" data-scroll-target="#codelistgenerator">CodelistGenerator</a></li>
   <li><a href="#patientprofiles" id="toc-patientprofiles" class="nav-link" data-scroll-target="#patientprofiles">PatientProfiles</a></li>
   <li><a href="#cohortconstructor" id="toc-cohortconstructor" class="nav-link" data-scroll-target="#cohortconstructor">CohortConstructor</a></li>
-  <li><a href="#codelistgenerator" id="toc-codelistgenerator" class="nav-link" data-scroll-target="#codelistgenerator">CodelistGenerator</a></li>
-  <li><a href="#visomopresults" id="toc-visomopresults" class="nav-link" data-scroll-target="#visomopresults">visOmopResults</a></li>
   <li><a href="#incidenceprevalence" id="toc-incidenceprevalence" class="nav-link" data-scroll-target="#incidenceprevalence">IncidencePrevalence</a></li>
   <li><a href="#drugutilisation" id="toc-drugutilisation" class="nav-link" data-scroll-target="#drugutilisation">DrugUtilisation</a></li>
   <li><a href="#cohortcharacteristics" id="toc-cohortcharacteristics" class="nav-link" data-scroll-target="#cohortcharacteristics">CohortCharacteristics</a></li>
   <li><a href="#cohortsurvival" id="toc-cohortsurvival" class="nav-link" data-scroll-target="#cohortsurvival">CohortSurvival</a></li>
   <li><a href="#cohortsymmetry" id="toc-cohortsymmetry" class="nav-link" data-scroll-target="#cohortsymmetry">CohortSymmetry</a></li>
   <li><a href="#omopsketch" id="toc-omopsketch" class="nav-link" data-scroll-target="#omopsketch">OmopSketch</a></li>
+  <li><a href="#measurementdiagnostics" id="toc-measurementdiagnostics" class="nav-link" data-scroll-target="#measurementdiagnostics">MeasurementDiagnostics</a></li>
   <li><a href="#phenotyper" id="toc-phenotyper" class="nav-link" data-scroll-target="#phenotyper">PhenotypeR</a></li>
-  <li><a href="#omock" id="toc-omock" class="nav-link" data-scroll-target="#omock">omock</a></li>
-  <li><a href="#omopconstructor" id="toc-omopconstructor" class="nav-link" data-scroll-target="#omopconstructor">OmopConstructor</a></li>
   <li><a href="#omopviewer" id="toc-omopviewer" class="nav-link" data-scroll-target="#omopviewer">OmopViewer</a></li>
-  <li><a href="#omopstudybuilder" id="toc-omopstudybuilder" class="nav-link" data-scroll-target="#omopstudybuilder">OmopStudyBuilder</a></li>
-  <li><a href="#epistandard" id="toc-epistandard" class="nav-link" data-scroll-target="#epistandard">EpiStandard</a></li>
-  <li><a href="#omoponspark" id="toc-omoponspark" class="nav-link" data-scroll-target="#omoponspark">OmopOnSpark</a></li>
-  </ul></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/oxford-pharmacoepi/OxinferOnboarding/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -376,125 +377,169 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="packages" class="level1">
-<h1>Packages</h1>
-<section id="our-packages" class="level2">
-<h2 class="anchored" data-anchor-id="our-packages">Our packages</h2>
-<p>Oxinfer developed several packages to work with the OMOP Common Data Model:</p>
+<section id="oxinfer-software" class="level1">
+<h1>OxInfer software</h1>
+<p>A core activity of OxInfer is building and maintaing research software, particularly focused on supporting analyses of health data mapped to the OMOP Common Data Model. For this we make open-source R packages which are released on CRAN.</p>
+<section id="releases" class="level3">
+<h3 class="anchored" data-anchor-id="releases">Releases</h3>
+<p>Below is a summary of CRAN releases of our R packages. As can be seen we have aim for a high frequency of releases, particularly in the early stages of package development. This reflects our aim of practicing continuously delivery.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="summary_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="relationships" class="level3">
+<h3 class="anchored" data-anchor-id="relationships">Relationships</h3>
+<p>The figure below is an attempt to show how our R packages relate to each other. We can see in the centre the core, lower-level, packages. Key imports across packages include <code>omopgenerics</code>, which defines core classes and methods for working with data in the OMOP Common Data Model format, and <code>PatientProfiles</code>, which provides functionality for identifying and bringing together patient features spread across OMOP Common Data Model tables. In addition, key suggests include <code>omock</code>, which creates synthetic datasets, <code>visOmopResults</code>, which supports creation of plots and tables to visualise study results. Meanwhile on the periphery are more user-facing, higher-level, packages. For example, these include <code>OmopSketch</code>, for summarising a dataset mapped to the OMOP Common Data Model, and <code>PhenotypeR</code>, for running diagnostics on them.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Imports</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Imports and suggests</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="summary_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="summary_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="packages" class="level3">
+<h3 class="anchored" data-anchor-id="packages">Packages</h3>
+</section>
 <section id="omopgenerics" class="level3">
 <h3 class="anchored" data-anchor-id="omopgenerics">omopgenerics</h3>
 <p><strong>Methods and Classes for the OMOP Common Data Model</strong></p>
 <p>Provides definitions of core classes and methods used by analytic pipelines that query the OMOP (Observational Medical Outcomes Partnership) common data model.</p>
-<p><a href="https://darwin-eu.github.io/omopgenerics/"><img src="https://img.shields.io/badge/documentation-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/darwin-eu/omopgenerics/issues/new/choose"><img src="https://img.shields.io/badge/report_issue-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a> <a href="https://cran.r-project.org/web/packages/omopgenerics/omopgenerics.pdf"><img src="https://img.shields.io/badge/manual-1E90FF?logo=r&amp;logoColor=black" class="img-fluid" alt="manual"></a> <a href="https://CRAN.R-project.org/package=omopgenerics"><img src="https://www.r-pkg.org/badges/version/omopgenerics" alt="CRAN version badge"></a> <a href="https://CRAN.R-project.org/package=omopgenerics"><img src="https://img.shields.io/badge/last_release-11_Nov_25-blue.svg" class="img-fluid" alt="last release"></a> <a href="https://CRAN.R-project.org/package=omopgenerics"><img src="https://img.shields.io/badge/first_release-17_Jan_24-red.svg" class="img-fluid" alt="first release"></a></p>
-</section>
-<section id="patientprofiles" class="level3">
-<h3 class="anchored" data-anchor-id="patientprofiles">PatientProfiles</h3>
-<p><img src="https://github.com/darwin-eu/PatientProfiles/blob/main/man/figures/logo.png?raw=true" alt="PatientProfiles" style="height: 100px;"> <strong>Identify Characteristics of Patients in the OMOP Common Data Model</strong></p>
-<p>Identify the characteristics of patients in data mapped to the Observational Medical Outcomes Partnership (OMOP) common data model.</p>
-<p><a href="https://darwin-eu.github.io/PatientProfiles/"><img src="https://img.shields.io/badge/documentation-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/darwin-eu/PatientProfiles/issues/new/choose"><img src="https://img.shields.io/badge/report_issue-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a> <a href="https://cran.r-project.org/web/packages/PatientProfiles/PatientProfiles.pdf"><img src="https://img.shields.io/badge/manual-1E90FF?logo=r&amp;logoColor=black" class="img-fluid" alt="manual"></a> <a href="https://CRAN.R-project.org/package=PatientProfiles"><img src="https://www.r-pkg.org/badges/version/PatientProfiles" alt="CRAN version badge"></a> <a href="https://CRAN.R-project.org/package=PatientProfiles"><img src="https://img.shields.io/badge/last_release-29_Oct_25-blue.svg" class="img-fluid" alt="last release"></a> <a href="https://CRAN.R-project.org/package=PatientProfiles"><img src="https://img.shields.io/badge/first_release-02_May_23-red.svg" class="img-fluid" alt="first release"></a></p>
-</section>
-<section id="cohortconstructor" class="level3">
-<h3 class="anchored" data-anchor-id="cohortconstructor">CohortConstructor</h3>
-<p><img src="https://github.com/ohdsi/CohortConstructor/blob/main/man/figures/logo.png?raw=true" alt="CohortConstructor" style="height: 100px;"> <strong>Build and Manipulate Study Cohorts Using a Common Data Model</strong></p>
-<p>Create and manipulate study cohorts in data mapped to the Observational Medical Outcomes Partnership Common Data Model.</p>
-<p><a href="https://ohdsi.github.io/CohortConstructor/"><img src="https://img.shields.io/badge/documentation-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/ohdsi/CohortConstructor/issues/new/choose"><img src="https://img.shields.io/badge/report_issue-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a> <a href="https://cran.r-project.org/web/packages/CohortConstructor/CohortConstructor.pdf"><img src="https://img.shields.io/badge/manual-1E90FF?logo=r&amp;logoColor=black" class="img-fluid" alt="manual"></a> <a href="https://CRAN.R-project.org/package=CohortConstructor"><img src="https://www.r-pkg.org/badges/version/CohortConstructor" alt="CRAN version badge"></a> <a href="https://CRAN.R-project.org/package=CohortConstructor"><img src="https://img.shields.io/badge/last_release-31_Oct_25-blue.svg" class="img-fluid" alt="last release"></a> <a href="https://CRAN.R-project.org/package=CohortConstructor"><img src="https://img.shields.io/badge/first_release-01_Jun_24-red.svg" class="img-fluid" alt="first release"></a></p>
-</section>
-<section id="codelistgenerator" class="level3">
-<h3 class="anchored" data-anchor-id="codelistgenerator">CodelistGenerator</h3>
-<p><img src="https://github.com/darwin-eu/CodelistGenerator/blob/main/man/figures/logo.png?raw=true" alt="CodelistGenerator" style="height: 100px;"> <strong>Identify Relevant Clinical Codes and Evaluate Their Use</strong></p>
-<p>Generate a candidate code list for the Observational Medical Outcomes Partnership (OMOP) common data model based on string matching. For a given search strategy, a candidate code list will be returned.</p>
-<p><a href="https://darwin-eu.github.io/CodelistGenerator/"><img src="https://img.shields.io/badge/documentation-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/darwin-eu/CodelistGenerator/issues/new/choose"><img src="https://img.shields.io/badge/report_issue-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a> <a href="https://cran.r-project.org/web/packages/CodelistGenerator/CodelistGenerator.pdf"><img src="https://img.shields.io/badge/manual-1E90FF?logo=r&amp;logoColor=black" class="img-fluid" alt="manual"></a> <a href="https://CRAN.R-project.org/package=CodelistGenerator"><img src="https://www.r-pkg.org/badges/version/CodelistGenerator" alt="CRAN version badge"></a> <a href="https://CRAN.R-project.org/package=CodelistGenerator"><img src="https://img.shields.io/badge/last_release-10_Apr_25-blue.svg" class="img-fluid" alt="last release"></a> <a href="https://CRAN.R-project.org/package=CodelistGenerator"><img src="https://img.shields.io/badge/first_release-07_Feb_23-red.svg" class="img-fluid" alt="first release"></a></p>
-</section>
-<section id="visomopresults" class="level3">
-<h3 class="anchored" data-anchor-id="visomopresults">visOmopResults</h3>
-<p><img src="https://github.com/darwin-eu/visOmopResults/blob/main/man/figures/logo.png?raw=true" alt="visOmopResults" style="height: 100px;"> <strong>Graphs and Tables for OMOP Results</strong></p>
-<p>Provides methods to transform omop_result objects into formatted tables and figures, facilitating the visualisation of study results working with the Observational Medical Outcomes Partnership (OMOP) Common Data Model.</p>
-<p><a href="https://darwin-eu.github.io/visOmopResults/"><img src="https://img.shields.io/badge/documentation-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/darwin-eu/visOmopResults/issues/new/choose"><img src="https://img.shields.io/badge/report_issue-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a> <a href="https://cran.r-project.org/web/packages/visOmopResults/visOmopResults.pdf"><img src="https://img.shields.io/badge/manual-1E90FF?logo=r&amp;logoColor=black" class="img-fluid" alt="manual"></a> <a href="https://CRAN.R-project.org/package=visOmopResults"><img src="https://www.r-pkg.org/badges/version/visOmopResults" alt="CRAN version badge"></a> <a href="https://CRAN.R-project.org/package=visOmopResults"><img src="https://img.shields.io/badge/last_release-07_Nov_25-blue.svg" class="img-fluid" alt="last release"></a> <a href="https://CRAN.R-project.org/package=visOmopResults"><img src="https://img.shields.io/badge/first_release-06_Feb_24-red.svg" class="img-fluid" alt="first release"></a></p>
-</section>
-<section id="incidenceprevalence" class="level3">
-<h3 class="anchored" data-anchor-id="incidenceprevalence">IncidencePrevalence</h3>
-<p><img src="https://github.com/darwin-eu/IncidencePrevalence/blob/main/man/figures/logo.png?raw=true" alt="IncidencePrevalence" style="height: 100px;"> <strong>Estimate Incidence and Prevalence using the OMOP Common Data Model</strong></p>
-<p>Calculate incidence and prevalence using data mapped to the Observational Medical Outcomes Partnership (OMOP) common data model. Incidence and prevalence can be estimated for the total population in a database or for a stratification cohort.</p>
-<p><a href="https://darwin-eu.github.io/IncidencePrevalence/"><img src="https://img.shields.io/badge/documentation-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/darwin-eu/IncidencePrevalence/issues/new/choose"><img src="https://img.shields.io/badge/report_issue-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a> <a href="https://cran.r-project.org/web/packages/IncidencePrevalence/IncidencePrevalence.pdf"><img src="https://img.shields.io/badge/manual-1E90FF?logo=r&amp;logoColor=black" class="img-fluid" alt="manual"></a> <a href="https://CRAN.R-project.org/package=IncidencePrevalence"><img src="https://www.r-pkg.org/badges/version/IncidencePrevalence" alt="CRAN version badge"></a> <a href="https://CRAN.R-project.org/package=IncidencePrevalence"><img src="https://img.shields.io/badge/last_release-22_Jul_25-blue.svg" class="img-fluid" alt="last release"></a> <a href="https://CRAN.R-project.org/package=IncidencePrevalence"><img src="https://img.shields.io/badge/first_release-27_Mar_23-red.svg" class="img-fluid" alt="first release"></a></p>
-</section>
-<section id="drugutilisation" class="level3">
-<h3 class="anchored" data-anchor-id="drugutilisation">DrugUtilisation</h3>
-<p><img src="https://github.com/darwin-eu/DrugUtilisation/blob/main/man/figures/logo.png?raw=true" alt="DrugUtilisation" style="height: 100px;"> <strong>Summarise Patient-Level Drug Utilisation in Data Mapped to the OMOP Common Data Model</strong></p>
-<p>Summarise patient-level drug utilisation cohorts using data mapped to the Observational Medical Outcomes Partnership (OMOP) common data model. New users and prevalent users cohorts can be generated and their characteristics, indication and drug use summarised.</p>
-<p><a href="https://darwin-eu.github.io/DrugUtilisation/"><img src="https://img.shields.io/badge/documentation-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/darwin-eu/DrugUtilisation/issues/new/choose"><img src="https://img.shields.io/badge/report_issue-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a> <a href="https://cran.r-project.org/web/packages/DrugUtilisation/DrugUtilisation.pdf"><img src="https://img.shields.io/badge/manual-1E90FF?logo=r&amp;logoColor=black" class="img-fluid" alt="manual"></a> <a href="https://CRAN.R-project.org/package=DrugUtilisation"><img src="https://www.r-pkg.org/badges/version/DrugUtilisation" alt="CRAN version badge"></a> <a href="https://CRAN.R-project.org/package=DrugUtilisation"><img src="https://img.shields.io/badge/last_release-19_Nov_25-blue.svg" class="img-fluid" alt="last release"></a> <a href="https://CRAN.R-project.org/package=DrugUtilisation"><img src="https://img.shields.io/badge/first_release-19_Jun_23-red.svg" class="img-fluid" alt="first release"></a></p>
-</section>
-<section id="cohortcharacteristics" class="level3">
-<h3 class="anchored" data-anchor-id="cohortcharacteristics">CohortCharacteristics</h3>
-<p><img src="https://github.com/darwin-eu/CohortCharacteristics/blob/main/man/figures/logo.png?raw=true" alt="CohortCharacteristics" style="height: 100px;"> <strong>Summarise and Visualise Characteristics of Patients in the OMOP CDM</strong></p>
-<p>Summarise and visualise the characteristics of patients in data mapped to the Observational Medical Outcomes Partnership (OMOP) common data model (CDM).</p>
-<p><a href="https://darwin-eu.github.io/CohortCharacteristics/"><img src="https://img.shields.io/badge/documentation-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/darwin-eu/CohortCharacteristics/issues/new/choose"><img src="https://img.shields.io/badge/report_issue-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a> <a href="https://cran.r-project.org/web/packages/CohortCharacteristics/CohortCharacteristics.pdf"><img src="https://img.shields.io/badge/manual-1E90FF?logo=r&amp;logoColor=black" class="img-fluid" alt="manual"></a> <a href="https://CRAN.R-project.org/package=CohortCharacteristics"><img src="https://www.r-pkg.org/badges/version/CohortCharacteristics" alt="CRAN version badge"></a> <a href="https://CRAN.R-project.org/package=CohortCharacteristics"><img src="https://img.shields.io/badge/last_release-19_Nov_25-blue.svg" class="img-fluid" alt="last release"></a> <a href="https://CRAN.R-project.org/package=CohortCharacteristics"><img src="https://img.shields.io/badge/first_release-16_Apr_24-red.svg" class="img-fluid" alt="first release"></a></p>
-</section>
-<section id="cohortsurvival" class="level3">
-<h3 class="anchored" data-anchor-id="cohortsurvival">CohortSurvival</h3>
-<p><img src="https://github.com/darwin-eu/CohortSurvival/blob/main/man/figures/logo.png?raw=true" alt="CohortSurvival" style="height: 100px;"> <strong>Estimate Survival from Common Data Model Cohorts</strong></p>
-<p>Estimate survival using data mapped to the Observational Medical Outcomes Partnership common data model. Survival can be estimated based on user-defined study cohorts.</p>
-<p><a href="https://darwin-eu.github.io/CohortSurvival/"><img src="https://img.shields.io/badge/documentation-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/darwin-eu/CohortSurvival/issues/new/choose"><img src="https://img.shields.io/badge/report_issue-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a> <a href="https://cran.r-project.org/web/packages/CohortSurvival/CohortSurvival.pdf"><img src="https://img.shields.io/badge/manual-1E90FF?logo=r&amp;logoColor=black" class="img-fluid" alt="manual"></a> <a href="https://CRAN.R-project.org/package=CohortSurvival"><img src="https://www.r-pkg.org/badges/version/CohortSurvival" alt="CRAN version badge"></a> <a href="https://CRAN.R-project.org/package=CohortSurvival"><img src="https://img.shields.io/badge/last_release-18_Aug_25-blue.svg" class="img-fluid" alt="last release"></a> <a href="https://CRAN.R-project.org/package=CohortSurvival"><img src="https://img.shields.io/badge/first_release-07_Dec_23-red.svg" class="img-fluid" alt="first release"></a></p>
-</section>
-<section id="cohortsymmetry" class="level3">
-<h3 class="anchored" data-anchor-id="cohortsymmetry">CohortSymmetry</h3>
-<p><img src="https://github.com/ohdsi/CohortSymmetry/blob/main/man/figures/logo.png?raw=true" alt="CohortSymmetry" style="height: 100px;"> <strong>Sequence Symmetry Analysis Using the Observational Medical Outcomes Partnership Common Data Model</strong></p>
-<p>Calculating crude sequence ratio, adjusted sequence ratio and confidence intervals using data mapped to the Observational Medical Outcomes Partnership Common Data Model.</p>
-<p><a href="https://ohdsi.github.io/CohortSymmetry/"><img src="https://img.shields.io/badge/documentation-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/ohdsi/CohortSymmetry/issues/new/choose"><img src="https://img.shields.io/badge/report_issue-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a> <a href="https://cran.r-project.org/web/packages/CohortSymmetry/CohortSymmetry.pdf"><img src="https://img.shields.io/badge/manual-1E90FF?logo=r&amp;logoColor=black" class="img-fluid" alt="manual"></a> <a href="https://CRAN.R-project.org/package=CohortSymmetry"><img src="https://www.r-pkg.org/badges/version/CohortSymmetry" alt="CRAN version badge"></a> <a href="https://CRAN.R-project.org/package=CohortSymmetry"><img src="https://img.shields.io/badge/last_release-24_Mar_25-blue.svg" class="img-fluid" alt="last release"></a> <a href="https://CRAN.R-project.org/package=CohortSymmetry"><img src="https://img.shields.io/badge/first_release-04_Jun_24-red.svg" class="img-fluid" alt="first release"></a></p>
-</section>
-<section id="omopsketch" class="level3">
-<h3 class="anchored" data-anchor-id="omopsketch">OmopSketch</h3>
-<p><img src="https://github.com/ohdsi/OmopSketch/blob/main/man/figures/logo.png?raw=true" alt="OmopSketch" style="height: 100px;"> <strong>Characterise Tables of an OMOP Common Data Model Instance</strong></p>
-<p>Summarises key information in data mapped to the Observational Medical Outcomes Partnership (OMOP) common data model. Assess suitability to perform specific epidemiological studies and explore the different domains to obtain feasibility counts and trends.</p>
-<p><a href="https://ohdsi.github.io/OmopSketch/"><img src="https://img.shields.io/badge/documentation-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/ohdsi/OmopSketch/issues/new/choose"><img src="https://img.shields.io/badge/report_issue-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a> <a href="https://cran.r-project.org/web/packages/OmopSketch/OmopSketch.pdf"><img src="https://img.shields.io/badge/manual-1E90FF?logo=r&amp;logoColor=black" class="img-fluid" alt="manual"></a> <a href="https://CRAN.R-project.org/package=OmopSketch"><img src="https://www.r-pkg.org/badges/version/OmopSketch" alt="CRAN version badge"></a> <a href="https://CRAN.R-project.org/package=OmopSketch"><img src="https://img.shields.io/badge/last_release-19_Nov_25-blue.svg" class="img-fluid" alt="last release"></a> <a href="https://CRAN.R-project.org/package=OmopSketch"><img src="https://img.shields.io/badge/first_release-26_Sep_24-red.svg" class="img-fluid" alt="first release"></a></p>
-</section>
-<section id="phenotyper" class="level3">
-<h3 class="anchored" data-anchor-id="phenotyper">PhenotypeR</h3>
-<p><img src="https://github.com/ohdsi/PhenotypeR/blob/main/man/figures/logo.png?raw=true" alt="PhenotypeR" style="height: 100px;"> <strong>Assess Study Cohorts Using a Common Data Model</strong></p>
-<p>Phenotype study cohorts in data mapped to the Observational Medical Outcomes Partnership Common Data Model. Diagnostics are run at the database, code list, cohort, and population level to assess whether study cohorts are ready for research.</p>
-<p><a href="https://ohdsi.github.io/PhenotypeR/"><img src="https://img.shields.io/badge/documentation-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/ohdsi/PhenotypeR/issues/new/choose"><img src="https://img.shields.io/badge/report_issue-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a> <a href="https://cran.r-project.org/web/packages/PhenotypeR/PhenotypeR.pdf"><img src="https://img.shields.io/badge/manual-1E90FF?logo=r&amp;logoColor=black" class="img-fluid" alt="manual"></a> <a href="https://CRAN.R-project.org/package=PhenotypeR"><img src="https://www.r-pkg.org/badges/version/PhenotypeR" alt="CRAN version badge"></a> <a href="https://CRAN.R-project.org/package=PhenotypeR"><img src="https://img.shields.io/badge/last_release-31_Jul_25-blue.svg" class="img-fluid" alt="last release"></a> <a href="https://CRAN.R-project.org/package=PhenotypeR"><img src="https://img.shields.io/badge/first_release-06_Dec_24-red.svg" class="img-fluid" alt="first release"></a></p>
+<p><a href="https://CRAN.R-project.org/package=omopgenerics"><img src="https://www.r-pkg.org/badges/version/omopgenerics" alt="CRAN version badge"></a> <a href="https://darwin-eu.github.io/omopgenerics/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/darwin-eu/omopgenerics/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
 </section>
 <section id="omock" class="level3">
 <h3 class="anchored" data-anchor-id="omock">omock</h3>
 <p><img src="https://github.com/ohdsi/omock/blob/main/man/figures/logo.png?raw=true" alt="omock" style="height: 100px;"> <strong>Creation of Mock Observational Medical Outcomes Partnership Common Data Model</strong></p>
 <p>Creates mock data for testing and package development for the Observational Medical Outcomes Partnership common data model. The package offers functions crafted with pipeline-friendly implementation, enabling users to effortlessly include only the necessary tables for their testing needs.</p>
-<p><a href="https://ohdsi.github.io/omock/"><img src="https://img.shields.io/badge/documentation-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/ohdsi/omock/issues/new/choose"><img src="https://img.shields.io/badge/report_issue-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a> <a href="https://cran.r-project.org/web/packages/omock/omock.pdf"><img src="https://img.shields.io/badge/manual-1E90FF?logo=r&amp;logoColor=black" class="img-fluid" alt="manual"></a> <a href="https://CRAN.R-project.org/package=omock"><img src="https://www.r-pkg.org/badges/version/omock" alt="CRAN version badge"></a> <a href="https://CRAN.R-project.org/package=omock"><img src="https://img.shields.io/badge/last_release-31_Oct_25-blue.svg" class="img-fluid" alt="last release"></a> <a href="https://CRAN.R-project.org/package=omock"><img src="https://img.shields.io/badge/first_release-08_Mar_24-red.svg" class="img-fluid" alt="first release"></a></p>
+<p><a href="https://CRAN.R-project.org/package=omock"><img src="https://www.r-pkg.org/badges/version/omock" alt="CRAN version badge"></a> <a href="https://ohdsi.github.io/omock/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/ohdsi/omock/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
 </section>
 <section id="omopconstructor" class="level3">
 <h3 class="anchored" data-anchor-id="omopconstructor">OmopConstructor</h3>
 <p><strong>Build Tables in the OMOP Common Data Model</strong></p>
 <p>Provides functionality to construct standardised tables from health care data formatted according to the Observational Medical Outcomes Partnership (OMOP) Common Data Model. The package includes tools to build key tables such as observation period and drug era, among others.</p>
-<p><a href="https://ohdsi.github.io/OmopConstructor/"><img src="https://img.shields.io/badge/documentation-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/ohdsi/OmopConstructor/issues/new/choose"><img src="https://img.shields.io/badge/report_issue-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a> <a href="https://cran.r-project.org/web/packages/OmopConstructor/OmopConstructor.pdf"><img src="https://img.shields.io/badge/manual-1E90FF?logo=r&amp;logoColor=black" class="img-fluid" alt="manual"></a> <a href="https://CRAN.R-project.org/package=OmopConstructor"><img src="https://www.r-pkg.org/badges/version/OmopConstructor" alt="CRAN version badge"></a> <a href="https://CRAN.R-project.org/package=OmopConstructor"><img src="https://img.shields.io/badge/last_release-30_Sep_25-blue.svg" class="img-fluid" alt="last release"></a> <a href="https://CRAN.R-project.org/package=OmopConstructor"><img src="https://img.shields.io/badge/first_release-30_Sep_25-red.svg" class="img-fluid" alt="first release"></a></p>
-</section>
-<section id="omopviewer" class="level3">
-<h3 class="anchored" data-anchor-id="omopviewer">OmopViewer</h3>
-<p><strong>Visualise OMOP Results using ‘shiny’ Applications</strong></p>
-<p>Visualise results obtained from analysing data mapped to the Observational Medical Outcomes Partnership (OMOP) common data model using ‘shiny’ applications.</p>
-<p><a href="https://ohdsi.github.io/OmopViewer/"><img src="https://img.shields.io/badge/documentation-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/ohdsi/OmopViewer/issues/new/choose"><img src="https://img.shields.io/badge/report_issue-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a> <a href="https://cran.r-project.org/web/packages/OmopViewer/OmopViewer.pdf"><img src="https://img.shields.io/badge/manual-1E90FF?logo=r&amp;logoColor=black" class="img-fluid" alt="manual"></a> <a href="https://CRAN.R-project.org/package=OmopViewer"><img src="https://www.r-pkg.org/badges/version/OmopViewer" alt="CRAN version badge"></a> <a href="https://CRAN.R-project.org/package=OmopViewer"><img src="https://img.shields.io/badge/last_release-16_Nov_25-blue.svg" class="img-fluid" alt="last release"></a> <a href="https://CRAN.R-project.org/package=OmopViewer"><img src="https://img.shields.io/badge/first_release-21_Oct_24-red.svg" class="img-fluid" alt="first release"></a></p>
-</section>
-<section id="omopstudybuilder" class="level3">
-<h3 class="anchored" data-anchor-id="omopstudybuilder">OmopStudyBuilder</h3>
-<p><strong>What the Package Does (Title Case)</strong></p>
-<p>More about what it does (maybe more than one line) Use four spaces when indenting paragraphs within the Description.</p>
-<p><a href="https://oxford-pharmacoepi.github.io/OmopStudyBuilder/"><img src="https://img.shields.io/badge/documentation-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/oxford-pharmacoepi/OmopStudyBuilder/issues/new/choose"><img src="https://img.shields.io/badge/report_issue-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a> <a href="https://CRAN.R-project.org/package=OmopStudyBuilder"><img src="https://www.r-pkg.org/badges/version/OmopStudyBuilder" alt="CRAN version badge"></a> <a href="https://CRAN.R-project.org/package=OmopStudyBuilder"><img src="https://img.shields.io/badge/last_release-not_published-blue.svg" class="img-fluid" alt="last release"></a> <a href="https://CRAN.R-project.org/package=OmopStudyBuilder"><img src="https://img.shields.io/badge/first_release-not_published-red.svg" class="img-fluid" alt="first release"></a></p>
-</section>
-<section id="epistandard" class="level3">
-<h3 class="anchored" data-anchor-id="epistandard">EpiStandard</h3>
-<p><strong>What the Package Does (One Line, Title Case)</strong></p>
-<p>What the package does (one paragraph).</p>
-<p><a href="https://oxford-pharmacoepi.github.io/EpiStandard/"><img src="https://img.shields.io/badge/documentation-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/oxford-pharmacoepi/EpiStandard/issues/new/choose"><img src="https://img.shields.io/badge/report_issue-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a> <a href="https://CRAN.R-project.org/package=EpiStandard"><img src="https://www.r-pkg.org/badges/version/EpiStandard" alt="CRAN version badge"></a> <a href="https://CRAN.R-project.org/package=EpiStandard"><img src="https://img.shields.io/badge/last_release-not_published-blue.svg" class="img-fluid" alt="last release"></a> <a href="https://CRAN.R-project.org/package=EpiStandard"><img src="https://img.shields.io/badge/first_release-not_published-red.svg" class="img-fluid" alt="first release"></a></p>
+<p><a href="https://CRAN.R-project.org/package=OmopConstructor"><img src="https://www.r-pkg.org/badges/version/OmopConstructor" alt="CRAN version badge"></a> <a href="https://ohdsi.github.io/OmopConstructor/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/ohdsi/OmopConstructor/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
 </section>
 <section id="omoponspark" class="level3">
 <h3 class="anchored" data-anchor-id="omoponspark">OmopOnSpark</h3>
 <p><strong>Using a Common Data Model on Spark</strong></p>
 <p>Use health data in the Observational Medical Outcomes Partnership Common Data Model format in Spark.</p>
-<p><a href="https://ohdsi.github.io/OmopOnSpark/"><img src="https://img.shields.io/badge/documentation-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/ohdsi/OmopOnSpark/issues/new/choose"><img src="https://img.shields.io/badge/report_issue-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a> <a href="https://cran.r-project.org/web/packages/OmopOnSpark/OmopOnSpark.pdf"><img src="https://img.shields.io/badge/manual-1E90FF?logo=r&amp;logoColor=black" class="img-fluid" alt="manual"></a> <a href="https://CRAN.R-project.org/package=OmopOnSpark"><img src="https://www.r-pkg.org/badges/version/OmopOnSpark" alt="CRAN version badge"></a> <a href="https://CRAN.R-project.org/package=OmopOnSpark"><img src="https://img.shields.io/badge/last_release-22_Oct_25-blue.svg" class="img-fluid" alt="last release"></a> <a href="https://CRAN.R-project.org/package=OmopOnSpark"><img src="https://img.shields.io/badge/first_release-22_Oct_25-red.svg" class="img-fluid" alt="first release"></a></p>
+<p><a href="https://CRAN.R-project.org/package=OmopOnSpark"><img src="https://www.r-pkg.org/badges/version/OmopOnSpark" alt="CRAN version badge"></a> <a href="https://ohdsi.github.io/OmopOnSpark/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/ohdsi/OmopOnSpark/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
+</section>
+<section id="visomopresults" class="level3">
+<h3 class="anchored" data-anchor-id="visomopresults">visOmopResults</h3>
+<p><img src="https://github.com/darwin-eu/visOmopResults/blob/main/man/figures/logo.png?raw=true" alt="visOmopResults" style="height: 100px;"> <strong>Graphs and Tables for OMOP Results</strong></p>
+<p>Provides methods to transform omop_result objects into formatted tables and figures, facilitating the visualisation of study results working with the Observational Medical Outcomes Partnership (OMOP) Common Data Model.</p>
+<p><a href="https://CRAN.R-project.org/package=visOmopResults"><img src="https://www.r-pkg.org/badges/version/visOmopResults" alt="CRAN version badge"></a> <a href="https://darwin-eu.github.io/visOmopResults/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/darwin-eu/visOmopResults/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
+</section>
+<section id="codelistgenerator" class="level3">
+<h3 class="anchored" data-anchor-id="codelistgenerator">CodelistGenerator</h3>
+<p><img src="https://github.com/darwin-eu/CodelistGenerator/blob/main/man/figures/logo.png?raw=true" alt="CodelistGenerator" style="height: 100px;"> <strong>Identify Relevant Clinical Codes and Evaluate Their Use</strong></p>
+<p>Generate a candidate code list for the Observational Medical Outcomes Partnership (OMOP) common data model based on string matching. For a given search strategy, a candidate code list will be returned.</p>
+<p><a href="https://CRAN.R-project.org/package=CodelistGenerator"><img src="https://www.r-pkg.org/badges/version/CodelistGenerator" alt="CRAN version badge"></a> <a href="https://darwin-eu.github.io/CodelistGenerator/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/darwin-eu/CodelistGenerator/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
+</section>
+<section id="patientprofiles" class="level3">
+<h3 class="anchored" data-anchor-id="patientprofiles">PatientProfiles</h3>
+<p><img src="https://github.com/darwin-eu/PatientProfiles/blob/main/man/figures/logo.png?raw=true" alt="PatientProfiles" style="height: 100px;"> <strong>Identify Characteristics of Patients in the OMOP Common Data Model</strong></p>
+<p>Identify the characteristics of patients in data mapped to the Observational Medical Outcomes Partnership (OMOP) common data model.</p>
+<p><a href="https://CRAN.R-project.org/package=PatientProfiles"><img src="https://www.r-pkg.org/badges/version/PatientProfiles" alt="CRAN version badge"></a> <a href="https://darwin-eu.github.io/PatientProfiles/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/darwin-eu/PatientProfiles/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
+</section>
+<section id="cohortconstructor" class="level3">
+<h3 class="anchored" data-anchor-id="cohortconstructor">CohortConstructor</h3>
+<p><img src="https://github.com/ohdsi/CohortConstructor/blob/main/man/figures/logo.png?raw=true" alt="CohortConstructor" style="height: 100px;"> <strong>Build and Manipulate Study Cohorts Using a Common Data Model</strong></p>
+<p>Create and manipulate study cohorts in data mapped to the Observational Medical Outcomes Partnership Common Data Model.</p>
+<p><a href="https://CRAN.R-project.org/package=CohortConstructor"><img src="https://www.r-pkg.org/badges/version/CohortConstructor" alt="CRAN version badge"></a> <a href="https://ohdsi.github.io/CohortConstructor/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/ohdsi/CohortConstructor/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
+</section>
+<section id="incidenceprevalence" class="level3">
+<h3 class="anchored" data-anchor-id="incidenceprevalence">IncidencePrevalence</h3>
+<p><img src="https://github.com/darwin-eu/IncidencePrevalence/blob/main/man/figures/logo.png?raw=true" alt="IncidencePrevalence" style="height: 100px;"> <strong>Estimate Incidence and Prevalence using the OMOP Common Data Model</strong></p>
+<p>Calculate incidence and prevalence using data mapped to the Observational Medical Outcomes Partnership (OMOP) common data model. Incidence and prevalence can be estimated for the total population in a database or for a stratification cohort.</p>
+<p><a href="https://CRAN.R-project.org/package=IncidencePrevalence"><img src="https://www.r-pkg.org/badges/version/IncidencePrevalence" alt="CRAN version badge"></a> <a href="https://darwin-eu.github.io/IncidencePrevalence/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/darwin-eu/IncidencePrevalence/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
+</section>
+<section id="drugutilisation" class="level3">
+<h3 class="anchored" data-anchor-id="drugutilisation">DrugUtilisation</h3>
+<p><img src="https://github.com/darwin-eu/DrugUtilisation/blob/main/man/figures/logo.png?raw=true" alt="DrugUtilisation" style="height: 100px;"> <strong>Summarise Patient-Level Drug Utilisation in Data Mapped to the OMOP Common Data Model</strong></p>
+<p>Summarise patient-level drug utilisation cohorts using data mapped to the Observational Medical Outcomes Partnership (OMOP) common data model. New users and prevalent users cohorts can be generated and their characteristics, indication and drug use summarised.</p>
+<p><a href="https://CRAN.R-project.org/package=DrugUtilisation"><img src="https://www.r-pkg.org/badges/version/DrugUtilisation" alt="CRAN version badge"></a> <a href="https://darwin-eu.github.io/DrugUtilisation/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/darwin-eu/DrugUtilisation/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
+</section>
+<section id="cohortcharacteristics" class="level3">
+<h3 class="anchored" data-anchor-id="cohortcharacteristics">CohortCharacteristics</h3>
+<p><img src="https://github.com/darwin-eu/CohortCharacteristics/blob/main/man/figures/logo.png?raw=true" alt="CohortCharacteristics" style="height: 100px;"> <strong>Summarise and Visualise Characteristics of Patients in the OMOP CDM</strong></p>
+<p>Summarise and visualise the characteristics of patients in data mapped to the Observational Medical Outcomes Partnership (OMOP) common data model (CDM).</p>
+<p><a href="https://CRAN.R-project.org/package=CohortCharacteristics"><img src="https://www.r-pkg.org/badges/version/CohortCharacteristics" alt="CRAN version badge"></a> <a href="https://darwin-eu.github.io/CohortCharacteristics/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/darwin-eu/CohortCharacteristics/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
+</section>
+<section id="cohortsurvival" class="level3">
+<h3 class="anchored" data-anchor-id="cohortsurvival">CohortSurvival</h3>
+<p><img src="https://github.com/darwin-eu/CohortSurvival/blob/main/man/figures/logo.png?raw=true" alt="CohortSurvival" style="height: 100px;"> <strong>Estimate Survival from Common Data Model Cohorts</strong></p>
+<p>Estimate survival using data mapped to the Observational Medical Outcomes Partnership common data model. Survival can be estimated based on user-defined study cohorts.</p>
+<p><a href="https://CRAN.R-project.org/package=CohortSurvival"><img src="https://www.r-pkg.org/badges/version/CohortSurvival" alt="CRAN version badge"></a> <a href="https://darwin-eu.github.io/CohortSurvival/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/darwin-eu/CohortSurvival/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
+</section>
+<section id="cohortsymmetry" class="level3">
+<h3 class="anchored" data-anchor-id="cohortsymmetry">CohortSymmetry</h3>
+<p><img src="https://github.com/ohdsi/CohortSymmetry/blob/main/man/figures/logo.png?raw=true" alt="CohortSymmetry" style="height: 100px;"> <strong>Sequence Symmetry Analysis Using the Observational Medical Outcomes Partnership Common Data Model</strong></p>
+<p>Calculating crude sequence ratio, adjusted sequence ratio and confidence intervals using data mapped to the Observational Medical Outcomes Partnership Common Data Model.</p>
+<p><a href="https://CRAN.R-project.org/package=CohortSymmetry"><img src="https://www.r-pkg.org/badges/version/CohortSymmetry" alt="CRAN version badge"></a> <a href="https://ohdsi.github.io/CohortSymmetry/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/ohdsi/CohortSymmetry/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
+</section>
+<section id="omopsketch" class="level3">
+<h3 class="anchored" data-anchor-id="omopsketch">OmopSketch</h3>
+<p><img src="https://github.com/ohdsi/OmopSketch/blob/main/man/figures/logo.png?raw=true" alt="OmopSketch" style="height: 100px;"> <strong>Characterise Tables of an OMOP Common Data Model Instance</strong></p>
+<p>Summarises key information in data mapped to the Observational Medical Outcomes Partnership (OMOP) common data model. Assess suitability to perform specific epidemiological studies and explore the different domains to obtain feasibility counts and trends.</p>
+<p><a href="https://CRAN.R-project.org/package=OmopSketch"><img src="https://www.r-pkg.org/badges/version/OmopSketch" alt="CRAN version badge"></a> <a href="https://ohdsi.github.io/OmopSketch/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/ohdsi/OmopSketch/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
+</section>
+<section id="measurementdiagnostics" class="level3">
+<h3 class="anchored" data-anchor-id="measurementdiagnostics">MeasurementDiagnostics</h3>
+<p><img src="https://github.com/ohdsi/MeasurementDiagnostics/blob/main/man/figures/logo.png?raw=true" alt="MeasurementDiagnostics" style="height: 100px;"> <strong>Diagnostics for Lists of Codes Based on Measurements</strong></p>
+<p>Diagnostics of list of codes based on concepts from the domains measurement and observation. This package works for data mapped to the Observational Medical Outcomes Partnership Common Data Model.</p>
+<p><a href="https://CRAN.R-project.org/package=MeasurementDiagnostics"><img src="https://www.r-pkg.org/badges/version/MeasurementDiagnostics" alt="CRAN version badge"></a> <a href="https://ohdsi.github.io/MeasurementDiagnostics/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/ohdsi/MeasurementDiagnostics/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
+</section>
+<section id="phenotyper" class="level3">
+<h3 class="anchored" data-anchor-id="phenotyper">PhenotypeR</h3>
+<p><img src="https://github.com/ohdsi/PhenotypeR/blob/main/man/figures/logo.png?raw=true" alt="PhenotypeR" style="height: 100px;"> <strong>Assess Study Cohorts Using a Common Data Model</strong></p>
+<p>Phenotype study cohorts in data mapped to the Observational Medical Outcomes Partnership Common Data Model. Diagnostics are run at the database, code list, cohort, and population level to assess whether study cohorts are ready for research.</p>
+<p><a href="https://CRAN.R-project.org/package=PhenotypeR"><img src="https://www.r-pkg.org/badges/version/PhenotypeR" alt="CRAN version badge"></a> <a href="https://ohdsi.github.io/PhenotypeR/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/ohdsi/PhenotypeR/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
+</section>
+<section id="omopviewer" class="level3">
+<h3 class="anchored" data-anchor-id="omopviewer">OmopViewer</h3>
+<p><strong>Visualise OMOP Results using ‘shiny’ Applications</strong></p>
+<p>Visualise results obtained from analysing data mapped to the Observational Medical Outcomes Partnership (OMOP) common data model using ‘shiny’ applications.</p>
+<p><a href="https://CRAN.R-project.org/package=OmopViewer"><img src="https://www.r-pkg.org/badges/version/OmopViewer" alt="CRAN version badge"></a> <a href="https://ohdsi.github.io/OmopViewer/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/ohdsi/OmopViewer/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
 
 
 </section>
 </section>
-</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Always keeping our software product in a releasable state, allowing fast release of features and rapid response to any failures. For more information on what continuous delivery means see <a href="https://martinfowler.com/bliki/ContinuousDelivery.html" class="uri">https://martinfowler.com/bliki/ContinuousDelivery.html</a> and for more on its benefits see <a href="https://dora.dev/capabilities/continuous-delivery/" class="uri">https://dora.dev/capabilities/continuous-delivery/</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
