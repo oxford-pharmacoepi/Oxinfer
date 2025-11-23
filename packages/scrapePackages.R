@@ -13,49 +13,49 @@ repo <- function(pkg, org) {
   paste0("https://github.com/", org, "/", pkg, "/")
 }
 open_issue <- function(pkg, org) {
-  '<a href="{repo(pkg, org)}issues/new/choose"><img src="https://img.shields.io/badge/report_issue-f6f6f6?logo=github&logoColor=black" class="img-fluid" alt="report_issue"></a>' |>
+  '<a href="{repo(pkg, org)}"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&logoColor=black" class="img-fluid" alt="report_issue"></a>' |>
     glue::glue()
 }
 website <- function(pkg, org) {
-  '<a href="https://{org}.github.io/{pkg}/"><img src="https://img.shields.io/badge/documentation-b3d9cf?logo=gitbook&logoColor=black" class="img-fluid" alt="documentation"></a>' |>
+  '<a href="https://{org}.github.io/{pkg}/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&logoColor=black" class="img-fluid" alt="documentation"></a>' |>
     glue::glue()
 }
 is_on_cran <- function(pkg) {
   pkg %in% rownames(available.packages())
 }
-manual <- function(pkg) {
-  if (is_on_cran(pkg)) {
-    x <- paste0("https://cran.r-project.org/web/packages/", pkg, "/", pkg, ".pdf")
-    '<a href="{x}"><img src="https://img.shields.io/badge/manual-1E90FF?logo=r&logoColor=black" class="img-fluid" alt="manual"></a>' |>
-      glue::glue() |>
-      as.character()
-  } else {
-    NULL
-  }
-}
+# manual <- function(pkg) {
+#   if (is_on_cran(pkg)) {
+#     x <- paste0("https://cran.r-project.org/web/packages/", pkg, "/", pkg, ".pdf")
+#     '<a href="{x}"><img src="https://img.shields.io/badge/manual-1E90FF?logo=r&logoColor=black" class="img-fluid" alt="manual"></a>' |>
+#       glue::glue() |>
+#       as.character()
+#   } else {
+#     NULL
+#   }
+# }
 getVersion <- function(pkg) {
   paste0(
     '[<img src="https://www.r-pkg.org/badges/version/', pkg, 
     '" alt="CRAN version badge">](https://CRAN.R-project.org/package=', pkg, ")"
   )
 }
-getLastRelease <- function(pkg) {
-  if (is_on_cran(pkg)) {
-    link <- paste0("https://CRAN.R-project.org/package=", pkg)
-    x <- readLines(link)
-    id <- which(x == "<td>Published:</td>")
-    x <- substr(x[id + 1], 5, 14) |>
-      as.Date("%Y-%m-%d") |>
-      format("%d_%b_%y")
-  } else {
-    link <- ""
-    x <- "not_published"
-  }
-  paste0(
-    "[![last release](https://img.shields.io/badge/last_release-", x,
-    "-blue.svg)](https://CRAN.R-project.org/package=", pkg, ")"
-  )
-}
+# getLastRelease <- function(pkg) {
+#   if (is_on_cran(pkg)) {
+#     link <- paste0("https://CRAN.R-project.org/package=", pkg)
+#     x <- readLines(link)
+#     id <- which(x == "<td>Published:</td>")
+#     x <- substr(x[id + 1], 5, 14) |>
+#       as.Date("%Y-%m-%d") |>
+#       format("%d_%b_%y")
+#   } else {
+#     link <- ""
+#     x <- "not_published"
+#   }
+#   paste0(
+#     "[![last release](https://img.shields.io/badge/last_release-", x,
+#     "-blue.svg)](https://CRAN.R-project.org/package=", pkg, ")"
+#   )
+# }
 getFirstRelease <- function(pkg) {
   if (is_on_cran(pkg)) {
     x <- versionsDates(dplyr::tibble(package_name = pkg)) |>
@@ -78,8 +78,6 @@ createGrid <- function(hex, life, cran, first, last, web, issue) {
     <div class="div2"> 
     <div class="div3"> {life} </div>
     <div class="div3"> {cran} </div>
-    <div class="div3"> {first} </div>
-    <div class="div3"> {last} </div>
     <div class="div3"> {web} </div>
     <div class="div3"> {issue} </div>
     </div>
@@ -106,18 +104,20 @@ summarisePackage <- function(pkg, org) {
     paste0("**", description$Title, "**"), "",
     # description
     description$Description, "",
+    # version
+    getVersion(pkg),
     # website
     website(pkg, org),
     # report issue
-    open_issue(pkg, org),
-    # manual
-    manual(pkg),
-    # version
-    getVersion(pkg),
+    open_issue(pkg, org)
+    # ,
+    # # manual
+    # manual(pkg),
+    # ,
     # last release
-    getLastRelease(pkg),
+    # getLastRelease(pkg),
     # first release
-    getFirstRelease(pkg)
+    # getFirstRelease(pkg)
   ) |>
     paste0(collapse = "\n")
 }
@@ -149,7 +149,7 @@ versionsDates <- function(pkgs) {
         error = function(e) {
           message(sprintf("Attempt %d failed: %s", attempt, e$message))
           attempt <<- attempt + 1
-          Sys.sleep(10)  # Wait before retrying
+          Sys.sleep(5)  # Wait before retrying
           NULL
         }
       )
