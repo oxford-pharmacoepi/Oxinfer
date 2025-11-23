@@ -1,13 +1,216 @@
-# Packages
+# OxInfer software
 
-## Our packages
+A core activity of OxInfer is building and maintaing research software, particularly focused on supporting analyses of health data mapped to the OMOP Common Data Model. For this we make open-source R packages which are released on CRAN.
 
-Oxinfer developed several packages to work with the OMOP Common Data Model:
+### Releases
 
-```{r, echo=FALSE}
+Below is a summary of CRAN releases of our R packages. As can be seen we have aim for a high frequency of releases, particularly in the early stages of package development. This reflects our aim of practicing continuously delivery.[^summary-1]
+
+[^summary-1]: Always keeping our software product in a releasable state, allowing fast release of features and rapid response to any failures. For more information on what continuous delivery means see <https://martinfowler.com/bliki/ContinuousDelivery.html> and for more on its benefits see <https://dora.dev/capabilities/continuous-delivery/>
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(igraph)
+library(ggraph)
+library(tidygraph)
+library(tools)
+library(jsonlite)
+library(dplyr)
+library(purrr)
+library(patchwork)
+library(ggplot2)
+
 # db <- tools::CRAN_package_db()
 source(here::here("packages", "scrapePackages.R"))
+packages <- readr::read_csv(here::here("newsletter", "packages.csv"), show_col_types = FALSE)
+pkgs <-  packages |> 
+  pull("package_name")
+type <-  packages |> 
+  pull("organisation")
 ```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+get_cran_release_history <- function(package_name) {
+  url <- paste0("https://crandb.r-pkg.org/", package_name, "/all")
+ 
+  releases <- list()
+  for(i in seq_along(url)){
+  cli::cli_inform("Getting releases for {package_name[i]}")
+  releases[[i]] <- fromJSON(url[i]) |>
+    pluck("versions") |>
+    map_dfr(~ tibble(
+      package_name = package_name[i],
+      type = type[i],
+      version = .$Version,
+      date = as.Date(.$Date)
+    )) |> 
+    arrange(date)
+  
+  # manual fix
+  releases[[i]] <- releases[[i]] |> 
+    dplyr::mutate(
+      version = dplyr::if_else(
+        package_name == "CodelistGenerator" & 
+          version == "3.0",
+        "3.0.0",
+        version))
+  
+  releases[[i]] <- releases[[i]] |> 
+    dplyr::mutate(
+      first = as.integer(gsub("^(\\d+)\\..*$", "\\1", version)),
+      second = as.integer(gsub("^\\d+\\.(\\d+)\\..*$", "\\1", version)),
+      third = as.integer(gsub("^.*\\.([0-9]+)$", "\\1", version))
+    ) |> 
+    dplyr::mutate(previous_first = lag(first),
+                  previous_second = lag(second),
+                  previous_third = lag(third)) |> 
+    dplyr::mutate(release_type = dplyr::case_when(
+      is.na(previous_first) ~ "first release",
+      first > previous_first  ~ "major release",
+      second > previous_second  ~ "minor release",
+      third > previous_third  ~ "patch release",
+      .default = NA
+    )) |> 
+    dplyr::select(package_name,
+                  type,
+                  version, date, release_type)
+  }
+  
+  dplyr::bind_rows(releases)
+  
+}
+
+
+release_hist <- get_cran_release_history(pkgs)
+ranges <- release_hist |>
+  group_by(package_name, type) |>
+  summarise(min_date = min(date), max_date = Sys.Date())
+
+p1 <- release_hist |>
+  mutate(package_name = factor(package_name,
+                               levels = rev(pkgs))) |> 
+  ggplot() +
+  geom_segment(data = ranges, 
+               aes(x = min_date, xend = max_date,
+                   y = package_name,
+                   yend = package_name),
+               color = "grey90", linewidth = 1.5) +
+  geom_point(aes(date, package_name,
+                 fill = release_type,
+                 size = release_type),
+             shape = 21) +
+  scale_size_manual(
+    values = c("first release" = 3, 
+               "patch release" = 1, 
+               "minor release" = 2, 
+               "major release" = 3)
+  ) +
+  scale_fill_manual(
+    values = c("first release" = "#e41a1c", 
+               "patch release" = "#377eb8", 
+               "minor release" = "#4daf4a", 
+               "major release" = "#984ea3")
+  ) +
+  theme_bw() +
+  ylab("") +
+  xlab("") +
+  # facet_grid(type~., scales = "free_y") +
+  theme(legend.title = element_blank(),
+        legend.position = "top",
+        panel.spacing = unit(0, "lines"))
+p1 <- p1+ theme(
+  axis.text.x = element_blank(), 
+  axis.title.x = element_blank(),
+  axis.ticks.x = element_blank()) 
+
+p2 <- release_hist |> 
+  mutate(date_floor = lubridate::floor_date(date, unit = "month")) |> 
+  group_by(date_floor) |> 
+  tally() |> 
+  ggplot() +
+  geom_col(aes(date_floor, n), width = 30, colour = "black", fill = "grey70")+
+  theme_bw() +
+  ylab("") +
+  xlab("Releases in month")
+
+p1 / p2 + 
+  plot_layout(heights = c(4, 1))
+```
+
+### Relationships
+
+The figure below is an attempt to show how our R packages relate to each other. We can see in the centre the core, lower-level, packages. Key imports across packages include `omopgenerics`, which defines core classes and methods for working with data in the OMOP Common Data Model format, and `PatientProfiles`, which provides functionality for identifying and bringing together patient features spread across OMOP Common Data Model tables. In addition, key suggests include `omock`, which creates synthetic datasets, `visOmopResults`, which supports creation of plots and tables to visualise study results. Meanwhile on the periphery are more user-facing, higher-level, packages. For example, these include `OmopSketch`, for summarising a dataset mapped to the OMOP Common Data Model, and `PhenotypeR`, for running diagnostics on them.  
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+get_edges <- function(pkg, type) {
+  pkg_db <- available.packages(repos = "http://cran.us.r-project.org")
+  deps <- package_dependencies(pkg, 
+                               db = pkg_db, 
+                               which = type, 
+                               recursive = FALSE)[[1]]
+  internal_deps <- intersect(deps, pkgs)
+  
+  if (length(internal_deps) > 0) {
+    return(data.frame(from = pkg, to = internal_deps, type = type))
+  } else {
+    return(NULL)
+  }
+}
+plot_dependencies <- function(suggests){
+edge_list <- list()
+for (pkg in pkgs) {
+  edge_list[[paste0(pkg, "_imp")]] <- get_edges(pkg, "Imports")
+  if(isTRUE(suggests)){
+  edge_list[[paste0(pkg, "_sug")]] <- get_edges(pkg, "Suggests")
+  }
+}
+
+final_edges <- do.call(rbind, edge_list)
+g <- as_tbl_graph(graph_from_data_frame(final_edges, directed = TRUE, vertices = pkgs))
+g <- g %>% 
+  mutate(
+    dependencies = centrality_degree(mode = "in")
+  )
+ggraph(g, layout = "centrality", centrality = dependencies) + 
+  geom_edge_arc(aes(linetype = type, color = type), 
+                strength = 0.1, end_cap = circle(4, 'mm'),
+                arrow = arrow(length = unit(3, 'mm'), type = "closed")) +
+  geom_node_point(aes(fill = dependencies),
+                  shape = 21, colour = "black",
+                  size = 5) +
+  geom_node_text(aes(label = name), 
+                 repel = TRUE,         
+                 bg.color = "white",   
+                 bg.r = 0.15,
+                 size = 4) +
+  scale_edge_linetype_manual(name = "Dependency type",
+                             values = c("Imports" = "solid", 
+                                        "Suggests" = "dashed")) +
+  scale_edge_color_manual(name = "Dependency type",
+                          values = c("Imports" = "black", 
+                                     "Suggests" = "grey45")) +
+  scale_fill_viridis(name = "Reverse dependencies",
+                     option="mako",
+                     direction = -1) +
+  theme_void() +
+  theme(legend.position = "bottom", 
+        legend.box = "veritcal")
+}
+```
+
+::: {.panel-tabset}
+### Imports 
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+plot_dependencies(suggests = FALSE)
+```
+
+### Imports and suggests
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+plot_dependencies(suggests = TRUE)
+```
+
+:::
+
+### Packages
 
 ```{r, results='asis', echo=FALSE, warning=FALSE, message=FALSE}
 readr::read_csv(here::here("newsletter", "packages.csv"), show_col_types = FALSE) |>
