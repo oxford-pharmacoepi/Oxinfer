@@ -23,6 +23,8 @@ jobs:
             libcurl4-openssl-dev \
             libgit2-dev \
             libx11-dev \
+            libglpk-dev \
+            libxml2-dev \
             pandoc
         
       - name: Set up Quarto
