@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-11-23">
+<meta name="dcterms.date" content="2025-11-24">
 
-<title>summary – Oxinfer</title>
+<title>summary – OxInfer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -38,14 +38,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a2f2fc977887d1ab4a52c557a2b25c2a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-db3ae57a60d18895bb8cbe2d6170aa68.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-a2f2fc977887d1ab4a52c557a2b25c2a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a2f2fc977887d1ab4a52c557a2b25c2a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,175 +71,13 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Oxinfer">
+<meta property="og:title" content="OxInfer">
 <meta property="og:description" content="">
 <meta property="og:image" content="summary_files/figure-html/unnamed-chunk-2-1.png">
-<meta property="og:site_name" content="Oxinfer">
+<meta property="og:site_name" content="OxInfer">
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -251,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Oxinfer</span>
+    <span class="navbar-title">OxInfer</span>
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -269,30 +103,20 @@ ul.task-list li input[type="checkbox"] {
 </i> 
 <span class="menu-text">Meet the team</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-software" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Software</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-software">    
-        <li>
-    <a class="dropdown-item" href="../packages/summary.html">
- <span class="dropdown-text">Summary</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../packages/newsletter.html">
- <span class="dropdown-text">Newsletter</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
-    <a class="nav-link" href="../onboarding/index.html"> <i class="bi bi-clipboard-check" role="img">
+    <a class="nav-link active" href="../packages/summary.html" aria-current="page"> <i class="bi bi-people" role="img">
 </i> 
-<span class="menu-text">Onboarding</span></a>
+<span class="menu-text">Software</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../publications.html"> <i class="bi bi-book" role="img">
 </i> 
 <span class="menu-text">Recent publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../onboarding/index.html"> <i class="bi bi-clipboard-check" role="img">
+</i> 
+<span class="menu-text">Onboarding</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -309,7 +133,6 @@ ul.task-list li input[type="checkbox"] {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -328,30 +151,13 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#releases" id="toc-releases" class="nav-link" data-scroll-target="#releases">Releases</a></li>
   <li><a href="#relationships" id="toc-relationships" class="nav-link" data-scroll-target="#relationships">Relationships</a></li>
   <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
-  <li><a href="#omopgenerics" id="toc-omopgenerics" class="nav-link" data-scroll-target="#omopgenerics">omopgenerics</a></li>
-  <li><a href="#omock" id="toc-omock" class="nav-link" data-scroll-target="#omock">omock</a></li>
-  <li><a href="#omopconstructor" id="toc-omopconstructor" class="nav-link" data-scroll-target="#omopconstructor">OmopConstructor</a></li>
-  <li><a href="#omoponspark" id="toc-omoponspark" class="nav-link" data-scroll-target="#omoponspark">OmopOnSpark</a></li>
-  <li><a href="#visomopresults" id="toc-visomopresults" class="nav-link" data-scroll-target="#visomopresults">visOmopResults</a></li>
-  <li><a href="#codelistgenerator" id="toc-codelistgenerator" class="nav-link" data-scroll-target="#codelistgenerator">CodelistGenerator</a></li>
-  <li><a href="#patientprofiles" id="toc-patientprofiles" class="nav-link" data-scroll-target="#patientprofiles">PatientProfiles</a></li>
-  <li><a href="#cohortconstructor" id="toc-cohortconstructor" class="nav-link" data-scroll-target="#cohortconstructor">CohortConstructor</a></li>
-  <li><a href="#incidenceprevalence" id="toc-incidenceprevalence" class="nav-link" data-scroll-target="#incidenceprevalence">IncidencePrevalence</a></li>
-  <li><a href="#drugutilisation" id="toc-drugutilisation" class="nav-link" data-scroll-target="#drugutilisation">DrugUtilisation</a></li>
-  <li><a href="#cohortcharacteristics" id="toc-cohortcharacteristics" class="nav-link" data-scroll-target="#cohortcharacteristics">CohortCharacteristics</a></li>
-  <li><a href="#cohortsurvival" id="toc-cohortsurvival" class="nav-link" data-scroll-target="#cohortsurvival">CohortSurvival</a></li>
-  <li><a href="#cohortsymmetry" id="toc-cohortsymmetry" class="nav-link" data-scroll-target="#cohortsymmetry">CohortSymmetry</a></li>
-  <li><a href="#omopsketch" id="toc-omopsketch" class="nav-link" data-scroll-target="#omopsketch">OmopSketch</a></li>
-  <li><a href="#measurementdiagnostics" id="toc-measurementdiagnostics" class="nav-link" data-scroll-target="#measurementdiagnostics">MeasurementDiagnostics</a></li>
-  <li><a href="#phenotyper" id="toc-phenotyper" class="nav-link" data-scroll-target="#phenotyper">PhenotypeR</a></li>
-  <li><a href="#omopviewer" id="toc-omopviewer" class="nav-link" data-scroll-target="#omopviewer">OmopViewer</a></li>
+  <li><a href="#newsletter" id="toc-newsletter" class="nav-link" data-scroll-target="#newsletter">Newsletter</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/oxford-pharmacoepi/OxinferOnboarding/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
-
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -365,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 23, 2025</p>
+      <p class="date">November 24, 2025</p>
     </div>
   </div>
   
@@ -426,110 +232,378 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="packages" class="level3">
 <h3 class="anchored" data-anchor-id="packages">Packages</h3>
-</section>
-<section id="omopgenerics" class="level3">
-<h3 class="anchored" data-anchor-id="omopgenerics">omopgenerics</h3>
+<section id="omopgenerics" class="level4">
+<h4 class="anchored" data-anchor-id="omopgenerics">omopgenerics</h4>
 <p><strong>Methods and Classes for the OMOP Common Data Model</strong></p>
 <p>Provides definitions of core classes and methods used by analytic pipelines that query the OMOP (Observational Medical Outcomes Partnership) common data model.</p>
 <p><a href="https://CRAN.R-project.org/package=omopgenerics"><img src="https://www.r-pkg.org/badges/version/omopgenerics" alt="CRAN version badge"></a> <a href="https://darwin-eu.github.io/omopgenerics/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/darwin-eu/omopgenerics/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
 </section>
-<section id="omock" class="level3">
-<h3 class="anchored" data-anchor-id="omock">omock</h3>
+<section id="omock" class="level4">
+<h4 class="anchored" data-anchor-id="omock">omock</h4>
 <p><img src="https://github.com/ohdsi/omock/blob/main/man/figures/logo.png?raw=true" alt="omock" style="height: 100px;"> <strong>Creation of Mock Observational Medical Outcomes Partnership Common Data Model</strong></p>
 <p>Creates mock data for testing and package development for the Observational Medical Outcomes Partnership common data model. The package offers functions crafted with pipeline-friendly implementation, enabling users to effortlessly include only the necessary tables for their testing needs.</p>
 <p><a href="https://CRAN.R-project.org/package=omock"><img src="https://www.r-pkg.org/badges/version/omock" alt="CRAN version badge"></a> <a href="https://ohdsi.github.io/omock/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/ohdsi/omock/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
 </section>
-<section id="omopconstructor" class="level3">
-<h3 class="anchored" data-anchor-id="omopconstructor">OmopConstructor</h3>
+<section id="omopconstructor" class="level4">
+<h4 class="anchored" data-anchor-id="omopconstructor">OmopConstructor</h4>
 <p><strong>Build Tables in the OMOP Common Data Model</strong></p>
 <p>Provides functionality to construct standardised tables from health care data formatted according to the Observational Medical Outcomes Partnership (OMOP) Common Data Model. The package includes tools to build key tables such as observation period and drug era, among others.</p>
 <p><a href="https://CRAN.R-project.org/package=OmopConstructor"><img src="https://www.r-pkg.org/badges/version/OmopConstructor" alt="CRAN version badge"></a> <a href="https://ohdsi.github.io/OmopConstructor/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/ohdsi/OmopConstructor/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
 </section>
-<section id="omoponspark" class="level3">
-<h3 class="anchored" data-anchor-id="omoponspark">OmopOnSpark</h3>
+<section id="omoponspark" class="level4">
+<h4 class="anchored" data-anchor-id="omoponspark">OmopOnSpark</h4>
 <p><strong>Using a Common Data Model on Spark</strong></p>
 <p>Use health data in the Observational Medical Outcomes Partnership Common Data Model format in Spark.</p>
 <p><a href="https://CRAN.R-project.org/package=OmopOnSpark"><img src="https://www.r-pkg.org/badges/version/OmopOnSpark" alt="CRAN version badge"></a> <a href="https://ohdsi.github.io/OmopOnSpark/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/ohdsi/OmopOnSpark/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
 </section>
-<section id="visomopresults" class="level3">
-<h3 class="anchored" data-anchor-id="visomopresults">visOmopResults</h3>
+<section id="visomopresults" class="level4">
+<h4 class="anchored" data-anchor-id="visomopresults">visOmopResults</h4>
 <p><img src="https://github.com/darwin-eu/visOmopResults/blob/main/man/figures/logo.png?raw=true" alt="visOmopResults" style="height: 100px;"> <strong>Graphs and Tables for OMOP Results</strong></p>
 <p>Provides methods to transform omop_result objects into formatted tables and figures, facilitating the visualisation of study results working with the Observational Medical Outcomes Partnership (OMOP) Common Data Model.</p>
 <p><a href="https://CRAN.R-project.org/package=visOmopResults"><img src="https://www.r-pkg.org/badges/version/visOmopResults" alt="CRAN version badge"></a> <a href="https://darwin-eu.github.io/visOmopResults/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/darwin-eu/visOmopResults/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
 </section>
-<section id="codelistgenerator" class="level3">
-<h3 class="anchored" data-anchor-id="codelistgenerator">CodelistGenerator</h3>
+<section id="codelistgenerator" class="level4">
+<h4 class="anchored" data-anchor-id="codelistgenerator">CodelistGenerator</h4>
 <p><img src="https://github.com/darwin-eu/CodelistGenerator/blob/main/man/figures/logo.png?raw=true" alt="CodelistGenerator" style="height: 100px;"> <strong>Identify Relevant Clinical Codes and Evaluate Their Use</strong></p>
 <p>Generate a candidate code list for the Observational Medical Outcomes Partnership (OMOP) common data model based on string matching. For a given search strategy, a candidate code list will be returned.</p>
 <p><a href="https://CRAN.R-project.org/package=CodelistGenerator"><img src="https://www.r-pkg.org/badges/version/CodelistGenerator" alt="CRAN version badge"></a> <a href="https://darwin-eu.github.io/CodelistGenerator/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/darwin-eu/CodelistGenerator/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
 </section>
-<section id="patientprofiles" class="level3">
-<h3 class="anchored" data-anchor-id="patientprofiles">PatientProfiles</h3>
+<section id="patientprofiles" class="level4">
+<h4 class="anchored" data-anchor-id="patientprofiles">PatientProfiles</h4>
 <p><img src="https://github.com/darwin-eu/PatientProfiles/blob/main/man/figures/logo.png?raw=true" alt="PatientProfiles" style="height: 100px;"> <strong>Identify Characteristics of Patients in the OMOP Common Data Model</strong></p>
 <p>Identify the characteristics of patients in data mapped to the Observational Medical Outcomes Partnership (OMOP) common data model.</p>
 <p><a href="https://CRAN.R-project.org/package=PatientProfiles"><img src="https://www.r-pkg.org/badges/version/PatientProfiles" alt="CRAN version badge"></a> <a href="https://darwin-eu.github.io/PatientProfiles/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/darwin-eu/PatientProfiles/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
 </section>
-<section id="cohortconstructor" class="level3">
-<h3 class="anchored" data-anchor-id="cohortconstructor">CohortConstructor</h3>
+<section id="cohortconstructor" class="level4">
+<h4 class="anchored" data-anchor-id="cohortconstructor">CohortConstructor</h4>
 <p><img src="https://github.com/ohdsi/CohortConstructor/blob/main/man/figures/logo.png?raw=true" alt="CohortConstructor" style="height: 100px;"> <strong>Build and Manipulate Study Cohorts Using a Common Data Model</strong></p>
 <p>Create and manipulate study cohorts in data mapped to the Observational Medical Outcomes Partnership Common Data Model.</p>
 <p><a href="https://CRAN.R-project.org/package=CohortConstructor"><img src="https://www.r-pkg.org/badges/version/CohortConstructor" alt="CRAN version badge"></a> <a href="https://ohdsi.github.io/CohortConstructor/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/ohdsi/CohortConstructor/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
 </section>
-<section id="incidenceprevalence" class="level3">
-<h3 class="anchored" data-anchor-id="incidenceprevalence">IncidencePrevalence</h3>
+<section id="incidenceprevalence" class="level4">
+<h4 class="anchored" data-anchor-id="incidenceprevalence">IncidencePrevalence</h4>
 <p><img src="https://github.com/darwin-eu/IncidencePrevalence/blob/main/man/figures/logo.png?raw=true" alt="IncidencePrevalence" style="height: 100px;"> <strong>Estimate Incidence and Prevalence using the OMOP Common Data Model</strong></p>
 <p>Calculate incidence and prevalence using data mapped to the Observational Medical Outcomes Partnership (OMOP) common data model. Incidence and prevalence can be estimated for the total population in a database or for a stratification cohort.</p>
 <p><a href="https://CRAN.R-project.org/package=IncidencePrevalence"><img src="https://www.r-pkg.org/badges/version/IncidencePrevalence" alt="CRAN version badge"></a> <a href="https://darwin-eu.github.io/IncidencePrevalence/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/darwin-eu/IncidencePrevalence/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
 </section>
-<section id="drugutilisation" class="level3">
-<h3 class="anchored" data-anchor-id="drugutilisation">DrugUtilisation</h3>
+<section id="drugutilisation" class="level4">
+<h4 class="anchored" data-anchor-id="drugutilisation">DrugUtilisation</h4>
 <p><img src="https://github.com/darwin-eu/DrugUtilisation/blob/main/man/figures/logo.png?raw=true" alt="DrugUtilisation" style="height: 100px;"> <strong>Summarise Patient-Level Drug Utilisation in Data Mapped to the OMOP Common Data Model</strong></p>
 <p>Summarise patient-level drug utilisation cohorts using data mapped to the Observational Medical Outcomes Partnership (OMOP) common data model. New users and prevalent users cohorts can be generated and their characteristics, indication and drug use summarised.</p>
 <p><a href="https://CRAN.R-project.org/package=DrugUtilisation"><img src="https://www.r-pkg.org/badges/version/DrugUtilisation" alt="CRAN version badge"></a> <a href="https://darwin-eu.github.io/DrugUtilisation/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/darwin-eu/DrugUtilisation/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
 </section>
-<section id="cohortcharacteristics" class="level3">
-<h3 class="anchored" data-anchor-id="cohortcharacteristics">CohortCharacteristics</h3>
+<section id="cohortcharacteristics" class="level4">
+<h4 class="anchored" data-anchor-id="cohortcharacteristics">CohortCharacteristics</h4>
 <p><img src="https://github.com/darwin-eu/CohortCharacteristics/blob/main/man/figures/logo.png?raw=true" alt="CohortCharacteristics" style="height: 100px;"> <strong>Summarise and Visualise Characteristics of Patients in the OMOP CDM</strong></p>
 <p>Summarise and visualise the characteristics of patients in data mapped to the Observational Medical Outcomes Partnership (OMOP) common data model (CDM).</p>
 <p><a href="https://CRAN.R-project.org/package=CohortCharacteristics"><img src="https://www.r-pkg.org/badges/version/CohortCharacteristics" alt="CRAN version badge"></a> <a href="https://darwin-eu.github.io/CohortCharacteristics/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/darwin-eu/CohortCharacteristics/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
 </section>
-<section id="cohortsurvival" class="level3">
-<h3 class="anchored" data-anchor-id="cohortsurvival">CohortSurvival</h3>
+<section id="cohortsurvival" class="level4">
+<h4 class="anchored" data-anchor-id="cohortsurvival">CohortSurvival</h4>
 <p><img src="https://github.com/darwin-eu/CohortSurvival/blob/main/man/figures/logo.png?raw=true" alt="CohortSurvival" style="height: 100px;"> <strong>Estimate Survival from Common Data Model Cohorts</strong></p>
 <p>Estimate survival using data mapped to the Observational Medical Outcomes Partnership common data model. Survival can be estimated based on user-defined study cohorts.</p>
 <p><a href="https://CRAN.R-project.org/package=CohortSurvival"><img src="https://www.r-pkg.org/badges/version/CohortSurvival" alt="CRAN version badge"></a> <a href="https://darwin-eu.github.io/CohortSurvival/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/darwin-eu/CohortSurvival/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
 </section>
-<section id="cohortsymmetry" class="level3">
-<h3 class="anchored" data-anchor-id="cohortsymmetry">CohortSymmetry</h3>
+<section id="cohortsymmetry" class="level4">
+<h4 class="anchored" data-anchor-id="cohortsymmetry">CohortSymmetry</h4>
 <p><img src="https://github.com/ohdsi/CohortSymmetry/blob/main/man/figures/logo.png?raw=true" alt="CohortSymmetry" style="height: 100px;"> <strong>Sequence Symmetry Analysis Using the Observational Medical Outcomes Partnership Common Data Model</strong></p>
 <p>Calculating crude sequence ratio, adjusted sequence ratio and confidence intervals using data mapped to the Observational Medical Outcomes Partnership Common Data Model.</p>
 <p><a href="https://CRAN.R-project.org/package=CohortSymmetry"><img src="https://www.r-pkg.org/badges/version/CohortSymmetry" alt="CRAN version badge"></a> <a href="https://ohdsi.github.io/CohortSymmetry/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/ohdsi/CohortSymmetry/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
 </section>
-<section id="omopsketch" class="level3">
-<h3 class="anchored" data-anchor-id="omopsketch">OmopSketch</h3>
+<section id="omopsketch" class="level4">
+<h4 class="anchored" data-anchor-id="omopsketch">OmopSketch</h4>
 <p><img src="https://github.com/ohdsi/OmopSketch/blob/main/man/figures/logo.png?raw=true" alt="OmopSketch" style="height: 100px;"> <strong>Characterise Tables of an OMOP Common Data Model Instance</strong></p>
 <p>Summarises key information in data mapped to the Observational Medical Outcomes Partnership (OMOP) common data model. Assess suitability to perform specific epidemiological studies and explore the different domains to obtain feasibility counts and trends.</p>
 <p><a href="https://CRAN.R-project.org/package=OmopSketch"><img src="https://www.r-pkg.org/badges/version/OmopSketch" alt="CRAN version badge"></a> <a href="https://ohdsi.github.io/OmopSketch/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/ohdsi/OmopSketch/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
 </section>
-<section id="measurementdiagnostics" class="level3">
-<h3 class="anchored" data-anchor-id="measurementdiagnostics">MeasurementDiagnostics</h3>
+<section id="measurementdiagnostics" class="level4">
+<h4 class="anchored" data-anchor-id="measurementdiagnostics">MeasurementDiagnostics</h4>
 <p><img src="https://github.com/ohdsi/MeasurementDiagnostics/blob/main/man/figures/logo.png?raw=true" alt="MeasurementDiagnostics" style="height: 100px;"> <strong>Diagnostics for Lists of Codes Based on Measurements</strong></p>
 <p>Diagnostics of list of codes based on concepts from the domains measurement and observation. This package works for data mapped to the Observational Medical Outcomes Partnership Common Data Model.</p>
 <p><a href="https://CRAN.R-project.org/package=MeasurementDiagnostics"><img src="https://www.r-pkg.org/badges/version/MeasurementDiagnostics" alt="CRAN version badge"></a> <a href="https://ohdsi.github.io/MeasurementDiagnostics/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/ohdsi/MeasurementDiagnostics/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
 </section>
-<section id="phenotyper" class="level3">
-<h3 class="anchored" data-anchor-id="phenotyper">PhenotypeR</h3>
+<section id="phenotyper" class="level4">
+<h4 class="anchored" data-anchor-id="phenotyper">PhenotypeR</h4>
 <p><img src="https://github.com/ohdsi/PhenotypeR/blob/main/man/figures/logo.png?raw=true" alt="PhenotypeR" style="height: 100px;"> <strong>Assess Study Cohorts Using a Common Data Model</strong></p>
 <p>Phenotype study cohorts in data mapped to the Observational Medical Outcomes Partnership Common Data Model. Diagnostics are run at the database, code list, cohort, and population level to assess whether study cohorts are ready for research.</p>
 <p><a href="https://CRAN.R-project.org/package=PhenotypeR"><img src="https://www.r-pkg.org/badges/version/PhenotypeR" alt="CRAN version badge"></a> <a href="https://ohdsi.github.io/PhenotypeR/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/ohdsi/PhenotypeR/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
 </section>
-<section id="omopviewer" class="level3">
-<h3 class="anchored" data-anchor-id="omopviewer">OmopViewer</h3>
+<section id="omopviewer" class="level4">
+<h4 class="anchored" data-anchor-id="omopviewer">OmopViewer</h4>
 <p><strong>Visualise OMOP Results using ‘shiny’ Applications</strong></p>
 <p>Visualise results obtained from analysing data mapped to the Observational Medical Outcomes Partnership (OMOP) common data model using ‘shiny’ applications.</p>
 <p><a href="https://CRAN.R-project.org/package=OmopViewer"><img src="https://www.r-pkg.org/badges/version/OmopViewer" alt="CRAN version badge"></a> <a href="https://ohdsi.github.io/OmopViewer/"><img src="https://img.shields.io/badge/website-b3d9cf?logo=gitbook&amp;logoColor=black" class="img-fluid" alt="documentation"></a> <a href="https://github.com/ohdsi/OmopViewer/"><img src="https://img.shields.io/badge/github-f6f6f6?logo=github&amp;logoColor=black" class="img-fluid" alt="report_issue"></a></p>
+</section>
+</section>
+<section id="newsletter" class="level3">
+<h3 class="anchored" data-anchor-id="newsletter">Newsletter</h3>
+<style>
+  #subscribe-form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 500px;
+    gap: 10px;
+    margin: 1em 0;
+  }
+
+  #subscribe-form input[type="email"] {
+    flex: 1 1 auto;
+    min-width: 200px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+  }
+
+  #subscribe-form input[type="email"]:focus {
+    outline: none;
+    border-color: #007acc;
+  }
+
+  #subscribe-form button {
+    flex: 0 0 auto;
+    background: linear-gradient(90deg, #007acc, #00bfa5);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  #subscribe-form button:hover {
+    background: linear-gradient(90deg, #005fa3, #009e88);
+    transform: translateY(-2px);
+  }
+
+  #subscribe-form button:active {
+    transform: translateY(0);
+  }
+
+  #message {
+    display: none;
+    color: green;
+    font-weight: bold;
+    margin-top: 1em;
+  }
+</style>
+
+<form id="subscribe-form">
+  <input type="email" name="email" required="" placeholder="Enter your email">
+  <button type="submit">📬 Subscribe</button>
+</form>
+
+<div id="message">
+  ✔ You've been subscribed to the OxInfer Newsletter :)
+</div>
+
+<script>
+  document.getElementById('subscribe-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Stop normal form submission
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    fetch('https://script.google.com/macros/s/AKfycbwPL438sqcd6WOqiKUMeD0OsT0QoSUAU5efR3Tj6rjggtdAoU8JqJjIEJnOJPjkB-8/exec', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.text())
+    .then(text => {
+      // Hide the form and show the success message
+      form.style.display = 'none';
+      document.getElementById('message').style.display = 'block';
+    })
+    .catch(error => {
+      alert('Oops, something went wrong. Please try again.');
+      console.error(error);
+    });
+  });
+</script>
+<section id="november-2025" class="level4">
+<h4 class="anchored" data-anchor-id="november-2025">November 2025</h4>
+</section>
+<section id="releases-1" class="level4">
+<h4 class="anchored" data-anchor-id="releases-1">Releases</h4>
+<ul>
+<li><em>2025-11-19</em> <strong>CohortCharacteristics</strong> 1.1.0 <a href="https://darwin-eu.github.io/CohortCharacteristics/news/index.html#cohortcharacteristics-110">changelog</a></li>
+<li><em>2025-11-19</em> <strong>DrugUtilisation</strong> 1.0.5 <a href="https://darwin-eu.github.io/DrugUtilisation/news/index.html#drugutilisation-105">changelog</a></li>
+<li><em>2025-11-19</em> <strong>OmopSketch</strong> 1.0.0 <a href="https://ohdsi.github.io/OmopSketch/news/index.html#omopsketch-100">changelog</a></li>
+<li><em>2025-11-16</em> <strong>OmopViewer</strong> 0.5.0 <a href="https://ohdsi.github.io/OmopViewer/news/index.html#omopviewer-050">changelog</a></li>
+<li><em>2025-11-11</em> <strong>omopgenerics</strong> 1.3.3</li>
+<li><em>2025-11-07</em> <strong>visOmopResults</strong> 1.4.0 <a href="https://darwin-eu.github.io/visOmopResults/news/index.html#visomopresults-140">changelog</a></li>
+</ul>
+</section>
+<section id="october-2025" class="level4">
+<h4 class="anchored" data-anchor-id="october-2025">October 2025</h4>
+</section>
+<section id="releases-2" class="level4">
+<h4 class="anchored" data-anchor-id="releases-2">Releases</h4>
+<ul>
+<li><em>2025-10-31</em> <strong>CohortConstructor</strong> 0.6.0</li>
+<li><em>2025-10-31</em> <strong>omock</strong> 0.6.0 <a href="https://ohdsi.github.io/omock/news/index.html#omock-060">changelog</a></li>
+<li><em>2025-10-29</em> <strong>PatientProfiles</strong> 1.4.4</li>
+<li><em>2025-10-23</em> <strong>CohortCharacteristics</strong> 1.0.2 <a href="https://darwin-eu.github.io/CohortCharacteristics/news/index.html#cohortcharacteristics-102">changelog</a></li>
+<li><em>2025-10-22</em> <strong>OmopOnSpark</strong> 0.1.0</li>
+<li><em>2025-10-22</em> <strong>OmopOnSpark</strong> 0.1.0</li>
+<li><em>2025-10-13</em> <strong>omopgenerics</strong> 1.3.2 <a href="https://darwin-eu.github.io/omopgenerics/news/index.html#omopgenerics-132">changelog</a></li>
+<li><em>2025-10-09</em> <strong>visOmopResults</strong> 1.3.1 <a href="https://darwin-eu.github.io/visOmopResults/news/index.html#visomopresults-131">changelog</a></li>
+<li><em>2025-10-05</em> <strong>visOmopResults</strong> 1.3.0 <a href="https://darwin-eu.github.io/visOmopResults/news/index.html#visomopresults-130">changelog</a></li>
+<li><em>2025-10-01</em> <strong>PatientProfiles</strong> 1.4.3 <a href="https://darwin-eu.github.io/PatientProfiles/news/index.html#patientprofiles-143">changelog</a></li>
+</ul>
+</section>
+<section id="september-2025" class="level4">
+<h4 class="anchored" data-anchor-id="september-2025">September 2025</h4>
+</section>
+<section id="releases-3" class="level4">
+<h4 class="anchored" data-anchor-id="releases-3">Releases</h4>
+<ul>
+<li><em>2025-09-30</em> <strong>CohortCharacteristics</strong> 1.0.1 <a href="https://darwin-eu.github.io/CohortCharacteristics/news/index.html#cohortcharacteristics-101">changelog</a></li>
+<li><em>2025-09-30</em> <strong>OmopConstructor</strong> 0.1.0</li>
+<li><em>2025-09-30</em> <strong>OmopConstructor</strong> 0.1.0</li>
+<li><em>2025-09-18</em> <strong>omopgenerics</strong> 1.3.1 <a href="https://darwin-eu.github.io/omopgenerics/news/index.html#omopgenerics-131">changelog</a></li>
+<li><em>2025-09-02</em> <strong>visOmopResults</strong> 1.2.0 <a href="https://darwin-eu.github.io/visOmopResults/news/index.html#visomopresults-120">changelog</a></li>
+<li><em>2025-09-01</em> <strong>omock</strong> 0.5.0 <a href="https://ohdsi.github.io/omock/news/index.html#omock-050">changelog</a></li>
+</ul>
+</section>
+<section id="august-2025" class="level4">
+<h4 class="anchored" data-anchor-id="august-2025">August 2025</h4>
+</section>
+<section id="releases-4" class="level4">
+<h4 class="anchored" data-anchor-id="releases-4">Releases</h4>
+<ul>
+<li><em>2025-08-18</em> <strong>CohortSurvival</strong> 1.0.3</li>
+</ul>
+</section>
+<section id="july-2025" class="level4">
+<h4 class="anchored" data-anchor-id="july-2025">July 2025</h4>
+</section>
+<section id="releases-5" class="level4">
+<h4 class="anchored" data-anchor-id="releases-5">Releases</h4>
+<ul>
+<li><em>2025-07-31</em> <strong>PhenotypeR</strong> 0.2.0</li>
+<li><em>2025-07-30</em> <strong>CohortConstructor</strong> 0.5.0 <a href="https://ohdsi.github.io/CohortConstructor/news/index.html#cohortconstructor-050">changelog</a></li>
+<li><em>2025-07-29</em> <strong>MeasurementDiagnostics</strong> 0.1.0</li>
+<li><em>2025-07-22</em> <strong>IncidencePrevalence</strong> 1.2.1</li>
+<li><em>2025-07-15</em> <strong>omopgenerics</strong> 1.3.0 <a href="https://darwin-eu.github.io/omopgenerics/news/index.html#omopgenerics-130">changelog</a></li>
+<li><em>2025-07-11</em> <strong>MeasurementDiagnostics</strong> 0.0.1</li>
+<li><em>2025-07-09</em> <strong>OmopViewer</strong> 0.4.0</li>
+<li><em>2025-07-09</em> <strong>PatientProfiles</strong> 1.4.2 <a href="https://darwin-eu.github.io/PatientProfiles/news/index.html#patientprofiles-142">changelog</a></li>
+<li><em>2025-07-03</em> <strong>DrugUtilisation</strong> 1.0.4 <a href="https://darwin-eu.github.io/DrugUtilisation/news/index.html#drugutilisation-104">changelog</a></li>
+</ul>
+</section>
+<section id="june-2025" class="level4">
+<h4 class="anchored" data-anchor-id="june-2025">June 2025</h4>
+</section>
+<section id="releases-6" class="level4">
+<h4 class="anchored" data-anchor-id="releases-6">Releases</h4>
+<ul>
+<li><em>2025-06-27</em> <strong>PatientProfiles</strong> 1.4.1 <a href="https://darwin-eu.github.io/PatientProfiles/news/index.html#patientprofiles-141">changelog</a></li>
+<li><em>2025-06-22</em> <strong>PhenotypeR</strong> 0.1.6</li>
+<li><em>2025-06-19</em> <strong>OmopSketch</strong> 0.5.1 <a href="https://ohdsi.github.io/OmopSketch/news/index.html#omopsketch-051">changelog</a></li>
+<li><em>2025-06-19</em> <strong>visOmopResults</strong> 1.1.1 <a href="https://darwin-eu.github.io/visOmopResults/news/index.html#visomopresults-111">changelog</a></li>
+<li><em>2025-06-18</em> <strong>OmopSketch</strong> 0.5.0 <a href="https://ohdsi.github.io/OmopSketch/news/index.html#omopsketch-050">changelog</a></li>
+<li><em>2025-06-16</em> <strong>CohortSurvival</strong> 1.0.2</li>
+<li><em>2025-06-12</em> <strong>omock</strong> 0.4.0 <a href="https://ohdsi.github.io/omock/news/index.html#omock-040">changelog</a></li>
+<li><em>2025-06-03</em> <strong>DrugUtilisation</strong> 1.0.3 <a href="https://darwin-eu.github.io/DrugUtilisation/news/index.html#drugutilisation-103">changelog</a></li>
+</ul>
+</section>
+<section id="may-2025" class="level4">
+<h4 class="anchored" data-anchor-id="may-2025">May 2025</h4>
+</section>
+<section id="releases-7" class="level4">
+<h4 class="anchored" data-anchor-id="releases-7">Releases</h4>
+<ul>
+<li><em>2025-05-30</em> <strong>PatientProfiles</strong> 1.4.0 <a href="https://darwin-eu.github.io/PatientProfiles/news/index.html#patientprofiles-140">changelog</a></li>
+<li><em>2025-05-22</em> <strong>PhenotypeR</strong> 0.1.5</li>
+<li><em>2025-05-21</em> <strong>CohortCharacteristics</strong> 1.0.0 <a href="https://darwin-eu.github.io/CohortCharacteristics/news/index.html#cohortcharacteristics-100">changelog</a></li>
+<li><em>2025-05-21</em> <strong>visOmopResults</strong> 1.1.0 <a href="https://darwin-eu.github.io/visOmopResults/news/index.html#visomopresults-110">changelog</a></li>
+<li><em>2025-05-19</em> <strong>omopgenerics</strong> 1.2.0 <a href="https://darwin-eu.github.io/omopgenerics/news/index.html#omopgenerics-120">changelog</a></li>
+<li><em>2025-05-15</em> <strong>OmopSketch</strong> 0.4.0 <a href="https://ohdsi.github.io/OmopSketch/news/index.html#omopsketch-040">changelog</a></li>
+<li><em>2025-05-13</em> <strong>DrugUtilisation</strong> 1.0.2 <a href="https://darwin-eu.github.io/DrugUtilisation/news/index.html#drugutilisation-102">changelog</a></li>
+<li><em>2025-05-08</em> <strong>CohortConstructor</strong> 0.4.0 <a href="https://ohdsi.github.io/CohortConstructor/news/index.html#cohortconstructor-040">changelog</a></li>
+</ul>
+</section>
+<section id="april-2025" class="level4">
+<h4 class="anchored" data-anchor-id="april-2025">April 2025</h4>
+</section>
+<section id="releases-8" class="level4">
+<h4 class="anchored" data-anchor-id="releases-8">Releases</h4>
+<ul>
+<li><em>2025-04-16</em> <strong>DrugUtilisation</strong> 1.0.1 <a href="https://darwin-eu.github.io/DrugUtilisation/news/index.html#drugutilisation-101">changelog</a></li>
+<li><em>2025-04-15</em> <strong>OmopViewer</strong> 0.3.0</li>
+<li><em>2025-04-14</em> <strong>OmopSketch</strong> 0.3.2 <a href="https://ohdsi.github.io/OmopSketch/news/index.html#omopsketch-032">changelog</a></li>
+<li><em>2025-04-10</em> <strong>CodelistGenerator</strong> 3.5.0</li>
+<li><em>2025-04-02</em> <strong>CohortSurvival</strong> 1.0.1</li>
+</ul>
+</section>
+<section id="march-2025" class="level4">
+<h4 class="anchored" data-anchor-id="march-2025">March 2025</h4>
+</section>
+<section id="releases-9" class="level4">
+<h4 class="anchored" data-anchor-id="releases-9">Releases</h4>
+<ul>
+<li><em>2025-03-28</em> <strong>PhenotypeR</strong> 0.1.4</li>
+<li><em>2025-03-27</em> <strong>CohortCharacteristics</strong> 0.5.1 <a href="https://darwin-eu.github.io/CohortCharacteristics/news/index.html#cohortcharacteristics-051">changelog</a></li>
+<li><em>2025-03-27</em> <strong>DrugUtilisation</strong> 1.0.0 <a href="https://darwin-eu.github.io/DrugUtilisation/news/index.html#drugutilisation-100">changelog</a></li>
+<li><em>2025-03-26</em> <strong>CodelistGenerator</strong> 3.4.1</li>
+<li><em>2025-03-24</em> <strong>CohortSymmetry</strong> 0.2.4</li>
+<li><em>2025-03-20</em> <strong>DrugUtilisation</strong> 0.8.3 <a href="https://darwin-eu.github.io/DrugUtilisation/news/index.html#drugutilisation-083">changelog</a></li>
+<li><em>2025-03-19</em> <strong>CohortSurvival</strong> 1.0.0</li>
+<li><em>2025-03-18</em> <strong>CohortCharacteristics</strong> 0.5.0 <a href="https://darwin-eu.github.io/CohortCharacteristics/news/index.html#cohortcharacteristics-050">changelog</a></li>
+<li><em>2025-03-17</em> <strong>OmopSketch</strong> 0.3.1 <a href="https://ohdsi.github.io/OmopSketch/news/index.html#omopsketch-031">changelog</a></li>
+<li><em>2025-03-17</em> <strong>omopgenerics</strong> 1.1.1 <a href="https://darwin-eu.github.io/omopgenerics/news/index.html#omopgenerics-111">changelog</a></li>
+<li><em>2025-03-08</em> <strong>IncidencePrevalence</strong> 1.2.0 <a href="https://darwin-eu.github.io/IncidencePrevalence/news/index.html#incidenceprevalence-120">changelog</a></li>
+<li><em>2025-03-06</em> <strong>visOmopResults</strong> 1.0.2 <a href="https://darwin-eu.github.io/visOmopResults/news/index.html#visomopresults-102">changelog</a></li>
+<li><em>2025-03-05</em> <strong>PatientProfiles</strong> 1.3.1 <a href="https://darwin-eu.github.io/PatientProfiles/news/index.html#patientprofiles-131">changelog</a></li>
+<li><em>2025-03-04</em> <strong>OmopSketch</strong> 0.3.0 <a href="https://ohdsi.github.io/OmopSketch/news/index.html#omopsketch-030">changelog</a></li>
+<li><em>2025-03-02</em> <strong>CohortSymmetry</strong> 0.2.3</li>
+<li><em>2025-03-01</em> <strong>CohortSymmetry</strong> 0.2.2</li>
+</ul>
+</section>
+<section id="february-2025" class="level4">
+<h4 class="anchored" data-anchor-id="february-2025">February 2025</h4>
+</section>
+<section id="releases-10" class="level4">
+<h4 class="anchored" data-anchor-id="releases-10">Releases</h4>
+<ul>
+<li><em>2025-02-27</em> <strong>visOmopResults</strong> 1.0.1 <a href="https://darwin-eu.github.io/visOmopResults/news/index.html#visomopresults-101">changelog</a></li>
+<li><em>2025-02-26</em> <strong>PatientProfiles</strong> 1.3.0 <a href="https://darwin-eu.github.io/PatientProfiles/news/index.html#patientprofiles-130">changelog</a></li>
+<li><em>2025-02-25</em> <strong>omopgenerics</strong> 1.1.0 <a href="https://darwin-eu.github.io/omopgenerics/news/index.html#omopgenerics-110">changelog</a></li>
+<li><em>2025-02-20</em> <strong>IncidencePrevalence</strong> 1.1.0 <a href="https://darwin-eu.github.io/IncidencePrevalence/news/index.html#incidenceprevalence-110">changelog</a></li>
+<li><em>2025-02-19</em> <strong>CodelistGenerator</strong> 3.4.0</li>
+<li><em>2025-02-17</em> <strong>PhenotypeR</strong> 0.1.3</li>
+<li><em>2025-02-16</em> <strong>CohortConstructor</strong> 0.3.5</li>
+<li><em>2025-02-14</em> <strong>omopgenerics</strong> 1.0.0 <a href="https://darwin-eu.github.io/omopgenerics/news/index.html#omopgenerics-100">changelog</a></li>
+<li><em>2025-02-12</em> <strong>CohortSymmetry</strong> 0.2.1</li>
+<li><em>2025-02-05</em> <strong>PhenotypeR</strong> 0.1.2</li>
+</ul>
+</section>
+<section id="january-2025" class="level4">
+<h4 class="anchored" data-anchor-id="january-2025">January 2025</h4>
+</section>
+<section id="releases-11" class="level4">
+<h4 class="anchored" data-anchor-id="releases-11">Releases</h4>
+<ul>
+<li><em>2025-01-28</em> <strong>CodelistGenerator</strong> 3.3.2</li>
+<li><em>2025-01-28</em> <strong>OmopSketch</strong> 0.2.2</li>
+<li><em>2025-01-23</em> <strong>omock</strong> 0.3.2 <a href="https://ohdsi.github.io/omock/news/index.html#omock-032">changelog</a></li>
+<li><em>2025-01-22</em> <strong>CohortSurvival</strong> 0.6.2</li>
+<li><em>2025-01-17</em> <strong>CohortConstructor</strong> 0.3.4</li>
+<li><em>2025-01-17</em> <strong>PhenotypeR</strong> 0.1.1</li>
+<li><em>2025-01-16</em> <strong>DrugUtilisation</strong> 0.8.2 <a href="https://darwin-eu.github.io/DrugUtilisation/news/index.html#drugutilisation-082">changelog</a></li>
+<li><em>2025-01-16</em> <strong>IncidencePrevalence</strong> 1.0.0 <a href="https://darwin-eu.github.io/IncidencePrevalence/news/index.html#incidenceprevalence-100">changelog</a></li>
+<li><em>2025-01-16</em> <strong>OmopSketch</strong> 0.2.1</li>
+<li><em>2025-01-15</em> <strong>visOmopResults</strong> 1.0.0 <a href="https://darwin-eu.github.io/visOmopResults/news/index.html#visomopresults-100">changelog</a></li>
+<li><em>2025-01-08</em> <strong>OmopSketch</strong> 0.2.0</li>
+</ul>
 
 
+</section>
 </section>
 </section>
 
@@ -542,19 +616,6 @@ ul.task-list li input[type="checkbox"] {
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -957,10 +1018,10 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Copyright 2024, Oxinfer</p>
+<p>Copyright 2025, OxInfer</p>
 </div>   
     <div class="nav-footer-center">
-<p>Rendered on November 23, 2025</p>
+<p>Rendered on November 24, 2025</p>
 <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/oxford-pharmacoepi/OxinferOnboarding/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">

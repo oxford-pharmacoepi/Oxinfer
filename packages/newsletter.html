@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-11-23">
+<meta name="dcterms.date" content="2025-11-24">
 
-<title>newsletter – Oxinfer</title>
+<title>newsletter – OxInfer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -38,14 +38,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a2f2fc977887d1ab4a52c557a2b25c2a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-db3ae57a60d18895bb8cbe2d6170aa68.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-a2f2fc977887d1ab4a52c557a2b25c2a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a2f2fc977887d1ab4a52c557a2b25c2a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,173 +71,11 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Oxinfer">
-<meta property="og:site_name" content="Oxinfer">
+<meta property="og:title" content="OxInfer">
+<meta property="og:site_name" content="OxInfer">
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -249,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Oxinfer</span>
+    <span class="navbar-title">OxInfer</span>
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -267,30 +101,20 @@ ul.task-list li input[type="checkbox"] {
 </i> 
 <span class="menu-text">Meet the team</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-software" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Software</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-software">    
-        <li>
-    <a class="dropdown-item" href="../packages/summary.html">
- <span class="dropdown-text">Summary</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../packages/newsletter.html">
- <span class="dropdown-text">Newsletter</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
-    <a class="nav-link" href="../onboarding/index.html"> <i class="bi bi-clipboard-check" role="img">
+    <a class="nav-link" href="../packages/summary.html"> <i class="bi bi-people" role="img">
 </i> 
-<span class="menu-text">Onboarding</span></a>
+<span class="menu-text">Software</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../publications.html"> <i class="bi bi-book" role="img">
 </i> 
 <span class="menu-text">Recent publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../onboarding/index.html"> <i class="bi bi-clipboard-check" role="img">
+</i> 
+<span class="menu-text">Onboarding</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -307,7 +131,6 @@ ul.task-list li input[type="checkbox"] {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -324,68 +147,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#newsletter" id="toc-newsletter" class="nav-link active" data-scroll-target="#newsletter">Newsletter</a>
   <ul class="collapse">
   <li><a href="#subscribe-to-our-newsletter" id="toc-subscribe-to-our-newsletter" class="nav-link" data-scroll-target="#subscribe-to-our-newsletter">Subscribe to Our Newsletter</a></li>
-  <li><a href="#november-2025" id="toc-november-2025" class="nav-link" data-scroll-target="#november-2025">November 2025</a>
-  <ul class="collapse">
-  <li><a href="#releases" id="toc-releases" class="nav-link" data-scroll-target="#releases">Releases</a></li>
-  <li><a href="#activity" id="toc-activity" class="nav-link" data-scroll-target="#activity">Activity</a></li>
-  </ul></li>
-  <li><a href="#october-2025" id="toc-october-2025" class="nav-link" data-scroll-target="#october-2025">October 2025</a>
-  <ul class="collapse">
-  <li><a href="#releases-1" id="toc-releases-1" class="nav-link" data-scroll-target="#releases-1">Releases</a></li>
-  <li><a href="#activity-1" id="toc-activity-1" class="nav-link" data-scroll-target="#activity-1">Activity</a></li>
-  </ul></li>
-  <li><a href="#september-2025" id="toc-september-2025" class="nav-link" data-scroll-target="#september-2025">September 2025</a>
-  <ul class="collapse">
-  <li><a href="#releases-2" id="toc-releases-2" class="nav-link" data-scroll-target="#releases-2">Releases</a></li>
-  <li><a href="#activity-2" id="toc-activity-2" class="nav-link" data-scroll-target="#activity-2">Activity</a></li>
-  </ul></li>
-  <li><a href="#august-2025" id="toc-august-2025" class="nav-link" data-scroll-target="#august-2025">August 2025</a>
-  <ul class="collapse">
-  <li><a href="#releases-3" id="toc-releases-3" class="nav-link" data-scroll-target="#releases-3">Releases</a></li>
-  <li><a href="#activity-3" id="toc-activity-3" class="nav-link" data-scroll-target="#activity-3">Activity</a></li>
-  </ul></li>
-  <li><a href="#july-2025" id="toc-july-2025" class="nav-link" data-scroll-target="#july-2025">July 2025</a>
-  <ul class="collapse">
-  <li><a href="#releases-4" id="toc-releases-4" class="nav-link" data-scroll-target="#releases-4">Releases</a></li>
-  <li><a href="#activity-4" id="toc-activity-4" class="nav-link" data-scroll-target="#activity-4">Activity</a></li>
-  </ul></li>
-  <li><a href="#june-2025" id="toc-june-2025" class="nav-link" data-scroll-target="#june-2025">June 2025</a>
-  <ul class="collapse">
-  <li><a href="#releases-5" id="toc-releases-5" class="nav-link" data-scroll-target="#releases-5">Releases</a></li>
-  <li><a href="#activity-5" id="toc-activity-5" class="nav-link" data-scroll-target="#activity-5">Activity</a></li>
-  </ul></li>
-  <li><a href="#may-2025" id="toc-may-2025" class="nav-link" data-scroll-target="#may-2025">May 2025</a>
-  <ul class="collapse">
-  <li><a href="#releases-6" id="toc-releases-6" class="nav-link" data-scroll-target="#releases-6">Releases</a></li>
-  <li><a href="#activity-6" id="toc-activity-6" class="nav-link" data-scroll-target="#activity-6">Activity</a></li>
-  </ul></li>
-  <li><a href="#april-2025" id="toc-april-2025" class="nav-link" data-scroll-target="#april-2025">April 2025</a>
-  <ul class="collapse">
-  <li><a href="#releases-7" id="toc-releases-7" class="nav-link" data-scroll-target="#releases-7">Releases</a></li>
-  <li><a href="#activity-7" id="toc-activity-7" class="nav-link" data-scroll-target="#activity-7">Activity</a></li>
-  </ul></li>
-  <li><a href="#march-2025" id="toc-march-2025" class="nav-link" data-scroll-target="#march-2025">March 2025</a>
-  <ul class="collapse">
-  <li><a href="#releases-8" id="toc-releases-8" class="nav-link" data-scroll-target="#releases-8">Releases</a></li>
-  <li><a href="#activity-8" id="toc-activity-8" class="nav-link" data-scroll-target="#activity-8">Activity</a></li>
-  </ul></li>
-  <li><a href="#february-2025" id="toc-february-2025" class="nav-link" data-scroll-target="#february-2025">February 2025</a>
-  <ul class="collapse">
-  <li><a href="#releases-9" id="toc-releases-9" class="nav-link" data-scroll-target="#releases-9">Releases</a></li>
-  <li><a href="#activity-9" id="toc-activity-9" class="nav-link" data-scroll-target="#activity-9">Activity</a></li>
-  </ul></li>
-  <li><a href="#january-2025" id="toc-january-2025" class="nav-link" data-scroll-target="#january-2025">January 2025</a>
-  <ul class="collapse">
-  <li><a href="#releases-10" id="toc-releases-10" class="nav-link" data-scroll-target="#releases-10">Releases</a></li>
-  <li><a href="#activity-10" id="toc-activity-10" class="nav-link" data-scroll-target="#activity-10">Activity</a></li>
-  </ul></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/oxford-pharmacoepi/OxinferOnboarding/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
-
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -399,7 +166,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 23, 2025</p>
+      <p class="date">November 24, 2025</p>
     </div>
   </div>
   
@@ -476,7 +243,7 @@ ul.task-list li input[type="checkbox"] {
 </form>
 
 <div id="message">
-  ✔ You've been subscribed to the Oxinfer Newsletter :)
+  ✔ You've been subscribed to the OxInfer Newsletter :)
 </div>
 
 <script>
@@ -502,11 +269,11 @@ ul.task-list li input[type="checkbox"] {
     });
   });
 </script>
+<section id="november-2025" class="level4">
+<h4 class="anchored" data-anchor-id="november-2025">November 2025</h4>
 </section>
-<section id="november-2025" class="level2">
-<h2 class="anchored" data-anchor-id="november-2025">November 2025</h2>
-<section id="releases" class="level3">
-<h3 class="anchored" data-anchor-id="releases">Releases</h3>
+<section id="releases" class="level4">
+<h4 class="anchored" data-anchor-id="releases">Releases</h4>
 <ul>
 <li><em>2025-11-19</em> <strong>CohortCharacteristics</strong> 1.1.0 <a href="https://darwin-eu.github.io/CohortCharacteristics/news/index.html#cohortcharacteristics-110">changelog</a></li>
 <li><em>2025-11-19</em> <strong>DrugUtilisation</strong> 1.0.5 <a href="https://darwin-eu.github.io/DrugUtilisation/news/index.html#drugutilisation-105">changelog</a></li>
@@ -516,20 +283,11 @@ ul.task-list li input[type="checkbox"] {
 <li><em>2025-11-07</em> <strong>visOmopResults</strong> 1.4.0 <a href="https://darwin-eu.github.io/visOmopResults/news/index.html#visomopresults-140">changelog</a></li>
 </ul>
 </section>
-<section id="activity" class="level3">
-<h3 class="anchored" data-anchor-id="activity">Activity</h3>
-<ul>
-<li>🔥 <strong>On fire</strong>: visOmopResults, CodelistGenerator, CohortCharacteristics, OmopSketch, OmopViewer.</li>
-<li>✨ <strong>Active</strong>: omopgenerics, MeasurementDiagnostics.</li>
-<li>🧊 <strong>Quiet</strong>: omock, OmopConstructor, PatientProfiles, CohortConstructor, IncidencePrevalence, DrugUtilisation, CohortSurvival, PhenotypeR.</li>
-<li>❄️️ <strong>No activity</strong>: OmopOnSpark, CohortSymmetry.</li>
-</ul>
+<section id="october-2025" class="level4">
+<h4 class="anchored" data-anchor-id="october-2025">October 2025</h4>
 </section>
-</section>
-<section id="october-2025" class="level2">
-<h2 class="anchored" data-anchor-id="october-2025">October 2025</h2>
-<section id="releases-1" class="level3">
-<h3 class="anchored" data-anchor-id="releases-1">Releases</h3>
+<section id="releases-1" class="level4">
+<h4 class="anchored" data-anchor-id="releases-1">Releases</h4>
 <ul>
 <li><em>2025-10-31</em> <strong>CohortConstructor</strong> 0.6.0</li>
 <li><em>2025-10-31</em> <strong>omock</strong> 0.6.0 <a href="https://ohdsi.github.io/omock/news/index.html#omock-060">changelog</a></li>
@@ -543,20 +301,11 @@ ul.task-list li input[type="checkbox"] {
 <li><em>2025-10-01</em> <strong>PatientProfiles</strong> 1.4.3 <a href="https://darwin-eu.github.io/PatientProfiles/news/index.html#patientprofiles-143">changelog</a></li>
 </ul>
 </section>
-<section id="activity-1" class="level3">
-<h3 class="anchored" data-anchor-id="activity-1">Activity</h3>
-<ul>
-<li>🔥 <strong>On fire</strong>: omopgenerics, omock, visOmopResults, CodelistGenerator, CohortConstructor, DrugUtilisation, CohortCharacteristics, OmopSketch.</li>
-<li>✨ <strong>Active</strong>: OmopOnSpark, PatientProfiles, OmopViewer.</li>
-<li>🧊 <strong>Quiet</strong>: OmopConstructor, IncidencePrevalence, CohortSurvival, MeasurementDiagnostics, PhenotypeR.</li>
-<li>❄️️ <strong>No activity</strong>: CohortSymmetry.</li>
-</ul>
+<section id="september-2025" class="level4">
+<h4 class="anchored" data-anchor-id="september-2025">September 2025</h4>
 </section>
-</section>
-<section id="september-2025" class="level2">
-<h2 class="anchored" data-anchor-id="september-2025">September 2025</h2>
-<section id="releases-2" class="level3">
-<h3 class="anchored" data-anchor-id="releases-2">Releases</h3>
+<section id="releases-2" class="level4">
+<h4 class="anchored" data-anchor-id="releases-2">Releases</h4>
 <ul>
 <li><em>2025-09-30</em> <strong>CohortCharacteristics</strong> 1.0.1 <a href="https://darwin-eu.github.io/CohortCharacteristics/news/index.html#cohortcharacteristics-101">changelog</a></li>
 <li><em>2025-09-30</em> <strong>OmopConstructor</strong> 0.1.0</li>
@@ -566,38 +315,20 @@ ul.task-list li input[type="checkbox"] {
 <li><em>2025-09-01</em> <strong>omock</strong> 0.5.0 <a href="https://ohdsi.github.io/omock/news/index.html#omock-050">changelog</a></li>
 </ul>
 </section>
-<section id="activity-2" class="level3">
-<h3 class="anchored" data-anchor-id="activity-2">Activity</h3>
-<ul>
-<li>🔥 <strong>On fire</strong>: omopgenerics, omock, OmopConstructor, visOmopResults, PatientProfiles, CohortConstructor, OmopSketch, PhenotypeR.</li>
-<li>✨ <strong>Active</strong>: DrugUtilisation.</li>
-<li>🧊 <strong>Quiet</strong>: CodelistGenerator, IncidencePrevalence, CohortCharacteristics, CohortSurvival, CohortSymmetry, MeasurementDiagnostics, OmopViewer.</li>
-<li>❄️️ <strong>No activity</strong>: OmopOnSpark.</li>
-</ul>
+<section id="august-2025" class="level4">
+<h4 class="anchored" data-anchor-id="august-2025">August 2025</h4>
 </section>
-</section>
-<section id="august-2025" class="level2">
-<h2 class="anchored" data-anchor-id="august-2025">August 2025</h2>
-<section id="releases-3" class="level3">
-<h3 class="anchored" data-anchor-id="releases-3">Releases</h3>
+<section id="releases-3" class="level4">
+<h4 class="anchored" data-anchor-id="releases-3">Releases</h4>
 <ul>
 <li><em>2025-08-18</em> <strong>CohortSurvival</strong> 1.0.3</li>
 </ul>
 </section>
-<section id="activity-3" class="level3">
-<h3 class="anchored" data-anchor-id="activity-3">Activity</h3>
-<ul>
-<li>🔥 <strong>On fire</strong>: CodelistGenerator, PhenotypeR.</li>
-<li>✨ <strong>Active</strong>: omopgenerics, visOmopResults, OmopSketch.</li>
-<li>🧊 <strong>Quiet</strong>: OmopConstructor, IncidencePrevalence, DrugUtilisation, CohortCharacteristics, CohortSurvival, OmopViewer.</li>
-<li>❄️️ <strong>No activity</strong>: omock, OmopOnSpark, PatientProfiles, CohortConstructor, CohortSymmetry, MeasurementDiagnostics.</li>
-</ul>
+<section id="july-2025" class="level4">
+<h4 class="anchored" data-anchor-id="july-2025">July 2025</h4>
 </section>
-</section>
-<section id="july-2025" class="level2">
-<h2 class="anchored" data-anchor-id="july-2025">July 2025</h2>
-<section id="releases-4" class="level3">
-<h3 class="anchored" data-anchor-id="releases-4">Releases</h3>
+<section id="releases-4" class="level4">
+<h4 class="anchored" data-anchor-id="releases-4">Releases</h4>
 <ul>
 <li><em>2025-07-31</em> <strong>PhenotypeR</strong> 0.2.0</li>
 <li><em>2025-07-30</em> <strong>CohortConstructor</strong> 0.5.0 <a href="https://ohdsi.github.io/CohortConstructor/news/index.html#cohortconstructor-050">changelog</a></li>
@@ -610,20 +341,11 @@ ul.task-list li input[type="checkbox"] {
 <li><em>2025-07-03</em> <strong>DrugUtilisation</strong> 1.0.4 <a href="https://darwin-eu.github.io/DrugUtilisation/news/index.html#drugutilisation-104">changelog</a></li>
 </ul>
 </section>
-<section id="activity-4" class="level3">
-<h3 class="anchored" data-anchor-id="activity-4">Activity</h3>
-<ul>
-<li>🔥 <strong>On fire</strong>: omopgenerics, OmopOnSpark, CohortSurvival, OmopSketch, MeasurementDiagnostics, PhenotypeR, OmopViewer.</li>
-<li>✨ <strong>Active</strong>: omock, visOmopResults, CodelistGenerator, CohortConstructor, IncidencePrevalence.</li>
-<li>🧊 <strong>Quiet</strong>: PatientProfiles, DrugUtilisation, CohortCharacteristics.</li>
-<li>❄️️ <strong>No activity</strong>: OmopConstructor, CohortSymmetry.</li>
-</ul>
+<section id="june-2025" class="level4">
+<h4 class="anchored" data-anchor-id="june-2025">June 2025</h4>
 </section>
-</section>
-<section id="june-2025" class="level2">
-<h2 class="anchored" data-anchor-id="june-2025">June 2025</h2>
-<section id="releases-5" class="level3">
-<h3 class="anchored" data-anchor-id="releases-5">Releases</h3>
+<section id="releases-5" class="level4">
+<h4 class="anchored" data-anchor-id="releases-5">Releases</h4>
 <ul>
 <li><em>2025-06-27</em> <strong>PatientProfiles</strong> 1.4.1 <a href="https://darwin-eu.github.io/PatientProfiles/news/index.html#patientprofiles-141">changelog</a></li>
 <li><em>2025-06-22</em> <strong>PhenotypeR</strong> 0.1.6</li>
@@ -635,20 +357,11 @@ ul.task-list li input[type="checkbox"] {
 <li><em>2025-06-03</em> <strong>DrugUtilisation</strong> 1.0.3 <a href="https://darwin-eu.github.io/DrugUtilisation/news/index.html#drugutilisation-103">changelog</a></li>
 </ul>
 </section>
-<section id="activity-5" class="level3">
-<h3 class="anchored" data-anchor-id="activity-5">Activity</h3>
-<ul>
-<li>🔥 <strong>On fire</strong>: omock, CohortConstructor, CohortSurvival, OmopSketch, MeasurementDiagnostics, PhenotypeR.</li>
-<li>✨ <strong>Active</strong>: OmopOnSpark, visOmopResults.</li>
-<li>🧊 <strong>Quiet</strong>: omopgenerics, CodelistGenerator, PatientProfiles, IncidencePrevalence, DrugUtilisation, CohortCharacteristics, OmopViewer.</li>
-<li>❄️️ <strong>No activity</strong>: OmopConstructor, CohortSymmetry.</li>
-</ul>
+<section id="may-2025" class="level4">
+<h4 class="anchored" data-anchor-id="may-2025">May 2025</h4>
 </section>
-</section>
-<section id="may-2025" class="level2">
-<h2 class="anchored" data-anchor-id="may-2025">May 2025</h2>
-<section id="releases-6" class="level3">
-<h3 class="anchored" data-anchor-id="releases-6">Releases</h3>
+<section id="releases-6" class="level4">
+<h4 class="anchored" data-anchor-id="releases-6">Releases</h4>
 <ul>
 <li><em>2025-05-30</em> <strong>PatientProfiles</strong> 1.4.0 <a href="https://darwin-eu.github.io/PatientProfiles/news/index.html#patientprofiles-140">changelog</a></li>
 <li><em>2025-05-22</em> <strong>PhenotypeR</strong> 0.1.5</li>
@@ -660,19 +373,11 @@ ul.task-list li input[type="checkbox"] {
 <li><em>2025-05-08</em> <strong>CohortConstructor</strong> 0.4.0 <a href="https://ohdsi.github.io/CohortConstructor/news/index.html#cohortconstructor-040">changelog</a></li>
 </ul>
 </section>
-<section id="activity-6" class="level3">
-<h3 class="anchored" data-anchor-id="activity-6">Activity</h3>
-<ul>
-<li>🔥 <strong>On fire</strong>: omopgenerics, visOmopResults, PatientProfiles, CohortConstructor, DrugUtilisation, CohortCharacteristics, OmopSketch, PhenotypeR, OmopViewer.</li>
-<li>🧊 <strong>Quiet</strong>: omock, OmopConstructor, CodelistGenerator, IncidencePrevalence, CohortSurvival.</li>
-<li>❄️️ <strong>No activity</strong>: OmopOnSpark, CohortSymmetry, MeasurementDiagnostics.</li>
-</ul>
+<section id="april-2025" class="level4">
+<h4 class="anchored" data-anchor-id="april-2025">April 2025</h4>
 </section>
-</section>
-<section id="april-2025" class="level2">
-<h2 class="anchored" data-anchor-id="april-2025">April 2025</h2>
-<section id="releases-7" class="level3">
-<h3 class="anchored" data-anchor-id="releases-7">Releases</h3>
+<section id="releases-7" class="level4">
+<h4 class="anchored" data-anchor-id="releases-7">Releases</h4>
 <ul>
 <li><em>2025-04-16</em> <strong>DrugUtilisation</strong> 1.0.1 <a href="https://darwin-eu.github.io/DrugUtilisation/news/index.html#drugutilisation-101">changelog</a></li>
 <li><em>2025-04-15</em> <strong>OmopViewer</strong> 0.3.0</li>
@@ -681,20 +386,11 @@ ul.task-list li input[type="checkbox"] {
 <li><em>2025-04-02</em> <strong>CohortSurvival</strong> 1.0.1</li>
 </ul>
 </section>
-<section id="activity-7" class="level3">
-<h3 class="anchored" data-anchor-id="activity-7">Activity</h3>
-<ul>
-<li>🔥 <strong>On fire</strong>: omopgenerics, CodelistGenerator, CohortConstructor, CohortSurvival, OmopSketch, OmopViewer.</li>
-<li>✨ <strong>Active</strong>: omock, OmopConstructor, DrugUtilisation, CohortCharacteristics.</li>
-<li>🧊 <strong>Quiet</strong>: visOmopResults, PatientProfiles, IncidencePrevalence, CohortSymmetry, PhenotypeR.</li>
-<li>❄️️ <strong>No activity</strong>: OmopOnSpark, MeasurementDiagnostics.</li>
-</ul>
+<section id="march-2025" class="level4">
+<h4 class="anchored" data-anchor-id="march-2025">March 2025</h4>
 </section>
-</section>
-<section id="march-2025" class="level2">
-<h2 class="anchored" data-anchor-id="march-2025">March 2025</h2>
-<section id="releases-8" class="level3">
-<h3 class="anchored" data-anchor-id="releases-8">Releases</h3>
+<section id="releases-8" class="level4">
+<h4 class="anchored" data-anchor-id="releases-8">Releases</h4>
 <ul>
 <li><em>2025-03-28</em> <strong>PhenotypeR</strong> 0.1.4</li>
 <li><em>2025-03-27</em> <strong>CohortCharacteristics</strong> 0.5.1 <a href="https://darwin-eu.github.io/CohortCharacteristics/news/index.html#cohortcharacteristics-051">changelog</a></li>
@@ -714,20 +410,11 @@ ul.task-list li input[type="checkbox"] {
 <li><em>2025-03-01</em> <strong>CohortSymmetry</strong> 0.2.2</li>
 </ul>
 </section>
-<section id="activity-8" class="level3">
-<h3 class="anchored" data-anchor-id="activity-8">Activity</h3>
-<ul>
-<li>🔥 <strong>On fire</strong>: omopgenerics, OmopOnSpark, CodelistGenerator, CohortConstructor, IncidencePrevalence, DrugUtilisation, CohortCharacteristics, CohortSurvival, CohortSymmetry, OmopSketch, PhenotypeR.</li>
-<li>✨ <strong>Active</strong>: visOmopResults.</li>
-<li>🧊 <strong>Quiet</strong>: omock, OmopConstructor, PatientProfiles, OmopViewer.</li>
-<li>❄️️ <strong>No activity</strong>: MeasurementDiagnostics.</li>
-</ul>
+<section id="february-2025" class="level4">
+<h4 class="anchored" data-anchor-id="february-2025">February 2025</h4>
 </section>
-</section>
-<section id="february-2025" class="level2">
-<h2 class="anchored" data-anchor-id="february-2025">February 2025</h2>
-<section id="releases-9" class="level3">
-<h3 class="anchored" data-anchor-id="releases-9">Releases</h3>
+<section id="releases-9" class="level4">
+<h4 class="anchored" data-anchor-id="releases-9">Releases</h4>
 <ul>
 <li><em>2025-02-27</em> <strong>visOmopResults</strong> 1.0.1 <a href="https://darwin-eu.github.io/visOmopResults/news/index.html#visomopresults-101">changelog</a></li>
 <li><em>2025-02-26</em> <strong>PatientProfiles</strong> 1.3.0 <a href="https://darwin-eu.github.io/PatientProfiles/news/index.html#patientprofiles-130">changelog</a></li>
@@ -741,20 +428,11 @@ ul.task-list li input[type="checkbox"] {
 <li><em>2025-02-05</em> <strong>PhenotypeR</strong> 0.1.2</li>
 </ul>
 </section>
-<section id="activity-9" class="level3">
-<h3 class="anchored" data-anchor-id="activity-9">Activity</h3>
-<ul>
-<li>🔥 <strong>On fire</strong>: omopgenerics, visOmopResults, CodelistGenerator, PatientProfiles, CohortConstructor, IncidencePrevalence, CohortSurvival, OmopSketch, PhenotypeR.</li>
-<li>✨ <strong>Active</strong>: omock, OmopOnSpark, CohortCharacteristics, CohortSymmetry.</li>
-<li>🧊 <strong>Quiet</strong>: DrugUtilisation, OmopViewer.</li>
-<li>❄️️ <strong>No activity</strong>: OmopConstructor, MeasurementDiagnostics.</li>
-</ul>
+<section id="january-2025" class="level4">
+<h4 class="anchored" data-anchor-id="january-2025">January 2025</h4>
 </section>
-</section>
-<section id="january-2025" class="level2">
-<h2 class="anchored" data-anchor-id="january-2025">January 2025</h2>
-<section id="releases-10" class="level3">
-<h3 class="anchored" data-anchor-id="releases-10">Releases</h3>
+<section id="releases-10" class="level4">
+<h4 class="anchored" data-anchor-id="releases-10">Releases</h4>
 <ul>
 <li><em>2025-01-28</em> <strong>CodelistGenerator</strong> 3.3.2</li>
 <li><em>2025-01-28</em> <strong>OmopSketch</strong> 0.2.2</li>
@@ -768,15 +446,6 @@ ul.task-list li input[type="checkbox"] {
 <li><em>2025-01-15</em> <strong>visOmopResults</strong> 1.0.0 <a href="https://darwin-eu.github.io/visOmopResults/news/index.html#visomopresults-100">changelog</a></li>
 <li><em>2025-01-08</em> <strong>OmopSketch</strong> 0.2.0</li>
 </ul>
-</section>
-<section id="activity-10" class="level3">
-<h3 class="anchored" data-anchor-id="activity-10">Activity</h3>
-<ul>
-<li>🔥 <strong>On fire</strong>: omopgenerics, OmopOnSpark, visOmopResults, CohortConstructor, IncidencePrevalence, CohortSurvival, OmopSketch, PhenotypeR.</li>
-<li>✨ <strong>Active</strong>: CodelistGenerator.</li>
-<li>🧊 <strong>Quiet</strong>: omock, PatientProfiles, DrugUtilisation, CohortCharacteristics, CohortSymmetry, OmopViewer.</li>
-<li>❄️️ <strong>No activity</strong>: OmopConstructor, MeasurementDiagnostics.</li>
-</ul>
 
 
 </section>
@@ -786,19 +455,6 @@ ul.task-list li input[type="checkbox"] {
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -1201,10 +857,10 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Copyright 2024, Oxinfer</p>
+<p>Copyright 2025, OxInfer</p>
 </div>   
     <div class="nav-footer-center">
-<p>Rendered on November 23, 2025</p>
+<p>Rendered on November 24, 2025</p>
 <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/oxford-pharmacoepi/OxinferOnboarding/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
