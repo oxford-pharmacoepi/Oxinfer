@@ -1,15 +1,16 @@
-# Oxinfer
+# OxInfer
 
-Oxinfer is part of the wider [Health Data Sciences section](https://www.ndorms.ox.ac.uk/research/research-groups/Musculoskeletal-Pharmacoepidemiology) (lead by [Prof. Daniel Prieto-Alhambra](https://www.ndorms.ox.ac.uk/team/daniel-prieto-alhambra))
+OxInfer is part of the wider [Health Data Sciences section](https://www.ndorms.ox.ac.uk/research/research-groups/Musculoskeletal-Pharmacoepidemiology), based within the [Nuffield Department of Orthopaedics, Rheumatology and Musculoskeletal Sciences (NDORMS)](https://www.ndorms.ox.ac.uk), University of Oxford.
 
 ![Our Team May 2024](images/awayday2024.jpeg)
 
-## The Oxinfer team
+## The OxInfer team
 
 Meet the members of the team.
 
 ::: {.callout-note collapse="true"}
 ### Edit your description
+
 Name, picture, job title and description of each member of the team is pulled from <https://www.ndorms.ox.ac.uk> please refer to the relevant team to edit it.
 :::
 
@@ -20,17 +21,20 @@ x <- dplyr::tibble(
   ndorms_id = c(
     "edward-burn", "marti-catala-sabate", "danielle-newby", "mike-du", 
     "xihang-chen", "kim-lopez-guell", "marta-alcalde-herraiz",
-    "nuria-mercade-besora", "elin-rowlands", "cecilia-campanile"
+    "nuria-mercade-besora", "elin-rowlands", "cecilia-campanile",
+    "folu-akintola"
   ),
   github = c(
     "edward-burn", "catalamarti", "daniellenewby", "ilovemane", "xihang-chen",
-    "KimLopezGuell", "martaalcalde", "nmercadeb", "elinrow", "cecicampanile"
+    "KimLopezGuell", "martaalcalde", "nmercadeb", "elinrow", "cecicampanile",
+    "Foluwa"
   ),
   email = c(
     "edarwd.burn@ndorms", "marti.catalasabate@ndorms", "danielle.newby@ndorms", 
     "mike.du@ndorms", "xihang.chen@ndorms", "kim.lopez@spc",
     "marta.alcaldeherraiz@ndorms", "nuria.mercadebesora@ndorms", 
-    "elin.rowlands@ndorms", "cecilia.campanile@ndorms"
+    "elin.rowlands@ndorms", "cecilia.campanile@ndorms",
+    "folu.akintola@ndorms.ox.ac.uk"
   ),
   twitter = "",
   linkedin = ""

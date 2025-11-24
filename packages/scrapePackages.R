@@ -97,7 +97,7 @@ summarisePackage <- function(pkg, org) {
   
   c(
     # pkg name
-    paste0("### ", pkg), "",
+    paste0("#### ", pkg), "",
     # hexsticker
     hexsticker(pkg, org),
     # title

@@ -5,13 +5,13 @@ project:
 date: today
 
 website:
-  title: "Oxinfer"
+  title: "OxInfer"
   open-graph: true # https://quarto.org/docs/websites/website-tools.html#open-graph
   repo-url: https://github.com/oxford-pharmacoepi/OxinferOnboarding
   repo-actions: [issue]
   page-footer:
     center: "Rendered on {{< meta date >}}"
-    left: "Copyright 2024, Oxinfer"
+    left: "Copyright 2025, OxInfer"
     right:
       - text: Github
         href: https://github.com/oxford-pharmacoepi
@@ -29,17 +29,14 @@ website:
         href: the_team.qmd
         icon: people
       - text: Software
-        menu:
-          - text: Summary
-            href: packages/summary.qmd
-          - text: Newsletter
-            href: packages/newsletter.qmd
-      - text: Onboarding
-        href: onboarding/index.qmd
-        icon: clipboard-check
+        href: packages/summary.qmd
+        icon: people
       - text: Recent publications
         href: publications.qmd
         icon: book
+      - text: Onboarding
+        href: onboarding/index.qmd
+        icon: clipboard-check
     right: 
       - text: Github
         href: https://github.com/oxford-pharmacoepi
@@ -84,7 +81,5 @@ format:
     #backgroundcolor: black
     #mainfont: Roboto
     #monofont: to edit fonts
-    theme: 
-      light: [flatly, styles.scss]
-      dark: [darkly, styles.scss]
+    theme: [flatly, styles.scss]
   

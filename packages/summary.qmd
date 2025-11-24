@@ -222,3 +222,111 @@ readr::read_csv(here::here("newsletter", "packages.csv"), show_col_types = FALSE
   paste0(collapse = "\n\n") |>
   cat()
 ```
+
+### Newsletter
+
+```{=html}
+<style>
+  #subscribe-form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 500px;
+    gap: 10px;
+    margin: 1em 0;
+  }
+
+  #subscribe-form input[type="email"] {
+    flex: 1 1 auto;
+    min-width: 200px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+  }
+
+  #subscribe-form input[type="email"]:focus {
+    outline: none;
+    border-color: #007acc;
+  }
+
+  #subscribe-form button {
+    flex: 0 0 auto;
+    background: linear-gradient(90deg, #007acc, #00bfa5);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  #subscribe-form button:hover {
+    background: linear-gradient(90deg, #005fa3, #009e88);
+    transform: translateY(-2px);
+  }
+
+  #subscribe-form button:active {
+    transform: translateY(0);
+  }
+
+  #message {
+    display: none;
+    color: green;
+    font-weight: bold;
+    margin-top: 1em;
+  }
+</style>
+
+<form id="subscribe-form">
+  <input type="email" name="email" required placeholder="Enter your email" />
+  <button type="submit">📬 Subscribe</button>
+</form>
+
+<div id="message">
+  ✔ You've been subscribed to the OxInfer Newsletter :)
+</div>
+
+<script>
+  document.getElementById('subscribe-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Stop normal form submission
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    fetch('https://script.google.com/macros/s/AKfycbwPL438sqcd6WOqiKUMeD0OsT0QoSUAU5efR3Tj6rjggtdAoU8JqJjIEJnOJPjkB-8/exec', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.text())
+    .then(text => {
+      // Hide the form and show the success message
+      form.style.display = 'none';
+      document.getElementById('message').style.display = 'block';
+    })
+    .catch(error => {
+      alert('Oops, something went wrong. Please try again.');
+      console.error(error);
+    });
+  });
+</script>
+```
+
+```{r, echo=FALSE, results='asis', message=FALSE, warning=FALSE}
+source(here::here("newsletter", "createNewsletter.R"))
+
+period <- seq.Date(from = as.Date("2025-01-01"), to = Sys.Date(), by = 1) |>
+  rev() |>
+  format("%B %Y") |>
+  unique()
+
+readr::read_csv(here::here("newsletter", "packages.csv"), show_col_types = FALSE) |>
+  dplyr::filter(.data$dev == "ox") |>
+  dplyr::select(!"dev") |>
+  createNewsletter(period = period) |>
+  cat()
+```
+

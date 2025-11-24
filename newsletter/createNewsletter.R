@@ -279,12 +279,15 @@ createNewsletter <- function(pkgs, period) {
     dplyr::left_join(activity, by = "period") |>
     dplyr::mutate(
       message_releases = dplyr::if_else(is.na(.data$releases), "", paste0(
-        "\n\n### Releases\n\n", .data$releases
+        "\n\n#### Releases\n\n", .data$releases
       )),
-      message_activity = dplyr::if_else(is.na(.data$activity), "", paste0(
-        "\n\n### Activity\n\n", .data$activity
-      )),
-      message = paste0("## ", .data$period, .data$message_releases, .data$message_activity)
+      # message_activity = dplyr::if_else(is.na(.data$activity), "", paste0(
+      #   "\n\n#### Activity\n\n", .data$activity
+      # )),
+      message = paste0("#### ", .data$period, .data$message_releases
+                       # ,
+                       # .data$message_activity
+                       )
     ) |>
     dplyr::pull(message) |>
     paste0(collapse = "\n\n")
