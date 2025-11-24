@@ -15,7 +15,7 @@ newsletter <- readr::read_csv(here::here("packages.csv"), show_col_types = FALSE
 # Create newsletter
 body_content <- paste0(
   "Dear colleagues,\n\n",
-  "Welcome to the latest edition of the **Oxinfer Newsletter**! Here's a summary of recent updates and activity in our packages — thank you for staying engaged with our work.\n\n",
+  "Welcome to the latest edition of the **OxInfer Newsletter**! Here's a summary of recent updates and activity in our packages — thank you for staying engaged with our work.\n\n",
   "---\n\n",
   stringr::str_replace(newsletter, pattern = paste0("## ", period, "\n\n"), replacement = ""), "\n\n",
   "---\n\n",

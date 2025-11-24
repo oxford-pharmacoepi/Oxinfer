@@ -1,4 +1,4 @@
-# Oxinfer website
+# OxInfer website
 
 <https://oxford-pharmacoepi.github.io/Oxinfer/>
 

@@ -64,7 +64,7 @@
 </form>
 
 <div id="message">
-  ✔ You've been subscribed to the Oxinfer Newsletter :)
+  ✔ You've been subscribed to the OxInfer Newsletter :)
 </div>
 
 <script>
