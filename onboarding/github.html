@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-12-02">
+<meta name="dcterms.date" content="2025-12-03">
 
 <title>github – OxInfer</title>
 <style>
@@ -369,7 +369,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 2, 2025</p>
+      <p class="date">December 3, 2025</p>
     </div>
   </div>
   
@@ -489,11 +489,22 @@ connectToDatabase.R</code></pre>
 <div class="cell-output cell-output-stderr">
 <pre><code>Downloading GitHub repo darwin-eu-dev/CDMConnector@HEAD</code></pre>
 </div>
+<div class="cell-output cell-output-stdout">
+<pre><code>vroom        (1.6.6 -&gt; 1.6.7) [CRAN]
+omopgenerics (1.3.3 -&gt; 1.3.4) [CRAN]</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Installing 2 packages: vroom, omopgenerics</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Installing packages into '/home/runner/work/Oxinfer/Oxinfer/renv/library/linux-ubuntu-noble/R-4.5/x86_64-pc-linux-gnu'
+(as 'lib' is unspecified)</code></pre>
+</div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Running `R CMD build`...</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>* checking for file ‘/tmp/RtmpCVDBFR/remotes18ef26ba6a2a/darwin-eu-dev-CDMConnector-38c899ab8617f0fcc7c905253839c83f04b65528/DESCRIPTION’ ... OK
+<pre><code>* checking for file ‘/tmp/RtmpXA7dx2/remotes18ef6a98680c/darwin-eu-dev-CDMConnector-38c899ab8617f0fcc7c905253839c83f04b65528/DESCRIPTION’ ... OK
 * preparing ‘CDMConnector’:
 * checking DESCRIPTION meta-information ... OK
 * checking for LF line-endings in source and make files and shell scripts
@@ -515,16 +526,16 @@ connectToDatabase.R</code></pre>
 <li><p>Set a new .Renviron variable called <code>GITHUB_PAT</code>.</p></li>
 </ol>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">edit_r_environ</span>()</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># write there</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>GITHUB_PAT <span class="ot">=</span> <span class="st">"ghp_..."</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">edit_r_environ</span>()</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># write there</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>GITHUB_PAT <span class="ot">=</span> <span class="st">"ghp_..."</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="6" type="1">
 <li>Restart your R session.</li>
 </ol>
 <p>Now you should be able to install the private repo (if you have access to it):</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"darwin-eu-dev/CDMConnector"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"darwin-eu-dev/CDMConnector"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
@@ -957,7 +968,7 @@ Important
 <p>Copyright 2025, OxInfer</p>
 </div>   
     <div class="nav-footer-center">
-<p>Rendered on December 2, 2025</p>
+<p>Rendered on December 3, 2025</p>
 <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/oxford-pharmacoepi/OxinferOnboarding/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
