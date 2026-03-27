@@ -195,8 +195,13 @@ get_edges <- function(pkg, type) {
     return(NULL)
   }
 }
-plot_dependencies <- function(suggests){
+plot_dependencies <- function(suggests, remove = NULL){
 edge_list <- list()
+
+if(!is.null(remove)){
+pkgs <- pkgs[! pkgs %in% remove]  
+}
+
 for (pkg in pkgs) {
   edge_list[[paste0(pkg, "_imp")]] <- get_edges(pkg, "Imports")
   if(isTRUE(suggests)){
@@ -210,7 +215,7 @@ g <- g %>%
   mutate(
     dependencies = centrality_degree(mode = "in")
   )
-ggraph(g, layout = "centrality", centrality = dependencies) + 
+ggraph(g, layout = "fr") + 
   geom_edge_arc(aes(linetype = type, color = type), 
                 strength = 0.1, end_cap = circle(4, 'mm'),
                 arrow = arrow(length = unit(3, 'mm'), type = "closed")) +
@@ -233,14 +238,14 @@ ggraph(g, layout = "centrality", centrality = dependencies) +
                      direction = -1) +
   theme_void() +
   theme(legend.position = "bottom", 
-        legend.box = "veritcal")
+        legend.box = "vertical")
 }
 ```
 
 ::: {.panel-tabset}
 ### Imports 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-plot_dependencies(suggests = FALSE)
+plot_dependencies(suggests = FALSE, remove = c("EpiStandard"))
 ```
 
 ### Imports and suggests
