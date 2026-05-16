@@ -17,3 +17,6 @@ MeasurementDiagnostics, ohdsi, ox
 PhenotypeR, ohdsi, ox
 OmopViewer, ohdsi, ox
 EpiStandard, oxford-pharmacoepi, ox
+OmopStudyBuilder, oxford-pharmacoepi, ox
+OmopIndexes, ohdsi, ox
+OmopConcepts, ohdsi, ox

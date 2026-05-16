@@ -42,7 +42,7 @@ total <- total_per_package |>
 bslib::value_box(
   title = "Number of R packages on CRAN",
   value = countup::countup(
-    total_per_package |> nrow(), 
+    sum(total_per_package$total>0), 
     duration = 2,                    
     options = list(separator = ",")  
   ),
@@ -72,53 +72,64 @@ Below is a summary of CRAN releases of our R packages. As can be seen we have ai
 get_cran_release_history <- function(package_name) {
   url <- paste0("https://crandb.r-pkg.org/", package_name, "/all")
  
+  url_exists <- function(url) {
+    con <- curl::curl(url)
+    on.exit(close(con))
+    res <- try(open(con, "rb"), silent = TRUE)
+    !inherits(res, "try-error")
+  }
+  
   releases <- list()
-  for(i in seq_along(url)){
-  cli::cli_inform("Getting releases for {package_name[i]}")
-  releases[[i]] <- fromJSON(url[i]) |>
-    pluck("versions") |>
-    map_dfr(~ tibble(
-      package_name = package_name[i],
-      type = type[i],
-      version = .$Version,
-      date = as.Date(.$Date)
-    )) |> 
-    arrange(date)
-  
-  # manual fix
-  releases[[i]] <- releases[[i]] |> 
-    dplyr::mutate(
-      version = dplyr::if_else(
-        package_name == "CodelistGenerator" & 
-          version == "3.0",
-        "3.0.0",
-        version))
-  
-  releases[[i]] <- releases[[i]] |> 
-    dplyr::mutate(
-      first = as.integer(gsub("^(\\d+)\\..*$", "\\1", version)),
-      second = as.integer(gsub("^\\d+\\.(\\d+)\\..*$", "\\1", version)),
-      third = as.integer(gsub("^.*\\.([0-9]+)$", "\\1", version))
-    ) |> 
-    dplyr::mutate(previous_first = lag(first),
-                  previous_second = lag(second),
-                  previous_third = lag(third)) |> 
-    dplyr::mutate(release_type = dplyr::case_when(
-      is.na(previous_first) ~ "first release",
-      first > previous_first  ~ "major release",
-      second > previous_second  ~ "minor release",
-      third > previous_third  ~ "patch release",
-      .default = NA
-    )) |> 
-    dplyr::select(package_name,
-                  type,
-                  version, date, release_type)
+  for (i in seq_along(url)) {
+    cli::cli_inform("Getting releases for {package_name[i]}")
+    
+    if (!url_exists(url[i])) {
+      cli::cli_inform(c("!" = "{package_name[i]} is not in CRAN"))
+      releases[[i]] <- NULL
+    } else {
+      releases[[i]] <- fromJSON(url[i]) |>
+        pluck("versions") |>
+        map_dfr(~ tibble(
+          package_name = package_name[i],
+          type = type[i],
+          version = .$Version,
+          date = as.Date(.$Date)
+        )) |> 
+        arrange(date)
+      
+      # manual fix
+      releases[[i]] <- releases[[i]] |> 
+        dplyr::mutate(
+          version = dplyr::if_else(
+            package_name == "CodelistGenerator" & 
+              version == "3.0",
+            "3.0.0",
+            version))
+      
+      releases[[i]] <- releases[[i]] |> 
+        dplyr::mutate(
+          first = as.integer(gsub("^(\\d+)\\..*$", "\\1", version)),
+          second = as.integer(gsub("^\\d+\\.(\\d+)\\..*$", "\\1", version)),
+          third = as.integer(gsub("^.*\\.([0-9]+)$", "\\1", version))
+        ) |> 
+        dplyr::mutate(previous_first = lag(first),
+                      previous_second = lag(second),
+                      previous_third = lag(third)) |> 
+        dplyr::mutate(release_type = dplyr::case_when(
+          is.na(previous_first) ~ "first release",
+          first > previous_first  ~ "major release",
+          second > previous_second  ~ "minor release",
+          third > previous_third  ~ "patch release",
+          .default = NA
+        )) |> 
+        dplyr::select(package_name,
+                      type,
+                      version, date, release_type)
+    }
   }
   
   dplyr::bind_rows(releases)
-  
 }
-
 
 release_hist <- get_cran_release_history(pkgs)
 ranges <- release_hist |>
