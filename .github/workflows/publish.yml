@@ -20,11 +20,13 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y \
-            libcurl4-openssl-dev \
-            libgit2-dev \
+            cmake \
+            gdal-bin \
+            libabsl-dev \
+            libgdal-dev \
+            libpng-dev \
+            libudunits2-dev \
             libx11-dev \
-            libglpk-dev \
-            libxml2-dev \
             pandoc
         
       - name: Set up Quarto
