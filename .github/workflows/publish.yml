@@ -27,7 +27,11 @@ jobs:
             libpng-dev \
             libudunits2-dev \
             libx11-dev \
-            pandoc
+            pandoc \
+            libcurl4-openssl-dev \
+            libgit2-dev \
+            libglpk-dev \
+            libxml2-dev
         
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
