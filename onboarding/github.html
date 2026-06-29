@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-06-28">
+<meta name="dcterms.date" content="2026-06-29">
 
 <title>github – OxInfer</title>
 <style>
@@ -371,7 +371,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 28, 2026</p>
+      <p class="date">June 29, 2026</p>
     </div>
   </div>
   
@@ -488,59 +488,15 @@ connectToDatabase.R</code></pre>
 <div class="cell-output cell-output-stderr">
 <pre><code>Using github PAT from envvar GITHUB_PAT. Use `gitcreds::gitcreds_set()` and unset GITHUB_PAT in .Renviron (or elsewhere) if you want to use the more secure git credential store instead.</code></pre>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Downloading GitHub repo darwin-eu-dev/CDMConnector@HEAD</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>rlang        (1.1.6   -&gt; 1.2.0) [CRAN]
-lifecycle    (1.0.4   -&gt; 1.0.5) [CRAN]
-glue         (1.8.0   -&gt; 1.8.1) [CRAN]
-cli          (3.6.5   -&gt; 3.6.6) [CRAN]
-withr        (3.0.2   -&gt; 3.0.3) [CRAN]
-cpp11        (0.5.2   -&gt; 0.5.5) [CRAN]
-vctrs        (0.6.5   -&gt; 0.7.3) [CRAN]
-tibble       (3.3.0   -&gt; 3.3.1) [CRAN]
-purrr        (1.2.0   -&gt; 1.2.2) [CRAN]
-magrittr     (2.0.4   -&gt; 2.0.5) [CRAN]
-dplyr        (1.1.4   -&gt; 1.2.1) [CRAN]
-tidyr        (1.3.1   -&gt; 1.3.2) [CRAN]
-DBI          (1.2.3   -&gt; 1.3.0) [CRAN]
-blob         (1.2.4   -&gt; 1.3.0) [CRAN]
-bit64        (4.6.0-1 -&gt; 4.8.2) [CRAN]
-dbplyr       (2.5.1   -&gt; 2.6.0) [CRAN]
-vroom        (1.6.6   -&gt; 1.7.1) [CRAN]
-clipr        (0.8.0   -&gt; 0.8.1) [CRAN]
-backports    (1.5.0   -&gt; 1.5.1) [CRAN]
-rappdirs     (0.3.3   -&gt; 0.3.4) [CRAN]
-openssl      (2.3.4   -&gt; 2.4.2) [CRAN]
-curl         (7.0.0   -&gt; 7.1.0) [CRAN]
-omopgenerics (1.3.3   -&gt; 1.4.0) [CRAN]
-readr        (2.1.6   -&gt; 2.2.0) [CRAN]
-checkmate    (2.3.3   -&gt; 2.3.4) [CRAN]
-httr2        (1.2.1   -&gt; 1.2.3) [CRAN]</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Installing 26 packages: rlang, lifecycle, glue, cli, withr, cpp11, vctrs, tibble, purrr, magrittr, dplyr, tidyr, DBI, blob, bit64, dbplyr, vroom, clipr, backports, rappdirs, openssl, curl, omopgenerics, readr, checkmate, httr2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Installing packages into '/home/runner/work/Oxinfer/Oxinfer/renv/library/linux-ubuntu-noble/R-4.5/x86_64-pc-linux-gnu'
-(as 'lib' is unspecified)</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Running `R CMD build`...</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>* checking for file ‘/tmp/RtmpTxkJcz/remotes1e292b016c9b/darwin-eu-dev-CDMConnector-c6e8081c0f3c4559a5ed7edaf105aae639ad8614/DESCRIPTION’ ... OK
-* preparing ‘CDMConnector’:
-* checking DESCRIPTION meta-information ... OK
-* checking for LF line-endings in source and make files and shell scripts
-* checking for empty or unneeded directories
-* looking to see if a ‘data/datalist’ file should be added
-* building ‘CDMConnector_2.6.0.tar.gz’</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Installing package into '/home/runner/work/Oxinfer/Oxinfer/renv/library/linux-ubuntu-noble/R-4.5/x86_64-pc-linux-gnu'
-(as 'lib' is unspecified)</code></pre>
+<div class="cell-output cell-output-error">
+<pre><code>Error: Failed to install 'CDMConnector' from GitHub:
+  HTTP error 429.
+  This endpoint is temporarily being throttled. Please try again later. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service)
+
+  Rate limit remaining: 4999/5000
+  Rate limit reset at: 2026-06-29 03:27:11 UTC
+
+  </code></pre>
 </div>
 </div>
 <p>So you can install private packages (that you have access to) you need to set up the <code>GITHUB_PAT</code>. You can set it up with the following steps:</p>
@@ -552,16 +508,16 @@ httr2        (1.2.1   -&gt; 1.2.3) [CRAN]</code></pre>
 <li><p>Set a new .Renviron variable called <code>GITHUB_PAT</code>.</p></li>
 </ol>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">edit_r_environ</span>()</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># write there</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>GITHUB_PAT <span class="ot">=</span> <span class="st">"ghp_..."</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">edit_r_environ</span>()</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># write there</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>GITHUB_PAT <span class="ot">=</span> <span class="st">"ghp_..."</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="6" type="1">
 <li>Restart your R session.</li>
 </ol>
 <p>Now you should be able to install the private repo (if you have access to it):</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"darwin-eu-dev/CDMConnector"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"darwin-eu-dev/CDMConnector"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
@@ -994,7 +950,7 @@ Important
 <p>Copyright 2025, OxInfer</p>
 </div>   
     <div class="nav-footer-center">
-<p>Rendered on June 28, 2026</p>
+<p>Rendered on June 29, 2026</p>
 <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/oxford-pharmacoepi/OxinferOnboarding/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
