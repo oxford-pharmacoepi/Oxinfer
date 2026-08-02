@@ -59,10 +59,7 @@ website:
             - onboarding/omop.qmd
         - section: "The team"
           contents:
-            - onboarding/organigram.qmd
-            - onboarding/work_with_me.qmd
             - onboarding/studies_and_authorship.qmd
-            - onboarding/useful_contacts.qmd
         - section: "Induction"
           contents:
             - onboarding/useful_terms.qmd

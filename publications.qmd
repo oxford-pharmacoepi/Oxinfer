@@ -31,7 +31,7 @@ while (i < numberTries & is.null(x)) {
   }
 }
 
-authors <- c(authors, "chen, xihang")
+authors <- c(authors)
 
 getIds <- function(xx) {
   res <- list(pubmed = NA_character_, doi = NA_character_)

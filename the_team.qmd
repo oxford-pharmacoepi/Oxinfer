@@ -20,18 +20,18 @@ web <- "https://www.ndorms.ox.ac.uk/team/"
 x <- dplyr::tibble(
   ndorms_id = c(
     "edward-burn", "marti-catala-sabate", "danielle-newby", "mike-du", 
-    "xihang-chen", "kim-lopez-guell", "marta-alcalde-herraiz",
+    "kim-lopez-guell", "marta-alcalde-herraiz",
     "nuria-mercade-besora", "elin-rowlands", "cecilia-campanile",
     "folu-akintola"
   ),
   github = c(
-    "edward-burn", "catalamarti", "daniellenewby", "ilovemane", "xihang-chen",
+    "edward-burn", "catalamarti", "daniellenewby", "ilovemane",
     "KimLopezGuell", "martaalcalde", "nmercadeb", "elinrow", "cecicampanile",
     "Foluwa"
   ),
   email = c(
     "edarwd.burn@ndorms", "marti.catalasabate@ndorms", "danielle.newby@ndorms", 
-    "mike.du@ndorms", "xihang.chen@ndorms", "kim.lopez@spc",
+    "mike.du@ndorms", "kim.lopez@spc",
     "marta.alcaldeherraiz@ndorms", "nuria.mercadebesora@ndorms", 
     "elin.rowlands@ndorms", "cecilia.campanile@ndorms",
     "folu.akintola@ndorms.ox.ac.uk"
