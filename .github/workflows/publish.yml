@@ -44,6 +44,8 @@ jobs:
 
       - name: Install R libraries in renv
         uses: r-lib/actions/setup-renv@v2
+        with:
+          cache-version: 2
         
       - name: Render quarto website
         run: quarto render
